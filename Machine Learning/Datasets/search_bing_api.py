@@ -7,7 +7,7 @@ from requests import exceptions
 
 # global variables
 API_KEY = "8f0210692af542a5aa109b193c5f7099" # Microsoft Cognitive Services API key
-MAX_RESULTS = 250 # Maximum number of results for a given search
+MAX_RESULTS = 100 # Maximum number of results for a given search
 GROUP_SIZE = 50 # Group size for results
 URL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search" # endpoint API URL
 EXCEPTIONS = set([IOError,FileNotFoundError,exceptions.RequestException, exceptions.HTTPError,exceptions.ConnectionError, exceptions.Timeout])
