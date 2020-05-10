@@ -1,5 +1,5 @@
 import cv2
-import pytesseract
+import pytesserac
 from PIL import Image
 
 def singleImageText(path):
@@ -32,5 +32,5 @@ def pytesseractMethod():
     folder = "Datasets/label_dataset/cardboard/"
     multipleImageText(folder, matches)
 
-def bagsOfWords():
+
 
