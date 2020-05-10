@@ -21,11 +21,16 @@ def multipleImageText(path, matches):
     accuracy = (count/63)*100
     print(accuracy,"%")
 
-# - - - - - - - - - - text from one image - - - - - - - - - - 
-image_path = "Datasets/label_dataset/cardboard/0.jpg"
-singleImageText(image_path)
+def pytesseractMethod():
 
-# - - - - - - - - - text from folder of images - - - - - - - - -
-matches = ["cardboard", "CARDBOARD", "card", "CARDBOARD" "paper", "PAPER"]
-folder = "Datasets/label_dataset/cardboard/"
-multipleImageText(folder, matches)
+    # - - - - - - - - - - text from one image - - - - - - - - - - 
+    image_path = "Datasets/label_dataset/cardboard/0.jpg"
+    singleImageText(image_path)
+
+    # - - - - - - - - - text from folder of images - - - - - - - - -
+    matches = ["cardboard", "CARDBOARD", "card", "CARDBOARD" "paper", "PAPER"]
+    folder = "Datasets/label_dataset/cardboard/"
+    multipleImageText(folder, matches)
+
+def bagsOfWords():
+
