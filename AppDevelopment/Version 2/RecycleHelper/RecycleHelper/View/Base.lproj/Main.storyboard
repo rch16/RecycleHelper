@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="RecycleHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWp-xo-3dP">
+                                <rect key="frame" x="50" y="104" width="121" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to do today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLC-6c-jhn">
+                                <rect key="frame" x="50" y="169" width="314" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="zEX-3b-8fH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltZ-X4-kcG">
+                                <rect key="frame" x="50" y="216" width="314" height="85"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.9882352941176471" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Search for an item">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVh-PF-usI">
+                                <rect key="frame" x="50" y="319" width="314" height="85"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.92941176470588238" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Scan a recycling symbol">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="symbolScanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUU-ci-nz4"/>
+                                    <segue destination="Lrs-jZ-cJ6" kind="presentation" modalPresentationStyle="fullScreen" id="yxh-aq-Nwn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynh-nR-MoF">
+                                <rect key="frame" x="50" y="422" width="314" height="85"/>
+                                <color key="backgroundColor" red="0.58039215686274503" green="0.82745098039215681" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="h3K-ns-x4t"/>
+                                </constraints>
+                                <state key="normal" title="Detect an object">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="objectScanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5iA-89-Ja7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-r3-037">
+                                <rect key="frame" x="50" y="216" width="314" height="85"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.98823529409999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="9vA-6S-mnu"/>
+                                </constraints>
+                                <state key="normal" title="Search for an item">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="searchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGR-4I-dSf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="trailing" secondItem="Ynh-nR-MoF" secondAttribute="trailing" id="1XH-gm-hWi"/>
+                            <constraint firstItem="Ynh-nR-MoF" firstAttribute="top" secondItem="RVh-PF-usI" secondAttribute="bottom" constant="18" id="89S-cX-RIk"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="trailing" secondItem="RVh-PF-usI" secondAttribute="trailing" id="93m-eK-SJh"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="EFU-Dv-EIA"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="NBs-qg-IRF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GLC-6c-jhn" secondAttribute="trailing" constant="50" id="PsE-DZ-aKu"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="ltZ-X4-kcG" secondAttribute="leading" id="StU-er-oIS"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="QWp-xo-3dP" secondAttribute="leading" id="TWO-XM-e0Y"/>
+                            <constraint firstItem="QWp-xo-3dP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="V3K-3q-V3j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ynh-nR-MoF" secondAttribute="bottom" constant="355" id="X66-24-gEG"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="RVh-PF-usI" secondAttribute="leading" id="XlB-l6-dBT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y4I-r3-037" secondAttribute="trailing" constant="50" id="bK0-d3-V3Z"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="top" secondItem="GLC-6c-jhn" secondAttribute="bottom" constant="26" id="bTG-Zc-kRP"/>
+                            <constraint firstItem="GLC-6c-jhn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="eNW-DF-j03"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QWp-xo-3dP" secondAttribute="trailing" constant="243" id="fKh-92-59C"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="top" secondItem="ltZ-X4-kcG" secondAttribute="top" id="hAY-z5-Xat"/>
+                            <constraint firstItem="GLC-6c-jhn" firstAttribute="top" secondItem="QWp-xo-3dP" secondAttribute="bottom" constant="6" id="hfL-LC-gAL"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="baseline" secondItem="ltZ-X4-kcG" secondAttribute="firstBaseline" id="kOk-Yy-hjx"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="Ynh-nR-MoF" secondAttribute="leading" id="phd-xN-rS2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y4I-r3-037" secondAttribute="trailing" constant="50" id="qaF-BN-64t"/>
+                            <constraint firstItem="RVh-PF-usI" firstAttribute="top" secondItem="Y4I-r3-037" secondAttribute="bottom" constant="18" id="tEy-Pn-UNN"/>
+                            <constraint firstItem="GLC-6c-jhn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="yOO-bP-Zwe"/>
+                            <constraint firstItem="Y4I-r3-037" firstAttribute="trailing" secondItem="ltZ-X4-kcG" secondAttribute="trailing" id="yX9-6p-JRM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+        <!--OCR View Controller-->
+        <scene sceneID="VKw-MO-nB5">
+            <objects>
+                <viewController title="OCR View Controller" id="Lrs-jZ-cJ6" customClass="OCRViewController" customModule="RecycleHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdP-Db-zb4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JRw-Ty-ZXX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tnh-De-ult"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uRd-fe-xsG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="985" y="137"/>
+        </scene>
+    </scenes>
+</document>

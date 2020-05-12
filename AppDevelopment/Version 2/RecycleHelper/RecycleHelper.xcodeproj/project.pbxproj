@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E503EC62246AF5DA00225A54 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E503EC61246AF5DA00225A54 /* License.txt */; };
+		E503EC67246B044200225A54 /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC66246B044200225A54 /* OCRViewController.swift */; };
 		E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */; };
 		E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */; };
-		E5ADD1DE246AE9ED0030CD19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DD246AE9ED0030CD19 /* ViewController.swift */; };
+		E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */; };
 		E5ADD1E1246AE9ED0030CD19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ADD1DF246AE9ED0030CD19 /* Main.storyboard */; };
 		E5ADD1E3246AE9F20030CD19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5ADD1E2246AE9F20030CD19 /* Assets.xcassets */; };
 		E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */; };
@@ -35,10 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E503EC61246AF5DA00225A54 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		E503EC66246B044200225A54 /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
 		E5ADD1D6246AE9ED0030CD19 /* RecycleHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5ADD1DD246AE9ED0030CD19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E5ADD1E0246AE9ED0030CD19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5ADD1E2246AE9F20030CD19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5ADD1E5246AE9F20030CD19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,9 +80,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E503EC63246B040A00225A54 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */,
+				E503EC66246B044200225A54 /* OCRViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E503EC64246B041500225A54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */,
+				E5ADD1DF246AE9ED0030CD19 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E503EC65246B042600225A54 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E5ADD1CD246AE9ED0030CD19 = {
 			isa = PBXGroup;
 			children = (
+				E503EC61246AF5DA00225A54 /* License.txt */,
 				E5ADD1D8246AE9ED0030CD19 /* RecycleHelper */,
 				E5ADD1EF246AE9F30030CD19 /* RecycleHelperTests */,
 				E5ADD1FA246AE9F30030CD19 /* RecycleHelperUITests */,
@@ -101,10 +131,10 @@
 			children = (
 				E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */,
 				E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */,
-				E5ADD1DD246AE9ED0030CD19 /* ViewController.swift */,
-				E5ADD1DF246AE9ED0030CD19 /* Main.storyboard */,
+				E503EC65246B042600225A54 /* Model */,
+				E503EC64246B041500225A54 /* View */,
+				E503EC63246B040A00225A54 /* Controller */,
 				E5ADD1E2246AE9F20030CD19 /* Assets.xcassets */,
-				E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */,
 				E5ADD1E7246AE9F20030CD19 /* Info.plist */,
 			);
 			path = RecycleHelper;
@@ -234,6 +264,7 @@
 			files = (
 				E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */,
 				E5ADD1E3246AE9F20030CD19 /* Assets.xcassets in Resources */,
+				E503EC62246AF5DA00225A54 /* License.txt in Resources */,
 				E5ADD1E1246AE9ED0030CD19 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5ADD1DE246AE9ED0030CD19 /* ViewController.swift in Sources */,
+				E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */,
+				E503EC67246B044200225A54 /* OCRViewController.swift in Sources */,
 				E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */,
 				E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */,
 			);
@@ -437,10 +469,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A98WJKXVLM;
 				INFOPLIST_FILE = RecycleHelper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -455,10 +489,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A98WJKXVLM;
 				INFOPLIST_FILE = RecycleHelper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
