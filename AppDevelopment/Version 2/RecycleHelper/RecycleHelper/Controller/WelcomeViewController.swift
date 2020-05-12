@@ -13,6 +13,10 @@ class WelcomeViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Make sure navigation bar is transparent
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.isTranslucent = true
     }
     
     // Attach UI

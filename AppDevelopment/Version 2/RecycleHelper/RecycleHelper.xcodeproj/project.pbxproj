@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E503EC62246AF5DA00225A54 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E503EC61246AF5DA00225A54 /* License.txt */; };
 		E503EC67246B044200225A54 /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC66246B044200225A54 /* OCRViewController.swift */; };
+		E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC68246B148F00225A54 /* VisionOCRViewController.swift */; };
 		E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */; };
 		E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */; };
 		E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		E503EC61246AF5DA00225A54 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		E503EC66246B044200225A54 /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
+		E503EC68246B148F00225A54 /* VisionOCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionOCRViewController.swift; sourceTree = "<group>"; };
 		E5ADD1D6246AE9ED0030CD19 /* RecycleHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */,
 				E503EC66246B044200225A54 /* OCRViewController.swift */,
+				E503EC68246B148F00225A54 /* VisionOCRViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */,
 				E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */,
 				E503EC67246B044200225A54 /* OCRViewController.swift in Sources */,
 				E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */,
