@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */; };
+		E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */; };
+		E5ADD1DE246AE9ED0030CD19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DD246AE9ED0030CD19 /* ViewController.swift */; };
+		E5ADD1E1246AE9ED0030CD19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ADD1DF246AE9ED0030CD19 /* Main.storyboard */; };
+		E5ADD1E3246AE9F20030CD19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5ADD1E2246AE9F20030CD19 /* Assets.xcassets */; };
+		E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */; };
+		E5ADD1F1246AE9F30030CD19 /* RecycleHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1F0246AE9F30030CD19 /* RecycleHelperTests.swift */; };
+		E5ADD1FC246AE9F30030CD19 /* RecycleHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1FB246AE9F30030CD19 /* RecycleHelperUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E5ADD1ED246AE9F30030CD19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5ADD1CE246AE9ED0030CD19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5ADD1D5246AE9ED0030CD19;
+			remoteInfo = RecycleHelper;
+		};
+		E5ADD1F8246AE9F30030CD19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5ADD1CE246AE9ED0030CD19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5ADD1D5246AE9ED0030CD19;
+			remoteInfo = RecycleHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E5ADD1D6246AE9ED0030CD19 /* RecycleHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E5ADD1DD246AE9ED0030CD19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5ADD1E0246AE9ED0030CD19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E5ADD1E2246AE9F20030CD19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5ADD1E5246AE9F20030CD19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5ADD1E7246AE9F20030CD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5ADD1EC246AE9F30030CD19 /* RecycleHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecycleHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5ADD1F0246AE9F30030CD19 /* RecycleHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleHelperTests.swift; sourceTree = "<group>"; };
+		E5ADD1F2246AE9F30030CD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5ADD1F7246AE9F30030CD19 /* RecycleHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecycleHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5ADD1FB246AE9F30030CD19 /* RecycleHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleHelperUITests.swift; sourceTree = "<group>"; };
+		E5ADD1FD246AE9F30030CD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5ADD1D3246AE9ED0030CD19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5ADD1E9246AE9F30030CD19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5ADD1F4246AE9F30030CD19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E5ADD1CD246AE9ED0030CD19 = {
+			isa = PBXGroup;
+			children = (
+				E5ADD1D8246AE9ED0030CD19 /* RecycleHelper */,
+				E5ADD1EF246AE9F30030CD19 /* RecycleHelperTests */,
+				E5ADD1FA246AE9F30030CD19 /* RecycleHelperUITests */,
+				E5ADD1D7246AE9ED0030CD19 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E5ADD1D7246AE9ED0030CD19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5ADD1D6246AE9ED0030CD19 /* RecycleHelper.app */,
+				E5ADD1EC246AE9F30030CD19 /* RecycleHelperTests.xctest */,
+				E5ADD1F7246AE9F30030CD19 /* RecycleHelperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5ADD1D8246AE9ED0030CD19 /* RecycleHelper */ = {
+			isa = PBXGroup;
+			children = (
+				E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */,
+				E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */,
+				E5ADD1DD246AE9ED0030CD19 /* ViewController.swift */,
+				E5ADD1DF246AE9ED0030CD19 /* Main.storyboard */,
+				E5ADD1E2246AE9F20030CD19 /* Assets.xcassets */,
+				E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */,
+				E5ADD1E7246AE9F20030CD19 /* Info.plist */,
+			);
+			path = RecycleHelper;
+			sourceTree = "<group>";
+		};
+		E5ADD1EF246AE9F30030CD19 /* RecycleHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				E5ADD1F0246AE9F30030CD19 /* RecycleHelperTests.swift */,
+				E5ADD1F2246AE9F30030CD19 /* Info.plist */,
+			);
+			path = RecycleHelperTests;
+			sourceTree = "<group>";
+		};
+		E5ADD1FA246AE9F30030CD19 /* RecycleHelperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E5ADD1FB246AE9F30030CD19 /* RecycleHelperUITests.swift */,
+				E5ADD1FD246AE9F30030CD19 /* Info.plist */,
+			);
+			path = RecycleHelperUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5ADD1D5246AE9ED0030CD19 /* RecycleHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5ADD200246AE9F30030CD19 /* Build configuration list for PBXNativeTarget "RecycleHelper" */;
+			buildPhases = (
+				E5ADD1D2246AE9ED0030CD19 /* Sources */,
+				E5ADD1D3246AE9ED0030CD19 /* Frameworks */,
+				E5ADD1D4246AE9ED0030CD19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecycleHelper;
+			productName = RecycleHelper;
+			productReference = E5ADD1D6246AE9ED0030CD19 /* RecycleHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E5ADD1EB246AE9F30030CD19 /* RecycleHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5ADD203246AE9F30030CD19 /* Build configuration list for PBXNativeTarget "RecycleHelperTests" */;
+			buildPhases = (
+				E5ADD1E8246AE9F30030CD19 /* Sources */,
+				E5ADD1E9246AE9F30030CD19 /* Frameworks */,
+				E5ADD1EA246AE9F30030CD19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5ADD1EE246AE9F30030CD19 /* PBXTargetDependency */,
+			);
+			name = RecycleHelperTests;
+			productName = RecycleHelperTests;
+			productReference = E5ADD1EC246AE9F30030CD19 /* RecycleHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E5ADD1F6246AE9F30030CD19 /* RecycleHelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5ADD206246AE9F30030CD19 /* Build configuration list for PBXNativeTarget "RecycleHelperUITests" */;
+			buildPhases = (
+				E5ADD1F3246AE9F30030CD19 /* Sources */,
+				E5ADD1F4246AE9F30030CD19 /* Frameworks */,
+				E5ADD1F5246AE9F30030CD19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5ADD1F9246AE9F30030CD19 /* PBXTargetDependency */,
+			);
+			name = RecycleHelperUITests;
+			productName = RecycleHelperUITests;
+			productReference = E5ADD1F7246AE9F30030CD19 /* RecycleHelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5ADD1CE246AE9ED0030CD19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Becca Hallam";
+				TargetAttributes = {
+					E5ADD1D5246AE9ED0030CD19 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					E5ADD1EB246AE9F30030CD19 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = E5ADD1D5246AE9ED0030CD19;
+					};
+					E5ADD1F6246AE9F30030CD19 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = E5ADD1D5246AE9ED0030CD19;
+					};
+				};
+			};
+			buildConfigurationList = E5ADD1D1246AE9ED0030CD19 /* Build configuration list for PBXProject "RecycleHelper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E5ADD1CD246AE9ED0030CD19;
+			productRefGroup = E5ADD1D7246AE9ED0030CD19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5ADD1D5246AE9ED0030CD19 /* RecycleHelper */,
+				E5ADD1EB246AE9F30030CD19 /* RecycleHelperTests */,
+				E5ADD1F6246AE9F30030CD19 /* RecycleHelperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5ADD1D4246AE9ED0030CD19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */,
+				E5ADD1E3246AE9F20030CD19 /* Assets.xcassets in Resources */,
+				E5ADD1E1246AE9ED0030CD19 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5ADD1EA246AE9F30030CD19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5ADD1F5246AE9F30030CD19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5ADD1D2246AE9ED0030CD19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5ADD1DE246AE9ED0030CD19 /* ViewController.swift in Sources */,
+				E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */,
+				E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5ADD1E8246AE9F30030CD19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5ADD1F1246AE9F30030CD19 /* RecycleHelperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5ADD1F3246AE9F30030CD19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5ADD1FC246AE9F30030CD19 /* RecycleHelperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E5ADD1EE246AE9F30030CD19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5ADD1D5246AE9ED0030CD19 /* RecycleHelper */;
+			targetProxy = E5ADD1ED246AE9F30030CD19 /* PBXContainerItemProxy */;
+		};
+		E5ADD1F9246AE9F30030CD19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5ADD1D5246AE9ED0030CD19 /* RecycleHelper */;
+			targetProxy = E5ADD1F8246AE9F30030CD19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E5ADD1DF246AE9ED0030CD19 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5ADD1E0246AE9ED0030CD19 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5ADD1E5246AE9F20030CD19 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E5ADD1FE246AE9F30030CD19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E5ADD1FF246AE9F30030CD19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5ADD201246AE9F30030CD19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E5ADD202246AE9F30030CD19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E5ADD204246AE9F30030CD19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecycleHelper.app/RecycleHelper";
+			};
+			name = Debug;
+		};
+		E5ADD205246AE9F30030CD19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecycleHelper.app/RecycleHelper";
+			};
+			name = Release;
+		};
+		E5ADD207246AE9F30030CD19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RecycleHelper;
+			};
+			name = Debug;
+		};
+		E5ADD208246AE9F30030CD19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RecycleHelper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5ADD1D1246AE9ED0030CD19 /* Build configuration list for PBXProject "RecycleHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5ADD1FE246AE9F30030CD19 /* Debug */,
+				E5ADD1FF246AE9F30030CD19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5ADD200246AE9F30030CD19 /* Build configuration list for PBXNativeTarget "RecycleHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5ADD201246AE9F30030CD19 /* Debug */,
+				E5ADD202246AE9F30030CD19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5ADD203246AE9F30030CD19 /* Build configuration list for PBXNativeTarget "RecycleHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5ADD204246AE9F30030CD19 /* Debug */,
+				E5ADD205246AE9F30030CD19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5ADD206246AE9F30030CD19 /* Build configuration list for PBXNativeTarget "RecycleHelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5ADD207246AE9F30030CD19 /* Debug */,
+				E5ADD208246AE9F30030CD19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5ADD1CE246AE9ED0030CD19 /* Project object */;
+}
