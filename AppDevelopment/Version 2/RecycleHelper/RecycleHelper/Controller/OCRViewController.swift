@@ -11,129 +11,130 @@ import UIKit
 import AVFoundation
 
 class OCRViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
-    
-    @IBOutlet weak var backBtn: UINavigationItem!
+
+    @IBAction func backBtn(_ sender: Any) {
+        performSegue(withIdentifier: K.cancelScanLabelSegue, sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Make sure navigation bar is transparent
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        self.navigationController!.navigationBar.isTranslucent = true
         // Begin capture session
-        setupCaptureSession()
+        //setupCaptureSession()
     }
 
-    var bufferSize: CGSize = .zero
-    var rootLayer: CALayer! = nil
+    // initialisation of capture session
+        private let session = AVCaptureSession()
+        private let videoDataOutput = AVCaptureVideoDataOutput()
+        private let videoDataOutputQueue = DispatchQueue(label: K.videoDataOutput, qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
+        
+        // initialise preview layers
+        var rootLayer: CALayer! = nil
+        private var previewLayer: AVCaptureVideoPreviewLayer! = nil
+        
+        // connection to storyboard
+        @IBOutlet weak private var previewView: UIView!
+        
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+            // dispose of any resources that can be recreated.
+        }
+        
+        //MARK: - AVCaptureSession Methods
+        
+        func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        }
+        
+        func setupCaptureSession() {
+            
+            var deviceInput: AVCaptureDeviceInput! // input device of type AVCaptureDeviceInput
+            
+            // Set device and session resolution
+            // !! set the camera resolution to the nearest resolution that is greater than or equal to the resolution of images used in the model
+            
+            let videoDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back).devices.first // if a discovery session can be created
+            do {
+                deviceInput = try AVCaptureDeviceInput(device: videoDevice!) // assign the video device
+            } catch {
+                print("Unable to access rear camera: \(error)")
+                return
+            }
+            
+            // ---------- Session configuration ----------
+            session.beginConfiguration() // start to configure the session
+            session.sessionPreset = .vga640x480 // Model image size is smaller
+            
+            // ---------- Add a video input ----------
+            if session.canAddInput(deviceInput){
+                // can add input
+                session.addInput(deviceInput)
+            } else {
+                // can't add input
+                print("Could not add input video device to the session")
+                session.commitConfiguration()
+                return
+            }
+            
+            
+            // ---------- Add a video output ----------
+            if session.canAddOutput(videoDataOutput) {
+                // can add output
+                session.addOutput(videoDataOutput)
+                // set properties
+                videoDataOutput.alwaysDiscardsLateVideoFrames = true // so as not to block processing
+                videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)] // two 8 bit components: 1st byte -> luna, 2nd -> chroma
+                videoDataOutput.setSampleBufferDelegate(self, queue: videoDataOutputQueue) // processing to be done in background
+            } else {
+                // can't add output
+                print("Could not add video data output to the session")
+                session.commitConfiguration()
+                return
+            }
+            
+            let captureConnection = videoDataOutput.connection(with: .video)
+            captureConnection?.isEnabled = true // always process the frames
+            
+            session.commitConfiguration() // commit session configuration
+            
+            // ---------- Preview frames ----------
+            previewLayer = AVCaptureVideoPreviewLayer(session: session)
+            previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            rootLayer = previewView.layer
+            previewLayer.frame = rootLayer.bounds
+            rootLayer.insertSublayer(previewLayer, at: 0)
 
-    // Attach UI
-    @IBOutlet weak private var previewView: UIView!
+        }
 
-    // Configure the camera
-    private let session = AVCaptureSession()
+        func startCaptureSession() {
+            session.startRunning()
+        }
+        
+        func stopCaptureSession() {
+            //previewLayer.removeFromSuperLayer()
+            previewLayer = nil
+        }
+        
+        //MARK: - Device Orientation
+        
+        public func deviceOrientation() -> CGImagePropertyOrientation {
+            let currentOrientation = UIDevice.current.orientation
+            let orientation: CGImagePropertyOrientation
 
-    private var previewLayer: AVCaptureVideoPreviewLayer! = nil
-    private let videoDataOutput = AVCaptureVideoDataOutput()
-
-    private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
-      
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {}
-
-    // MARK: setupCaptureSession
-    func setupCaptureSession(){
-       
-       var deviceInput: AVCaptureDeviceInput!
-       
-       // Select a video device
-       let videoDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back).devices.first
-       do {
-           // Assign input
-           deviceInput = try AVCaptureDeviceInput(device: videoDevice!)
-       } catch {
-           print("Could not find a video input: \(error)")
-           return
-       }
-       
-       session.beginConfiguration()
-       session.sessionPreset = .vga640x480
-       
-       // Add video input
-       guard session.canAddInput(deviceInput) else {
-           print("Could not add video input to the session")
-           session.commitConfiguration()
-           return
-       }
-       
-       session.addInput(deviceInput)
-       
-       // Add video output
-       if session.canAddOutput(videoDataOutput) {
-           session.addOutput(videoDataOutput)
-           // Add a video data output
-           videoDataOutput.alwaysDiscardsLateVideoFrames = true
-           videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
-           videoDataOutput.setSampleBufferDelegate(self, queue: videoDataOutputQueue)
-       } else {
-           print("Could not add video data output to the session")
-           session.commitConfiguration()
-           return
-       }
-       
-       let captureConnection = videoDataOutput.connection(with: .video)
-       
-       // Always process the frames
-       captureConnection?.isEnabled = true
-       do {
-           // Prevent more than one request at a time
-           try  videoDevice!.lockForConfiguration()
-           let dimensions = CMVideoFormatDescriptionGetDimensions((videoDevice?.activeFormat.formatDescription)!)
-           bufferSize.width = CGFloat(dimensions.width)
-           bufferSize.height = CGFloat(dimensions.height)
-           videoDevice!.unlockForConfiguration()
-       } catch {
-           print(error)
-       }
-       session.commitConfiguration()
-       previewLayer = AVCaptureVideoPreviewLayer(session: session)
-       previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-       rootLayer = previewView.layer
-       previewLayer.frame = rootLayer.bounds
-       rootLayer.addSublayer(previewLayer)
+            switch currentOrientation {
+            case UIDeviceOrientation.portraitUpsideDown:  // Device oriented vertically, home button on the top
+                orientation = .left
+            case UIDeviceOrientation.landscapeLeft:       // Device oriented horizontally, home button on the right
+                orientation = .upMirrored
+            case UIDeviceOrientation.landscapeRight:      // Device oriented horizontally, home button on the left
+                orientation = .down
+            case UIDeviceOrientation.portrait:            // Device oriented vertically, home button on the bottom
+                orientation = .up
+            default:
+                orientation = .up
+            }
+            
+            return orientation
+        }
     }
 
-    // MARK: startCaptureSession
-    func startCaptureSession() {
-       session.startRunning()
-    }
 
-    // MARK: stop Capture Session
-    // Clean up capture setup
-    func teardownCaptureSession() {
-       previewLayer.removeFromSuperlayer()
-       previewLayer = nil
-    }
-
-    func captureOutput(_ captureOutput: AVCaptureOutput, didDrop didDropSampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-       // print("frame dropped")
-    }
-
-    public func exifOrientationFromDeviceOrientation() -> CGImagePropertyOrientation {
-       let curDeviceOrientation = UIDevice.current.orientation
-       let exifOrientation: CGImagePropertyOrientation
-       
-       switch curDeviceOrientation {
-       case UIDeviceOrientation.portraitUpsideDown:  // Device oriented vertically, home button on the top
-           exifOrientation = .left
-       case UIDeviceOrientation.landscapeLeft:       // Device oriented horizontally, home button on the right
-           exifOrientation = .upMirrored
-       case UIDeviceOrientation.landscapeRight:      // Device oriented horizontally, home button on the left
-           exifOrientation = .down
-       case UIDeviceOrientation.portrait:            // Device oriented vertically, home button on the bottom
-           exifOrientation = .up
-       default:
-           exifOrientation = .up
-       }
-       return exifOrientation
-    }
-}

@@ -10,6 +10,8 @@
 		E503EC62246AF5DA00225A54 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E503EC61246AF5DA00225A54 /* License.txt */; };
 		E503EC67246B044200225A54 /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC66246B044200225A54 /* OCRViewController.swift */; };
 		E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC68246B148F00225A54 /* VisionOCRViewController.swift */; };
+		E5A381FC246B4288005DEAC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A381FB246B4288005DEAC5 /* Constants.swift */; };
+		E5A381FE246B42BF005DEAC5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */; };
 		E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */; };
 		E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */; };
 		E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */; };
@@ -41,6 +43,8 @@
 		E503EC61246AF5DA00225A54 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		E503EC66246B044200225A54 /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
 		E503EC68246B148F00225A54 /* VisionOCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionOCRViewController.swift; sourceTree = "<group>"; };
+		E5A381FB246B4288005DEAC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		E5ADD1D6246AE9ED0030CD19 /* RecycleHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 				E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */,
 				E503EC66246B044200225A54 /* OCRViewController.swift */,
 				E503EC68246B148F00225A54 /* VisionOCRViewController.swift */,
+				E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 				E503EC63246B040A00225A54 /* Controller */,
 				E5ADD1E2246AE9F20030CD19 /* Assets.xcassets */,
 				E5ADD1E7246AE9F20030CD19 /* Info.plist */,
+				E5A381FB246B4288005DEAC5 /* Constants.swift */,
 			);
 			path = RecycleHelper;
 			sourceTree = "<group>";
@@ -293,11 +299,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A381FE246B42BF005DEAC5 /* ItemViewController.swift in Sources */,
 				E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */,
 				E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */,
 				E503EC67246B044200225A54 /* OCRViewController.swift in Sources */,
 				E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */,
 				E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */,
+				E5A381FC246B4288005DEAC5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

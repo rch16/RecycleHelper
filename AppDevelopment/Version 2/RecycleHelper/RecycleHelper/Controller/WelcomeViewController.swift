@@ -14,14 +14,13 @@ class WelcomeViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
     override func viewDidLoad() {
         super.viewDidLoad()
         // Make sure navigation bar is transparent
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        self.navigationController!.navigationBar.isTranslucent = true
     }
     
     // Attach UI
     @IBAction func searchBtn(_ sender: UIButton) {}
-    @IBAction func symbolScanBtn(_ sender: UIButton) {}
+    @IBAction func symbolScanBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: K.scanLabelSegue, sender: self)
+    }
     @IBAction func objectScanBtn(_ sender: UIButton) {}
    
     

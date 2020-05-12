@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  RecycleHelper
 //
-//  Created by Becca Hallam on 12/05/2020.
-//  Copyright © 2020 Becca Hallam. All rights reserved.
+//  Created by Becca Hallam on 30/12/2019.
+//  Copyright © 2019 Becca Hallam. All rights reserved.
 //
 
 import UIKit
@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
         return true
     }
 
@@ -34,4 +36,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

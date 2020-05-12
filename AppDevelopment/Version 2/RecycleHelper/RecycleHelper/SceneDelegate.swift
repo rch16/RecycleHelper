@@ -2,8 +2,8 @@
 //  SceneDelegate.swift
 //  RecycleHelper
 //
-//  Created by Becca Hallam on 12/05/2020.
-//  Copyright © 2020 Becca Hallam. All rights reserved.
+//  Created by Becca Hallam on 30/12/2019.
+//  Copyright © 2019 Becca Hallam. All rights reserved.
 //
 
 import UIKit
@@ -11,8 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
