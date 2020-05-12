@@ -23,7 +23,7 @@ ap.add_argument("-o","--output",required=True,help="path to output directory of 
 # parse arguments
 args=vars(ap.parse_args())
 
-# headeres and search parameters
+# headers and search parameters
 term = args["query"]
 headers = {"Ocp-Apim-Subscription-Key" : API_KEY}
 params = {"q": term, "offset": 0, "count": GROUP_SIZE}
