@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -86,6 +86,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A44A86F4676C6568A9D3A250 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E503EC63246B040A00225A54 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +107,8 @@
 		E503EC64246B041500225A54 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */,
 				E5ADD1DF246AE9ED0030CD19 /* Main.storyboard */,
+				E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +128,7 @@
 				E5ADD1EF246AE9F30030CD19 /* RecycleHelperTests */,
 				E5ADD1FA246AE9F30030CD19 /* RecycleHelperUITests */,
 				E5ADD1D7246AE9ED0030CD19 /* Products */,
+				A44A86F4676C6568A9D3A250 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5ADD203246AE9F30030CD19 /* Build configuration list for PBXNativeTarget "RecycleHelperTests" */;
 			buildPhases = (
+				EDF6B255B86EE77F7B850470 /* [CP] Check Pods Manifest.lock */,
 				E5ADD1E8246AE9F30030CD19 /* Sources */,
 				E5ADD1E9246AE9F30030CD19 /* Frameworks */,
 				E5ADD1EA246AE9F30030CD19 /* Resources */,
@@ -209,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5ADD206246AE9F30030CD19 /* Build configuration list for PBXNativeTarget "RecycleHelperUITests" */;
 			buildPhases = (
+				ADC3AC6234E8EF653F77434E /* [CP] Check Pods Manifest.lock */,
 				E5ADD1F3246AE9F30030CD19 /* Sources */,
 				E5ADD1F4246AE9F30030CD19 /* Frameworks */,
 				E5ADD1F5246AE9F30030CD19 /* Resources */,
+				D8D7FB6E8FE5D22476C51C4E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -293,6 +304,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ADC3AC6234E8EF653F77434E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecycleHelper-RecycleHelperUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8D7FB6E8FE5D22476C51C4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDF6B255B86EE77F7B850470 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecycleHelperTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E5ADD1D2246AE9ED0030CD19 /* Sources */ = {

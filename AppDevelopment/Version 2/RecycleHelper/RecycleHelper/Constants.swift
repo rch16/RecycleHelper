@@ -14,4 +14,7 @@ struct K {
     static let itemViewSegue = "ShowItemSegue"
     static let videoDataOutput = "VideoDataOutput"
     static let visionDomain = "VisionViewController"
+    static let deviceMoving = "Hold device still"
+    static let deviceStill = "Looking for recycling label..."
+    static let visionQueueLabel = "com.BeccaHallam.RecycleHelper.serialVisionQueue"
 }

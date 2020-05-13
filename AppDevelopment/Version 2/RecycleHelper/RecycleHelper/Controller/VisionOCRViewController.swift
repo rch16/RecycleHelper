@@ -11,14 +11,19 @@ import AVFoundation
 import CoreML
 import Vision
 
-class VisionObjectRecognitionViewController: OCRViewController {
+
+class VisionOCRViewController: OCRViewController {
     
+    @IBOutlet weak var instructionsLabel: UILabel!
     // Views
     var itemViewOpen = false // info view about detected item
     private var detectionOverlay: CALayer! = nil // layer showing detection
     
+    // OCR
+    var requests = [VNRequest]()
+    
     // Vision
-    private let visionQueue = DispatchQueue(label: "com.BeccaHallam.RecycleHelper.serialVisionQueue")
+    private let visionQueue = DispatchQueue(label: K.visionQueueLabel)
     private var analysisRequests = [VNRequest]() // array of observations, each with a set of labels and bounding boxes
     private let sequenceRequestHandler = VNSequenceRequestHandler()
     private var currentlyAnalysedPixelBuffer: CVPixelBuffer? // buffer under analysis
@@ -34,12 +39,17 @@ class VisionObjectRecognitionViewController: OCRViewController {
     override func setupCaptureSession() {
         super.setupCaptureSession()
         
+        // Adjust label appearance
+        instructionsLabel.clipsToBounds = true
+        instructionsLabel.layer.cornerRadius = 15
+        
         // setup Vision parts
         setupLayers()
-        setupVision()
+        //setupVision()
         
         // start the capture
         startCaptureSession()
+        startTextDetection()
         
     }
     
@@ -92,47 +102,117 @@ class VisionObjectRecognitionViewController: OCRViewController {
         }
     }
     
+    //MARK: - Text Recognition
+    
+    func startTextDetection() {
+        let textRequest = VNDetectTextRectanglesRequest(completionHandler: self.detectTextHandler)
+        textRequest.reportCharacterBoxes = true
+        self.requests = [textRequest]
+    }
+
+    func detectTextHandler(request: VNRequest, error: Error?) {
+        guard let observations = request.results else {
+            print("no result")
+            return
+        }
+            
+        let result = observations.map({$0 as? VNTextObservation})
+
+        DispatchQueue.main.async() {
+            self.previewView.layer.sublayers?.removeSubrange(3...)
+            for region in result {
+                guard let rg = region else {
+                    continue
+                }
+                
+                self.highlightWord(box: rg)
+                
+            }
+        }
+    }
+    
+    func highlightWord(box: VNTextObservation) {
+        guard let boxes = box.characterBoxes else {
+            return
+        }
+            
+        var maxX: CGFloat = 9999.0
+        var minX: CGFloat = 0.0
+        var maxY: CGFloat = 9999.0
+        var minY: CGFloat = 0.0
+            
+        for char in boxes {
+            if char.bottomLeft.x < maxX {
+                maxX = char.bottomLeft.x
+            }
+            if char.bottomRight.x > minX {
+                minX = char.bottomRight.x
+            }
+            if char.bottomRight.y < maxY {
+                maxY = char.bottomRight.y
+            }
+            if char.topRight.y > minY {
+                minY = char.topRight.y
+            }
+        }
+            
+        let xCord = maxX * previewView.frame.size.width
+        let yCord = (1 - minY) * previewView.frame.size.height
+        let width = (minX - maxX) * previewView.frame.size.width
+        let height = (minY - maxY) * previewView.frame.size.height
+            
+        let outline = CALayer()
+        outline.frame = CGRect(x: xCord, y: yCord, width: width, height: height)
+        outline.borderWidth = 2.0
+        outline.borderColor = UIColor.red.cgColor
+            
+        previewView.layer.addSublayer(outline)
+    }
+    
     //MARK: - Vision Methods
     
-    func setupVision() -> NSError? {
-        let error: NSError! = nil
-        
-        guard let modelURL = Bundle.main.url(forResource: "WasteClassifier", withExtension: "mlmodelc") else {
-            return NSError(domain: K.visionDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "The model file cannot be found."])
-        }
-        guard let objectRecognition = createClassificationRequest(with: modelURL) else {
-            return NSError(domain: K.visionDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "The classification request failed."])
-        }
-        self.analysisRequests.append(objectRecognition)
-        return error
-    }
-    
-    func createClassificationRequest(with modelURL: URL) -> VNCoreMLRequest? {
-        do {
-            let model = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
-            let classificationRequest = VNCoreMLRequest(model: model, completionHandler: {(request, error) in
-                if let results = request.results as? [VNClassificationObservation] {
-                    print("\(results.first!.identifier) : \(results.first!.confidence)")
-                    if results.first!.confidence > 0.98 { // choose result with confidence > 98%
-                        self.showItemInfo(results.first!.identifier)
-                    }
-                }
-            })
-            return classificationRequest
-        } catch {
-            print("Model failed to load: \(error).")
-            return nil
-        }
-    }
+//    func setupVision() -> NSError? {
+//        let error: NSError! = nil
+//
+//        request.recognitionLevel = .fast // scanning a live feed
+//
+//        guard let modelURL = Bundle.main.url(forResource: "WasteClassifier", withExtension: "mlmodelc") else {
+//            return NSError(domain: K.visionDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "The model file cannot be found."])
+//        }
+//        guard let objectRecognition = createClassificationRequest(with: modelURL) else {
+//            return NSError(domain: K.visionDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "The classification request failed."])
+//        }
+//
+//        self.analysisRequests.append(objectRecognition)
+//        return error
+//    }
+//
+//    func createClassificationRequest(with modelURL: URL) -> VNCoreMLRequest? {
+//        do {
+//            let model = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
+//            let classificationRequest = VNCoreMLRequest(model: model, completionHandler: {(request, error) in
+//                if let results = request.results as? [VNClassificationObservation] {
+//                    print("\(results.first!.identifier) : \(results.first!.confidence)")
+//                    if results.first!.confidence > 0.98 { // choose result with confidence > 98%
+//                        //self.showItemInfo(results.first!.identifier)
+//                    }
+//                }
+//            })
+//            return classificationRequest
+//        } catch {
+//            print("Model failed to load: \(error).")
+//            return nil
+//        }
+//    }
     
 
     //MARK: - View Setup
     
     func setupLayers() {
         detectionOverlay = CALayer()
-        detectionOverlay.bounds = self.view.bounds.insetBy(dx: 20, dy: 20)
+        detectionOverlay.bounds = self.view.bounds.insetBy(dx: 30, dy: 50)
         detectionOverlay.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
-        detectionOverlay.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 0.2, 0.7])
+        detectionOverlay.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.58, 0.83, 0.68, 0.5])
         detectionOverlay.borderWidth = 8
         detectionOverlay.cornerRadius = 20
         detectionOverlay.isHidden = true
@@ -143,34 +223,40 @@ class VisionObjectRecognitionViewController: OCRViewController {
         DispatchQueue.main.async(execute: {
             // perform all the UI updates on the main queue
             self.detectionOverlay.isHidden = !visible // toggle
+            if(visible == true){
+                self.instructionsLabel.text = K.deviceStill
+            }
+            else{
+                self.instructionsLabel.text = K.deviceMoving
+            }
         })
     }
     
-    fileprivate func showItemInfo(_ identifier: String) {
-        // Perform all UI updates on the main queue.
-        DispatchQueue.main.async(execute: {
-            if self.itemViewOpen {
-                // nothing required if view already open - don't want to overwrite
-                return
-            }
-            // segue to item view
-            self.itemViewOpen = true
-            self.performSegue(withIdentifier: K.itemViewSegue, sender: identifier)
-        })
-    }
+//    fileprivate func showItemInfo(_ identifier: String) {
+//        // Perform all UI updates on the main queue.
+//        DispatchQueue.main.async(execute: {
+//            if self.itemViewOpen {
+//                // nothing required if view already open - don't want to overwrite
+//                return
+//            }
+//            // segue to item view
+//            self.itemViewOpen = true
+//            self.performSegue(withIdentifier: K.itemViewSegue, sender: identifier)
+//        })
+//    }
     
     @IBAction func unwindToScanning(unwindSegue: UIStoryboardSegue) {
         itemViewOpen = false
         self.resetTranspositionHistory() // reset scene stability
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let itemVC = segue.destination as? ItemViewController, segue.identifier == K.itemViewSegue {
-            if let itemID = sender as? String {
-                itemVC.itemID = itemID
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let itemVC = segue.destination as? ItemViewController, segue.identifier == K.itemViewSegue {
+//            if let itemID = sender as? String {
+//                itemVC.itemID = itemID
+//            }
+//        }
+//    }
     
     //MARK: - Check Scene Stability via Registration
     
@@ -191,6 +277,7 @@ class VisionObjectRecognitionViewController: OCRViewController {
         }
         return false
     }
+
     
     //MARK: - Image Analysis
     
@@ -198,18 +285,21 @@ class VisionObjectRecognitionViewController: OCRViewController {
         // computer vision task is not rotation-agnostic
         // check device orientation
         let orientation = deviceOrientation()
-        
+
         let requestHandler = VNImageRequestHandler(cvPixelBuffer: currentlyAnalysedPixelBuffer!, orientation: orientation)
         visionQueue.async { // resource heavy operation so perform in background
             do {
+                
                 // Release the pixel buffer when done, allowing the next buffer to be processed.
                 defer { self.currentlyAnalysedPixelBuffer = nil }
-                try requestHandler.perform(self.analysisRequests)
+                //try requestHandler.perform(self.analysisRequests)
+                try requestHandler.perform(self.requests)
             } catch {
                 print("Error: Vision request failed with error \"\(error)\"")
             }
         }
     }
+    
     
     fileprivate func resetTranspositionHistory() {
         transpositionHistoryPoints.removeAll()
@@ -224,3 +314,4 @@ class VisionObjectRecognitionViewController: OCRViewController {
     }
 
 }
+
