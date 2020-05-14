@@ -17,4 +17,5 @@ struct K {
     static let deviceMoving = "Hold device still"
     static let deviceStill = "Looking for recycling label..."
     static let visionQueueLabel = "com.BeccaHallam.RecycleHelper.serialVisionQueue"
+    static let boundingBoxConfidence = 0.5
 }

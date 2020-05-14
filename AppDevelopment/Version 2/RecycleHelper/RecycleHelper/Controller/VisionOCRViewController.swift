@@ -11,6 +11,17 @@ import AVFoundation
 import CoreML
 import Vision
 
+extension CIImage {
+  func toUIImage() -> UIImage? {
+    let context: CIContext = CIContext.init(options: nil)
+
+    if let cgImage: CGImage = context.createCGImage(self, from: self.extent) {
+      return UIImage(cgImage: cgImage)
+    } else {
+      return nil
+    }
+  }
+}
 
 class VisionOCRViewController: OCRViewController {
     
@@ -21,6 +32,8 @@ class VisionOCRViewController: OCRViewController {
     
     // OCR
     var requests = [VNRequest]()
+    private var layers = [CALayer]()
+    let scaleUp: CGFloat = 0.2
     
     // Vision
     private let visionQueue = DispatchQueue(label: K.visionQueueLabel)
@@ -33,6 +46,14 @@ class VisionOCRViewController: OCRViewController {
     private var transpositionHistoryPoints: [CGPoint] = [ ]
     private var previousPixelBuffer: CVPixelBuffer?
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParent {
+            stopTextDetection()
+            super.stopCaptureSession()
+        }
+    }
 
     //MARK: - AVCaptureSession Methods
     
@@ -109,64 +130,65 @@ class VisionOCRViewController: OCRViewController {
         textRequest.reportCharacterBoxes = true
         self.requests = [textRequest]
     }
+    
+    func stopTextDetection() {
+        self.requests = []
 
+    }
+    
     func detectTextHandler(request: VNRequest, error: Error?) {
         guard let observations = request.results else {
             print("no result")
             return
         }
+        
             
         let result = observations.map({$0 as? VNTextObservation})
-
+        //print(result)
         DispatchQueue.main.async() {
-            self.previewView.layer.sublayers?.removeSubrange(3...)
-            for region in result {
-                guard let rg = region else {
-                    continue
-                }
+            self.removeBoxes()
+            // Filter so that boxes only displayed if above 0.5 confidence
+            //var images = [UIImage]()
+            let results = result.filter({$0!.confidence > VNConfidence(K.boundingBoxConfidence)})
+            
+            self.layers = results.map({ result in // result has type VNTextObservation
+                // Create a layer that will become the bounding box
+                let layer = CALayer()
+                self.previewView.layer.addSublayer(layer)
+                layer.borderWidth = 2
+                layer.borderColor = UIColor.red.cgColor
+            
+                // Obtain bounding box
+                var box = result!.boundingBox
                 
-                self.highlightWord(box: rg)
+                // Transform bounding box
+                let transform = CGAffineTransform(translationX: 0.5, y: 0.5)
+                            .rotated(by: CGFloat.pi / 2)
+                            .translatedBy(x: -0.5, y: -0.5)
+                            .translatedBy(x: 1.0, y: 0)
+                            .scaledBy(x: -1, y: 1)
+                box = box.applying(transform)
                 
-            }
+                // Create rectangle to display bounding box
+                let rect = self.previewLayer.layerRectConverted(fromMetadataOutputRect: box)
+                
+                // Create a scaled up rectangle for cropping
+                let biggerRect = rect.insetBy(dx: -rect.size.width * self.scaleUp, dy: -rect.size.height * self.scaleUp)
+                
+                layer.frame = rect
+                
+                return layer
+            })
         }
     }
+
     
-    func highlightWord(box: VNTextObservation) {
-        guard let boxes = box.characterBoxes else {
-            return
+    // Remove all drawn boxes. Must be called on main queue.
+    func removeBoxes() {
+        for layer in layers {
+            layer.removeFromSuperlayer()
         }
-            
-        var maxX: CGFloat = 9999.0
-        var minX: CGFloat = 0.0
-        var maxY: CGFloat = 9999.0
-        var minY: CGFloat = 0.0
-            
-        for char in boxes {
-            if char.bottomLeft.x < maxX {
-                maxX = char.bottomLeft.x
-            }
-            if char.bottomRight.x > minX {
-                minX = char.bottomRight.x
-            }
-            if char.bottomRight.y < maxY {
-                maxY = char.bottomRight.y
-            }
-            if char.topRight.y > minY {
-                minY = char.topRight.y
-            }
-        }
-            
-        let xCord = maxX * previewView.frame.size.width
-        let yCord = (1 - minY) * previewView.frame.size.height
-        let width = (minX - maxX) * previewView.frame.size.width
-        let height = (minY - maxY) * previewView.frame.size.height
-            
-        let outline = CALayer()
-        outline.frame = CGRect(x: xCord, y: yCord, width: width, height: height)
-        outline.borderWidth = 2.0
-        outline.borderColor = UIColor.red.cgColor
-            
-        previewView.layer.addSublayer(outline)
+        layers.removeAll()
     }
     
     //MARK: - Vision Methods
@@ -228,6 +250,7 @@ class VisionOCRViewController: OCRViewController {
             }
             else{
                 self.instructionsLabel.text = K.deviceMoving
+                self.removeBoxes() // remove detection rectangles if device not still
             }
         })
     }
@@ -283,20 +306,22 @@ class VisionOCRViewController: OCRViewController {
     
     private func analyseCurrentImage() {
         // computer vision task is not rotation-agnostic
-        // check device orientation
-        let orientation = deviceOrientation()
+        let requestHandler = VNImageRequestHandler(cvPixelBuffer: currentlyAnalysedPixelBuffer!, orientation: .right)//, orientation: orientation)
 
-        let requestHandler = VNImageRequestHandler(cvPixelBuffer: currentlyAnalysedPixelBuffer!, orientation: orientation)
         visionQueue.async { // resource heavy operation so perform in background
             do {
                 
                 // Release the pixel buffer when done, allowing the next buffer to be processed.
                 defer { self.currentlyAnalysedPixelBuffer = nil }
-                //try requestHandler.perform(self.analysisRequests)
-                try requestHandler.perform(self.requests)
+                
+                try requestHandler.perform(self.requests) // Detect text 
             } catch {
                 print("Error: Vision request failed with error \"\(error)\"")
             }
+            
+            // TODO: Text recognition
+            // VNRecognizeTextRequest.recognitionLevel = VNRequestTextRecognitionLevel.fast // fast vs accurate -> fast suitable due to live capture
+            // VNRecognizeTextRequest.recognitionLanguages = ["en_GB"]
         }
     }
     

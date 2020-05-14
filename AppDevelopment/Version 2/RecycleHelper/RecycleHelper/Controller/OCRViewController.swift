@@ -32,6 +32,14 @@ class OCRViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
         super.viewDidLoad()
         setupCaptureSession() // capture session setup
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParent {
+            stopCaptureSession()
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
