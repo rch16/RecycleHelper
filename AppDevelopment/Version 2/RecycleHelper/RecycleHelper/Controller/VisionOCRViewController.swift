@@ -34,6 +34,8 @@ class VisionOCRViewController: OCRViewController {
     var requests = [VNRequest]()
     private var layers = [CALayer]()
     let scaleUp: CGFloat = 0.2
+    var image: UIImage?
+    var images = [UIImage]()
     
     // Vision
     private let visionQueue = DispatchQueue(label: K.visionQueueLabel)
@@ -114,6 +116,9 @@ class VisionOCRViewController: OCRViewController {
             if currentlyAnalysedPixelBuffer == nil {
                 // if a pixel buffer not currently being analysed -> retain current image buffer for processing
                 currentlyAnalysedPixelBuffer = pixelBuffer
+                // Convert pixel buffer to image
+                image = CIImage(cvPixelBuffer: currentlyAnalysedPixelBuffer!).toUIImage()
+                
                 // analyse image
                 analyseCurrentImage()
             }
@@ -172,10 +177,17 @@ class VisionOCRViewController: OCRViewController {
                 // Create rectangle to display bounding box
                 let rect = self.previewLayer.layerRectConverted(fromMetadataOutputRect: box)
                 
+                // Display rectangle on layer
+                layer.frame = rect
+                
                 // Create a scaled up rectangle for cropping
                 let biggerRect = rect.insetBy(dx: -rect.size.width * self.scaleUp, dy: -rect.size.height * self.scaleUp)
                 
-                layer.frame = rect
+                // Cropped image will be used for OCR
+                if let croppedImage = self.crop(image: self.image!, rect: biggerRect) {
+                    print(croppedImage)
+                    self.images.append(croppedImage)
+                }
                 
                 return layer
             })
@@ -189,6 +201,11 @@ class VisionOCRViewController: OCRViewController {
             layer.removeFromSuperlayer()
         }
         layers.removeAll()
+    }
+    
+    private func crop(image: UIImage, rect: CGRect) -> UIImage? {
+        guard let cropped = image.cgImage?.cropping(to: rect) else {return nil}
+        return UIImage(cgImage: cropped, scale: image.scale, orientation: image.imageOrientation)
     }
     
     //MARK: - Vision Methods
@@ -305,6 +322,7 @@ class VisionOCRViewController: OCRViewController {
     //MARK: - Image Analysis
     
     private func analyseCurrentImage() {
+        
         // computer vision task is not rotation-agnostic
         let requestHandler = VNImageRequestHandler(cvPixelBuffer: currentlyAnalysedPixelBuffer!, orientation: .right)//, orientation: orientation)
 
@@ -314,7 +332,7 @@ class VisionOCRViewController: OCRViewController {
                 // Release the pixel buffer when done, allowing the next buffer to be processed.
                 defer { self.currentlyAnalysedPixelBuffer = nil }
                 
-                try requestHandler.perform(self.requests) // Detect text 
+                try requestHandler.perform(self.requests) // Detect text
             } catch {
                 print("Error: Vision request failed with error \"\(error)\"")
             }

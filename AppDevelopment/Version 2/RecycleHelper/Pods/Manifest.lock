@@ -1,0 +1,16 @@
+PODS:
+  - TesseractOCRiOS (5.0.1)
+
+DEPENDENCIES:
+  - TesseractOCRiOS (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - TesseractOCRiOS
+
+SPEC CHECKSUMS:
+  TesseractOCRiOS: 2c189465f86abb030d0c5141c90da9705b647854
+
+PODFILE CHECKSUM: c29b0b08cc80e0edfa2fbba2f63d3d4db78157e0
+
+COCOAPODS: 1.9.1
