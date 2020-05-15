@@ -99,6 +99,7 @@ class OCRViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferD
         
         let captureConnection = videoDataOutput.connection(with: .video)
         captureConnection?.isEnabled = true // always process the frames
+        captureConnection?.videoOrientation = .portrait
         
         session.commitConfiguration() // commit session configuration
         

@@ -10,6 +10,20 @@ import UIKit
 import AVFoundation
 import CoreML
 import Vision
+import Firebase
+//import TesseractOCR
+//import SwiftOCR
+
+extension CGRect {
+  func scaleUp(scaleUp: CGFloat) -> CGRect {
+    let biggerRect = self.insetBy(
+      dx: -self.size.width * scaleUp,
+      dy: -self.size.height * scaleUp
+    )
+
+    return biggerRect
+  }
+}
 
 extension CIImage {
   func toUIImage() -> UIImage? {
@@ -23,6 +37,41 @@ extension CIImage {
   }
 }
 
+extension UIImage {
+    func crop(boundingBox: CGRect) -> UIImage? {
+        guard let image = self.cgImage?.cropping(to: boundingBox) else {
+            return nil
+        }
+        return UIImage(cgImage: image)
+    }
+    
+    func rotate(radians: Float) -> UIImage? {
+        var newSize = CGRect(origin: CGPoint.zero, size: self.size).applying(CGAffineTransform(rotationAngle: CGFloat(radians))).size
+        // Trim off the extremely small float value to prevent core graphics from rounding it up
+        newSize.width = floor(newSize.width)
+        newSize.height = floor(newSize.height)
+
+        UIGraphicsBeginImageContextWithOptions(newSize, false, self.scale)
+        let context = UIGraphicsGetCurrentContext()!
+
+        // Move origin to middle
+        context.translateBy(x: newSize.width/2, y: newSize.height/2)
+        // Rotate around middle
+        context.rotate(by: CGFloat(radians))
+        // Draw the image at its center
+        self.draw(in: CGRect(x: -self.size.width/2, y: -self.size.height/2, width: self.size.width, height: self.size.height))
+
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage
+    }
+}
+
+protocol OCRServiceDelegate: class {
+  func ocrService(_ service: VisionOCRViewController, didDetect text: String)
+}
+
 class VisionOCRViewController: OCRViewController {
     
     @IBOutlet weak var instructionsLabel: UILabel!
@@ -31,11 +80,22 @@ class VisionOCRViewController: OCRViewController {
     private var detectionOverlay: CALayer! = nil // layer showing detection
     
     // OCR
-    var requests = [VNRequest]()
+    private var requests = [VNRequest]()
     private var layers = [CALayer]()
-    let scaleUp: CGFloat = 0.2
-    var image: UIImage?
-    var images = [UIImage]()
+    private var currentlyAnalysedImage: UIImage?
+    private var images = [UIImage]()
+    private let vision = Vision.vision()
+    private var textRecognizer: VisionTextRecognizer!
+    weak var delegate: OCRServiceDelegate?
+//    private let tesseract = G8Tesseract(language: "eng")!
+//    private let swiftOCRInstance = SwiftOCR()
+//    init() {
+//        tesseract.engineMode = .tesseractCubeCombined
+//        tesseract.pageSegmentationMode = .singleBlock
+//    }
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     // Vision
     private let visionQueue = DispatchQueue(label: K.visionQueueLabel)
@@ -117,8 +177,7 @@ class VisionOCRViewController: OCRViewController {
                 // if a pixel buffer not currently being analysed -> retain current image buffer for processing
                 currentlyAnalysedPixelBuffer = pixelBuffer
                 // Convert pixel buffer to image
-                image = CIImage(cvPixelBuffer: currentlyAnalysedPixelBuffer!).toUIImage()
-                
+                currentlyAnalysedImage = CIImage(cvPixelBuffer: currentlyAnalysedPixelBuffer!).toUIImage()
                 // analyse image
                 analyseCurrentImage()
             }
@@ -149,46 +208,52 @@ class VisionOCRViewController: OCRViewController {
         
             
         let result = observations.map({$0 as? VNTextObservation})
-        //print(result)
         DispatchQueue.main.async() {
             self.removeBoxes()
             // Filter so that boxes only displayed if above 0.5 confidence
-            //var images = [UIImage]()
             let results = result.filter({$0!.confidence > VNConfidence(K.boundingBoxConfidence)})
-            
+
             self.layers = results.map({ result in // result has type VNTextObservation
                 // Create a layer that will become the bounding box
                 let layer = CALayer()
                 self.previewView.layer.addSublayer(layer)
                 layer.borderWidth = 2
                 layer.borderColor = UIColor.red.cgColor
-            
-                // Obtain bounding box
-                var box = result!.boundingBox
                 
+                // Obtain bounding box
+                let boundingBox = result!.boundingBox
+                
+//                // iOS coordinates originate at top left, while bounding boxes originate at bottom left
+//                let rect = self.normalise(box: boundingBox)
+//                let frame = self.makeFrame(layer: layer, rect: boundingBox)
+
                 // Transform bounding box
                 let transform = CGAffineTransform(translationX: 0.5, y: 0.5)
                             .rotated(by: CGFloat.pi / 2)
                             .translatedBy(x: -0.5, y: -0.5)
                             .translatedBy(x: 1.0, y: 0)
                             .scaledBy(x: -1, y: 1)
-                box = box.applying(transform)
-                
+                let box = boundingBox.applying(transform)
+
                 // Create rectangle to display bounding box
                 let rect = self.previewLayer.layerRectConverted(fromMetadataOutputRect: box)
                 
                 // Display rectangle on layer
                 layer.frame = rect
-                
+
+                // Create a normalised rectangle according to differences in coordinate system - will be used for cropping
+                let normalisedRect = self.normalise(box: result!)
+
                 // Create a scaled up rectangle for cropping
-                let biggerRect = rect.insetBy(dx: -rect.size.width * self.scaleUp, dy: -rect.size.height * self.scaleUp)
-                
-                // Cropped image will be used for OCR
-                if let croppedImage = self.crop(image: self.image!, rect: biggerRect) {
-                    print(croppedImage)
+                //let biggerRect = rect.insetBy(dx: -rect.size.width * CGFloat(K.scaleUp), dy: -rect.size.height * CGFloat(K.scaleUp))
+
+                // Crop image to be used for OCR to improve accuracy
+                //if let croppedImage = self.crop(image: self.currentlyAnalysedImage!, rect: rect) {
+                if let croppedImage = self.cropImage(image: self.currentlyAnalysedImage!, normalisedRect: normalisedRect) {
+                    //print(croppedImage)
                     self.images.append(croppedImage)
                 }
-                
+
                 return layer
             })
         }
@@ -203,9 +268,56 @@ class VisionOCRViewController: OCRViewController {
         layers.removeAll()
     }
     
-    private func crop(image: UIImage, rect: CGRect) -> UIImage? {
-        guard let cropped = image.cgImage?.cropping(to: rect) else {return nil}
-        return UIImage(cgImage: cropped, scale: image.scale, orientation: image.imageOrientation)
+    private func normalise(box: VNTextObservation) -> CGRect {
+      return CGRect(
+        x: box.boundingBox.origin.x,
+        y: 1 - box.boundingBox.origin.y - box.boundingBox.height,
+        width: box.boundingBox.size.width,
+        height: box.boundingBox.size.height
+      )
+    }
+    
+    private func cropImage(image: UIImage, normalisedRect: CGRect) -> UIImage? {
+      let x = normalisedRect.origin.x * image.size.width
+      let y = normalisedRect.origin.y * image.size.height
+      let width = normalisedRect.width * image.size.width
+      let height = normalisedRect.height * image.size.height
+
+      let rect = CGRect(x: x, y: y, width: width, height: height).scaleUp(scaleUp: 0.1)
+
+      guard let cropped = image.cgImage?.cropping(to: rect) else {
+        return nil
+      }
+
+      let croppedImage = UIImage(cgImage: cropped, scale: image.scale, orientation: image.imageOrientation)
+      return croppedImage
+    }
+    
+//    func handle(image: UIImage) {
+//        handleWithTesseract(image: image)
+//    }
+//
+//    private func handleWithTesseract(image: UIImage) {
+//        //tesseract.image = image.g8_blackAndWhite()
+//        tesseract.image = image
+//        tesseract.recognize()
+//        let text = tesseract.recognizedText!
+//        print(text)
+//        delegate?.ocrService(self, didDetect: text)
+//    }
+    
+    func recognizeText(with image: UIImage) {
+       let vision = Vision.vision()
+       let textRecognizer = vision.onDeviceTextRecognizer()
+       let visionImage = VisionImage(image: image)
+
+       textRecognizer.process(visionImage) { result, error in
+           if error != nil {
+            print("MLKIT ERROR - \(String(describing: error))") } else {
+               let resultText = result?.text
+            print("MLKIT RESULT - \(String(describing: resultText))")
+           }
+        }
     }
     
     //MARK: - Vision Methods
@@ -324,7 +436,7 @@ class VisionOCRViewController: OCRViewController {
     private func analyseCurrentImage() {
         
         // computer vision task is not rotation-agnostic
-        let requestHandler = VNImageRequestHandler(cvPixelBuffer: currentlyAnalysedPixelBuffer!, orientation: .right)//, orientation: orientation)
+        let requestHandler = VNImageRequestHandler(cvPixelBuffer: currentlyAnalysedPixelBuffer!, orientation: .up)
 
         visionQueue.async { // resource heavy operation so perform in background
             do {
@@ -338,6 +450,19 @@ class VisionOCRViewController: OCRViewController {
             }
             
             // TODO: Text recognition
+            guard let biggestImage = self.images.sorted(by: {
+                $0.size.width > $1.size.width && $0.size.height > $1.size.height
+            }).first else {
+              return
+            }
+            self.recognizeText(with: biggestImage)
+            
+            //self.handle(image: biggestImage) // TesseractOCR
+//            self.swiftOCRInstance.recognize(biggestImage) { recognizedString in // SwiftOCR
+//                DispatchQueue.main.async {
+//                    print(recognizedString)
+//                }
+//            }
             // VNRecognizeTextRequest.recognitionLevel = VNRequestTextRecognitionLevel.fast // fast vs accurate -> fast suitable due to live capture
             // VNRecognizeTextRequest.recognitionLanguages = ["en_GB"]
         }
