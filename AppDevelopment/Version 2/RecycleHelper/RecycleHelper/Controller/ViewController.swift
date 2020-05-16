@@ -1,5 +1,5 @@
 //
-//  OCRViewController.swift
+//  ViewController.swift
 //  RecycleHelper
 //
 //  Created by Becca Hallam on 12/05/2020.
@@ -14,7 +14,7 @@ import Vision
 import CoreML
 
 
-class OCRViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     // initialisation of capture session
     private let session = AVCaptureSession()

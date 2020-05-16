@@ -11,7 +11,7 @@
 		73240D97BA28045A38869832 /* Pods_RecycleHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7CA13B266779D7BADF18C1 /* Pods_RecycleHelper.framework */; };
 		9C83425B3FC93B7582F05F74 /* Pods_RecycleHelperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0729845E4EDAA2A333F792FB /* Pods_RecycleHelperTests.framework */; };
 		E503EC62246AF5DA00225A54 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E503EC61246AF5DA00225A54 /* License.txt */; };
-		E503EC67246B044200225A54 /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC66246B044200225A54 /* OCRViewController.swift */; };
+		E503EC67246B044200225A54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC66246B044200225A54 /* ViewController.swift */; };
 		E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC68246B148F00225A54 /* VisionOCRViewController.swift */; };
 		E5A381FC246B4288005DEAC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A381FB246B4288005DEAC5 /* Constants.swift */; };
 		E5A381FE246B42BF005DEAC5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */; };
@@ -26,6 +26,7 @@
 		E5A38219246FEF47005DEAC5 /* plastic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A38215246FEF46005DEAC5 /* plastic.jpg */; };
 		E5A3821B246FF4B4005DEAC5 /* paper_and_cardboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */; };
 		E5A3821D24702606005DEAC5 /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A3821C24702606005DEAC5 /* paper.jpg */; };
+		E5A3821F247043BE005DEAC5 /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3821E247043BE005DEAC5 /* VisionViewController.swift */; };
 		E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */; };
 		E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */; };
 		E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */; };
@@ -63,7 +64,7 @@
 		DC84702100FFB2F936DE3449 /* Pods-RecycleHelperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelperTests.debug.xcconfig"; path = "Target Support Files/Pods-RecycleHelperTests/Pods-RecycleHelperTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E3F47CB5EF36D0B0E2A7D09F /* Pods-RecycleHelper-RecycleHelperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelper-RecycleHelperUITests.release.xcconfig"; path = "Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E503EC61246AF5DA00225A54 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
-		E503EC66246B044200225A54 /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
+		E503EC66246B044200225A54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E503EC68246B148F00225A54 /* VisionOCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionOCRViewController.swift; sourceTree = "<group>"; };
 		E5A381FB246B4288005DEAC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		E5A38215246FEF46005DEAC5 /* plastic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plastic.jpg; sourceTree = "<group>"; };
 		E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper_and_cardboard.jpg; sourceTree = "<group>"; };
 		E5A3821C24702606005DEAC5 /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper.jpg; sourceTree = "<group>"; };
+		E5A3821E247043BE005DEAC5 /* VisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
 		E5ADD1D6246AE9ED0030CD19 /* RecycleHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,8 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */,
-				E503EC66246B044200225A54 /* OCRViewController.swift */,
+				E503EC66246B044200225A54 /* ViewController.swift */,
 				E503EC68246B148F00225A54 /* VisionOCRViewController.swift */,
+				E5A3821E247043BE005DEAC5 /* VisionViewController.swift */,
 				E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */,
 			);
 			path = Controller;
@@ -534,7 +537,8 @@
 				E5A381FE246B42BF005DEAC5 /* ItemViewController.swift in Sources */,
 				E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */,
 				E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */,
-				E503EC67246B044200225A54 /* OCRViewController.swift in Sources */,
+				E503EC67246B044200225A54 /* ViewController.swift in Sources */,
+				E5A3821F247043BE005DEAC5 /* VisionViewController.swift in Sources */,
 				E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */,
 				E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */,
 				E5A381FC246B4288005DEAC5 /* Constants.swift in Sources */,

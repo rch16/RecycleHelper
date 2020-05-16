@@ -1,5 +1,5 @@
 //
-//  VisionViewController.swift
+//  VisionOCRViewController.swift
 //  RecycleHelper
 //
 //  Created by Becca Hallam on 30/12/2019.
@@ -72,7 +72,7 @@ protocol OCRServiceDelegate: class {
   func ocrService(_ service: VisionOCRViewController, didDetect text: String)
 }
 
-class VisionOCRViewController: OCRViewController {
+class VisionOCRViewController: ViewController {
     
     // UI
     @IBOutlet weak var instructionsLabel: UILabel!
@@ -222,10 +222,6 @@ class VisionOCRViewController: OCRViewController {
                 
                 // Obtain bounding box
                 let boundingBox = result!.boundingBox
-                
-//                // iOS coordinates originate at top left, while bounding boxes originate at bottom left
-//                let rect = self.normalise(box: boundingBox)
-//                let frame = self.makeFrame(layer: layer, rect: boundingBox)
 
                 // Transform bounding box
                 let transform = CGAffineTransform(translationX: 0.5, y: 0.5)

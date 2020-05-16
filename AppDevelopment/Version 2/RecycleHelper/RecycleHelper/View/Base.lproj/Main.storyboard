@@ -89,6 +89,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="objectScanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5iA-89-Ja7"/>
+                                    <segue destination="b5Z-kb-dC4" kind="show" identifier="BeginDetectionSegue" id="oRf-Rr-IuA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-r3-037">
@@ -330,6 +331,63 @@
                 <exit id="uNS-yj-TJG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1802.8985507246377" y="133.92857142857142"/>
+        </scene>
+        <!--Vision View Controller-->
+        <scene sceneID="S7I-Jd-hvm">
+            <objects>
+                <viewController title="Vision OCR View Controller" id="b5Z-kb-dC4" userLabel="Vision View Controller" customClass="VisionViewController" customModule="RecycleHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ka1-Sr-Cs4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JvY-T8-9id" userLabel="Preview View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold device still" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYM-Lg-HUq" userLabel="Instructions">
+                                        <rect key="frame" x="50" y="776" width="314" height="51"/>
+                                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="0.44935252570000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="CC1-To-qrF"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="169" id="e5R-Yd-VEn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZYM-Lg-HUq" secondAttribute="trailing" constant="20" symbolic="YES" id="2cQ-2i-GM2"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZYM-Lg-HUq" secondAttribute="bottom" constant="69" id="7vg-mY-WSF"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZYM-Lg-HUq" secondAttribute="trailing" constant="20" symbolic="YES" id="Ks9-3B-D25"/>
+                                    <constraint firstItem="ZYM-Lg-HUq" firstAttribute="leading" secondItem="JvY-T8-9id" secondAttribute="leading" constant="50" id="RBP-Gb-lAt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZYM-Lg-HUq" secondAttribute="trailing" constant="50" id="fKR-RW-szN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JvY-T8-9id" firstAttribute="trailing" secondItem="5mp-I0-7T9" secondAttribute="trailing" id="1Lm-yH-0aB"/>
+                            <constraint firstItem="JvY-T8-9id" firstAttribute="centerX" secondItem="Ka1-Sr-Cs4" secondAttribute="centerX" id="JxM-ZH-4iW"/>
+                            <constraint firstItem="JvY-T8-9id" firstAttribute="centerY" secondItem="Ka1-Sr-Cs4" secondAttribute="centerY" id="aS8-X5-mmO"/>
+                            <constraint firstItem="JvY-T8-9id" firstAttribute="top" secondItem="Ka1-Sr-Cs4" secondAttribute="topMargin" constant="-88" id="cls-LR-CKl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5mp-I0-7T9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="roa-Ki-3fJ"/>
+                    <connections>
+                        <outlet property="instructionsLabel" destination="ZYM-Lg-HUq" id="4kX-qs-OpI"/>
+                        <outlet property="previewView" destination="JvY-T8-9id" id="RHY-tn-S3K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="15T-3V-sC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984" y="829"/>
         </scene>
     </scenes>
 </document>
