@@ -21,4 +21,5 @@ struct K {
     static let scaleUp = 0.2
     static let rotationAngle = 1.5708
     static let possibleCategories = ["card","Card","CARD","cardboard","Cardboard","CARDBOARD","paper","Paper","PAPER","metal","Metal","METAL","aluminium","Aluminium","ALUMINIUM","can","Can","CAN","foil","Foil","FOIL","plastic","Plastic","PLASTIC","glass","Glass","GLASS"]
+    static let unwindLabelScanSegue = "BackToHome"
 }

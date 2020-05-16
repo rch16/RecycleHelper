@@ -40,6 +40,7 @@
         <scene sceneID="OY5-Kb-TUX">
             <objects>
                 <navigationController id="71g-ye-slP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BV2-58-bBh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fRO-ic-VZW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -234,11 +235,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DD-CP-yf7">
-                                <rect key="frame" x="239" y="797" width="100" height="30"/>
+                                <rect key="frame" x="239" y="784" width="100" height="43"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.82745098039999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="OWa-WT-Fan"/>
-                                    <constraint firstAttribute="height" constant="30" id="btl-6S-7x4" userLabel="height = 40"/>
+                                    <constraint firstAttribute="height" constant="43" id="btl-6S-7x4" userLabel="height = 40"/>
                                 </constraints>
                                 <state key="normal" title="Scan Again">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -250,14 +251,15 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="scanAgainBtn:" destination="aFZ-lk-7N6" eventType="touchUpInside" id="uTd-da-NRL"/>
+                                    <segue destination="uNS-yj-TJG" kind="unwind" unwindAction="unwindToScanningWithUnwindSegue:" id="iG4-R6-JJH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLu-eL-QDJ">
-                                <rect key="frame" x="75" y="797" width="100" height="30"/>
+                                <rect key="frame" x="75" y="784" width="100" height="43"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.82745098039999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="8Gm-4Q-OpT"/>
-                                    <constraint firstAttribute="height" constant="30" id="iGw-LK-Ofn" userLabel="height = 40"/>
+                                    <constraint firstAttribute="height" constant="43" id="iGw-LK-Ofn" userLabel="height = 40"/>
                                 </constraints>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -269,6 +271,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="doneBtn:" destination="aFZ-lk-7N6" eventType="touchUpInside" id="Tts-Z9-WqT"/>
+                                    <segue destination="uNS-yj-TJG" kind="unwind" unwindAction="unwindLabelScanningWithSegue:" id="UYX-E2-dQn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recyclable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pyn-u7-7lw">
@@ -324,6 +327,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvk-5c-cRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="uNS-yj-TJG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1802.8985507246377" y="133.92857142857142"/>
         </scene>

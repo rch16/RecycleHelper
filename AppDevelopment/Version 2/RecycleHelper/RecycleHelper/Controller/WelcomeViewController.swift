@@ -12,6 +12,8 @@ import UIKit
 import AVFoundation
 
 class WelcomeViewController: UIViewController {
+    
+    @IBAction func unwindLabelScanning(segue: UIStoryboardSegue) {}
 
     override func viewDidLoad() {
         super.viewDidLoad()

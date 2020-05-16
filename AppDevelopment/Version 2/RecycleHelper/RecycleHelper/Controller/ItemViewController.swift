@@ -27,9 +27,9 @@ extension Dictionary where Key == String {
             }
         }
     }
-
 }
 
+    
 class ItemViewController: UIViewController {
 
     // Link to UI
@@ -81,16 +81,7 @@ class ItemViewController: UIViewController {
                 return
             }
         }
-        
-
-//            itemRecyclability.text = itemList[itemID]?["recyclable"] as? String
-//            //itemImageSource.text = itemList[itemID]?["source"] as? String
-//            //itemDescription.text = itemList[itemID]?["description"] as? String
-//            let photoID = itemList[itemID]?["image"] as? String
-//            if let photo = UIImage(named: photoID!) {
-//                itemImage.image = photo
-//            }
-//        }
     }
     
 }
+
