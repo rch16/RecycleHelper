@@ -74,8 +74,8 @@ protocol OCRServiceDelegate: class {
 
 class VisionOCRViewController: OCRViewController {
     
+    // UI
     @IBOutlet weak var instructionsLabel: UILabel!
-    // Views
     var itemViewOpen = false // info view about detected item
     private var detectionOverlay: CALayer! = nil // layer showing detection
     
@@ -259,6 +259,49 @@ class VisionOCRViewController: OCRViewController {
         }
     }
 
+    func recognizeText(with image: UIImage) {
+       let vision = Vision.vision()
+       let textRecognizer = vision.onDeviceTextRecognizer()
+       let visionImage = VisionImage(image: image)
+
+       textRecognizer.process(visionImage) { result, error in
+           if error != nil {
+            print("MLKIT ERROR - \(String(describing: error))")
+           } else {
+            if let resultText = result?.text {
+                let check = self.checkForRelevantLabel(text: resultText, categories: K.possibleCategories)
+                if check != "not found" {
+                    self.showItemInfo(check)
+                }
+            }
+           }
+        }
+    }
+    
+    func checkForRelevantLabel(text: String, categories: [String]) -> String{
+        for category in categories {
+            if text.contains(category){
+                return category
+            }
+        }
+        return "not found"
+    }
+
+//    func handle(image: UIImage) {
+//        handleWithTesseract(image: image)
+//    }
+//
+//    private func handleWithTesseract(image: UIImage) {
+//        //tesseract.image = image.g8_blackAndWhite()
+//        tesseract.image = image
+//        tesseract.recognize()
+//        let text = tesseract.recognizedText!
+//        print(text)
+//        delegate?.ocrService(self, didDetect: text)
+//    }
+    
+
+    //MARK: - User Interface
     
     // Remove all drawn boxes. Must be called on main queue.
     func removeBoxes() {
@@ -293,72 +336,6 @@ class VisionOCRViewController: OCRViewController {
       return croppedImage
     }
     
-//    func handle(image: UIImage) {
-//        handleWithTesseract(image: image)
-//    }
-//
-//    private func handleWithTesseract(image: UIImage) {
-//        //tesseract.image = image.g8_blackAndWhite()
-//        tesseract.image = image
-//        tesseract.recognize()
-//        let text = tesseract.recognizedText!
-//        print(text)
-//        delegate?.ocrService(self, didDetect: text)
-//    }
-    
-    func recognizeText(with image: UIImage) {
-       let vision = Vision.vision()
-       let textRecognizer = vision.onDeviceTextRecognizer()
-       let visionImage = VisionImage(image: image)
-
-       textRecognizer.process(visionImage) { result, error in
-           if error != nil {
-            print("MLKIT ERROR - \(String(describing: error))") } else {
-               let resultText = result?.text
-            print("MLKIT RESULT - \(String(describing: resultText))")
-           }
-        }
-    }
-    
-    //MARK: - Vision Methods
-    
-//    func setupVision() -> NSError? {
-//        let error: NSError! = nil
-//
-//        request.recognitionLevel = .fast // scanning a live feed
-//
-//        guard let modelURL = Bundle.main.url(forResource: "WasteClassifier", withExtension: "mlmodelc") else {
-//            return NSError(domain: K.visionDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "The model file cannot be found."])
-//        }
-//        guard let objectRecognition = createClassificationRequest(with: modelURL) else {
-//            return NSError(domain: K.visionDomain, code: -1, userInfo: [NSLocalizedDescriptionKey: "The classification request failed."])
-//        }
-//
-//        self.analysisRequests.append(objectRecognition)
-//        return error
-//    }
-//
-//    func createClassificationRequest(with modelURL: URL) -> VNCoreMLRequest? {
-//        do {
-//            let model = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
-//            let classificationRequest = VNCoreMLRequest(model: model, completionHandler: {(request, error) in
-//                if let results = request.results as? [VNClassificationObservation] {
-//                    print("\(results.first!.identifier) : \(results.first!.confidence)")
-//                    if results.first!.confidence > 0.98 { // choose result with confidence > 98%
-//                        //self.showItemInfo(results.first!.identifier)
-//                    }
-//                }
-//            })
-//            return classificationRequest
-//        } catch {
-//            print("Model failed to load: \(error).")
-//            return nil
-//        }
-//    }
-    
-
-    //MARK: - View Setup
-    
     func setupLayers() {
         detectionOverlay = CALayer()
         detectionOverlay.bounds = self.view.bounds.insetBy(dx: 30, dy: 50)
@@ -384,31 +361,31 @@ class VisionOCRViewController: OCRViewController {
         })
     }
     
-//    fileprivate func showItemInfo(_ identifier: String) {
-//        // Perform all UI updates on the main queue.
-//        DispatchQueue.main.async(execute: {
-//            if self.itemViewOpen {
-//                // nothing required if view already open - don't want to overwrite
-//                return
-//            }
-//            // segue to item view
-//            self.itemViewOpen = true
-//            self.performSegue(withIdentifier: K.itemViewSegue, sender: identifier)
-//        })
-//    }
+    fileprivate func showItemInfo(_ identifier: String) {
+        // Perform all UI updates on the main queue.
+        DispatchQueue.main.async(execute: {
+            if self.itemViewOpen {
+                // nothing required if view already open - don't want to overwrite
+                return
+            }
+            // segue to item view
+            self.itemViewOpen = true
+            self.performSegue(withIdentifier: K.itemViewSegue, sender: identifier)
+        })
+    }
     
     @IBAction func unwindToScanning(unwindSegue: UIStoryboardSegue) {
         itemViewOpen = false
         self.resetTranspositionHistory() // reset scene stability
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let itemVC = segue.destination as? ItemViewController, segue.identifier == K.itemViewSegue {
-//            if let itemID = sender as? String {
-//                itemVC.itemID = itemID
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let itemVC = segue.destination as? ItemViewController, segue.identifier == K.itemViewSegue {
+            if let itemID = sender as? String {
+                itemVC.itemID = itemID
+            }
+        }
+    }
     
     //MARK: - Check Scene Stability via Registration
     
@@ -444,18 +421,21 @@ class VisionOCRViewController: OCRViewController {
                 // Release the pixel buffer when done, allowing the next buffer to be processed.
                 defer { self.currentlyAnalysedPixelBuffer = nil }
                 
-                try requestHandler.perform(self.requests) // Detect text
+                if self.requests != [] {
+                    try requestHandler.perform(self.requests) // Detect text
+                    
+                    guard let biggestImage = self.images.sorted(by: {
+                        $0.size.width > $1.size.width && $0.size.height > $1.size.height
+                    }).first else {
+                      return
+                    }
+                    self.recognizeText(with: biggestImage)
+                }
             } catch {
                 print("Error: Vision request failed with error \"\(error)\"")
             }
             
-            // TODO: Text recognition
-            guard let biggestImage = self.images.sorted(by: {
-                $0.size.width > $1.size.width && $0.size.height > $1.size.height
-            }).first else {
-              return
-            }
-            self.recognizeText(with: biggestImage)
+            
             
             //self.handle(image: biggestImage) // TesseractOCR
 //            self.swiftOCRInstance.recognize(biggestImage) { recognizedString in // SwiftOCR

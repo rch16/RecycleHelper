@@ -20,6 +20,12 @@
 		E5A3820F246E9513005DEAC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A3820E246E9513005DEAC5 /* GoogleService-Info.plist */; };
 		E5A38210246E9513005DEAC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A3820E246E9513005DEAC5 /* GoogleService-Info.plist */; };
 		E5A38211246E9513005DEAC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A3820E246E9513005DEAC5 /* GoogleService-Info.plist */; };
+		E5A38216246FEF47005DEAC5 /* glass.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A38212246FEF45005DEAC5 /* glass.jpg */; };
+		E5A38217246FEF47005DEAC5 /* ItemList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A38213246FEF46005DEAC5 /* ItemList.plist */; };
+		E5A38218246FEF47005DEAC5 /* metal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A38214246FEF46005DEAC5 /* metal.jpg */; };
+		E5A38219246FEF47005DEAC5 /* plastic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A38215246FEF46005DEAC5 /* plastic.jpg */; };
+		E5A3821B246FF4B4005DEAC5 /* paper_and_cardboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */; };
+		E5A3821D24702606005DEAC5 /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A3821C24702606005DEAC5 /* paper.jpg */; };
 		E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */; };
 		E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */; };
 		E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */; };
@@ -64,6 +70,12 @@
 		E5A38206246DCFCA005DEAC5 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		E5A38208246DCFF6005DEAC5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		E5A3820E246E9513005DEAC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5A38212246FEF45005DEAC5 /* glass.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = glass.jpg; sourceTree = "<group>"; };
+		E5A38213246FEF46005DEAC5 /* ItemList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ItemList.plist; sourceTree = "<group>"; };
+		E5A38214246FEF46005DEAC5 /* metal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal.jpg; sourceTree = "<group>"; };
+		E5A38215246FEF46005DEAC5 /* plastic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plastic.jpg; sourceTree = "<group>"; };
+		E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper_and_cardboard.jpg; sourceTree = "<group>"; };
+		E5A3821C24702606005DEAC5 /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper.jpg; sourceTree = "<group>"; };
 		E5ADD1D6246AE9ED0030CD19 /* RecycleHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +176,12 @@
 		E5A38205246DCF98005DEAC5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E5A3821C24702606005DEAC5 /* paper.jpg */,
+				E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */,
+				E5A38212246FEF45005DEAC5 /* glass.jpg */,
+				E5A38213246FEF46005DEAC5 /* ItemList.plist */,
+				E5A38214246FEF46005DEAC5 /* metal.jpg */,
+				E5A38215246FEF46005DEAC5 /* plastic.jpg */,
 				E5A38206246DCFCA005DEAC5 /* tessdata */,
 			);
 			path = Resources;
@@ -338,10 +356,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A38218246FEF47005DEAC5 /* metal.jpg in Resources */,
 				E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */,
+				E5A38219246FEF47005DEAC5 /* plastic.jpg in Resources */,
 				E5ADD1E3246AE9F20030CD19 /* Assets.xcassets in Resources */,
 				E5A38207246DCFCA005DEAC5 /* tessdata in Resources */,
+				E5A38217246FEF47005DEAC5 /* ItemList.plist in Resources */,
 				E503EC62246AF5DA00225A54 /* License.txt in Resources */,
+				E5A38216246FEF47005DEAC5 /* glass.jpg in Resources */,
+				E5A3821D24702606005DEAC5 /* paper.jpg in Resources */,
+				E5A3821B246FF4B4005DEAC5 /* paper_and_cardboard.jpg in Resources */,
 				E5ADD1E1246AE9ED0030CD19 /* Main.storyboard in Resources */,
 				E5A3820F246E9513005DEAC5 /* GoogleService-Info.plist in Resources */,
 			);

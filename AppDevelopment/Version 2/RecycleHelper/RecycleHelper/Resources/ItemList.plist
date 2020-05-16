@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Metal</key>
+	<dict>
+		<key>label</key>
+		<string>Metal</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>metal.jpg</string>
+	</dict>
+	<key>Aluminium</key>
+	<dict>
+		<key>label</key>
+		<string>Metal</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>metal.jpg</string>
+	</dict>
+	<key>Can</key>
+	<dict>
+		<key>label</key>
+		<string>Metal</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>metal.jpg</string>
+	</dict>
+	<key>Foil</key>
+	<dict>
+		<key>label</key>
+		<string>Metal</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>metal.jpg</string>
+	</dict>
+	<key>Cardboard</key>
+	<dict>
+		<key>label</key>
+		<string>Paper and Cardboard</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>paper.jpg</string>
+	</dict>
+	<key>Paper</key>
+	<dict>
+		<key>label</key>
+		<string>Paper and Cardboard</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>paper.jpg</string>
+	</dict>
+	<key>Glass</key>
+	<dict>
+		<key>label</key>
+		<string>Glass</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>glass.jpg</string>
+	</dict>
+	<key>Plastic</key>
+	<dict>
+		<key>label</key>
+		<string>Plastic</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>plastic.jpg</string>
+	</dict>
+</dict>
+</plist>
