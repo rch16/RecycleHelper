@@ -12,6 +12,8 @@ import AVFoundation
 
 class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBAction func unwindInfoViewToOnboarding(segue: UIStoryboardSegue) {}
+    
     // Link to UI
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageCtrl: UIPageControl!
@@ -22,7 +24,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     
     // Onboarding views
     var titles = ["Welcome to RecycleHelper", "Text Recognition", "Object Detection", "Recycling made easy"]
-    var descriptions = ["Recycling information, specific to your location, in one place.", "Allows you to scan recycling labels.", "To even identify an object itself!", "Once the item is identified, just follow the step-by-step instructions."]
+    var descriptions = ["Recycling information, specific to your location, available anytime.", "Allows you to scan recycling labels.", "Allows you to even identify an object itself!", "Once the item is identified, just follow the step-by-step instructions."]
     var images = ["onboarding1","onboarding2","onboarding3","onboarding4"]
     
     override func viewDidLoad() {

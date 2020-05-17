@@ -43,6 +43,10 @@ class VisionViewController: ViewController {
     override func setupCaptureSession() {
         super.setupCaptureSession()
         
+        // Adjust label appearance
+        instructionsLabel.clipsToBounds = true
+        instructionsLabel.layer.cornerRadius = 15
+        
         // setup Vision parts
         setupLayers()
         //setupVision()

@@ -40,6 +40,7 @@
 		E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */; };
 		E5ADD1F1246AE9F30030CD19 /* RecycleHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1F0246AE9F30030CD19 /* RecycleHelperTests.swift */; };
 		E5ADD1FC246AE9F30030CD19 /* RecycleHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1FB246AE9F30030CD19 /* RecycleHelperUITests.swift */; };
+		E5CD4F6D2471C86200DEB567 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		E5ADD1F7246AE9F30030CD19 /* RecycleHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecycleHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5ADD1FB246AE9F30030CD19 /* RecycleHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleHelperUITests.swift; sourceTree = "<group>"; };
 		E5ADD1FD246AE9F30030CD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		F364BFFFD5D9695643500628 /* Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig"; path = "Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +169,7 @@
 				E503EC68246B148F00225A54 /* VisionOCRViewController.swift */,
 				E5A3821E247043BE005DEAC5 /* VisionViewController.swift */,
 				E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */,
+				E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */,
 				E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */,
 				E503EC67246B044200225A54 /* ViewController.swift in Sources */,
+				E5CD4F6D2471C86200DEB567 /* InfoViewController.swift in Sources */,
 				E5A3821F247043BE005DEAC5 /* VisionViewController.swift in Sources */,
 				E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */,
 				E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */,

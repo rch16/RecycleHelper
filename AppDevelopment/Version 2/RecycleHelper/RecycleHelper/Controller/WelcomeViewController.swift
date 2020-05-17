@@ -14,7 +14,18 @@ import AVFoundation
 class WelcomeViewController: UIViewController {
     
     @IBAction func unwindLabelScanning(segue: UIStoryboardSegue) {}
-
+    @IBAction func unwindInfoView(segue: UIStoryboardSegue) {}
+    
+    // Attach UI
+    @IBAction func searchBtn(_ sender: UIButton) {}
+    @IBAction func symbolScanBtn(_ sender: UIButton) {}
+    @IBAction func objectScanBtn(_ sender: UIButton) {}
+    @IBAction func infoBtn(_ sender: UIButton) {
+    }
+    
+    let image = UIImage(systemName: "info.circle")
+    let configuration = UIImage.SymbolConfiguration(scale: .large)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Make navigation bar transparent
@@ -24,17 +35,8 @@ class WelcomeViewController: UIViewController {
         // Hide back button
         self.navigationItem.hidesBackButton = true
         // Change navigation bar back button appearance
-//        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
-//        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: UIImage(named: "Cancel"), style: .plain, target: nil, action: nil)
-        //self.navigationItem.backBarButtonItem?.setTitlePositionAdjustment(UIOffset(horizontal: 10, vertical: 0), for: .default)
     }
-    
-    // Attach UI
-    @IBAction func searchBtn(_ sender: UIButton) {}
-    @IBAction func symbolScanBtn(_ sender: UIButton) {}
-    @IBAction func objectScanBtn(_ sender: UIButton) {}
-   
     
 }
 
