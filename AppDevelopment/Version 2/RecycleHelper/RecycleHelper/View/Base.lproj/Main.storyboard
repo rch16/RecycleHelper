@@ -34,7 +34,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHc-Sc-0lc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-675" y="137"/>
+            <point key="canvasLocation" x="-1472" y="137"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OY5-Kb-TUX">
@@ -46,12 +46,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="j3n-kx-Uhb"/>
+                        <segue destination="4YP-yD-45p" kind="relationship" relationship="rootViewController" id="6w4-3v-YRO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swd-EP-csw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1597" y="137"/>
+            <point key="canvasLocation" x="-2296" y="137"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -216,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRd-fe-xsG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984.05797101449286" y="136.60714285714286"/>
+            <point key="canvasLocation" x="983" y="-258"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="ocy-SI-lyU">
@@ -332,6 +332,73 @@
             </objects>
             <point key="canvasLocation" x="1802.8985507246377" y="133.92857142857142"/>
         </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="Z9h-el-IQT">
+            <objects>
+                <viewController id="4YP-yD-45p" userLabel="Onboarding View Controller" customClass="OnboardingViewController" customModule="RecycleHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2tp-Qy-rzw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmY-Rx-pEo">
+                                <rect key="frame" x="54" y="793" width="306" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="igy-95-CUY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" red="0.41331344126983999" green="0.85294842720031738" blue="0.62510633553562311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
+                                        <color key="value" red="0.93725490199999995" green="0.98823529409999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
+                                        <color key="value" red="0.58039215690000001" green="0.82745098039999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="mvA-YW-mLO"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="xqs-XT-C19">
+                                <rect key="frame" x="188" y="730" width="38" height="37"/>
+                                <color key="tintColor" red="0.58039215690000001" green="0.82745098039999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.58039215690000001" green="0.82745098039999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mjl-ey-mPE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="QV0-yh-fLh"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="JMl-0y-dGg"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tpt-Xb-hiE" firstAttribute="bottom" secondItem="QmY-Rx-pEo" secondAttribute="bottom" constant="24" id="Hb2-lO-3wk"/>
+                            <constraint firstItem="QmY-Rx-pEo" firstAttribute="leading" secondItem="tpt-Xb-hiE" secondAttribute="leading" constant="54" id="JOP-Wh-Fg7"/>
+                            <constraint firstItem="mjl-ey-mPE" firstAttribute="trailing" secondItem="tpt-Xb-hiE" secondAttribute="trailing" id="Jmm-Cr-Gcl"/>
+                            <constraint firstItem="tpt-Xb-hiE" firstAttribute="trailing" secondItem="QmY-Rx-pEo" secondAttribute="trailing" constant="54" id="M7J-VL-5ou"/>
+                            <constraint firstItem="mjl-ey-mPE" firstAttribute="leading" secondItem="tpt-Xb-hiE" secondAttribute="leading" id="OZf-4j-u80"/>
+                            <constraint firstItem="xqs-XT-C19" firstAttribute="top" secondItem="mjl-ey-mPE" secondAttribute="bottom" constant="8" id="S71-Jl-xoF"/>
+                            <constraint firstItem="xqs-XT-C19" firstAttribute="leading" secondItem="tpt-Xb-hiE" secondAttribute="leading" constant="188" id="Tol-hc-dCs"/>
+                            <constraint firstItem="mjl-ey-mPE" firstAttribute="top" secondItem="2tp-Qy-rzw" secondAttribute="top" id="c4w-cP-nwv"/>
+                            <constraint firstItem="QmY-Rx-pEo" firstAttribute="top" secondItem="xqs-XT-C19" secondAttribute="bottom" constant="26" id="f6e-8a-gZs"/>
+                            <constraint firstItem="xqs-XT-C19" firstAttribute="centerX" secondItem="QmY-Rx-pEo" secondAttribute="centerX" id="lK4-4S-yOm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tpt-Xb-hiE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sQ4-MN-sGe"/>
+                    <connections>
+                        <outlet property="pageCtrl" destination="xqs-XT-C19" id="5h4-w0-Kem"/>
+                        <outlet property="scrollView" destination="mjl-ey-mPE" id="02U-5c-ieh"/>
+                        <outlet property="startedBtn" destination="QmY-Rx-pEo" id="6Co-YJ-OQT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpX-cC-CVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-626" y="137"/>
+        </scene>
         <!--Vision View Controller-->
         <scene sceneID="S7I-Jd-hvm">
             <objects>
@@ -387,7 +454,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15T-3V-sC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="829"/>
+            <point key="canvasLocation" x="983" y="427"/>
         </scene>
     </scenes>
 </document>
