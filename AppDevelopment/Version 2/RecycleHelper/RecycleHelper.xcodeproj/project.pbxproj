@@ -27,6 +27,10 @@
 		E5A3821B246FF4B4005DEAC5 /* paper_and_cardboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */; };
 		E5A3821D24702606005DEAC5 /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A3821C24702606005DEAC5 /* paper.jpg */; };
 		E5A3821F247043BE005DEAC5 /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3821E247043BE005DEAC5 /* VisionViewController.swift */; };
+		E5A3822424706C18005DEAC5 /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A3822024706C16005DEAC5 /* onboarding2.png */; };
+		E5A3822524706C18005DEAC5 /* onboarding3.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A3822124706C17005DEAC5 /* onboarding3.png */; };
+		E5A3822624706C18005DEAC5 /* onboarding4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A3822224706C17005DEAC5 /* onboarding4.png */; };
+		E5A3822724706C18005DEAC5 /* onboarding1.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A3822324706C17005DEAC5 /* onboarding1.png */; };
 		E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */; };
 		E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */; };
 		E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1DD246AE9ED0030CD19 /* WelcomeViewController.swift */; };
@@ -78,6 +82,10 @@
 		E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper_and_cardboard.jpg; sourceTree = "<group>"; };
 		E5A3821C24702606005DEAC5 /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper.jpg; sourceTree = "<group>"; };
 		E5A3821E247043BE005DEAC5 /* VisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
+		E5A3822024706C16005DEAC5 /* onboarding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2.png; sourceTree = "<group>"; };
+		E5A3822124706C17005DEAC5 /* onboarding3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding3.png; sourceTree = "<group>"; };
+		E5A3822224706C17005DEAC5 /* onboarding4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding4.png; sourceTree = "<group>"; };
+		E5A3822324706C17005DEAC5 /* onboarding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding1.png; sourceTree = "<group>"; };
 		E5ADD1D6246AE9ED0030CD19 /* RecycleHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5ADD1DB246AE9ED0030CD19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +187,10 @@
 		E5A38205246DCF98005DEAC5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E5A3822324706C17005DEAC5 /* onboarding1.png */,
+				E5A3822024706C16005DEAC5 /* onboarding2.png */,
+				E5A3822124706C17005DEAC5 /* onboarding3.png */,
+				E5A3822224706C17005DEAC5 /* onboarding4.png */,
 				E5A3821C24702606005DEAC5 /* paper.jpg */,
 				E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */,
 				E5A38212246FEF45005DEAC5 /* glass.jpg */,
@@ -361,11 +373,15 @@
 			files = (
 				E5A38218246FEF47005DEAC5 /* metal.jpg in Resources */,
 				E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */,
+				E5A3822424706C18005DEAC5 /* onboarding2.png in Resources */,
 				E5A38219246FEF47005DEAC5 /* plastic.jpg in Resources */,
 				E5ADD1E3246AE9F20030CD19 /* Assets.xcassets in Resources */,
 				E5A38207246DCFCA005DEAC5 /* tessdata in Resources */,
+				E5A3822724706C18005DEAC5 /* onboarding1.png in Resources */,
+				E5A3822524706C18005DEAC5 /* onboarding3.png in Resources */,
 				E5A38217246FEF47005DEAC5 /* ItemList.plist in Resources */,
 				E503EC62246AF5DA00225A54 /* License.txt in Resources */,
+				E5A3822624706C18005DEAC5 /* onboarding4.png in Resources */,
 				E5A38216246FEF47005DEAC5 /* glass.jpg in Resources */,
 				E5A3821D24702606005DEAC5 /* paper.jpg in Resources */,
 				E5A3821B246FF4B4005DEAC5 /* paper_and_cardboard.jpg in Resources */,
