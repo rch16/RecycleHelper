@@ -22,21 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window =  UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let launchedBefore = UserDefaults.standard.bool(forKey: "LaunchedBefore")
-
-        if launchedBefore  { // Not the first visit
-            // So show the home screen
-            launchStoryboard(identifier: "welcome")
-        }
-        else { // First visit
-            // Set "launchedBefore" to true
-            UserDefaults.standard.set(true, forKey: "LaunchedBefore")
-            // And show the onboarding
-            launchStoryboard(identifier: "onboarding")
-            
-        }
 
         return true
     }
@@ -54,14 +39,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    
-    func launchStoryboard(identifier: String){
-        let viewController = storyboard!.instantiateViewController(withIdentifier: identifier)
-        let navigationController = UINavigationController.init(rootViewController: viewController)
-        //self.window?.rootViewController = navigationController
-        if let window = self.window {
-            window.rootViewController = navigationController
-            window.makeKeyAndVisible()
-        }
-    }
+
 }

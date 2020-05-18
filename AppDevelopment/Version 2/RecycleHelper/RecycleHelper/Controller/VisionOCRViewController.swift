@@ -112,6 +112,7 @@ class VisionOCRViewController: ViewController {
         super.viewWillDisappear(animated)
 
         if self.isMovingFromParent {
+            removeBoxes()
             stopTextDetection()
             super.stopCaptureSession()
         }
@@ -210,48 +211,50 @@ class VisionOCRViewController: ViewController {
         let result = observations.map({$0 as? VNTextObservation})
         DispatchQueue.main.async() {
             self.removeBoxes()
-            // Filter so that boxes only displayed if above 0.5 confidence
-            let results = result.filter({$0!.confidence > VNConfidence(K.boundingBoxConfidence)})
+            if result != [] {
+                // Filter so that boxes only displayed if above 0.5 confidence
+                let results = result.filter({$0!.confidence > VNConfidence(K.boundingBoxConfidence)})
 
-            self.layers = results.map({ result in // result has type VNTextObservation
-                // Create a layer that will become the bounding box
-                let layer = CALayer()
-                self.previewView.layer.addSublayer(layer)
-                layer.borderWidth = 2
-                layer.borderColor = UIColor.red.cgColor
+                self.layers = results.map({ result in // result has type VNTextObservation
+                    // Create a layer that will become the bounding box
+                    let layer = CALayer()
+                    self.previewView.layer.addSublayer(layer)
+                    layer.borderWidth = 2
+                    layer.borderColor = UIColor.red.cgColor
+                    
+                    // Obtain bounding box
+                    let boundingBox = result!.boundingBox
+
+                    // Transform bounding box
+                    let transform = CGAffineTransform(translationX: 0.5, y: 0.5)
+                                .rotated(by: CGFloat.pi / 2)
+                                .translatedBy(x: -0.5, y: -0.5)
+                                .translatedBy(x: 1.0, y: 0)
+                                .scaledBy(x: -1, y: 1)
+                    let box = boundingBox.applying(transform)
+
+                    // Create rectangle to display bounding box
+                    let rect = self.previewLayer.layerRectConverted(fromMetadataOutputRect: box)
+                    
+                    // Display rectangle on layer
+                    layer.frame = rect
+
+                    // Create a normalised rectangle according to differences in coordinate system - will be used for cropping
+                    let normalisedRect = self.normalise(box: result!)
+
+                    // Create a scaled up rectangle for cropping
+                    //let biggerRect = rect.insetBy(dx: -rect.size.width * CGFloat(K.scaleUp), dy: -rect.size.height * CGFloat(K.scaleUp))
+
+                    // Crop image to be used for OCR to improve accuracy
+                    //if let croppedImage = self.crop(image: self.currentlyAnalysedImage!, rect: rect) {
+                    if let croppedImage = self.cropImage(image: self.currentlyAnalysedImage!, normalisedRect: normalisedRect) {
+                        //print(croppedImage)
+                        self.images.append(croppedImage)
+                    }
                 
-                // Obtain bounding box
-                let boundingBox = result!.boundingBox
-
-                // Transform bounding box
-                let transform = CGAffineTransform(translationX: 0.5, y: 0.5)
-                            .rotated(by: CGFloat.pi / 2)
-                            .translatedBy(x: -0.5, y: -0.5)
-                            .translatedBy(x: 1.0, y: 0)
-                            .scaledBy(x: -1, y: 1)
-                let box = boundingBox.applying(transform)
-
-                // Create rectangle to display bounding box
-                let rect = self.previewLayer.layerRectConverted(fromMetadataOutputRect: box)
-                
-                // Display rectangle on layer
-                layer.frame = rect
-
-                // Create a normalised rectangle according to differences in coordinate system - will be used for cropping
-                let normalisedRect = self.normalise(box: result!)
-
-                // Create a scaled up rectangle for cropping
-                //let biggerRect = rect.insetBy(dx: -rect.size.width * CGFloat(K.scaleUp), dy: -rect.size.height * CGFloat(K.scaleUp))
-
-                // Crop image to be used for OCR to improve accuracy
-                //if let croppedImage = self.crop(image: self.currentlyAnalysedImage!, rect: rect) {
-                if let croppedImage = self.cropImage(image: self.currentlyAnalysedImage!, normalisedRect: normalisedRect) {
-                    //print(croppedImage)
-                    self.images.append(croppedImage)
-                }
-
-                return layer
-            })
+                    return layer
+                })
+            }
         }
     }
 

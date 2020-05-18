@@ -11,11 +11,28 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var storyboard:UIStoryboard?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        window =  UIWindow(frame: UIScreen.main.bounds)
+        //window?.makeKeyAndVisible()
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "LaunchedBefore")
+
+        if launchedBefore  { // Not the first visit
+            // So show the home screen
+            launchStoryboard(identifier: "welcome", scene: scene)
+        }
+        else { // First visit
+            // Set "launchedBefore" to true
+            UserDefaults.standard.set(true, forKey: "LaunchedBefore")
+            // And show the onboarding
+            launchStoryboard(identifier: "onboarding", scene: scene)
+            
+        }
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
@@ -47,6 +64,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    func launchStoryboard(identifier: String, scene: UIScene){
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard!.instantiateViewController(withIdentifier: identifier)
+        let navigationController = UINavigationController.init(rootViewController: viewController)
+        //self.window?.rootViewController = navigationController
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = navigationController
+            self.window = window
+            window.makeKeyAndVisible()
+        }
+    }
 
 }
 
