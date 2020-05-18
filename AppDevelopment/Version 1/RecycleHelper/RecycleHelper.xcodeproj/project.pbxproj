@@ -15,6 +15,17 @@
 		062B883323BA04F200AA43CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062B883123BA04F200AA43CF /* LaunchScreen.storyboard */; };
 		062B883E23BA04F200AA43CF /* RecycleHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B883D23BA04F200AA43CF /* RecycleHelperTests.swift */; };
 		062B884923BA04F200AA43CF /* RecycleHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B884823BA04F200AA43CF /* RecycleHelperUITests.swift */; };
+		06A369CD23C1ED8A00808380 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A369CC23C1ED8A00808380 /* Constants.swift */; };
+		06A369CF23C20BC900808380 /* WasteClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 06A369CE23C20BC900808380 /* WasteClassifier.mlmodel */; };
+		06A369DF23C2211300808380 /* glass.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06A369D923C2211200808380 /* glass.jpg */; };
+		06A369E023C2211300808380 /* metal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06A369DA23C2211200808380 /* metal.jpg */; };
+		06A369E123C2211300808380 /* plastic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06A369DB23C2211200808380 /* plastic.jpg */; };
+		06A369E223C2211300808380 /* trash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06A369DC23C2211200808380 /* trash.jpg */; };
+		06A369E323C2211300808380 /* cardboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06A369DD23C2211300808380 /* cardboard.jpg */; };
+		06A369E423C2211300808380 /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06A369DE23C2211300808380 /* paper.jpg */; };
+		06A369E623C2213700808380 /* ItemList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06A369E523C2213700808380 /* ItemList.plist */; };
+		06F952E223BA0B8A0079CB4A /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F952E123BA0B8A0079CB4A /* VisionViewController.swift */; };
+		06F952E423BA0BA00079CB4A /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F952E323BA0BA00079CB4A /* ItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +60,17 @@
 		062B884423BA04F200AA43CF /* RecycleHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecycleHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		062B884823BA04F200AA43CF /* RecycleHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleHelperUITests.swift; sourceTree = "<group>"; };
 		062B884A23BA04F200AA43CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06A369CC23C1ED8A00808380 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		06A369CE23C20BC900808380 /* WasteClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = WasteClassifier.mlmodel; path = RecycleHelper/WasteClassifier.mlmodel; sourceTree = "<group>"; };
+		06A369D923C2211200808380 /* glass.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = glass.jpg; sourceTree = "<group>"; };
+		06A369DA23C2211200808380 /* metal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal.jpg; sourceTree = "<group>"; };
+		06A369DB23C2211200808380 /* plastic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plastic.jpg; sourceTree = "<group>"; };
+		06A369DC23C2211200808380 /* trash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trash.jpg; sourceTree = "<group>"; };
+		06A369DD23C2211300808380 /* cardboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardboard.jpg; sourceTree = "<group>"; };
+		06A369DE23C2211300808380 /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper.jpg; sourceTree = "<group>"; };
+		06A369E523C2213700808380 /* ItemList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ItemList.plist; sourceTree = "<group>"; };
+		06F952E123BA0B8A0079CB4A /* VisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
+		06F952E323BA0BA00079CB4A /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +105,7 @@
 				062B883C23BA04F200AA43CF /* RecycleHelperTests */,
 				062B884723BA04F200AA43CF /* RecycleHelperUITests */,
 				062B882423BA04EF00AA43CF /* Products */,
+				06A369CE23C20BC900808380 /* WasteClassifier.mlmodel */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +124,13 @@
 			children = (
 				062B882623BA04EF00AA43CF /* AppDelegate.swift */,
 				062B882823BA04EF00AA43CF /* SceneDelegate.swift */,
-				062B882A23BA04EF00AA43CF /* ViewController.swift */,
-				062B882C23BA04EF00AA43CF /* Main.storyboard */,
+				06F952DF23BA0B380079CB4A /* Controllers */,
+				06F952E023BA0B4A0079CB4A /* View */,
 				062B882F23BA04F200AA43CF /* Assets.xcassets */,
 				062B883123BA04F200AA43CF /* LaunchScreen.storyboard */,
 				062B883423BA04F200AA43CF /* Info.plist */,
+				06A369CC23C1ED8A00808380 /* Constants.swift */,
+				06A369D823C220EB00808380 /* Item Resources */,
 			);
 			path = RecycleHelper;
 			sourceTree = "<group>";
@@ -126,6 +151,38 @@
 				062B884A23BA04F200AA43CF /* Info.plist */,
 			);
 			path = RecycleHelperUITests;
+			sourceTree = "<group>";
+		};
+		06A369D823C220EB00808380 /* Item Resources */ = {
+			isa = PBXGroup;
+			children = (
+				06A369DD23C2211300808380 /* cardboard.jpg */,
+				06A369D923C2211200808380 /* glass.jpg */,
+				06A369DA23C2211200808380 /* metal.jpg */,
+				06A369DE23C2211300808380 /* paper.jpg */,
+				06A369DB23C2211200808380 /* plastic.jpg */,
+				06A369DC23C2211200808380 /* trash.jpg */,
+				06A369E523C2213700808380 /* ItemList.plist */,
+			);
+			path = "Item Resources";
+			sourceTree = "<group>";
+		};
+		06F952DF23BA0B380079CB4A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				062B882A23BA04EF00AA43CF /* ViewController.swift */,
+				06F952E123BA0B8A0079CB4A /* VisionViewController.swift */,
+				06F952E323BA0BA00079CB4A /* ItemViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		06F952E023BA0B4A0079CB4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				062B882C23BA04EF00AA43CF /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +290,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				062B883323BA04F200AA43CF /* LaunchScreen.storyboard in Resources */,
+				06A369E623C2213700808380 /* ItemList.plist in Resources */,
 				062B883023BA04F200AA43CF /* Assets.xcassets in Resources */,
+				06A369DF23C2211300808380 /* glass.jpg in Resources */,
+				06A369E023C2211300808380 /* metal.jpg in Resources */,
+				06A369E223C2211300808380 /* trash.jpg in Resources */,
+				06A369E423C2211300808380 /* paper.jpg in Resources */,
+				06A369E123C2211300808380 /* plastic.jpg in Resources */,
+				06A369E323C2211300808380 /* cardboard.jpg in Resources */,
 				062B882E23BA04EF00AA43CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +323,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06F952E223BA0B8A0079CB4A /* VisionViewController.swift in Sources */,
 				062B882B23BA04EF00AA43CF /* ViewController.swift in Sources */,
+				06A369CF23C20BC900808380 /* WasteClassifier.mlmodel in Sources */,
+				06F952E423BA0BA00079CB4A /* ItemViewController.swift in Sources */,
 				062B882723BA04EF00AA43CF /* AppDelegate.swift in Sources */,
+				06A369CD23C1ED8A00808380 /* Constants.swift in Sources */,
 				062B882923BA04EF00AA43CF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +509,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BeccaHallam.RecycleHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -459,7 +527,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BeccaHallam.RecycleHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
