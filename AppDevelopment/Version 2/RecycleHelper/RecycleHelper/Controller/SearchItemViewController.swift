@@ -14,6 +14,7 @@ class SearchItemViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemRecyclability: UILabel!
     @IBOutlet weak var descriptionTable: UITableView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBAction func learnMoreBtn(_ sender: Any) { openUrl(urlStr: "https://www.recyclenow.com/what-to-do-with") }
     
     var itemID: String!
@@ -60,6 +61,23 @@ class SearchItemViewController: UIViewController, UITableViewDataSource, UITable
     
     private func displayInfo(){
         itemRecyclability.text = recyclable
+        if recyclable.contains("Widely Recycled") {
+            if let photo = UIImage(named: "can_recycle.png"){
+                imageView.image = photo
+            }
+        } else if recyclable.contains("Local Authority") {
+            if let photo = UIImage(named: "check.png"){
+                   imageView.image = photo
+               }
+        } else if recyclable.contains("Recyclable") {
+            if let photo = UIImage(named: "can_recycle.png"){
+                imageView.image = photo
+            }
+        } else {
+            if let photo = UIImage(named: "cant_recycle.png"){
+                   imageView.image = photo
+               }
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -85,10 +103,7 @@ class SearchItemViewController: UIViewController, UITableViewDataSource, UITable
         cell.instr.numberOfLines = 0
         cell.instr.lineBreakMode = .byWordWrapping
         cell.instr.sizeToFit()
-        cell.layer.cornerRadius = 10
-        cell.layer.borderWidth = 2.0
-        cell.layer.borderColor = UIColor(rgb: 0xCCEDD2).cgColor
-        
+    
         return cell
     }
     
