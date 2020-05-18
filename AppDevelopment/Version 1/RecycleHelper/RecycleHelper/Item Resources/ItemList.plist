@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>cardboard</key>
+	<dict>
+		<key>label</key>
+		<string>Cardboard</string>
+		<key>source</key>
+		<string>© WRAP</string>
+		<key>description</key>
+		<string>If clean and dry, cardboard can be placed in your clear sack for recycling.</string>
+	</dict>
+	<key>glass</key>
+	<dict>
+		<key>label</key>
+		<string>Glass</string>
+		<key>source</key>
+		<string>© WRAP</string>
+		<key>description</key>
+		<string>If clean and dry, glass bottles and jars can be placed in your clear sack for recycling.</string>
+	</dict>
+	<key>metal</key>
+	<dict>
+		<key>label</key>
+		<string>Metal</string>
+		<key>source</key>
+		<string>© WRAP</string>
+		<key>description</key>
+		<string>If clean and dry, metal tins, cans and aerosols can be placed in your clear sack for recycling.</string>
+	</dict>
+	<key>paper</key>
+	<dict>
+		<key>label</key>
+		<string>Paper</string>
+		<key>source</key>
+		<string>© WRAP</string>
+		<key>description</key>
+		<string>If clean and dry, paper can be placed in your clear sack for recycling.</string>
+	</dict>
+	<key>plastic</key>
+	<dict>
+		<key>label</key>
+		<string>Plastic</string>
+		<key>source</key>
+		<string>© WRAP</string>
+		<key>description</key>
+		<string>If clean and dry, plastic bottles, tubs, trays and pots can be placed in your clear sack for recycling.</string>
+	</dict>
+	<key>trash</key>
+	<dict>
+		<key>label</key>
+		<string>Trash</string>
+		<key>source</key>
+		<string>© WRAP</string>
+		<key>description</key>
+		<string>Hammersmith and Fulham does not accept food-soiled packaging, polystyrene, shredded paper, food waste, plastic wrappers, foil, paper towels, plastic bags or textils in your clear sack for recycling.</string>
+	</dict>
+</dict>
+</plist>
