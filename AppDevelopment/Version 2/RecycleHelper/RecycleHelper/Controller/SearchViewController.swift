@@ -25,6 +25,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         // Setup delegates
         searchBar.delegate = self
         // Make navigation bar opaque
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
         // Load the data
         loadItemData()
@@ -104,7 +106,25 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
-    //MARK: Private Methods
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // MARK: - Navigation
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let itemVC = segue.destination as? SearchItemViewController, segue.identifier == K.searchItemViewSegue {
+            if let itemIndex = tableView.indexPathForSelectedRow?.row {
+                if(searchActive) {
+                    itemVC.itemID = filtered[itemIndex]
+                } else {
+                    itemVC.itemID = tableList[itemIndex]
+                }
+            }
+        }
+    }
+    // MARK: - Private Methods
     
     private func loadItemData() {
         // Read from the plist file into the dictionary.
