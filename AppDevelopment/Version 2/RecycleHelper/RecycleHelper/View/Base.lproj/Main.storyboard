@@ -15,75 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWp-xo-3dP">
-                                <rect key="frame" x="50" y="113" width="314" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to do today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLC-6c-jhn">
-                                <rect key="frame" x="50" y="154" width="314" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynh-nR-MoF">
-                                <rect key="frame" x="50" y="427" width="314" height="80"/>
-                                <color key="backgroundColor" red="0.58039215686274503" green="0.82745098039215681" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Ra4-Bn-Hxb"/>
-                                </constraints>
-                                <state key="normal" title="Detect an object">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="objectScanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5iA-89-Ja7"/>
-                                    <segue destination="b5Z-kb-dC4" kind="show" identifier="BeginDetectionSegue" id="oRf-Rr-IuA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-r3-037">
-                                <rect key="frame" x="50" y="218" width="314" height="80"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.98823529409999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Pgr-R5-2Xw"/>
-                                    <constraint firstAttribute="height" constant="80" id="XpO-5f-06i"/>
-                                </constraints>
-                                <state key="normal" title="Search for an item">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="searchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGR-4I-dSf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVh-PF-usI">
-                                <rect key="frame" x="50" y="323" width="314" height="80"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.92941176470588238" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="wyn-IF-ndF"/>
-                                </constraints>
-                                <state key="normal" title="Scan a recycling symbol">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="symbolScanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUU-ci-nz4"/>
-                                    <segue destination="Lrs-jZ-cJ6" kind="show" identifier="BeginScanSegue" id="goy-Kq-OuH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCa-z4-T8V">
                                 <rect key="frame" x="339" y="838" width="25" height="24"/>
                                 <constraints>
@@ -96,29 +27,105 @@
                                     <segue destination="iSJ-Gx-be5" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" id="2pH-7Q-kR4"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Mug-bb-2Di">
+                                <rect key="frame" x="45" y="116" width="325" height="389"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="x9x-23-VlE">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="61"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWp-xo-3dP">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="32.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to do today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLC-6c-jhn">
+                                                <rect key="frame" x="0.0" y="40.5" width="325" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="325" id="gNl-1y-ZIj"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="MhH-pz-ES4">
+                                        <rect key="frame" x="0.0" y="101" width="325" height="288"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-r3-037">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="80"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.98823529409999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Pgr-R5-2Xw"/>
+                                                    <constraint firstAttribute="height" constant="80" id="XpO-5f-06i"/>
+                                                </constraints>
+                                                <state key="normal" title="Search for an item">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGR-4I-dSf"/>
+                                                    <segue destination="aId-y9-d9b" kind="show" id="cgL-PQ-Ltj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVh-PF-usI">
+                                                <rect key="frame" x="0.0" y="104" width="325" height="80"/>
+                                                <color key="backgroundColor" red="0.80000000000000004" green="0.92941176470588238" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="wyn-IF-ndF"/>
+                                                </constraints>
+                                                <state key="normal" title="Scan a recycling symbol">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="symbolScanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUU-ci-nz4"/>
+                                                    <segue destination="Lrs-jZ-cJ6" kind="show" identifier="BeginScanSegue" id="goy-Kq-OuH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynh-nR-MoF">
+                                                <rect key="frame" x="0.0" y="208" width="325" height="80"/>
+                                                <color key="backgroundColor" red="0.58039215686274503" green="0.82745098039215681" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="Ra4-Bn-Hxb"/>
+                                                </constraints>
+                                                <state key="normal" title="Detect an object">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="objectScanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5iA-89-Ja7"/>
+                                                    <segue destination="b5Z-kb-dC4" kind="show" identifier="BeginDetectionSegue" id="oRf-Rr-IuA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="325" id="yjc-Pu-fOu"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Y4I-r3-037" firstAttribute="trailing" secondItem="Ynh-nR-MoF" secondAttribute="trailing" id="1XH-gm-hWi"/>
+                            <constraint firstItem="Mug-bb-2Di" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="2A8-kc-4KZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JCa-z4-T8V" secondAttribute="trailing" constant="50" id="6tW-1Y-Bk7"/>
-                            <constraint firstItem="Y4I-r3-037" firstAttribute="trailing" secondItem="RVh-PF-usI" secondAttribute="trailing" id="93m-eK-SJh"/>
-                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="EFU-Dv-EIA"/>
-                            <constraint firstItem="RVh-PF-usI" firstAttribute="top" secondItem="Y4I-r3-037" secondAttribute="bottom" constant="25" id="MAs-wJ-O2F"/>
-                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="NBs-qg-IRF"/>
-                            <constraint firstItem="QWp-xo-3dP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="NwV-h6-p4e"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GLC-6c-jhn" secondAttribute="trailing" constant="50" id="PsE-DZ-aKu"/>
-                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="QWp-xo-3dP" secondAttribute="leading" id="TWO-XM-e0Y"/>
-                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="RVh-PF-usI" secondAttribute="leading" id="XlB-l6-dBT"/>
-                            <constraint firstItem="RVh-PF-usI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="323" id="Zfq-LH-jFW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y4I-r3-037" secondAttribute="trailing" constant="50" id="bK0-d3-V3Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mug-bb-2Di" secondAttribute="trailing" constant="44" id="Oiz-Dc-7wi"/>
+                            <constraint firstItem="Mug-bb-2Di" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="dPH-G8-jlV"/>
                             <constraint firstItem="JCa-z4-T8V" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ehS-1q-U0U"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QWp-xo-3dP" secondAttribute="trailing" constant="50" id="fKh-92-59C"/>
-                            <constraint firstItem="Ynh-nR-MoF" firstAttribute="top" secondItem="RVh-PF-usI" secondAttribute="bottom" constant="24" id="l7n-cN-cNP"/>
-                            <constraint firstItem="GLC-6c-jhn" firstAttribute="top" secondItem="QWp-xo-3dP" secondAttribute="bottom" constant="8" id="mNB-9A-RK1"/>
-                            <constraint firstItem="Y4I-r3-037" firstAttribute="leading" secondItem="Ynh-nR-MoF" secondAttribute="leading" id="phd-xN-rS2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y4I-r3-037" secondAttribute="trailing" constant="50" id="qaF-BN-64t"/>
-                            <constraint firstItem="QWp-xo-3dP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="vNJ-fU-XfG"/>
-                            <constraint firstItem="GLC-6c-jhn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="yOO-bP-Zwe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -127,6 +134,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1092.753623188406" y="136.60714285714286"/>
+        </scene>
+        <!--Items-->
+        <scene sceneID="QYg-Go-lKV">
+            <objects>
+                <tableViewController id="aId-y9-d9b" customClass="SearchViewController" customModule="RecycleHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xIk-xf-yaM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="2LU-l9-oyX">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ItemTableViewCell" id="1PF-Pk-lAx" customClass="ItemTableViewCell" customModule="RecycleHelper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1PF-Pk-lAx" id="dPY-m1-kdm">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0c5-xn-r6K" userLabel="Title">
+                                            <rect key="frame" x="20" y="9" width="338" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="0c5-xn-r6K" id="5H3-fQ-13l"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aId-y9-d9b" id="vlm-F6-5yI"/>
+                            <outlet property="delegate" destination="aId-y9-d9b" id="GPv-Xd-bp5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Items" id="tvg-4m-EKU"/>
+                    <connections>
+                        <outlet property="searchBar" destination="2LU-l9-oyX" id="0id-TY-7bH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WpH-Ms-z32" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282.60869565217394" y="908.70535714285711"/>
         </scene>
         <!--Vision OCR View Controller-->
         <scene sceneID="VKw-MO-nB5">
@@ -184,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRd-fe-xsG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892.753623188406" y="-258.48214285714283"/>
+            <point key="canvasLocation" x="1093" y="910"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="ocy-SI-lyU">
@@ -210,6 +266,7 @@
                                     <constraint firstAttribute="width" constant="100" id="OWa-WT-Fan"/>
                                     <constraint firstAttribute="height" constant="43" id="btl-6S-7x4" userLabel="height = 40"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Scan Again">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -230,6 +287,7 @@
                                     <constraint firstAttribute="width" constant="100" id="8Gm-4Q-OpT"/>
                                     <constraint firstAttribute="height" constant="43" id="iGw-LK-Ofn" userLabel="height = 40"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -298,7 +356,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvk-5c-cRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="uNS-yj-TJG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2713.04347826087" y="133.92857142857142"/>
+            <point key="canvasLocation" x="1512" y="1696"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="Z9h-el-IQT">
@@ -489,7 +547,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcm-ep-s3W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="OyJ-54-j7R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1093" y="911"/>
+            <point key="canvasLocation" x="1900" y="137"/>
         </scene>
         <!--Vision View Controller-->
         <scene sceneID="S7I-Jd-hvm">
@@ -546,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15T-3V-sC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892.753623188406" y="426.5625"/>
+            <point key="canvasLocation" x="1900" y="909"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hff-Op-KYW">
@@ -566,6 +624,107 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3R-QW-uwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-626.08695652173913" y="136.60714285714286"/>
+        </scene>
+        <!--Search Item View Controller-->
+        <scene sceneID="KXZ-Cu-8ou">
+            <objects>
+                <viewController title="Item View Controller" id="LEe-Ks-fBL" userLabel="Search Item View Controller" customClass="SearchItemViewController" customModule="RecycleHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EcE-Ov-Czo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpo-CA-TD0" userLabel="Item">
+                                <rect key="frame" x="75" y="92" width="47.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="B7X-dl-tLb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBY-Fm-daH">
+                                <rect key="frame" x="239" y="784" width="100" height="43"/>
+                                <color key="backgroundColor" red="0.58039215690000001" green="0.82745098039999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="hkn-JZ-tjL" userLabel="height = 40"/>
+                                    <constraint firstAttribute="width" constant="100" id="jyz-V9-Yt3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Search Again">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="scanAgainBtn:" destination="LEe-Ks-fBL" eventType="touchUpInside" id="ite-zA-HR1"/>
+                                    <action selector="searchBtn:" destination="LEe-Ks-fBL" eventType="touchUpInside" id="4Ib-pg-dHk"/>
+                                    <segue destination="sBx-uW-JHG" kind="unwind" unwindAction="unwindToScanningWithUnwindSegue:" id="iRu-3r-Uxe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzM-Wa-US8">
+                                <rect key="frame" x="75" y="784" width="100" height="43"/>
+                                <color key="backgroundColor" red="0.58039215690000001" green="0.82745098039999998" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="NDI-R0-HV7"/>
+                                    <constraint firstAttribute="height" constant="43" id="fUe-5y-yy2" userLabel="height = 40"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneBtn:" destination="LEe-Ks-fBL" eventType="touchUpInside" id="3ds-Qn-y7a"/>
+                                    <segue destination="sBx-uW-JHG" kind="unwind" unwindAction="unwindLabelScanningWithSegue:" id="C83-Ag-YQl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recyclable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pv1-JT-d6w">
+                                <rect key="frame" x="75" y="129" width="131" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTm-PS-lJg" userLabel="Information">
+                                <rect key="frame" x="75" y="194" width="264" height="452"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.92941176469999998" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aR3-m2-gql" firstAttribute="trailing" secondItem="kBY-Fm-daH" secondAttribute="trailing" constant="75" id="8IX-6R-mB8"/>
+                            <constraint firstItem="pv1-JT-d6w" firstAttribute="top" secondItem="aR3-m2-gql" secondAttribute="top" constant="85" id="B9f-5u-x6k"/>
+                            <constraint firstItem="aR3-m2-gql" firstAttribute="bottom" secondItem="AzM-Wa-US8" secondAttribute="bottom" constant="35" id="IOC-HU-Aga"/>
+                            <constraint firstItem="AzM-Wa-US8" firstAttribute="leading" secondItem="aR3-m2-gql" secondAttribute="leading" constant="75" id="exY-HX-Rqa"/>
+                            <constraint firstItem="Jpo-CA-TD0" firstAttribute="top" secondItem="aR3-m2-gql" secondAttribute="top" constant="48" id="g9F-ad-Ere"/>
+                            <constraint firstItem="aR3-m2-gql" firstAttribute="trailing" secondItem="pv1-JT-d6w" secondAttribute="trailing" constant="208" id="k5u-he-7f9"/>
+                            <constraint firstItem="Jpo-CA-TD0" firstAttribute="leading" secondItem="aR3-m2-gql" secondAttribute="leading" constant="75" id="lf7-oh-COD"/>
+                            <constraint firstItem="pv1-JT-d6w" firstAttribute="leading" secondItem="aR3-m2-gql" secondAttribute="leading" constant="75" id="quq-MU-HaF"/>
+                            <constraint firstItem="aR3-m2-gql" firstAttribute="bottom" secondItem="kBY-Fm-daH" secondAttribute="bottom" constant="35" id="wEg-Wz-boS"/>
+                            <constraint firstItem="Jpo-CA-TD0" firstAttribute="top" secondItem="aR3-m2-gql" secondAttribute="top" constant="48" id="yCh-Mi-zDl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aR3-m2-gql"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tiC-5n-zji"/>
+                    <connections>
+                        <outlet property="itemDescription" destination="gTm-PS-lJg" id="b0t-bq-kV7"/>
+                        <outlet property="itemName" destination="Jpo-CA-TD0" id="937-Si-olv"/>
+                        <outlet property="itemRecyclability" destination="pv1-JT-d6w" id="K7m-hr-Xyl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vyH-qU-iqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="sBx-uW-JHG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="282.60869565217394" y="1695.5357142857142"/>
         </scene>
     </scenes>
 </document>

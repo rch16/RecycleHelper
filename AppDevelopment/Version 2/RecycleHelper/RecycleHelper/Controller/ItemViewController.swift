@@ -77,9 +77,6 @@ class ItemViewController: UIViewController {
                     itemImage.clipsToBounds = true
                 }
             }
-            guard itemList[itemID] != nil else {
-                return
-            }
         }
     }
     

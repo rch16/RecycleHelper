@@ -13,6 +13,10 @@
 		E503EC62246AF5DA00225A54 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E503EC61246AF5DA00225A54 /* License.txt */; };
 		E503EC67246B044200225A54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC66246B044200225A54 /* ViewController.swift */; };
 		E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC68246B148F00225A54 /* VisionOCRViewController.swift */; };
+		E5A1D7F524727EDE00161F8D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1D7F424727EDE00161F8D /* SearchViewController.swift */; };
+		E5A1D7F72472862F00161F8D /* SearchItemsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D7F62472862F00161F8D /* SearchItemsList.plist */; };
+		E5A1D7F92472BEDD00161F8D /* SearchItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1D7F82472BEDD00161F8D /* SearchItemViewController.swift */; };
+		E5A1D7FB2472E61B00161F8D /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1D7FA2472E61B00161F8D /* ItemTableViewCell.swift */; };
 		E5A381FC246B4288005DEAC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A381FB246B4288005DEAC5 /* Constants.swift */; };
 		E5A381FE246B42BF005DEAC5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */; };
 		E5A38207246DCFCA005DEAC5 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = E5A38206246DCFCA005DEAC5 /* tessdata */; };
@@ -72,6 +76,10 @@
 		E503EC61246AF5DA00225A54 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		E503EC66246B044200225A54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E503EC68246B148F00225A54 /* VisionOCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionOCRViewController.swift; sourceTree = "<group>"; };
+		E5A1D7F424727EDE00161F8D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E5A1D7F62472862F00161F8D /* SearchItemsList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SearchItemsList.plist; sourceTree = "<group>"; };
+		E5A1D7F82472BEDD00161F8D /* SearchItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewController.swift; sourceTree = "<group>"; };
+		E5A1D7FA2472E61B00161F8D /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		E5A381FB246B4288005DEAC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		E5A38206246DCFCA005DEAC5 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
@@ -168,7 +176,9 @@
 				E503EC66246B044200225A54 /* ViewController.swift */,
 				E503EC68246B148F00225A54 /* VisionOCRViewController.swift */,
 				E5A3821E247043BE005DEAC5 /* VisionViewController.swift */,
+				E5A1D7F424727EDE00161F8D /* SearchViewController.swift */,
 				E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */,
+				E5A1D7F82472BEDD00161F8D /* SearchItemViewController.swift */,
 				E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */,
 			);
 			path = Controller;
@@ -179,6 +189,7 @@
 			children = (
 				E5ADD1DF246AE9ED0030CD19 /* Main.storyboard */,
 				E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */,
+				E5A1D7FA2472E61B00161F8D /* ItemTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +215,7 @@
 				E5A38214246FEF46005DEAC5 /* metal.jpg */,
 				E5A38215246FEF46005DEAC5 /* plastic.jpg */,
 				E5A38206246DCFCA005DEAC5 /* tessdata */,
+				E5A1D7F62472862F00161F8D /* SearchItemsList.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -381,6 +393,7 @@
 				E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */,
 				E5A3822424706C18005DEAC5 /* onboarding2.png in Resources */,
 				E5A38219246FEF47005DEAC5 /* plastic.jpg in Resources */,
+				E5A1D7F72472862F00161F8D /* SearchItemsList.plist in Resources */,
 				E5ADD1E3246AE9F20030CD19 /* Assets.xcassets in Resources */,
 				E5A38207246DCFCA005DEAC5 /* tessdata in Resources */,
 				E5A3822724706C18005DEAC5 /* onboarding1.png in Resources */,
@@ -557,9 +570,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5A381FE246B42BF005DEAC5 /* ItemViewController.swift in Sources */,
+				E5A1D7F524727EDE00161F8D /* SearchViewController.swift in Sources */,
 				E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */,
 				E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */,
 				E503EC67246B044200225A54 /* ViewController.swift in Sources */,
+				E5A1D7F92472BEDD00161F8D /* SearchItemViewController.swift in Sources */,
+				E5A1D7FB2472E61B00161F8D /* ItemTableViewCell.swift in Sources */,
 				E5CD4F6D2471C86200DEB567 /* InfoViewController.swift in Sources */,
 				E5A3821F247043BE005DEAC5 /* VisionViewController.swift in Sources */,
 				E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */,

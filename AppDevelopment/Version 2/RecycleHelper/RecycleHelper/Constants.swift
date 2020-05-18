@@ -27,6 +27,9 @@ struct K {
     static let boundingBoxConfidence = 0.75
     static let scaleUp = 0.2
     static let rotationAngle = 1.5708
+    // Item Search
+    static let cellIdentifier = "ItemTableViewCell"
+    static let searchData = "SearchItemsList"
     // Item View
     static let possibleCategories = ["card","Card","CARD","cardboard","Cardboard","CARDBOARD","paper","Paper","PAPER","metal","Metal","METAL","aluminium","Aluminium","ALUMINIUM","can","Can","CAN","foil","Foil","FOIL","plastic","Plastic","PLASTIC","glass","Glass","GLASS"]
 }

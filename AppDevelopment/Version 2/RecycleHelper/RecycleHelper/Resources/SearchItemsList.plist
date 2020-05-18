@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Aerosols</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Ensure aerosols are completely empty before recycling</string>
+			<string>Do not pierce, crush or flatten aerosol cans</string>
+			<string>Detach any loose or easily removable parts, such as the lid, and dispose of them with the rest of your recycling</string>
+		</array>
+	</dict>
+	<key>Aluminium Trays</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Rinse or wipe off any crumbs or food residue from foil trays.</string>
+			<string>Scrunch kitchen foil, tub and pot lids and wrappers together to form a ball.</string>
+		</array>
+	</dict>
+	<key>Animal Bedding &amp; Waste</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your District or County Council whether they accept it.</string>
+	</dict>
+	<key>Ash (Coal)</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Place in your general waste bin.</string>
+		</array>
+	</dict>
+	<key>Ash (Wood)</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable with Garden Waste</string>
+		<key>How</key>
+		<array>
+			<string>If the service is offered in your area, put in your household garden waste collections.</string>
+			<string>Otherwise take to the recycling center and recycle with garden waste.</string>
+			<string>Or add to your home composting bin or use as soil fertiliser</string>
+		</array>
+	</dict>
+	<key>Batteries</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Check with your council to see if they are accepted as part of your household collection.</string>
+			<string>In most ares you will need to take them to a recycling centre or a collection poitn in a supermarket.</string>
+		</array>
+	</dict>
+	<key>Biscuit &amp; Sweet Tins</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Empty and rinse items.</string>
+			<string>You can leave labels on.</string>
+		</array>
+	</dict>
+	<key>Black Plastic</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+	</dict>
+	<key>Books</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Pass them on to someone else.</string>
+			<string>Or donate them to a charity shop.</string>
+			<string>Or sell them.</string>
+		</array>
+	</dict>
+	<key>Bubble Wrap</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+		<key>How</key>
+		<array>
+			<string>Some councils now offer a household collection for the recycling of bubble wrap, but this is still limited.</string>
+			<string>Alternatively, bubble wrap can be recycled along with plastic film and carrier bags at collection points such as supermarkets.</string>
+		</array>
+	</dict>
+	<key>Buttons</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>It&apos;s always helpful to keep a stash of buttons, as you never know when you mignt need them.</string>
+			<string>Alternatively, you can always donate them to a charity shop.</string>
+		</array>
+	</dict>
+	<key>Cans</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Empty and rinse items.</string>
+			<string>You can leave labels on.</string>
+		</array>
+	</dict>
+	<key>Cardboard</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Tape, polystyrene and plastic inserts need to be removed from cardboard packaging.</string>
+			<string>Glitter, badges and batteries should also be torn off greeting cards.</string>
+			<string>Egg boxes and rolls from kitchen towel and toilet rolls can also be home composted.</string>
+		</array>
+	</dict>
+	<key>Cartons</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority.</string>
+		<key>How</key>
+		<array>
+			<string>Leave plastic tops on and straws in, as these will be removed and recycled.</string>
+		</array>
+	</dict>
+	<key>Catalogues &amp; Magazines</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Paper is a valuable recyclable material, but only when it is clean.</string>
+			<string>Remove any plastic wrapping - this can be recycled with plastic bags at larger supermarkets.</string>
+			<string>If you scrunch paper and it doesn&apos;t spring back, then it can be recycled.</string>
+		</array>
+	</dict>
+	<key>CDs &amp; DVDs</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+		<key>How</key>
+		<array>
+			<string>Some local recycling centres will accept CDs and DVDs.</string>
+			<string>However you could donate them to a Charity Shop.</string>
+			<string>Or sell them on sites like eBay or Music Magpie.</string>
+			<string>If you have large amounts to recycle, you could purchase a zero waste box from Terracycle UK.</string>
+		</array>
+	</dict>
+	<key>Chemicals</key>
+	<dict>
+		<key>Recylable</key>
+		<string>Check with your Local Authority</string>
+	</dict>
+	<key>Cling Film</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+	</dict>
+	<key>Clothing, Textiles &amp; Fabrics</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+		<key>How</key>
+		<array>
+			<string>Check to see if your council offeres clothes and textiles collections.</string>
+			<string>Otherwise, drop off your unwanted items at recycling points and clothing and textile banks in supermarkets and local car parks.</string>
+			<string>Clothes can often also be donated to registered charites and re-use organisations.</string>
+			<string>Many high street retailers such as Primark and M&amp;S now offer clothing donatinon banks in-store.</string>
+			<string>If the clothes are still in good condition, you could consider reselling on sites such as Depop and Ebay.</string>
+		</array>
+	</dict>
+	<key>Coffee Pods &amp; Capsules</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Usually Accepted</string>
+		<key>How</key>
+		<array>
+			<string>Some brands are collected by TerraCycle.</string>
+			<string>They are then recycled to create new products.</string>
+		</array>
+	</dict>
+	<key>Coins (Foreign &amp; Old)</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Try taking them to your local charity shop, as many charities accept old and foreign coins to help raise valuable funds.</string>
+			<string>You can also often donate foreign coins on your return flight from holiday.</string>
+		</array>
+	</dict>
+	<key>Compostable Plastics</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Do Not Recycle</string>
+		<key>How</key>
+		<array>
+			<string>Compostable plastics can&apos;t go in with your plastic recycling as they can&apos;t be recycled in the same way.</string>
+			<string>They can be either home compostable or industrially compostable.</string>
+			<string>Industrially compostable plastics need to go into your food or garden compost, but check with your Local Authority.</string>
+			<string>Home compostable plastics can go on your compost heap at home.</string>
+		</array>
+	</dict>
+	<key>Computers</key>
+	<dict>
+		<key>Recyclable </key>
+		<string>Take to a Household Waste Recycling Centre.</string>
+		<key>How</key>
+		<array>
+			<string>Make sure that you permanently delete all files and remove your personal data to reduce the risk of it being used by someone else.</string>
+			<string>Companies like Apple also offer recycling and trade-in schemes.</string>
+		</array>
+	</dict>
+	<key>Cooking Oil &amp; Fat</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Cooking oil and fat can cause blockages, so do not pour down your sink.</string>
+			<string>Small amounts of cooking oil, fats and plate scrapings can be added to your food waste recycling service.</string>
+			<string>Otherwise, put it in a sealed container and place in the general waste bin.</string>
+		</array>
+	</dict>
+	<key>Corks</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>If you have a home compost bin, corks can be put in here.</string>
+			<string>Some stores recycle corks.</string>
+			<string>When chopped into small pieces, cork can also be used as mulch on plants.</string>
+		</array>
+	</dict>
+	<key>Cotton Buds</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Even those with paper stems should be palced in the waste bin.</string>
+			<string>Never flush them down the toilet, as they can block systems and pollute the environment.</string>
+			<string>Plastic stemmed cotton buds were due to be banned in England from April 2020.</string>
+		</array>
+	</dict>
+	<key>Cotton Wool</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Should be placed in your rubbish bin.</string>
+			<string>Do not try to flush away, as it expands when placed in water and can cause blockages.</string>
+		</array>
+	</dict>
+	<key>Crisp Packets</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Place in your rubbish bin.</string>
+			<string>Or recycle via TerraCycle&apos;s Crisp Packet Recycling Scheme.</string>
+		</array>
+	</dict>
+	<key>Crockery &amp; Cutlery</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Donate items that are still in a good, usable condition to charities or charity shops.</string>
+		</array>
+	</dict>
+	<key>Decorations</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Baubels are not recyclable - theys hould be disposed off in general waste. If made from glass, make sure to wrap up.</string>
+			<string>Tinsel should be disposed off in your general waste.</string>
+			<string>Natural materials on wreaths can be composted as long as they are not covered with excessive glitter.</string>
+			<string>Artificial decorations such as ribbons and plastic flowers must go in the general waste.</string>
+		</array>
+	</dict>
+	<key>Diesel &amp; Petrol</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with Your Local Authority</string>
+	</dict>
+	<key>Disposable Cutlery</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>If made from wood, then it can be palced in a garden waste collection to be composted.</string>
+			<string>If made from plastic, it is unlikely to be recycled as it will fall out during the de-contamination process.</string>
+			<string>The best thing to do is to avoid using if at all possible.</string>
+		</array>
+	</dict>
+	<key>Disposable Plates &amp; Bowls</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>These can be wiped clean and re-used.</string>
+			<string>However the best practice is avoid using them if possible.</string>
+		</array>
+	</dict>
+	<key>Egg Shells</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Can be included in your food waste collection scheme in your area if you have one.</string>
+			<string>They can also be included in your home composting bin.</string>
+		</array>
+	</dict>
+	<key>Electrical Items</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+		<key>How</key>
+		<array>
+			<string>Some local authorities collect small electrical items as part of their kerbside collection.</string>
+			<string>Otherwise you can recycle these at selected retailers and at Household Waste Recycling Centres.</string>
+			<string>If it still works, consider donating or selling this on to someone else.</string>
+		</array>
+	</dict>
+	<key>Energy-saving Bulbs</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Can be recycled at most larger household waste recycling centres and some stores.</string>
+		</array>
+	</dict>
+	<key>Engine Oil</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Can be recycled at your nearest recycling bank.</string>
+			<string>Make sure it is stored in a sealed container.</string>
+			<string>Don&apos;t mix it with any other substance, as this makes it difficult to recycle.</string>
+		</array>
+	</dict>
+	<key>Envelopes</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Paper is a valuable recyclabel material, but only when it is clean.</string>
+			<string>Remove any plastic wrapping or inserts.</string>
+			<string>If you scrunch paper and it doesn&apos;t spring back, then it can be recycled.</string>
+		</array>
+	</dict>
+	<key>Foil</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Rinse or wipe of any crumbs or food residue.</string>
+			<string>Scrunch up to form a ball.</string>
+		</array>
+	</dict>
+	<key>Food &amp; Drink Pouches</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>These should be placed in your rubbish bina s they are not usually accepted in your recycling collections from home.</string>
+			<string>However, some brands are collected by a company called TerraCycle, who recycle them to create new products.</string>
+		</array>
+	</dict>
+	<key>Food Waste</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+		<key>How</key>
+		<array>
+			<string>If your local authority has given you a kitchen caddy to collect food waste, you can usually ercycle any cooked or raw food scraps.</string>
+			<string>Make sure that you remove all packaging, especially plastic.</string>
+			<string>Alternatively, you could make compost at home.</string>
+			<string>However you cannot compost cooked food, fish, meat or dairy products.</string>
+		</array>
+	</dict>
+	<key>Games &amp; Toys</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Some household waste recycling centres accept toys and game, but it is best to check first.</string>
+			<string>These are not collected as part of household collections, so should not be put in your home recycling.</string>
+			<string>If they are still in good condition, you could try to sell or donate them.</string>
+			<string>If they are beyond repair, it may still be possible to recycle someof the parts if you dismantle them.</string>
+		</array>
+	</dict>
+	<key>Garden Waste</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+		<key>How</key>
+		<array>
+			<string>Some local authorites provide a special bin for your garden waste, and collect it as part of their household collection scheme.</string>
+			<string>If you don&apos;t have this service, or your bin is full, you can recycle garden waste at you rnearest Household Waste Recycling Centre.</string>
+			<string>If you are provided the service, make sure you follow any special instructions for what can and can&apos;t be included.</string>
+			<string>Do not include any other items, unless your council tells you that it is ok.</string>
+			<string>If taking garden waste to your local recycling centre, use a strong, durable bag (not a black bin liner), and try not to overfill it.</string>
+			<string>Once emptied, you can then take this bag back home with you and re use it.</string>
+		</array>
+	</dict>
+	<key>Gas Bottles</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable with the Supplier</string>
+		<key>How</key>
+		<array>
+			<string>Gas bottles can be refilled for further use, and should be returned to the supplier.</string>
+			<string>Do not place in your waste bin, as they may explode if they are crushed.</string>
+			<string>Some local authorities accept gas bottles at household waste reycling centres, but check where they should be left so that they can be stored safely.</string>
+		</array>
+	</dict>
+	<key>Gift &amp; Toy Packaging</key>
+	<dict>
+		<key>Recylable</key>
+		<string>Partially Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Some parts of the packaging is recyclable, but it will need to be separated and sorted.</string>
+			<string>Remove plastic windows from cardboard boxes before recycling - the plastic should be put in the rubbish bin.</string>
+			<string>Flatten cardboard for ease of transport, or to fit more into you rrecycling bin.</string>
+			<string>Plastic blisters marked PET or PETE can be recycled by most local authorities, but check first.</string>
+			<string>Wire tires are not generally recyclable, but can be re-used around the home.</string>
+			<string>Remove rope or ribbon handles - these can be re-used or should be placed in the rubbish bin.</string>
+		</array>
+	</dict>
+	<key>Gift Wrap</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+	</dict>
+	<key>Glass Bottles &amp; Jars</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Empty and rinse.</string>
+			<string>Put lids and caps back on.</string>
+			<string>Corks should be removed.</string>
+		</array>
+	</dict>
+	<key>Greetings Cards</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Most cards are paper based and can be recycled along with their envelopes.</string>
+			<string>Any embellishments, such as ribbons glitter, cannot be recycled s oshould be removed first.</string>
+		</array>
+	</dict>
+	<key>Inhalers</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>All used inhalers should be returned to a pharmacy to be disposed of safely.</string>
+		</array>
+	</dict>
+	<key>Printer, Inkjet &amp; Toner Cartridges</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+		<key>How</key>
+		<array>
+			<string>These are increasingly being collected at local recycling centres.</string>
+			<string>But are not generally collected from kerbside.</string>
+			<string>However, you may be able to donate them to charity.</string>
+		</array>
+	</dict>
+	<key>Jewellery</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>There are specialist services, charities and other organisations who will take your unwanted or borken jewellery.</string>
+			<string>If in good quality, you may be able to sell it.</string>
+			<string>If donating, place in a separate plastc bag to keep them together.</string>
+		</array>
+	</dict>
+	<key>Junk Mail</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Paper is a valuable recyclable material, but only when it is clean.</string>
+			<string>Remove any plastic wrapping.</string>
+			<string>If you scurnch paper and it doesn&apos;t spring back, then it can be recycled.</string>
+		</array>
+	</dict>
+	<key>Keys</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Can be recyceld in the mixed metals recycling facility at most local recycling centres.</string>
+		</array>
+	</dict>
+	<key>Kitchen Roll &amp; Paper Towels</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Partially Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>The cardboard inner tube is widely collected as part of household recycling schemes.</string>
+			<string>Used sheets of kitchen roll should be placed in your rubbish bin, unless your council tells you otherwise.</string>
+			<string>Some will allow you to put a small amout of kitchen towel in the food waste bin - but check first.</string>
+		</array>
+	</dict>
+	<key>Light Bulbs</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+	</dict>
+	<key>Nappies (Disposable)</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Should be placed in your rubbish bins.</string>
+		</array>
+	</dict>
+	<key>Newspapers</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Paper is a valuable recyclable material, but only when it is clean.</string>
+			<string>Remove any plastic wrapping - this can be recycled with plastic bags at larger supermarkets.</string>
+		</array>
+	</dict>
+	<key>Oil (Car)</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>You can recycle engine oil at your nearest recycling bank.</string>
+		</array>
+	</dict>
+	<key>Packaging (Food)</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Most packaging is recyclable, but it will need to be separated and sorted.</string>
+			<string>Before recycling, remove any food or drink residue by rinsining it.</string>
+			<string>Squash items if possible, to make more space in your bin.</string>
+			<string>Food and drinks cans and plastic bottles are widely ercycled.</string>
+			<string>Check locally for plastic pots, tubs and trays.</string>
+			<string>Plastic films and carrier bags are not usually collected, but can be recycled at carrier bag collection points.</string>
+		</array>
+	</dict>
+	<key>Paint</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+		<key>How</key>
+		<array>
+			<string>Your local household waste recycling centre may have a donation point for paint - it is re-used rather than recycled.</string>
+			<string>Alternatively, donate your paint to a local Community Repaint scheme.</string>
+			<string>Make sure you harden your paint before disposable.</string>
+			<string>Solvent based paint, paint thinner and white spirit should be disposed of as hazardous waste.</string>
+		</array>
+	</dict>
+	<key>Paint Cans</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+		<key>How</key>
+		<array>
+			<string>Empty metal paint cans are accepted at most household waste recycling centres.</string>
+			<string>These must be empty or dry.</string>
+			<string>Currently, plastic paint cans are not widely accepted.</string>
+		</array>
+	</dict>
+	<key>Paper</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Paper is a valuable recyclable material, but only when it is clean.</string>
+			<string>Remove any plastic wrapping.</string>
+			<string>If you scrunch paper and it doesn&apos;t spring back, then it can be recycled.</string>
+		</array>
+	</dict>
+	<key>Paper Coffee Cups</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Not normally accpeted in household recycling collection schemes, especially when used.</string>
+			<string>High street coffee store chains often accept returns of these for recycling.</string>
+			<string>These often provide discounts when you do return them.</string>
+		</array>
+	</dict>
+	<key>Petrol</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+	</dict>
+	<key>Photographs</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Sometimes Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Make sure that you check with your local council that they accept it.</string>
+		</array>
+	</dict>
+	<key>Pizza Boxes</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Pizza boxes are recyclable, even when stained or greasy as long as they are empty.</string>
+			<string>However, it may be worth check this with your local authority.</string>
+		</array>
+	</dict>
+	<key>Plastic Bags</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Find your local carrier bag collection point.</string>
+			<string>These can be found at most major supermarkets, including Tesco, Asda, Morrisons, Sainsbury&apos;s, The Co-op and Waitrose.</string>
+		</array>
+	</dict>
+	<key>Plastic Bottles</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Empty and rinse.</string>
+			<string>Leave on labels.</string>
+			<string>Replace lids and tops.</string>
+			<string>Squash bottles to save space.</string>
+		</array>
+	</dict>
+	<key>Plastic Plant Pots</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Most local authorities collect pots, tubs and trays in their kerbside collection.</string>
+			<string>If they do, then you should be able to put non-black plastic plant pots in your normal home recycling collection.</string>
+		</array>
+	</dict>
+	<key>Plastic Sticky Tape &amp; Sellotape</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+	</dict>
+	<key>Plastic Straws</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+	</dict>
+	<key>Plastic Tubes</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+		<key>How</key>
+		<array>
+			<string>Tubes containing DIY products like mastic cannot be recycled.</string>
+			<string>Pump-action toothpaste tubes are easy to recycle.</string>
+			<string>Plastic items that are less thatn 40x40mm are unlikely to be recycled.</string>
+		</array>
+	</dict>
+	<key>Plastic Tubs &amp; Trays</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Rinse food packaging.</string>
+			<string>Labels and lids can all be left on, but plastic film must be removed.</string>
+		</array>
+	</dict>
+	<key>Polystyrene Packaging</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Commonly Recycled</string>
+	</dict>
+	<key>Postage Stamps</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Used stamps can be recycled with paper if they are still attached to envelopes.</string>
+			<string>Alternatively, you can collect stamps for charities.</string>
+		</array>
+	</dict>
+	<key>PVC Packaging</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+	</dict>
+	<key>Pyrex</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+	</dict>
+	<key>Records</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>If in good condition, these can be donated to some charity shops.</string>
+			<string>You could also sell them online.</string>
+			<string>If not suitable for re-use or re-sale, they will need to be disposed of in the bin.</string>
+			<string>Carboard sleeves should be removed and recycled.</string>
+		</array>
+	</dict>
+	<key>Saucepans</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>If in good condition, these could be donated to charity.</string>
+			<string>Otherwise can be recycled at your local Household Waste Recycling Centre.</string>
+		</array>
+	</dict>
+	<key>Shampoo Bottles</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+		<key>How</key>
+		<array>
+			<string>Empty and rinse bottles.</string>
+			<string>Leave on labels.</string>
+			<string>Replace lids and tops.</string>
+			<string>Squash bottles to save space.</string>
+		</array>
+	</dict>
+	<key>Shoes &amp; Boots</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>You can take your old or unwanted shoes and boots to most recycling centres, put them in a bring bank, or donate to a charity shop.</string>
+			<string>Where possible, these can be sold for re-use.</string>
+		</array>
+	</dict>
+	<key>Shredded Paper</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Widely Recycled</string>
+	</dict>
+	<key>Tea bags</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recylable</string>
+		<key>How</key>
+		<array>
+			<string>To help prevent greenhouse gas emissions from tea bags rotting in landfill, place your tea bags in a food or garden waste collection scheme if you have one.</string>
+		</array>
+	</dict>
+	<key>Tiles (Floor &amp; Wall)</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Floor and wall tiles are not collected as part of your councils household recycling scheme.</string>
+			<string>However, you can usually take them to your local Household Waste Recycling Centre.</string>
+		</array>
+	</dict>
+	<key>Tissues</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+	</dict>
+	<key>Tyres</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Tyres can be taken to household waste recycling centres.</string>
+			<string>However, there may be a limit to how many you can take, and you may also be charged.</string>
+			<string>When you need new tyres on your car, the garage where you have them fitted may dipose of your old ones for you.</string>
+		</array>
+	</dict>
+	<key>Water Filters</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Water filters cannot be recycled as part of a collection scheme or at a recycling centre.</string>
+			<string>Howver, BRITA branded filters can be recycled at most Argos, Robert Dyas and Homebase stores, or using TerraCycle.</string>
+		</array>
+	</dict>
+	<key>Wipes</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>Wipes are not recyclable, but are also not flushable.</string>
+			<string>They should always be placed in your rubbish bin.</string>
+		</array>
+	</dict>
+	<key>Wrapping Paper</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Check with your Local Authority</string>
+	</dict>
+</dict>
+</plist>
