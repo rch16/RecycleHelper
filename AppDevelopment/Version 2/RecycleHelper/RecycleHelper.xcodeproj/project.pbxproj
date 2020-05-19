@@ -23,6 +23,9 @@
 		E5A1D8052473357700161F8D /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D8012473357700161F8D /* appstore.png */; };
 		E5A1D8062473357700161F8D /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D8022473357700161F8D /* check.png */; };
 		E5A1D8072473357700161F8D /* cant_recycle.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D8032473357700161F8D /* cant_recycle.png */; };
+		E5A1D8112473D3A500161F8D /* recycle.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D80E2473D3A400161F8D /* recycle.png */; };
+		E5A1D8122473D3A500161F8D /* background4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D80F2473D3A400161F8D /* background4.png */; };
+		E5A1D8132473D3A500161F8D /* background3.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D8102473D3A400161F8D /* background3.png */; };
 		E5A381FC246B4288005DEAC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A381FB246B4288005DEAC5 /* Constants.swift */; };
 		E5A381FE246B42BF005DEAC5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */; };
 		E5A38207246DCFCA005DEAC5 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = E5A38206246DCFCA005DEAC5 /* tessdata */; };
@@ -92,6 +95,11 @@
 		E5A1D8012473357700161F8D /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
 		E5A1D8022473357700161F8D /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		E5A1D8032473357700161F8D /* cant_recycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cant_recycle.png; sourceTree = "<group>"; };
+		E5A1D80C2473D2E700161F8D /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = "/Users/beccahallam/Documents/GitHub/FYP/AppDevelopment/Version 2/RecycleHelper/RecycleHelper/Resources/background1.png"; sourceTree = "<absolute>"; };
+		E5A1D80D2473D2E800161F8D /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background2.png; path = "/Users/beccahallam/Documents/GitHub/FYP/AppDevelopment/Version 2/RecycleHelper/RecycleHelper/Resources/background2.png"; sourceTree = "<absolute>"; };
+		E5A1D80E2473D3A400161F8D /* recycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recycle.png; sourceTree = "<group>"; };
+		E5A1D80F2473D3A400161F8D /* background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background4.png; sourceTree = "<group>"; };
+		E5A1D8102473D3A400161F8D /* background3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background3.png; sourceTree = "<group>"; };
 		E5A381FB246B4288005DEAC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		E5A38206246DCFCA005DEAC5 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
@@ -217,6 +225,11 @@
 		E5A38205246DCF98005DEAC5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E5A1D8102473D3A400161F8D /* background3.png */,
+				E5A1D80F2473D3A400161F8D /* background4.png */,
+				E5A1D80E2473D3A400161F8D /* recycle.png */,
+				E5A1D80C2473D2E700161F8D /* background1.png */,
+				E5A1D80D2473D2E800161F8D /* background2.png */,
 				E5A1D8012473357700161F8D /* appstore.png */,
 				E5A1D8002473357700161F8D /* can_recycle.png */,
 				E5A1D8032473357700161F8D /* cant_recycle.png */,
@@ -416,8 +429,11 @@
 				E5A1D7F72472862F00161F8D /* SearchItemsList.plist in Resources */,
 				E5A1D8062473357700161F8D /* check.png in Resources */,
 				E5ADD1E3246AE9F20030CD19 /* Assets.xcassets in Resources */,
+				E5A1D8122473D3A500161F8D /* background4.png in Resources */,
+				E5A1D8112473D3A500161F8D /* recycle.png in Resources */,
 				E5A38207246DCFCA005DEAC5 /* tessdata in Resources */,
 				E5A3822724706C18005DEAC5 /* onboarding1.png in Resources */,
+				E5A1D8132473D3A500161F8D /* background3.png in Resources */,
 				E5A3822524706C18005DEAC5 /* onboarding3.png in Resources */,
 				E5A38217246FEF47005DEAC5 /* ItemList.plist in Resources */,
 				E503EC62246AF5DA00225A54 /* License.txt in Resources */,

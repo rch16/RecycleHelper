@@ -29,10 +29,10 @@ class SearchItemViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Make navigation bar transparent
+        // Make navigation bar opaque
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.isTranslucent = false
         // Assign table data source and delegate
         descriptionTable.dataSource = self
         descriptionTable.delegate = self
@@ -60,30 +60,28 @@ class SearchItemViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: - Displaying Information
     
     private func displayInfo(){
-        itemRecyclability.text = recyclable
-        if recyclable.contains("Widely Recycled") {
-            if let photo = UIImage(named: "can_recycle.png"){
-                imageView.image = photo
+        if let recycle = recyclable {
+            itemRecyclability.text = recycle
+            if recycle == "Widely Recycled" || recycle == "Recyclable" {
+                if let photo = UIImage(named: "can_recycle.png"){
+                    imageView.image = photo
+                }
+            } else if recycle.contains("Local Authority") {
+                if let photo = UIImage(named: "check.png"){
+                       imageView.image = photo
+                   }
+            } else if recycle == "Not Recyclable" {
+                if let photo = UIImage(named: "cant_recycle.png"){
+                    imageView.image = photo
+                }
+            } else {
+                if let photo = UIImage(named: "can_recycle.png"){
+                       imageView.image = photo
+                   }
             }
-        } else if recyclable.contains("Local Authority") {
-            if let photo = UIImage(named: "check.png"){
-                   imageView.image = photo
-               }
-        } else if recyclable.contains("Recyclable") {
-            if let photo = UIImage(named: "can_recycle.png"){
-                imageView.image = photo
-            }
-        } else {
-            if let photo = UIImage(named: "cant_recycle.png"){
-                   imageView.image = photo
-               }
         }
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        descriptionTable.deselectRow(at: indexPath, animated: true)
-    }
-    
+
     // Number of rows in section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return instructions.count

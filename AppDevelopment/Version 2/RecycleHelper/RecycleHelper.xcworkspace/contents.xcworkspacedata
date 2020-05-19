@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/beccahallam/Documents/GitHub/FYP/AppDevelopment/Version 2/RecycleHelper/RecycleHelper/Resources/background1.png">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/beccahallam/Documents/GitHub/FYP/AppDevelopment/Version 2/RecycleHelper/RecycleHelper/Resources/background2.png">
+   </FileRef>
+   <FileRef
       location = "group:RecycleHelper.xcodeproj">
    </FileRef>
    <FileRef

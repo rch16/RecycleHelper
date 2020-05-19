@@ -2,6 +2,60 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Sleeve</key>
+	<dict>
+		<key>label</key>
+		<string>Paper and Cardboard</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>paper.jpg</string>
+	</dict>
+	<key>Tray</key>
+	<dict>
+		<key>label</key>
+		<string>Metal</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>metal.jpg</string>
+	</dict>
+	<key>Film</key>
+	<dict>
+		<key>label</key>
+		<string>Plastic</string>
+		<key>recyclable</key>
+		<string>Not Recyclable</string>
+		<key>image</key>
+		<string>plastic.jpg</string>
+	</dict>
+	<key>Carton</key>
+	<dict>
+		<key>label</key>
+		<string>Paper and Cardboard</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>paper.jpg</string>
+	</dict>
+	<key>Lid</key>
+	<dict>
+		<key>label</key>
+		<string>Plastic</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>plastic.jpg</string>
+	</dict>
+	<key>Pot</key>
+	<dict>
+		<key>label</key>
+		<string>Plastic</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>plastic.jpg</string>
+	</dict>
 	<key>Metal</key>
 	<dict>
 		<key>label</key>
