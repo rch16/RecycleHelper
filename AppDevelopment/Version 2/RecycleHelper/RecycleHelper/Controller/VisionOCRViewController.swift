@@ -18,12 +18,12 @@ protocol OCRServiceDelegate: class {
   func ocrService(_ service: VisionOCRViewController, didDetect text: String)
 }
 
-class VisionOCRViewController: ViewController {
+class VisionOCRViewController: OCRViewController {
     
     // UI
     @IBOutlet weak var instructionsLabel: UILabel!
     var itemViewOpen = false // info view about detected item
-    private var detectionOverlay: CALayer! = nil // layer showing detection
+    private var detectionRegion: CALayer! = nil // place label within this region
     
     // OCR
     private var requests = [VNRequest]()
@@ -145,8 +145,12 @@ class VisionOCRViewController: ViewController {
     //MARK: - Text Recognition
     
     func startTextDetection() {
+        let scanRect = CGRect(x: 50, y: 300, width: 214, height: 296)
+        let testRect = CGRect(x: 0.16, y: 0.34, width: 0.68, height: 0.23)
+        let regionOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: scanRect)
         let textRequest = VNDetectTextRectanglesRequest(completionHandler: self.detectTextHandler)
         textRequest.reportCharacterBoxes = true
+        textRequest.regionOfInterest = testRect
         self.requests = [textRequest]
     }
     
@@ -289,26 +293,30 @@ class VisionOCRViewController: ViewController {
       return croppedImage
     }
     
+    
     func setupLayers() {
-        detectionOverlay = CALayer()
-        detectionOverlay.bounds = self.view.bounds.insetBy(dx: 30, dy: 50)
-        detectionOverlay.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
-        detectionOverlay.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.58, 0.83, 0.68, 0.5])
-        detectionOverlay.borderWidth = 8
-        detectionOverlay.cornerRadius = 20
-        detectionOverlay.isHidden = true
-        rootLayer.addSublayer(detectionOverlay)
+        detectionRegion = CALayer()
+        detectionRegion.bounds = self.view.bounds.insetBy(dx: 50, dy: 300)
+        detectionRegion.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
+        detectionRegion.borderColor = .init(genericGrayGamma2_2Gray: 0.5, alpha: 1)
+        detectionRegion.borderWidth = 8
+        detectionRegion.cornerRadius = 20
+        rootLayer.addSublayer(detectionRegion)
     }
     
     private func showDetectionOverlay(_ visible: Bool) {
         DispatchQueue.main.async(execute: {
             // perform all the UI updates on the main queue
-            self.detectionOverlay.isHidden = !visible // toggle
+            //self.detectionOverlay.isHidden = !visible // toggle
             if(visible == true){
                 self.instructionsLabel.text = K.deviceStill
+                self.instructionsLabel.backgroundColor = UIColor(red: 0.58, green: 0.83, blue: 0.68, alpha: 0.5)
+                self.detectionRegion.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.58, 0.83, 0.68, 0.5])
             }
             else{
                 self.instructionsLabel.text = K.deviceMoving
+                self.instructionsLabel.backgroundColor = UIColor(cgColor: .init(genericGrayGamma2_2Gray: 0.5, alpha: 0.5))
+                self.detectionRegion.borderColor = .init(genericGrayGamma2_2Gray: 0.5, alpha: 0.5)
                 self.removeBoxes() // remove detection rectangles if device not still
             }
         })
@@ -359,6 +367,11 @@ class VisionOCRViewController: ViewController {
         }
         return false
     }
+    
+    // MARK: - Region of Interest
+ 
+
+
 
     
     //MARK: - Image Analysis
@@ -375,6 +388,7 @@ class VisionOCRViewController: ViewController {
                 defer { self.currentlyAnalysedPixelBuffer = nil }
                 
                 if self.requests != [] {
+
                     try requestHandler.perform(self.requests) // Detect text
                     
                     guard let biggestImage = self.images.sorted(by: {

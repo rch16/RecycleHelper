@@ -14,7 +14,7 @@ import Vision
 import CoreML
 
 
-class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+class OCRViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     // initialisation of capture session
     private let session = AVCaptureSession()
@@ -85,7 +85,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             return
         }
         
-        
         // ---------- Add a video output ----------
         if session.canAddOutput(videoDataOutput) {
             // can add output
@@ -100,7 +99,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             session.commitConfiguration()
             return
         }
-        
+
         let captureConnection = videoDataOutput.connection(with: .video)
         captureConnection?.isEnabled = true // always process the frames
         captureConnection?.videoOrientation = .portrait
