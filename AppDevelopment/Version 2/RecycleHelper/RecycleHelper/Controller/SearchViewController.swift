@@ -28,6 +28,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
+        // Dismiss keyboard on drag
+        self.tableView.keyboardDismissMode = .onDrag
         // Load the data
         loadItemData()
         

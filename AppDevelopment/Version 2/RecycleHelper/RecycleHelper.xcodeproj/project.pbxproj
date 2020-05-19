@@ -13,6 +13,11 @@
 		E503EC62246AF5DA00225A54 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E503EC61246AF5DA00225A54 /* License.txt */; };
 		E503EC67246B044200225A54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC66246B044200225A54 /* ViewController.swift */; };
 		E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC68246B148F00225A54 /* VisionOCRViewController.swift */; };
+		E541E566247434D800ED8EDA /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E541E565247434D800ED8EDA /* InfoTableViewCell.swift */; };
+		E541E56824744E7D00ED8EDA /* WasteClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E541E56724744E7D00ED8EDA /* WasteClassifier.mlmodel */; };
+		E541E56C247472C600ED8EDA /* onboarding4.png in Resources */ = {isa = PBXBuildFile; fileRef = E541E56B247472C600ED8EDA /* onboarding4.png */; };
+		E541E56F2474742500ED8EDA /* Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E541E56E2474742500ED8EDA /* Splashscreen.png */; };
+		E541E5752474765500ED8EDA /* CLTypingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E541E5742474765500ED8EDA /* CLTypingLabel.swift */; };
 		E5A1D7F524727EDE00161F8D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1D7F424727EDE00161F8D /* SearchViewController.swift */; };
 		E5A1D7F72472862F00161F8D /* SearchItemsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D7F62472862F00161F8D /* SearchItemsList.plist */; };
 		E5A1D7F92472BEDD00161F8D /* SearchItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1D7F82472BEDD00161F8D /* SearchItemViewController.swift */; };
@@ -29,6 +34,11 @@
 		E5A1D8182473EA7B00161F8D /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D8162473EA7A00161F8D /* background1.png */; };
 		E5A1D8192473EA7B00161F8D /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D8172473EA7B00161F8D /* background2.png */; };
 		E5A1D81B2473F27500161F8D /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1D81A2473F27500161F8D /* OCRViewController.swift */; };
+		E5A1D8212474178C00161F8D /* metal_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D81C2474178A00161F8D /* metal_recyclable.png */; };
+		E5A1D8222474178C00161F8D /* paper_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D81D2474178A00161F8D /* paper_recyclable.png */; };
+		E5A1D8232474178C00161F8D /* glass_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D81E2474178B00161F8D /* glass_recyclable.png */; };
+		E5A1D8242474178C00161F8D /* plastic_non_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D81F2474178B00161F8D /* plastic_non_recyclable.png */; };
+		E5A1D8252474178C00161F8D /* plastic_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1D8202474178B00161F8D /* plastic_recyclable.png */; };
 		E5A381FC246B4288005DEAC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A381FB246B4288005DEAC5 /* Constants.swift */; };
 		E5A381FE246B42BF005DEAC5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */; };
 		E5A38207246DCFCA005DEAC5 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = E5A38206246DCFCA005DEAC5 /* tessdata */; };
@@ -36,16 +46,10 @@
 		E5A3820F246E9513005DEAC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A3820E246E9513005DEAC5 /* GoogleService-Info.plist */; };
 		E5A38210246E9513005DEAC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A3820E246E9513005DEAC5 /* GoogleService-Info.plist */; };
 		E5A38211246E9513005DEAC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A3820E246E9513005DEAC5 /* GoogleService-Info.plist */; };
-		E5A38216246FEF47005DEAC5 /* glass.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A38212246FEF45005DEAC5 /* glass.jpg */; };
-		E5A38217246FEF47005DEAC5 /* ItemList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A38213246FEF46005DEAC5 /* ItemList.plist */; };
-		E5A38218246FEF47005DEAC5 /* metal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A38214246FEF46005DEAC5 /* metal.jpg */; };
-		E5A38219246FEF47005DEAC5 /* plastic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A38215246FEF46005DEAC5 /* plastic.jpg */; };
-		E5A3821B246FF4B4005DEAC5 /* paper_and_cardboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */; };
-		E5A3821D24702606005DEAC5 /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5A3821C24702606005DEAC5 /* paper.jpg */; };
 		E5A3821F247043BE005DEAC5 /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3821E247043BE005DEAC5 /* VisionViewController.swift */; };
 		E5A3822424706C18005DEAC5 /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A3822024706C16005DEAC5 /* onboarding2.png */; };
 		E5A3822524706C18005DEAC5 /* onboarding3.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A3822124706C17005DEAC5 /* onboarding3.png */; };
-		E5A3822624706C18005DEAC5 /* onboarding4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A3822224706C17005DEAC5 /* onboarding4.png */; };
+		E5A3822624706C18005DEAC5 /* onboarding5.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A3822224706C17005DEAC5 /* onboarding5.png */; };
 		E5A3822724706C18005DEAC5 /* onboarding1.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A3822324706C17005DEAC5 /* onboarding1.png */; };
 		E5A382292471ACFB005DEAC5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A382282471ACFB005DEAC5 /* OnboardingViewController.swift */; };
 		E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1D9246AE9ED0030CD19 /* AppDelegate.swift */; };
@@ -88,6 +92,12 @@
 		E503EC61246AF5DA00225A54 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		E503EC66246B044200225A54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E503EC68246B148F00225A54 /* VisionOCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionOCRViewController.swift; sourceTree = "<group>"; };
+		E541E565247434D800ED8EDA /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		E541E56724744E7D00ED8EDA /* WasteClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WasteClassifier.mlmodel; sourceTree = "<group>"; };
+		E541E56B247472C600ED8EDA /* onboarding4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding4.png; sourceTree = "<group>"; };
+		E541E56D247472D500ED8EDA /* ItemList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ItemList.plist; sourceTree = "<group>"; };
+		E541E56E2474742500ED8EDA /* Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splashscreen.png; sourceTree = "<group>"; };
+		E541E5742474765500ED8EDA /* CLTypingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTypingLabel.swift; sourceTree = "<group>"; };
 		E5A1D7F424727EDE00161F8D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E5A1D7F62472862F00161F8D /* SearchItemsList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SearchItemsList.plist; sourceTree = "<group>"; };
 		E5A1D7F82472BEDD00161F8D /* SearchItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewController.swift; sourceTree = "<group>"; };
@@ -104,21 +114,20 @@
 		E5A1D8162473EA7A00161F8D /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
 		E5A1D8172473EA7B00161F8D /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
 		E5A1D81A2473F27500161F8D /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
+		E5A1D81C2474178A00161F8D /* metal_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal_recyclable.png; sourceTree = "<group>"; };
+		E5A1D81D2474178A00161F8D /* paper_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_recyclable.png; sourceTree = "<group>"; };
+		E5A1D81E2474178B00161F8D /* glass_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_recyclable.png; sourceTree = "<group>"; };
+		E5A1D81F2474178B00161F8D /* plastic_non_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plastic_non_recyclable.png; sourceTree = "<group>"; };
+		E5A1D8202474178B00161F8D /* plastic_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plastic_recyclable.png; sourceTree = "<group>"; };
 		E5A381FB246B4288005DEAC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		E5A38206246DCFCA005DEAC5 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		E5A38208246DCFF6005DEAC5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		E5A3820E246E9513005DEAC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E5A38212246FEF45005DEAC5 /* glass.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = glass.jpg; sourceTree = "<group>"; };
-		E5A38213246FEF46005DEAC5 /* ItemList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ItemList.plist; sourceTree = "<group>"; };
-		E5A38214246FEF46005DEAC5 /* metal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal.jpg; sourceTree = "<group>"; };
-		E5A38215246FEF46005DEAC5 /* plastic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plastic.jpg; sourceTree = "<group>"; };
-		E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper_and_cardboard.jpg; sourceTree = "<group>"; };
-		E5A3821C24702606005DEAC5 /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper.jpg; sourceTree = "<group>"; };
 		E5A3821E247043BE005DEAC5 /* VisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
 		E5A3822024706C16005DEAC5 /* onboarding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2.png; sourceTree = "<group>"; };
 		E5A3822124706C17005DEAC5 /* onboarding3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding3.png; sourceTree = "<group>"; };
-		E5A3822224706C17005DEAC5 /* onboarding4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding4.png; sourceTree = "<group>"; };
+		E5A3822224706C17005DEAC5 /* onboarding5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding5.png; sourceTree = "<group>"; };
 		E5A3822324706C17005DEAC5 /* onboarding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding1.png; sourceTree = "<group>"; };
 		E5A382282471ACFB005DEAC5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E5ADD1D6246AE9ED0030CD19 /* RecycleHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,8 +210,8 @@
 				E5A3821E247043BE005DEAC5 /* VisionViewController.swift */,
 				E5A1D81A2473F27500161F8D /* OCRViewController.swift */,
 				E503EC68246B148F00225A54 /* VisionOCRViewController.swift */,
-				E5A1D7F424727EDE00161F8D /* SearchViewController.swift */,
 				E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */,
+				E5A1D7F424727EDE00161F8D /* SearchViewController.swift */,
 				E5A1D7F82472BEDD00161F8D /* SearchItemViewController.swift */,
 				E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */,
 			);
@@ -216,6 +225,8 @@
 				E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */,
 				E5A1D7FA2472E61B00161F8D /* ItemTableViewCell.swift */,
 				E5A1D7FC2472FCC400161F8D /* ItemInfoTableViewCell.swift */,
+				E541E565247434D800ED8EDA /* InfoTableViewCell.swift */,
+				E541E5742474765500ED8EDA /* CLTypingLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,30 +238,64 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E5A38205246DCF98005DEAC5 /* Resources */ = {
+		E541E5702474742D00ED8EDA /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
 				E5A1D8162473EA7A00161F8D /* background1.png */,
 				E5A1D8172473EA7B00161F8D /* background2.png */,
 				E5A1D8102473D3A400161F8D /* background3.png */,
 				E5A1D80F2473D3A400161F8D /* background4.png */,
-				E5A1D80E2473D3A400161F8D /* recycle.png */,
-				E5A1D8012473357700161F8D /* appstore.png */,
-				E5A1D8002473357700161F8D /* can_recycle.png */,
-				E5A1D8032473357700161F8D /* cant_recycle.png */,
-				E5A1D8022473357700161F8D /* check.png */,
+			);
+			path = Backgrounds;
+			sourceTree = "<group>";
+		};
+		E541E5712474743D00ED8EDA /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
 				E5A3822324706C17005DEAC5 /* onboarding1.png */,
 				E5A3822024706C16005DEAC5 /* onboarding2.png */,
 				E5A3822124706C17005DEAC5 /* onboarding3.png */,
-				E5A3822224706C17005DEAC5 /* onboarding4.png */,
-				E5A3821C24702606005DEAC5 /* paper.jpg */,
-				E5A3821A246FF4B4005DEAC5 /* paper_and_cardboard.jpg */,
-				E5A38212246FEF45005DEAC5 /* glass.jpg */,
-				E5A38213246FEF46005DEAC5 /* ItemList.plist */,
-				E5A38214246FEF46005DEAC5 /* metal.jpg */,
-				E5A38215246FEF46005DEAC5 /* plastic.jpg */,
+				E541E56B247472C600ED8EDA /* onboarding4.png */,
+				E5A3822224706C17005DEAC5 /* onboarding5.png */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E541E5722474745F00ED8EDA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E5A1D81E2474178B00161F8D /* glass_recyclable.png */,
+				E5A1D81C2474178A00161F8D /* metal_recyclable.png */,
+				E5A1D81D2474178A00161F8D /* paper_recyclable.png */,
+				E5A1D81F2474178B00161F8D /* plastic_non_recyclable.png */,
+				E5A1D8202474178B00161F8D /* plastic_recyclable.png */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E541E5732474747700ED8EDA /* Recycling Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				E5A1D80E2473D3A400161F8D /* recycle.png */,
+				E5A1D8002473357700161F8D /* can_recycle.png */,
+				E5A1D8032473357700161F8D /* cant_recycle.png */,
+				E5A1D8022473357700161F8D /* check.png */,
+			);
+			path = "Recycling Instructions";
+			sourceTree = "<group>";
+		};
+		E5A38205246DCF98005DEAC5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E541E56E2474742500ED8EDA /* Splashscreen.png */,
+				E5A1D8012473357700161F8D /* appstore.png */,
+				E541E5722474745F00ED8EDA /* Categories */,
+				E541E5702474742D00ED8EDA /* Backgrounds */,
+				E541E5732474747700ED8EDA /* Recycling Instructions */,
+				E541E5712474743D00ED8EDA /* Onboarding */,
 				E5A38206246DCFCA005DEAC5 /* tessdata */,
 				E5A1D7F62472862F00161F8D /* SearchItemsList.plist */,
+				E541E56D247472D500ED8EDA /* ItemList.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -259,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				E503EC61246AF5DA00225A54 /* License.txt */,
+				E541E56724744E7D00ED8EDA /* WasteClassifier.mlmodel */,
 				E5ADD1D8246AE9ED0030CD19 /* RecycleHelper */,
 				E5ADD1EF246AE9F30030CD19 /* RecycleHelperTests */,
 				E5ADD1FA246AE9F30030CD19 /* RecycleHelperUITests */,
@@ -427,30 +473,31 @@
 			files = (
 				E5A1D8052473357700161F8D /* appstore.png in Resources */,
 				E5A1D8072473357700161F8D /* cant_recycle.png in Resources */,
-				E5A38218246FEF47005DEAC5 /* metal.jpg in Resources */,
 				E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */,
 				E5A3822424706C18005DEAC5 /* onboarding2.png in Resources */,
-				E5A38219246FEF47005DEAC5 /* plastic.jpg in Resources */,
 				E5A1D7F72472862F00161F8D /* SearchItemsList.plist in Resources */,
+				E5A1D8232474178C00161F8D /* glass_recyclable.png in Resources */,
 				E5A1D8062473357700161F8D /* check.png in Resources */,
 				E5ADD1E3246AE9F20030CD19 /* Assets.xcassets in Resources */,
 				E5A1D8122473D3A500161F8D /* background4.png in Resources */,
 				E5A1D8112473D3A500161F8D /* recycle.png in Resources */,
 				E5A38207246DCFCA005DEAC5 /* tessdata in Resources */,
 				E5A1D8192473EA7B00161F8D /* background2.png in Resources */,
+				E541E56F2474742500ED8EDA /* Splashscreen.png in Resources */,
+				E5A1D8242474178C00161F8D /* plastic_non_recyclable.png in Resources */,
 				E5A3822724706C18005DEAC5 /* onboarding1.png in Resources */,
 				E5A1D8132473D3A500161F8D /* background3.png in Resources */,
 				E5A3822524706C18005DEAC5 /* onboarding3.png in Resources */,
-				E5A38217246FEF47005DEAC5 /* ItemList.plist in Resources */,
 				E503EC62246AF5DA00225A54 /* License.txt in Resources */,
-				E5A3822624706C18005DEAC5 /* onboarding4.png in Resources */,
-				E5A38216246FEF47005DEAC5 /* glass.jpg in Resources */,
-				E5A3821D24702606005DEAC5 /* paper.jpg in Resources */,
-				E5A3821B246FF4B4005DEAC5 /* paper_and_cardboard.jpg in Resources */,
+				E5A3822624706C18005DEAC5 /* onboarding5.png in Resources */,
+				E5A1D8222474178C00161F8D /* paper_recyclable.png in Resources */,
+				E5A1D8212474178C00161F8D /* metal_recyclable.png in Resources */,
 				E5ADD1E1246AE9ED0030CD19 /* Main.storyboard in Resources */,
 				E5A1D8042473357700161F8D /* can_recycle.png in Resources */,
 				E5A1D8182473EA7B00161F8D /* background1.png in Resources */,
 				E5A3820F246E9513005DEAC5 /* GoogleService-Info.plist in Resources */,
+				E5A1D8252474178C00161F8D /* plastic_recyclable.png in Resources */,
+				E541E56C247472C600ED8EDA /* onboarding4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,8 +665,10 @@
 				E5A1D7F524727EDE00161F8D /* SearchViewController.swift in Sources */,
 				E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */,
 				E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */,
+				E541E5752474765500ED8EDA /* CLTypingLabel.swift in Sources */,
 				E5A1D7FD2472FCC400161F8D /* ItemInfoTableViewCell.swift in Sources */,
 				E5A1D81B2473F27500161F8D /* OCRViewController.swift in Sources */,
+				E541E566247434D800ED8EDA /* InfoTableViewCell.swift in Sources */,
 				E503EC67246B044200225A54 /* ViewController.swift in Sources */,
 				E5A1D7F92472BEDD00161F8D /* SearchItemViewController.swift in Sources */,
 				E5A1D7FB2472E61B00161F8D /* ItemTableViewCell.swift in Sources */,
@@ -629,6 +678,7 @@
 				E5ADD1DA246AE9ED0030CD19 /* AppDelegate.swift in Sources */,
 				E5ADD1DC246AE9ED0030CD19 /* SceneDelegate.swift in Sources */,
 				E5A382292471ACFB005DEAC5 /* OnboardingViewController.swift in Sources */,
+				E541E56824744E7D00ED8EDA /* WasteClassifier.mlmodel in Sources */,
 				E5A381FC246B4288005DEAC5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

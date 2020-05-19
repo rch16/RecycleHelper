@@ -57,7 +57,7 @@ class VisionViewController: ViewController {
         
         // setup Vision parts
         setupLayers()
-        //setupVision()
+        setupVision()
         
         // start the capture
         startCaptureSession()

@@ -1,15 +1,15 @@
 //
-//  ItemInfoTableViewCell.swift
+//  InfoTableViewCell.swift
 //  RecycleHelper
 //
-//  Created by Becca Hallam on 18/05/2020.
+//  Created by Becca Hallam on 19/05/2020.
 //  Copyright © 2020 Becca Hallam. All rights reserved.
 //
 
 import UIKit
 
-class ItemInfoTableViewCell: UITableViewCell {
-
+class InfoTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var instr: UILabel!
     
     override func awakeFromNib() {
@@ -22,5 +22,5 @@ class ItemInfoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

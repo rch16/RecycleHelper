@@ -23,9 +23,9 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     var scrollHeight: CGFloat! = 0.0
     
     // Onboarding views
-    var titles = ["Welcome to RecycleHelper", "Text Recognition", "Object Detection", "Recycling made easy"]
-    var descriptions = ["Recycling information, specific to your location, available anytime.", "Allows you to scan recycling labels.", "Allows you to even identify an object itself!", "Once the item is identified, just follow the step-by-step instructions."]
-    var images = ["onboarding1","onboarding2","onboarding3","onboarding4"]
+    var titles = ["Welcome to RecycleHelper", "Text Recognition", "Object Detection", "Search Functionality", "Recycling made easy"]
+    var descriptions = ["Recycling information, specific to your location, available anytime.", "Allows you to scan recycling labels.", "Allows you to learn how to recycle your regular waste items.", "Allows you to learn more information about a range of items.", "Once the item is identified, just follow the step-by-step instructions."]
+    var images = ["onboarding1","onboarding2","onboarding3","onboarding4","onboarding5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

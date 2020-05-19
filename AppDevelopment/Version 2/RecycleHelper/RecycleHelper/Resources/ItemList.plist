@@ -2,6 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Card</key>
+	<dict>
+		<key>label</key>
+		<string>Paper and Cardboard</string>
+		<key>recyclable</key>
+		<string>Recyclable</string>
+		<key>image</key>
+		<string>paper_recyclable.png</string>
+		<key>instructions</key>
+		<array>
+			<string>Tape, polystyrene &amp; plastic inserts need to be removed.</string>
+			<string>Glitter, badges &amp; batteries should be removed from greeting cards.</string>
+			<string>Egg boxes &amp; cardboard rolls (e.g. from toilet rolls) can be home composted.</string>
+			<string>Any plastic wrapping should be removed.</string>
+			<string>Stamps can also be recycled.</string>
+		</array>
+	</dict>
+	<key>Trash</key>
+	<dict>
+		<key>label</key>
+		<string>Waste</string>
+		<key>recyclable</key>
+		<string>Not Recyclable</string>
+		<key>image</key>
+		<string>cant_recycle.png</string>
+		<key>instructions</key>
+		<array></array>
+	</dict>
 	<key>Sleeve</key>
 	<dict>
 		<key>label</key>
@@ -9,7 +37,15 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>paper.jpg</string>
+		<string>paper_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Tape, polystyrene &amp; plastic inserts need to be removed.</string>
+            <string>Glitter, badges &amp; batteries should be removed from greeting cards.</string>
+            <string>Egg boxes &amp; cardboard rolls (e.g. from toilet rolls) can be home composted.</string>
+            <string>Any plastic wrapping should be removed.</string>
+            <string>Stamps can also be recycled.</string>
+		</array>
 	</dict>
 	<key>Tray</key>
 	<dict>
@@ -18,7 +54,12 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>metal.jpg</string>
+		<string>metal_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Rinse or wipe off any crumbs or food residue.</string>
+            <string>Scrunch foil, wrappers and tub / pot lids to form a ball.</string>
+		</array>
 	</dict>
 	<key>Film</key>
 	<dict>
@@ -27,7 +68,16 @@
 		<key>recyclable</key>
 		<string>Not Recyclable</string>
 		<key>image</key>
-		<string>plastic.jpg</string>
+		<string>plastic_non_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Empty and rinse.</string>
+            <string>Leave on labels.</string>
+            <string>Replace lids and tops.</string>
+            <string>Squash to save space.</string>
+            <string>Straws &amp; Black Plastic are not recyclable.</string>
+            <string>Plastic bags can go to supermarket collection points.</string>
+		</array>
 	</dict>
 	<key>Carton</key>
 	<dict>
@@ -36,7 +86,15 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>paper.jpg</string>
+		<string>paper_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Tape, polystyrene &amp; plastic inserts need to be removed.</string>
+            <string>Glitter, badges &amp; batteries should be removed from greeting cards.</string>
+            <string>Egg boxes &amp; cardboard rolls (e.g. from toilet rolls) can be home composted.</string>
+            <string>Any plastic wrapping should be removed.</string>
+            <string>Stamps can also be recycled.</string>
+		</array>
 	</dict>
 	<key>Lid</key>
 	<dict>
@@ -45,7 +103,16 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>plastic.jpg</string>
+		<string>plastic_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Empty and rinse.</string>
+            <string>Leave on labels.</string>
+            <string>Replace lids and tops.</string>
+            <string>Squash to save space.</string>
+            <string>Straws &amp; Black Plastic are not recyclable.</string>
+            <string>Plastic bags can go to supermarket collection points.</string>
+		</array>
 	</dict>
 	<key>Pot</key>
 	<dict>
@@ -54,7 +121,16 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>plastic.jpg</string>
+		<string>plastic_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Empty and rinse.</string>
+            <string>Leave on labels.</string>
+            <string>Replace lids and tops.</string>
+            <string>Squash to save space.</string>
+            <string>Straws &amp; Black Plastic are not recyclable.</string>
+            <string>Plastic bags can go to supermarket collection points.</string>
+		</array>
 	</dict>
 	<key>Metal</key>
 	<dict>
@@ -63,7 +139,12 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>metal.jpg</string>
+		<string>metal_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Rinse or wipe off any crumbs or food residue.</string>
+            <string>Scrunch foil, wrappers and tub / pot lids to form a ball.</string>
+		</array>
 	</dict>
 	<key>Aluminium</key>
 	<dict>
@@ -72,7 +153,12 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>metal.jpg</string>
+		<string>metal_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Rinse or wipe off any crumbs or food residue.</string>
+            <string>Scrunch foil, wrappers and tub / pot lids to form a ball.</string>
+		</array>
 	</dict>
 	<key>Can</key>
 	<dict>
@@ -81,7 +167,12 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>metal.jpg</string>
+		<string>metal_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Rinse or wipe off any crumbs or food residue.</string>
+            <string>Scrunch foil, wrappers and tub / pot lids to form a ball.</string>
+		</array>
 	</dict>
 	<key>Foil</key>
 	<dict>
@@ -90,7 +181,12 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>metal.jpg</string>
+		<string>metal_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Rinse or wipe off any crumbs or food residue.</string>
+            <string>Scrunch foil, wrappers and tub / pot lids to form a ball.</string>
+		</array>
 	</dict>
 	<key>Cardboard</key>
 	<dict>
@@ -99,7 +195,15 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>paper.jpg</string>
+		<string>paper_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Tape, polystyrene &amp; plastic inserts need to be removed.</string>
+            <string>Glitter, badges &amp; batteries should be removed from greeting cards.</string>
+            <string>Egg boxes &amp; cardboard rolls (e.g. from toilet rolls) can be home composted.</string>
+            <string>Any plastic wrapping should be removed.</string>
+            <string>Stamps can also be recycled.</string>
+		</array>
 	</dict>
 	<key>Paper</key>
 	<dict>
@@ -108,7 +212,15 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>paper.jpg</string>
+		<string>paper_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Tape, polystyrene &amp; plastic inserts need to be removed.</string>
+            <string>Glitter, badges &amp; batteries should be removed from greeting cards.</string>
+            <string>Egg boxes &amp; cardboard rolls (e.g. from toilet rolls) can be home composted.</string>
+            <string>Any plastic wrapping should be removed.</string>
+            <string>Stamps can also be recycled.</string>
+		</array>
 	</dict>
 	<key>Glass</key>
 	<dict>
@@ -117,7 +229,13 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>glass.jpg</string>
+		<string>glass_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Empty and Rinse.</string>
+            <string>Put lids and caps back on.</string>
+            <string>Corks should be removed from bottles.</string>
+		</array>
 	</dict>
 	<key>Plastic</key>
 	<dict>
@@ -126,7 +244,16 @@
 		<key>recyclable</key>
 		<string>Recyclable</string>
 		<key>image</key>
-		<string>plastic.jpg</string>
+		<string>plastic_recyclable.png</string>
+		<key>instructions</key>
+        <array>
+            <string>Empty and rinse.</string>
+            <string>Leave on labels.</string>
+            <string>Replace lids and tops.</string>
+            <string>Squash to save space.</string>
+            <string>Straws &amp; Black Plastic are not recyclable.</string>
+            <string>Plastic bags can go to supermarket collection points.</string>
+		</array>
 	</dict>
 </dict>
 </plist>

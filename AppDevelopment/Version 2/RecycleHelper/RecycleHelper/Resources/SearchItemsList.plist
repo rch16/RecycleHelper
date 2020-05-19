@@ -89,7 +89,7 @@
 		<string>Check with your Local Authority</string>
 		<key>How</key>
 		<array>
-			<string>Some councils now offer a household collection for this, but this is still limited.</string>
+			<string>Some councils may offer a household collection for this.</string>
 			<string>It can also be recycled with carrier bags at supermarket collection points.</string>
 		</array>
 	</dict>
@@ -369,7 +369,7 @@
 		<string>Widely Recycled</string>
 		<key>How</key>
 		<array>
-			<string>Paper is a valuable recyclabel material, but only when it is clean.</string>
+			<string>Paper is a valuable recyclable material, but only when it is clean.</string>
 			<string>Remove any plastic wrapping or inserts.</string>
 			<string>If you scrunch paper and it doesn&apos;t spring back, then it can be recycled.</string>
 		</array>

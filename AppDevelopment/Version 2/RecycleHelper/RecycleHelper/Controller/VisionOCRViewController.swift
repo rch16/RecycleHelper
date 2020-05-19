@@ -145,18 +145,16 @@ class VisionOCRViewController: OCRViewController {
     //MARK: - Text Recognition
     
     func startTextDetection() {
-        let scanRect = CGRect(x: 50, y: 300, width: 214, height: 296)
-        let testRect = CGRect(x: 0.16, y: 0.34, width: 0.68, height: 0.23)
-        let regionOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: scanRect)
+        let scanRect = CGRect(x: 0.16, y: 0.44, width: 0.68, height: 0.23)
         let textRequest = VNDetectTextRectanglesRequest(completionHandler: self.detectTextHandler)
         textRequest.reportCharacterBoxes = true
-        textRequest.regionOfInterest = testRect
+        textRequest.regionOfInterest = scanRect
         self.requests = [textRequest]
     }
     
     func stopTextDetection() {
         self.requests = []
-
+        self.images = []
     }
     
     func detectTextHandler(request: VNRequest, error: Error?) {

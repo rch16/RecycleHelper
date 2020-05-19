@@ -34,4 +34,5 @@ struct K {
     static let itemInfoCellIdentifier = "ItemInfoTableViewCell"
     // Item View
     static let possibleCategories = ["card","Card","CARD","cardboard","Cardboard","CARDBOARD","paper","Paper","PAPER","metal","Metal","METAL","aluminium","Aluminium","ALUMINIUM","can","Can","CAN","foil","Foil","FOIL","plastic","Plastic","PLASTIC","glass","Glass","GLASS"]
+    static let infoCellIdentifier = "InfoTableViewCell"
 }
