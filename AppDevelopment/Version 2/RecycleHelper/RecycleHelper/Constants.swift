@@ -33,6 +33,6 @@ struct K {
     static let searchData = "SearchItemsList"
     static let itemInfoCellIdentifier = "ItemInfoTableViewCell"
     // Item View
-    static let possibleCategories = ["card","Card","CARD","cardboard","Cardboard","CARDBOARD","paper","Paper","PAPER","metal","Metal","METAL","aluminium","Aluminium","ALUMINIUM","can","Can","CAN","foil","Foil","FOIL","plastic","Plastic","PLASTIC","glass","Glass","GLASS"]
+    static let possibleCategories = ["Card","Paper","Box","Carton","Bag","Sleeve","Tray","Film","Lid","Pot","Metal","Aluminium","Can","Foil","Glass","Plastic"]
     static let infoCellIdentifier = "InfoTableViewCell"
 }

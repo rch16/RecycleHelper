@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		36597A3B3BAB67F2197BEB37 /* Pods_RecycleHelper_RecycleHelperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA8689A08B57E6DC13D976E /* Pods_RecycleHelper_RecycleHelperUITests.framework */; };
-		73240D97BA28045A38869832 /* Pods_RecycleHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7CA13B266779D7BADF18C1 /* Pods_RecycleHelper.framework */; };
+		5FD307A7A461DBFA9570A032 /* Pods_RecycleHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7CA13B266779D7BADF18C1 /* Pods_RecycleHelper.framework */; };
 		9C83425B3FC93B7582F05F74 /* Pods_RecycleHelperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0729845E4EDAA2A333F792FB /* Pods_RecycleHelperTests.framework */; };
 		E503EC62246AF5DA00225A54 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E503EC61246AF5DA00225A54 /* License.txt */; };
 		E503EC67246B044200225A54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC66246B044200225A54 /* ViewController.swift */; };
 		E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503EC68246B148F00225A54 /* VisionOCRViewController.swift */; };
+		E51DC4082476E71D001B0110 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E51DC4072476E71D001B0110 /* libc++.tbd */; };
 		E541E566247434D800ED8EDA /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E541E565247434D800ED8EDA /* InfoTableViewCell.swift */; };
 		E541E56824744E7D00ED8EDA /* WasteClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E541E56724744E7D00ED8EDA /* WasteClassifier.mlmodel */; };
 		E541E56C247472C600ED8EDA /* onboarding4.png in Resources */ = {isa = PBXBuildFile; fileRef = E541E56B247472C600ED8EDA /* onboarding4.png */; };
@@ -60,6 +61,10 @@
 		E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ADD1E4246AE9F20030CD19 /* LaunchScreen.storyboard */; };
 		E5ADD1F1246AE9F30030CD19 /* RecycleHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1F0246AE9F30030CD19 /* RecycleHelperTests.swift */; };
 		E5ADD1FC246AE9F30030CD19 /* RecycleHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADD1FB246AE9F30030CD19 /* RecycleHelperUITests.swift */; };
+		E5B51AC02476F07500A58346 /* ItemList2.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5B51ABF2476F07400A58346 /* ItemList2.plist */; };
+		E5B51AC22476F47C00A58346 /* ScanInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B51AC12476F47C00A58346 /* ScanInfoViewController.swift */; };
+		E5B51AC92476F66A00A58346 /* oprl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5B51AC72476F66A00A58346 /* oprl.jpg */; };
+		E5B51ACA2476F66A00A58346 /* scan_info.png in Resources */ = {isa = PBXBuildFile; fileRef = E5B51AC82476F66A00A58346 /* scan_info.png */; };
 		E5CD4F6D2471C86200DEB567 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +97,8 @@
 		E503EC61246AF5DA00225A54 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		E503EC66246B044200225A54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E503EC68246B148F00225A54 /* VisionOCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionOCRViewController.swift; sourceTree = "<group>"; };
+		E51DC4072476E71D001B0110 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		E51DC4092476E747001B0110 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E541E565247434D800ED8EDA /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		E541E56724744E7D00ED8EDA /* WasteClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WasteClassifier.mlmodel; sourceTree = "<group>"; };
 		E541E56B247472C600ED8EDA /* onboarding4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding4.png; sourceTree = "<group>"; };
@@ -144,6 +151,10 @@
 		E5ADD1F7246AE9F30030CD19 /* RecycleHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecycleHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5ADD1FB246AE9F30030CD19 /* RecycleHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleHelperUITests.swift; sourceTree = "<group>"; };
 		E5ADD1FD246AE9F30030CD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5B51ABF2476F07400A58346 /* ItemList2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ItemList2.plist; sourceTree = "<group>"; };
+		E5B51AC12476F47C00A58346 /* ScanInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInfoViewController.swift; sourceTree = "<group>"; };
+		E5B51AC72476F66A00A58346 /* oprl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oprl.jpg; sourceTree = "<group>"; };
+		E5B51AC82476F66A00A58346 /* scan_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scan_info.png; sourceTree = "<group>"; };
 		E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		F364BFFFD5D9695643500628 /* Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig"; path = "Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,8 +164,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E51DC4082476E71D001B0110 /* libc++.tbd in Frameworks */,
 				E5A38209246DCFF6005DEAC5 /* CoreImage.framework in Frameworks */,
-				73240D97BA28045A38869832 /* Pods_RecycleHelper.framework in Frameworks */,
+				5FD307A7A461DBFA9570A032 /* Pods_RecycleHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +192,8 @@
 		A44A86F4676C6568A9D3A250 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E51DC4092476E747001B0110 /* FirebaseCore.framework */,
+				E51DC4072476E71D001B0110 /* libc++.tbd */,
 				E5A38208246DCFF6005DEAC5 /* CoreImage.framework */,
 				7F7CA13B266779D7BADF18C1 /* Pods_RecycleHelper.framework */,
 				0AA8689A08B57E6DC13D976E /* Pods_RecycleHelper_RecycleHelperUITests.framework */,
@@ -214,6 +228,7 @@
 				E5A1D7F424727EDE00161F8D /* SearchViewController.swift */,
 				E5A1D7F82472BEDD00161F8D /* SearchItemViewController.swift */,
 				E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */,
+				E5B51AC12476F47C00A58346 /* ScanInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +302,9 @@
 		E5A38205246DCF98005DEAC5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E5B51AC72476F66A00A58346 /* oprl.jpg */,
+				E5B51AC82476F66A00A58346 /* scan_info.png */,
+				E5B51ABF2476F07400A58346 /* ItemList2.plist */,
 				E541E56E2474742500ED8EDA /* Splashscreen.png */,
 				E5A1D8012473357700161F8D /* appstore.png */,
 				E541E5722474745F00ED8EDA /* Categories */,
@@ -367,12 +385,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5ADD200246AE9F30030CD19 /* Build configuration list for PBXNativeTarget "RecycleHelper" */;
 			buildPhases = (
-				09130882150EB108B62CF765 /* [CP] Check Pods Manifest.lock */,
+				D469E6E1CFEE84F656D003F8 /* [CP] Check Pods Manifest.lock */,
 				E5ADD1D2246AE9ED0030CD19 /* Sources */,
 				E5ADD1D3246AE9ED0030CD19 /* Frameworks */,
 				E5ADD1D4246AE9ED0030CD19 /* Resources */,
-				10FB29FA468ABC1D2C3F4812 /* [CP] Embed Pods Frameworks */,
-				C1CE7830AB845584E241592E /* [CP] Copy Pods Resources */,
+				78286949E1391F7B85CD42F5 /* [CP] Embed Pods Frameworks */,
+				BBF3A38C8CDF310C15E395C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -475,6 +493,7 @@
 				E5A1D8072473357700161F8D /* cant_recycle.png in Resources */,
 				E5ADD1E6246AE9F20030CD19 /* LaunchScreen.storyboard in Resources */,
 				E5A3822424706C18005DEAC5 /* onboarding2.png in Resources */,
+				E5B51ACA2476F66A00A58346 /* scan_info.png in Resources */,
 				E5A1D7F72472862F00161F8D /* SearchItemsList.plist in Resources */,
 				E5A1D8232474178C00161F8D /* glass_recyclable.png in Resources */,
 				E5A1D8062473357700161F8D /* check.png in Resources */,
@@ -497,7 +516,9 @@
 				E5A1D8182473EA7B00161F8D /* background1.png in Resources */,
 				E5A3820F246E9513005DEAC5 /* GoogleService-Info.plist in Resources */,
 				E5A1D8252474178C00161F8D /* plastic_recyclable.png in Resources */,
+				E5B51AC02476F07500A58346 /* ItemList2.plist in Resources */,
 				E541E56C247472C600ED8EDA /* onboarding4.png in Resources */,
+				E5B51AC92476F66A00A58346 /* oprl.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,45 +541,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09130882150EB108B62CF765 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RecycleHelper-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		10FB29FA468ABC1D2C3F4812 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3209C997E3B87AF7C053B595 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -596,6 +578,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78286949E1391F7B85CD42F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A311932B5D55E8555A3C668F /* [CP] Check Pods Manifest.lock */ = {
@@ -637,7 +636,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1CE7830AB845584E241592E /* [CP] Copy Pods Resources */ = {
+		BBF3A38C8CDF310C15E395C5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -654,6 +653,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D469E6E1CFEE84F656D003F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecycleHelper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -664,6 +685,7 @@
 				E5A381FE246B42BF005DEAC5 /* ItemViewController.swift in Sources */,
 				E5A1D7F524727EDE00161F8D /* SearchViewController.swift in Sources */,
 				E503EC69246B148F00225A54 /* VisionOCRViewController.swift in Sources */,
+				E5B51AC22476F47C00A58346 /* ScanInfoViewController.swift in Sources */,
 				E5ADD1DE246AE9ED0030CD19 /* WelcomeViewController.swift in Sources */,
 				E541E5752474765500ED8EDA /* CLTypingLabel.swift in Sources */,
 				E5A1D7FD2472FCC400161F8D /* ItemInfoTableViewCell.swift in Sources */,
@@ -854,7 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = A98WJKXVLM;
 				INFOPLIST_FILE = RecycleHelper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -876,7 +898,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = A98WJKXVLM;
 				INFOPLIST_FILE = RecycleHelper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

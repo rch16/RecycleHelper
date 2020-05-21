@@ -6,11 +6,12 @@ target 'RecycleHelper' do
   use_frameworks!
 
   # Pods for RecycleHelper
-  pod 'Firebase/Core' 
-  pod 'Firebase/MLVision' 
+  pod 'Firebase/Core'
+  # On-device API
   pod 'Firebase/MLVisionTextModel'
-  pod 'Firebase/Analytics'
-
+  # Cloud-based API
+  pod 'Firebase/MLVision'
+  
   target 'RecycleHelperTests' do
     inherit! :search_paths
     # Pods for testing

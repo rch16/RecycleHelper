@@ -23,7 +23,8 @@ class VisionOCRViewController: OCRViewController {
     // UI
     @IBOutlet weak var instructionsLabel: UILabel!
     var itemViewOpen = false // info view about detected item
-    private var detectionRegion: CALayer! = nil // place label within this region
+    //private var detectionRegion: CALayer! = nil // place label within this region
+    private var detectionOverlay: CALayer! = nil
     
     // OCR
     private var requests = [VNRequest]()
@@ -145,10 +146,10 @@ class VisionOCRViewController: OCRViewController {
     //MARK: - Text Recognition
     
     func startTextDetection() {
-        let scanRect = CGRect(x: 0.16, y: 0.44, width: 0.68, height: 0.23)
+//        let scanRect = CGRect(x: 0.16, y: 0.44, width: 0.68, height: 0.23)
         let textRequest = VNDetectTextRectanglesRequest(completionHandler: self.detectTextHandler)
         textRequest.reportCharacterBoxes = true
-        textRequest.regionOfInterest = scanRect
+//        textRequest.regionOfInterest = scanRect
         self.requests = [textRequest]
     }
     
@@ -292,29 +293,40 @@ class VisionOCRViewController: OCRViewController {
     }
     
     
+//    func setupLayers() {
+//        detectionRegion = CALayer()
+//        detectionRegion.bounds = self.view.bounds.insetBy(dx: 50, dy: 300)
+//        detectionRegion.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
+//        detectionRegion.borderColor = .init(genericGrayGamma2_2Gray: 0.5, alpha: 1)
+//        detectionRegion.borderWidth = 8
+//        detectionRegion.cornerRadius = 20
+//        rootLayer.addSublayer(detectionRegion)
+//    }
+    
     func setupLayers() {
-        detectionRegion = CALayer()
-        detectionRegion.bounds = self.view.bounds.insetBy(dx: 50, dy: 300)
-        detectionRegion.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
-        detectionRegion.borderColor = .init(genericGrayGamma2_2Gray: 0.5, alpha: 1)
-        detectionRegion.borderWidth = 8
-        detectionRegion.cornerRadius = 20
-        rootLayer.addSublayer(detectionRegion)
+        detectionOverlay = CALayer()
+        detectionOverlay.bounds = self.view.bounds.insetBy(dx: 30, dy: 50)
+        detectionOverlay.position = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
+        detectionOverlay.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.58, 0.83, 0.68, 0.5])
+        detectionOverlay.borderWidth = 8
+        detectionOverlay.cornerRadius = 20
+        detectionOverlay.isHidden = true
+        rootLayer.addSublayer(detectionOverlay)
     }
     
     private func showDetectionOverlay(_ visible: Bool) {
         DispatchQueue.main.async(execute: {
             // perform all the UI updates on the main queue
-            //self.detectionOverlay.isHidden = !visible // toggle
+            self.detectionOverlay.isHidden = !visible // toggle
             if(visible == true){
                 self.instructionsLabel.text = K.deviceStill
-                self.instructionsLabel.backgroundColor = UIColor(red: 0.58, green: 0.83, blue: 0.68, alpha: 0.5)
-                self.detectionRegion.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.58, 0.83, 0.68, 0.5])
+                //self.instructionsLabel.backgroundColor = UIColor(red: 0.58, green: 0.83, blue: 0.68, alpha: 0.5)
+                //self.detectionRegion.borderColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.58, 0.83, 0.68, 0.5])
             }
             else{
                 self.instructionsLabel.text = K.deviceMoving
-                self.instructionsLabel.backgroundColor = UIColor(cgColor: .init(genericGrayGamma2_2Gray: 0.5, alpha: 0.5))
-                self.detectionRegion.borderColor = .init(genericGrayGamma2_2Gray: 0.5, alpha: 0.5)
+                //self.instructionsLabel.backgroundColor = UIColor(cgColor: .init(genericGrayGamma2_2Gray: 0.5, alpha: 0.5))
+               // self.detectionRegion.borderColor = .init(genericGrayGamma2_2Gray: 0.5, alpha: 0.5)
                 self.removeBoxes() // remove detection rectangles if device not still
             }
         })

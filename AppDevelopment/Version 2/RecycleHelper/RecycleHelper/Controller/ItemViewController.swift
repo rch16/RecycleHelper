@@ -27,17 +27,6 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var category: String!
     var instructions: [String]!
     
-    //@IBAction func dismissView(_ sender: Any) {dismiss(animated: true)}
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Read the product catalog from the plist file into the dictionary.
-        if let path = Bundle.main.path(forResource: "ItemList", ofType: "plist") {
-            itemList = NSDictionary(contentsOfFile: path) as? [String: [String: Any]]
-            itemOptions = Array(itemList.keys)
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,13 +38,18 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         infoTable.alwaysBounceVertical = false
         infoTable.separatorStyle = .none
         
-        if itemID != nil {
-            for item in itemOptions{
-                if item.lowercased().contains(itemID.lowercased()){
-                    loadData(category: item)
+        if let path = Bundle.main.path(forResource: "ItemList2", ofType: "plist") {
+            itemList = NSDictionary(contentsOfFile: path) as? [String: [String: Any]]
+            itemOptions = Array(itemList.keys)
+            if itemID != nil {
+                for item in itemOptions{
+                    if item.lowercased().contains(itemID.lowercased()){
+                        loadData(category: item)
+                    }
                 }
             }
         }
+    
     }
     
     func loadData(category: String) {

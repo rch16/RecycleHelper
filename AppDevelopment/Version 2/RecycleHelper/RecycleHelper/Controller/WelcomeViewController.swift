@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func unwindLabelScanning(segue: UIStoryboardSegue) {}
     @IBAction func unwindInfoView(segue: UIStoryboardSegue) {}
+    @IBAction func unwindScanInfoView(segue: UIStoryboardSegue) {}
     
     // Attach UI
     @IBAction func searchBtn(_ sender: UIButton) {}
