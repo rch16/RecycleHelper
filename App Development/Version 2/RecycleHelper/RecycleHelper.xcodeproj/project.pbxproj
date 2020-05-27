@@ -226,9 +226,6 @@
 				E503EC68246B148F00225A54 /* VisionOCRViewController.swift */,
 				E5A381FD246B42BF005DEAC5 /* ItemViewController.swift */,
 				E5A1D7F424727EDE00161F8D /* SearchViewController.swift */,
-				E5A1D7F82472BEDD00161F8D /* SearchItemViewController.swift */,
-				E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */,
-				E5B51AC12476F47C00A58346 /* ScanInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +246,9 @@
 		E503EC65246B042600225A54 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5A1D7F82472BEDD00161F8D /* SearchItemViewController.swift */,
+				E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */,
+				E5B51AC12476F47C00A58346 /* ScanInfoViewController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
