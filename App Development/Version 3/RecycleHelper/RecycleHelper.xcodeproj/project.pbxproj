@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E534F18F2484FB080042CBFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F18E2484FB080042CBFD /* AppDelegate.swift */; };
+		E534F1912484FB080042CBFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1902484FB080042CBFD /* SceneDelegate.swift */; };
+		E534F1932484FB080042CBFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1922484FB080042CBFD /* ViewController.swift */; };
+		E534F1962484FB080042CBFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E534F1942484FB080042CBFD /* Main.storyboard */; };
+		E534F1982484FB090042CBFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E534F1972484FB090042CBFD /* Assets.xcassets */; };
+		E534F19B2484FB090042CBFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E534F1992484FB090042CBFD /* LaunchScreen.storyboard */; };
+		E534F1A62484FB0A0042CBFD /* RecycleHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1A52484FB0A0042CBFD /* RecycleHelperTests.swift */; };
+		E534F1B12484FB0A0042CBFD /* RecycleHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1B02484FB0A0042CBFD /* RecycleHelperUITests.swift */; };
+		E534F1C02484FE7A0042CBFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1BF2484FE7A0042CBFD /* HomeViewController.swift */; };
+		E534F1C22484FE8E0042CBFD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1C12484FE8E0042CBFD /* SearchViewController.swift */; };
+		E534F1C42484FE990042CBFD /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1C32484FE990042CBFD /* VisionViewController.swift */; };
+		E534F1C62484FEA80042CBFD /* SymbolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1C52484FEA80042CBFD /* SymbolViewController.swift */; };
+		E534F1C82484FEB40042CBFD /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1C72484FEB40042CBFD /* LocationViewController.swift */; };
+		E534F1CA2484FEC20042CBFD /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1C92484FEC20042CBFD /* ItemViewController.swift */; };
+		E534F1CD248505250042CBFD /* recycling.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1CC248505250042CBFD /* recycling.png */; };
+		E534F1CF248509FF0042CBFD /* SearchItemsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E534F1CE248509FF0042CBFD /* SearchItemsList.plist */; };
+		E534F1D224850A660042CBFD /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1D124850A660042CBFD /* ItemTableViewCell.swift */; };
+		E534F1E024850C510042CBFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1DF24850C510042CBFD /* Constants.swift */; };
+		E534F1F224850C7D0042CBFD /* metal_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1E224850C7D0042CBFD /* metal_recyclable.png */; };
+		E534F1F324850C7D0042CBFD /* plastic_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1E324850C7D0042CBFD /* plastic_recyclable.png */; };
+		E534F1F424850C7D0042CBFD /* paper_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1E424850C7D0042CBFD /* paper_recyclable.png */; };
+		E534F1F524850C7D0042CBFD /* plastic_non_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1E524850C7D0042CBFD /* plastic_non_recyclable.png */; };
+		E534F1F624850C7D0042CBFD /* glass_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1E624850C7D0042CBFD /* glass_recyclable.png */; };
+		E534F1F724850C7D0042CBFD /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1E824850C7D0042CBFD /* check.png */; };
+		E534F1F824850C7D0042CBFD /* can_recycle.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1E924850C7D0042CBFD /* can_recycle.png */; };
+		E534F1F924850C7D0042CBFD /* cant_recycle.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1EA24850C7D0042CBFD /* cant_recycle.png */; };
+		E534F1FA24850C7D0042CBFD /* recycle.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1EB24850C7D0042CBFD /* recycle.png */; };
+		E534F1FB24850C7D0042CBFD /* onboarding1.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1ED24850C7D0042CBFD /* onboarding1.png */; };
+		E534F1FC24850C7D0042CBFD /* onboarding3.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1EE24850C7D0042CBFD /* onboarding3.png */; };
+		E534F1FD24850C7D0042CBFD /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1EF24850C7D0042CBFD /* onboarding2.png */; };
+		E534F1FE24850C7D0042CBFD /* onboarding5.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1F024850C7D0042CBFD /* onboarding5.png */; };
+		E534F1FF24850C7D0042CBFD /* onboarding4.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1F124850C7D0042CBFD /* onboarding4.png */; };
+		E534F20124850D9D0042CBFD /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F20024850D9D0042CBFD /* InfoTableViewCell.swift */; };
+		E534F20424856B380042CBFD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F20324856B380042CBFD /* Extensions.swift */; };
+		E534F20724859F350042CBFD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E534F20624859F350042CBFD /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E534F1A22484FB0A0042CBFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E534F1832484FB080042CBFD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E534F18A2484FB080042CBFD;
+			remoteInfo = RecycleHelper;
+		};
+		E534F1AD2484FB0A0042CBFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E534F1832484FB080042CBFD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E534F18A2484FB080042CBFD;
+			remoteInfo = RecycleHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E534F18B2484FB080042CBFD /* RecycleHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E534F18E2484FB080042CBFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E534F1902484FB080042CBFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E534F1922484FB080042CBFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E534F1952484FB080042CBFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E534F1972484FB090042CBFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E534F19A2484FB090042CBFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E534F19C2484FB090042CBFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E534F1A12484FB0A0042CBFD /* RecycleHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecycleHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E534F1A52484FB0A0042CBFD /* RecycleHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleHelperTests.swift; sourceTree = "<group>"; };
+		E534F1A72484FB0A0042CBFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E534F1AC2484FB0A0042CBFD /* RecycleHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecycleHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E534F1B02484FB0A0042CBFD /* RecycleHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleHelperUITests.swift; sourceTree = "<group>"; };
+		E534F1B22484FB0A0042CBFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E534F1BF2484FE7A0042CBFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E534F1C12484FE8E0042CBFD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E534F1C32484FE990042CBFD /* VisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
+		E534F1C52484FEA80042CBFD /* SymbolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolViewController.swift; sourceTree = "<group>"; };
+		E534F1C72484FEB40042CBFD /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		E534F1C92484FEC20042CBFD /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		E534F1CC248505250042CBFD /* recycling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recycling.png; sourceTree = "<group>"; };
+		E534F1CE248509FF0042CBFD /* SearchItemsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SearchItemsList.plist; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/SearchItemsList.plist"; sourceTree = "<group>"; };
+		E534F1D124850A660042CBFD /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		E534F1DF24850C510042CBFD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E534F1E224850C7D0042CBFD /* metal_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal_recyclable.png; sourceTree = "<group>"; };
+		E534F1E324850C7D0042CBFD /* plastic_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plastic_recyclable.png; sourceTree = "<group>"; };
+		E534F1E424850C7D0042CBFD /* paper_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paper_recyclable.png; sourceTree = "<group>"; };
+		E534F1E524850C7D0042CBFD /* plastic_non_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plastic_non_recyclable.png; sourceTree = "<group>"; };
+		E534F1E624850C7D0042CBFD /* glass_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_recyclable.png; sourceTree = "<group>"; };
+		E534F1E824850C7D0042CBFD /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		E534F1E924850C7D0042CBFD /* can_recycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = can_recycle.png; sourceTree = "<group>"; };
+		E534F1EA24850C7D0042CBFD /* cant_recycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cant_recycle.png; sourceTree = "<group>"; };
+		E534F1EB24850C7D0042CBFD /* recycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recycle.png; sourceTree = "<group>"; };
+		E534F1ED24850C7D0042CBFD /* onboarding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding1.png; sourceTree = "<group>"; };
+		E534F1EE24850C7D0042CBFD /* onboarding3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding3.png; sourceTree = "<group>"; };
+		E534F1EF24850C7D0042CBFD /* onboarding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2.png; sourceTree = "<group>"; };
+		E534F1F024850C7D0042CBFD /* onboarding5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding5.png; sourceTree = "<group>"; };
+		E534F1F124850C7D0042CBFD /* onboarding4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding4.png; sourceTree = "<group>"; };
+		E534F20024850D9D0042CBFD /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		E534F20324856B380042CBFD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Extensions.swift"; sourceTree = "<group>"; };
+		E534F20624859F350042CBFD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E534F20824859F5D0042CBFD /* RecycleHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecycleHelper.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E534F1882484FB080042CBFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E534F20724859F350042CBFD /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E534F19E2484FB0A0042CBFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E534F1A92484FB0A0042CBFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E534F1822484FB080042CBFD = {
+			isa = PBXGroup;
+			children = (
+				E534F18D2484FB080042CBFD /* RecycleHelper */,
+				E534F1A42484FB0A0042CBFD /* RecycleHelperTests */,
+				E534F1AF2484FB0A0042CBFD /* RecycleHelperUITests */,
+				E534F18C2484FB080042CBFD /* Products */,
+				E534F20524859F350042CBFD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E534F18C2484FB080042CBFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E534F18B2484FB080042CBFD /* RecycleHelper.app */,
+				E534F1A12484FB0A0042CBFD /* RecycleHelperTests.xctest */,
+				E534F1AC2484FB0A0042CBFD /* RecycleHelperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E534F18D2484FB080042CBFD /* RecycleHelper */ = {
+			isa = PBXGroup;
+			children = (
+				E534F20824859F5D0042CBFD /* RecycleHelper.entitlements */,
+				E534F20224856B1D0042CBFD /* Model */,
+				E534F1D024850A4A0042CBFD /* View */,
+				E534F1CB248505120042CBFD /* Resources */,
+				E534F1BE2484FE680042CBFD /* Controllers */,
+				E534F1972484FB090042CBFD /* Assets.xcassets */,
+				E534F1992484FB090042CBFD /* LaunchScreen.storyboard */,
+				E534F19C2484FB090042CBFD /* Info.plist */,
+			);
+			path = RecycleHelper;
+			sourceTree = "<group>";
+		};
+		E534F1A42484FB0A0042CBFD /* RecycleHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				E534F1A52484FB0A0042CBFD /* RecycleHelperTests.swift */,
+				E534F1A72484FB0A0042CBFD /* Info.plist */,
+			);
+			path = RecycleHelperTests;
+			sourceTree = "<group>";
+		};
+		E534F1AF2484FB0A0042CBFD /* RecycleHelperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E534F1B02484FB0A0042CBFD /* RecycleHelperUITests.swift */,
+				E534F1B22484FB0A0042CBFD /* Info.plist */,
+			);
+			path = RecycleHelperUITests;
+			sourceTree = "<group>";
+		};
+		E534F1BE2484FE680042CBFD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E534F1922484FB080042CBFD /* ViewController.swift */,
+				E534F1BF2484FE7A0042CBFD /* HomeViewController.swift */,
+				E534F1C12484FE8E0042CBFD /* SearchViewController.swift */,
+				E534F1C32484FE990042CBFD /* VisionViewController.swift */,
+				E534F1C52484FEA80042CBFD /* SymbolViewController.swift */,
+				E534F1C72484FEB40042CBFD /* LocationViewController.swift */,
+				E534F1C92484FEC20042CBFD /* ItemViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E534F1CB248505120042CBFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E534F1E124850C7D0042CBFD /* Categories */,
+				E534F1EC24850C7D0042CBFD /* Onboarding */,
+				E534F1E724850C7D0042CBFD /* Recycling Instructions */,
+				E534F1CE248509FF0042CBFD /* SearchItemsList.plist */,
+				E534F1CC248505250042CBFD /* recycling.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E534F1D024850A4A0042CBFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E534F1942484FB080042CBFD /* Main.storyboard */,
+				E534F1D124850A660042CBFD /* ItemTableViewCell.swift */,
+				E534F20024850D9D0042CBFD /* InfoTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E534F1E124850C7D0042CBFD /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E534F1E224850C7D0042CBFD /* metal_recyclable.png */,
+				E534F1E324850C7D0042CBFD /* plastic_recyclable.png */,
+				E534F1E424850C7D0042CBFD /* paper_recyclable.png */,
+				E534F1E524850C7D0042CBFD /* plastic_non_recyclable.png */,
+				E534F1E624850C7D0042CBFD /* glass_recyclable.png */,
+			);
+			name = Categories;
+			path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/Categories";
+			sourceTree = "<group>";
+		};
+		E534F1E724850C7D0042CBFD /* Recycling Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				E534F1E824850C7D0042CBFD /* check.png */,
+				E534F1E924850C7D0042CBFD /* can_recycle.png */,
+				E534F1EA24850C7D0042CBFD /* cant_recycle.png */,
+				E534F1EB24850C7D0042CBFD /* recycle.png */,
+			);
+			name = "Recycling Instructions";
+			path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/Recycling Instructions";
+			sourceTree = "<group>";
+		};
+		E534F1EC24850C7D0042CBFD /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E534F1ED24850C7D0042CBFD /* onboarding1.png */,
+				E534F1EE24850C7D0042CBFD /* onboarding3.png */,
+				E534F1EF24850C7D0042CBFD /* onboarding2.png */,
+				E534F1F024850C7D0042CBFD /* onboarding5.png */,
+				E534F1F124850C7D0042CBFD /* onboarding4.png */,
+			);
+			name = Onboarding;
+			path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/Onboarding";
+			sourceTree = "<group>";
+		};
+		E534F20224856B1D0042CBFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E534F20324856B380042CBFD /* Extensions.swift */,
+				E534F18E2484FB080042CBFD /* AppDelegate.swift */,
+				E534F1902484FB080042CBFD /* SceneDelegate.swift */,
+				E534F1DF24850C510042CBFD /* Constants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E534F20524859F350042CBFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E534F20624859F350042CBFD /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E534F18A2484FB080042CBFD /* RecycleHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E534F1B52484FB0A0042CBFD /* Build configuration list for PBXNativeTarget "RecycleHelper" */;
+			buildPhases = (
+				E534F1872484FB080042CBFD /* Sources */,
+				E534F1882484FB080042CBFD /* Frameworks */,
+				E534F1892484FB080042CBFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecycleHelper;
+			productName = RecycleHelper;
+			productReference = E534F18B2484FB080042CBFD /* RecycleHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E534F1A02484FB0A0042CBFD /* RecycleHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E534F1B82484FB0A0042CBFD /* Build configuration list for PBXNativeTarget "RecycleHelperTests" */;
+			buildPhases = (
+				E534F19D2484FB0A0042CBFD /* Sources */,
+				E534F19E2484FB0A0042CBFD /* Frameworks */,
+				E534F19F2484FB0A0042CBFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E534F1A32484FB0A0042CBFD /* PBXTargetDependency */,
+			);
+			name = RecycleHelperTests;
+			productName = RecycleHelperTests;
+			productReference = E534F1A12484FB0A0042CBFD /* RecycleHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E534F1AB2484FB0A0042CBFD /* RecycleHelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E534F1BB2484FB0A0042CBFD /* Build configuration list for PBXNativeTarget "RecycleHelperUITests" */;
+			buildPhases = (
+				E534F1A82484FB0A0042CBFD /* Sources */,
+				E534F1A92484FB0A0042CBFD /* Frameworks */,
+				E534F1AA2484FB0A0042CBFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E534F1AE2484FB0A0042CBFD /* PBXTargetDependency */,
+			);
+			name = RecycleHelperUITests;
+			productName = RecycleHelperUITests;
+			productReference = E534F1AC2484FB0A0042CBFD /* RecycleHelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E534F1832484FB080042CBFD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Becca Hallam";
+				TargetAttributes = {
+					E534F18A2484FB080042CBFD = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					E534F1A02484FB0A0042CBFD = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = E534F18A2484FB080042CBFD;
+					};
+					E534F1AB2484FB0A0042CBFD = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = E534F18A2484FB080042CBFD;
+					};
+				};
+			};
+			buildConfigurationList = E534F1862484FB080042CBFD /* Build configuration list for PBXProject "RecycleHelper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E534F1822484FB080042CBFD;
+			productRefGroup = E534F18C2484FB080042CBFD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E534F18A2484FB080042CBFD /* RecycleHelper */,
+				E534F1A02484FB0A0042CBFD /* RecycleHelperTests */,
+				E534F1AB2484FB0A0042CBFD /* RecycleHelperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E534F1892484FB080042CBFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E534F1F624850C7D0042CBFD /* glass_recyclable.png in Resources */,
+				E534F1CD248505250042CBFD /* recycling.png in Resources */,
+				E534F19B2484FB090042CBFD /* LaunchScreen.storyboard in Resources */,
+				E534F1982484FB090042CBFD /* Assets.xcassets in Resources */,
+				E534F1F724850C7D0042CBFD /* check.png in Resources */,
+				E534F1FF24850C7D0042CBFD /* onboarding4.png in Resources */,
+				E534F1F224850C7D0042CBFD /* metal_recyclable.png in Resources */,
+				E534F1F424850C7D0042CBFD /* paper_recyclable.png in Resources */,
+				E534F1FA24850C7D0042CBFD /* recycle.png in Resources */,
+				E534F1FC24850C7D0042CBFD /* onboarding3.png in Resources */,
+				E534F1F324850C7D0042CBFD /* plastic_recyclable.png in Resources */,
+				E534F1F924850C7D0042CBFD /* cant_recycle.png in Resources */,
+				E534F1FD24850C7D0042CBFD /* onboarding2.png in Resources */,
+				E534F1FE24850C7D0042CBFD /* onboarding5.png in Resources */,
+				E534F1962484FB080042CBFD /* Main.storyboard in Resources */,
+				E534F1CF248509FF0042CBFD /* SearchItemsList.plist in Resources */,
+				E534F1FB24850C7D0042CBFD /* onboarding1.png in Resources */,
+				E534F1F824850C7D0042CBFD /* can_recycle.png in Resources */,
+				E534F1F524850C7D0042CBFD /* plastic_non_recyclable.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E534F19F2484FB0A0042CBFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E534F1AA2484FB0A0042CBFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E534F1872484FB080042CBFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E534F1C22484FE8E0042CBFD /* SearchViewController.swift in Sources */,
+				E534F1E024850C510042CBFD /* Constants.swift in Sources */,
+				E534F1932484FB080042CBFD /* ViewController.swift in Sources */,
+				E534F1D224850A660042CBFD /* ItemTableViewCell.swift in Sources */,
+				E534F18F2484FB080042CBFD /* AppDelegate.swift in Sources */,
+				E534F1912484FB080042CBFD /* SceneDelegate.swift in Sources */,
+				E534F1C42484FE990042CBFD /* VisionViewController.swift in Sources */,
+				E534F1C62484FEA80042CBFD /* SymbolViewController.swift in Sources */,
+				E534F20424856B380042CBFD /* Extensions.swift in Sources */,
+				E534F1C02484FE7A0042CBFD /* HomeViewController.swift in Sources */,
+				E534F20124850D9D0042CBFD /* InfoTableViewCell.swift in Sources */,
+				E534F1C82484FEB40042CBFD /* LocationViewController.swift in Sources */,
+				E534F1CA2484FEC20042CBFD /* ItemViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E534F19D2484FB0A0042CBFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E534F1A62484FB0A0042CBFD /* RecycleHelperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E534F1A82484FB0A0042CBFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E534F1B12484FB0A0042CBFD /* RecycleHelperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E534F1A32484FB0A0042CBFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E534F18A2484FB080042CBFD /* RecycleHelper */;
+			targetProxy = E534F1A22484FB0A0042CBFD /* PBXContainerItemProxy */;
+		};
+		E534F1AE2484FB0A0042CBFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E534F18A2484FB080042CBFD /* RecycleHelper */;
+			targetProxy = E534F1AD2484FB0A0042CBFD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E534F1942484FB080042CBFD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E534F1952484FB080042CBFD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E534F1992484FB090042CBFD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E534F19A2484FB090042CBFD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E534F1B32484FB0A0042CBFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E534F1B42484FB0A0042CBFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E534F1B62484FB0A0042CBFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RecycleHelper/RecycleHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E534F1B72484FB0A0042CBFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RecycleHelper/RecycleHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E534F1B92484FB0A0042CBFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecycleHelper.app/RecycleHelper";
+			};
+			name = Debug;
+		};
+		E534F1BA2484FB0A0042CBFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecycleHelper.app/RecycleHelper";
+			};
+			name = Release;
+		};
+		E534F1BC2484FB0A0042CBFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RecycleHelper;
+			};
+			name = Debug;
+		};
+		E534F1BD2484FB0A0042CBFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A98WJKXVLM;
+				INFOPLIST_FILE = RecycleHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RebeccaHallam.RecycleHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RecycleHelper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E534F1862484FB080042CBFD /* Build configuration list for PBXProject "RecycleHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E534F1B32484FB0A0042CBFD /* Debug */,
+				E534F1B42484FB0A0042CBFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E534F1B52484FB0A0042CBFD /* Build configuration list for PBXNativeTarget "RecycleHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E534F1B62484FB0A0042CBFD /* Debug */,
+				E534F1B72484FB0A0042CBFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E534F1B82484FB0A0042CBFD /* Build configuration list for PBXNativeTarget "RecycleHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E534F1B92484FB0A0042CBFD /* Debug */,
+				E534F1BA2484FB0A0042CBFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E534F1BB2484FB0A0042CBFD /* Build configuration list for PBXNativeTarget "RecycleHelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E534F1BC2484FB0A0042CBFD /* Debug */,
+				E534F1BD2484FB0A0042CBFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E534F1832484FB080042CBFD /* Project object */;
+}
