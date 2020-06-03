@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05B323AB006E291727F09DA9 /* Pods_RecycleHelperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC35F56A9B0754E75D5ADAC8 /* Pods_RecycleHelperTests.framework */; };
+		22B4A21F77011A5155E5BCA4 /* Pods_RecycleHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C188B3E74B7D82BA7ECF06B /* Pods_RecycleHelper.framework */; };
+		8551D4A92504AF8FA43E5FC8 /* Pods_RecycleHelper_RecycleHelperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57BC861333FED190B86CCB26 /* Pods_RecycleHelper_RecycleHelperUITests.framework */; };
 		E534F18F2484FB080042CBFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F18E2484FB080042CBFD /* AppDelegate.swift */; };
 		E534F1912484FB080042CBFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1902484FB080042CBFD /* SceneDelegate.swift */; };
 		E534F1932484FB080042CBFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1922484FB080042CBFD /* ViewController.swift */; };
@@ -42,6 +45,46 @@
 		E534F20124850D9D0042CBFD /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F20024850D9D0042CBFD /* InfoTableViewCell.swift */; };
 		E534F20424856B380042CBFD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F20324856B380042CBFD /* Extensions.swift */; };
 		E534F20724859F350042CBFD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E534F20624859F350042CBFD /* MapKit.framework */; };
+		E534F20C24863C990042CBFD /* Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F20B24863C990042CBFD /* Pin.png */; };
+		E534F20E2486527A0042CBFD /* LocationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F20D2486527A0042CBFD /* LocationInfoViewController.swift */; };
+		E5AF663A2486A382007B26B5 /* oprl.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66392486A382007B26B5 /* oprl.png */; };
+		E5AF663C2486A4C8007B26B5 /* plasticresincode.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF663B2486A4C8007B26B5 /* plasticresincode.png */; };
+		E5AF66402486A73F007B26B5 /* RecyclingSymbols.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5AF663F2486A73F007B26B5 /* RecyclingSymbols.plist */; };
+		E5AF66552486E06B007B26B5 /* LDPE.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66422486E06B007B26B5 /* LDPE.png */; };
+		E5AF66562486E06B007B26B5 /* seedling.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66432486E06B007B26B5 /* seedling.png */; };
+		E5AF66582486E06B007B26B5 /* recyclablesteel.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66452486E06B007B26B5 /* recyclablesteel.png */; };
+		E5AF66592486E06B007B26B5 /* recyclablealuminium.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66462486E06B007B26B5 /* recyclablealuminium.png */; };
+		E5AF665A2486E06B007B26B5 /* recyclableglass.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66472486E06B007B26B5 /* recyclableglass.png */; };
+		E5AF665B2486E06B007B26B5 /* wasteelectrical.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66482486E06B007B26B5 /* wasteelectrical.png */; };
+		E5AF665C2486E06B007B26B5 /* greendot.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66492486E06B007B26B5 /* greendot.png */; };
+		E5AF665D2486E06B007B26B5 /* HDPE.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF664A2486E06B007B26B5 /* HDPE.png */; };
+		E5AF665F2486E06B007B26B5 /* tidyman.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF664C2486E06B007B26B5 /* tidyman.png */; };
+		E5AF66602486E06B007B26B5 /* PS.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF664D2486E06B007B26B5 /* PS.png */; };
+		E5AF66612486E06B007B26B5 /* PVC.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF664E2486E06B007B26B5 /* PVC.png */; };
+		E5AF66622486E06B007B26B5 /* PP.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF664F2486E06B007B26B5 /* PP.png */; };
+		E5AF66632486E06B007B26B5 /* fsc.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66502486E06B007B26B5 /* fsc.png */; };
+		E5AF66652486E06B007B26B5 /* PETE.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66522486E06B007B26B5 /* PETE.png */; };
+		E5AF66672486E06B007B26B5 /* otherplastic.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66542486E06B007B26B5 /* otherplastic.png */; };
+		E5AF66692486E7E4007B26B5 /* SymbolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AF66682486E7E4007B26B5 /* SymbolTableViewCell.swift */; };
+		E5AF666C24878558007B26B5 /* oprl2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF666A24878557007B26B5 /* oprl2.png */; };
+		E5AF666D24878558007B26B5 /* oprl1.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF666B24878557007B26B5 /* oprl1.png */; };
+		E5AF66A024878AD0007B26B5 /* homecomposting.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF669F24878ACF007B26B5 /* homecomposting.png */; };
+		E5AF66B324878FBC007B26B5 /* mobius.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66B224878FBC007B26B5 /* mobius.png */; };
+		E5F47B322487EB5200CFC3D8 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2B2487EB5100CFC3D8 /* appstore.png */; };
+		E5F47B332487EB5200CFC3D8 /* background4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2D2487EB5200CFC3D8 /* background4.png */; };
+		E5F47B342487EB5200CFC3D8 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2E2487EB5200CFC3D8 /* background2.png */; };
+		E5F47B352487EB5200CFC3D8 /* background3.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2F2487EB5200CFC3D8 /* background3.png */; };
+		E5F47B362487EB5200CFC3D8 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B302487EB5200CFC3D8 /* background1.png */; };
+		E5F47B372487EB5200CFC3D8 /* Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B312487EB5200CFC3D8 /* Splashscreen.png */; };
+		E5F47B3B2488310B00CFC3D8 /* SearchFavourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B3A2488310B00CFC3D8 /* SearchFavourites.swift */; };
+		E5F853F72487ADEC00401F4A /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F02487ADEC00401F4A /* 4.png */; };
+		E5F853F82487ADEC00401F4A /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F12487ADEC00401F4A /* 5.png */; };
+		E5F853F92487ADEC00401F4A /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F22487ADEC00401F4A /* 7.png */; };
+		E5F853FA2487ADEC00401F4A /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F32487ADEC00401F4A /* 6.png */; };
+		E5F853FB2487ADEC00401F4A /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F42487ADEC00401F4A /* 2.png */; };
+		E5F853FC2487ADEC00401F4A /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F52487ADEC00401F4A /* 3.png */; };
+		E5F853FD2487ADEC00401F4A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F62487ADEC00401F4A /* 1.png */; };
+		E5F853FF2487B40700401F4A /* SymbolInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F853FE2487B40700401F4A /* SymbolInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +105,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11AC97FC25DF759ADCA4EDBD /* Pods-RecycleHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelper.release.xcconfig"; path = "Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper.release.xcconfig"; sourceTree = "<group>"; };
+		44E6C6125495E35CC1ED402A /* Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig"; path = "Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		57BC861333FED190B86CCB26 /* Pods_RecycleHelper_RecycleHelperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycleHelper_RecycleHelperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63DB895AE2FD90966174315C /* Pods-RecycleHelper-RecycleHelperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelper-RecycleHelperUITests.release.xcconfig"; path = "Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8935B7794D561FB0513805BE /* Pods-RecycleHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelper.debug.xcconfig"; path = "Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper.debug.xcconfig"; sourceTree = "<group>"; };
+		9348296009DA047425A00725 /* Pods-RecycleHelperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelperTests.release.xcconfig"; path = "Target Support Files/Pods-RecycleHelperTests/Pods-RecycleHelperTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C188B3E74B7D82BA7ECF06B /* Pods_RecycleHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycleHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC35F56A9B0754E75D5ADAC8 /* Pods_RecycleHelperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycleHelperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D76B0168BB71BD15168AE82C /* Pods-RecycleHelperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelperTests.debug.xcconfig"; path = "Target Support Files/Pods-RecycleHelperTests/Pods-RecycleHelperTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E534F18B2484FB080042CBFD /* RecycleHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E534F18E2484FB080042CBFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E534F1902484FB080042CBFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +156,46 @@
 		E534F20324856B380042CBFD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Extensions.swift"; sourceTree = "<group>"; };
 		E534F20624859F350042CBFD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E534F20824859F5D0042CBFD /* RecycleHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecycleHelper.entitlements; sourceTree = "<group>"; };
+		E534F20B24863C990042CBFD /* Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pin.png; sourceTree = "<group>"; };
+		E534F20D2486527A0042CBFD /* LocationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewController.swift; sourceTree = "<group>"; };
+		E5AF66392486A382007B26B5 /* oprl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oprl.png; sourceTree = "<group>"; };
+		E5AF663B2486A4C8007B26B5 /* plasticresincode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plasticresincode.png; sourceTree = "<group>"; };
+		E5AF663F2486A73F007B26B5 /* RecyclingSymbols.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RecyclingSymbols.plist; sourceTree = "<group>"; };
+		E5AF66422486E06B007B26B5 /* LDPE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LDPE.png; sourceTree = "<group>"; };
+		E5AF66432486E06B007B26B5 /* seedling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seedling.png; sourceTree = "<group>"; };
+		E5AF66452486E06B007B26B5 /* recyclablesteel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclablesteel.png; sourceTree = "<group>"; };
+		E5AF66462486E06B007B26B5 /* recyclablealuminium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclablealuminium.png; sourceTree = "<group>"; };
+		E5AF66472486E06B007B26B5 /* recyclableglass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclableglass.png; sourceTree = "<group>"; };
+		E5AF66482486E06B007B26B5 /* wasteelectrical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wasteelectrical.png; sourceTree = "<group>"; };
+		E5AF66492486E06B007B26B5 /* greendot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greendot.png; sourceTree = "<group>"; };
+		E5AF664A2486E06B007B26B5 /* HDPE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HDPE.png; sourceTree = "<group>"; };
+		E5AF664C2486E06B007B26B5 /* tidyman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tidyman.png; sourceTree = "<group>"; };
+		E5AF664D2486E06B007B26B5 /* PS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PS.png; sourceTree = "<group>"; };
+		E5AF664E2486E06B007B26B5 /* PVC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PVC.png; sourceTree = "<group>"; };
+		E5AF664F2486E06B007B26B5 /* PP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PP.png; sourceTree = "<group>"; };
+		E5AF66502486E06B007B26B5 /* fsc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fsc.png; sourceTree = "<group>"; };
+		E5AF66522486E06B007B26B5 /* PETE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PETE.png; sourceTree = "<group>"; };
+		E5AF66542486E06B007B26B5 /* otherplastic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = otherplastic.png; sourceTree = "<group>"; };
+		E5AF66682486E7E4007B26B5 /* SymbolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolTableViewCell.swift; sourceTree = "<group>"; };
+		E5AF666A24878557007B26B5 /* oprl2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oprl2.png; sourceTree = "<group>"; };
+		E5AF666B24878557007B26B5 /* oprl1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oprl1.png; sourceTree = "<group>"; };
+		E5AF669F24878ACF007B26B5 /* homecomposting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homecomposting.png; sourceTree = "<group>"; };
+		E5AF66B224878FBC007B26B5 /* mobius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mobius.png; sourceTree = "<group>"; };
+		E5F47B2B2487EB5100CFC3D8 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/appstore.png"; sourceTree = "<group>"; };
+		E5F47B2D2487EB5200CFC3D8 /* background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background4.png; sourceTree = "<group>"; };
+		E5F47B2E2487EB5200CFC3D8 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
+		E5F47B2F2487EB5200CFC3D8 /* background3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background3.png; sourceTree = "<group>"; };
+		E5F47B302487EB5200CFC3D8 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
+		E5F47B312487EB5200CFC3D8 /* Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splashscreen.png; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/Splashscreen.png"; sourceTree = "<group>"; };
+		E5F47B3A2488310B00CFC3D8 /* SearchFavourites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFavourites.swift; sourceTree = "<group>"; };
+		E5F853F02487ADEC00401F4A /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		E5F853F12487ADEC00401F4A /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		E5F853F22487ADEC00401F4A /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		E5F853F32487ADEC00401F4A /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		E5F853F42487ADEC00401F4A /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		E5F853F52487ADEC00401F4A /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		E5F853F62487ADEC00401F4A /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		E5F853FE2487B40700401F4A /* SymbolInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E534F20724859F350042CBFD /* MapKit.framework in Frameworks */,
+				22B4A21F77011A5155E5BCA4 /* Pods_RecycleHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B323AB006E291727F09DA9 /* Pods_RecycleHelperTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,12 +220,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8551D4A92504AF8FA43E5FC8 /* Pods_RecycleHelper_RecycleHelperUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A6849EB5FF3858704848B77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8935B7794D561FB0513805BE /* Pods-RecycleHelper.debug.xcconfig */,
+				11AC97FC25DF759ADCA4EDBD /* Pods-RecycleHelper.release.xcconfig */,
+				44E6C6125495E35CC1ED402A /* Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig */,
+				63DB895AE2FD90966174315C /* Pods-RecycleHelper-RecycleHelperUITests.release.xcconfig */,
+				D76B0168BB71BD15168AE82C /* Pods-RecycleHelperTests.debug.xcconfig */,
+				9348296009DA047425A00725 /* Pods-RecycleHelperTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E534F1822484FB080042CBFD = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +248,7 @@
 				E534F1AF2484FB0A0042CBFD /* RecycleHelperUITests */,
 				E534F18C2484FB080042CBFD /* Products */,
 				E534F20524859F350042CBFD /* Frameworks */,
+				4A6849EB5FF3858704848B77 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,7 +271,6 @@
 				E534F1CB248505120042CBFD /* Resources */,
 				E534F1BE2484FE680042CBFD /* Controllers */,
 				E534F1972484FB090042CBFD /* Assets.xcassets */,
-				E534F1992484FB090042CBFD /* LaunchScreen.storyboard */,
 				E534F19C2484FB090042CBFD /* Info.plist */,
 			);
 			path = RecycleHelper;
@@ -196,6 +304,8 @@
 				E534F1C52484FEA80042CBFD /* SymbolViewController.swift */,
 				E534F1C72484FEB40042CBFD /* LocationViewController.swift */,
 				E534F1C92484FEC20042CBFD /* ItemViewController.swift */,
+				E534F20D2486527A0042CBFD /* LocationInfoViewController.swift */,
+				E5F853FE2487B40700401F4A /* SymbolInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,11 +313,19 @@
 		E534F1CB248505120042CBFD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E5F47B2B2487EB5100CFC3D8 /* appstore.png */,
+				E5F47B2C2487EB5200CFC3D8 /* Backgrounds */,
+				E5F47B312487EB5200CFC3D8 /* Splashscreen.png */,
+				E5AF66412486E06B007B26B5 /* Labels */,
+				E5AF663B2486A4C8007B26B5 /* plasticresincode.png */,
+				E5AF66392486A382007B26B5 /* oprl.png */,
+				E534F20B24863C990042CBFD /* Pin.png */,
 				E534F1E124850C7D0042CBFD /* Categories */,
 				E534F1EC24850C7D0042CBFD /* Onboarding */,
 				E534F1E724850C7D0042CBFD /* Recycling Instructions */,
 				E534F1CE248509FF0042CBFD /* SearchItemsList.plist */,
 				E534F1CC248505250042CBFD /* recycling.png */,
+				E5AF663F2486A73F007B26B5 /* RecyclingSymbols.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -216,8 +334,10 @@
 			isa = PBXGroup;
 			children = (
 				E534F1942484FB080042CBFD /* Main.storyboard */,
+				E534F1992484FB090042CBFD /* LaunchScreen.storyboard */,
 				E534F1D124850A660042CBFD /* ItemTableViewCell.swift */,
 				E534F20024850D9D0042CBFD /* InfoTableViewCell.swift */,
+				E5AF66682486E7E4007B26B5 /* SymbolTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,6 +387,7 @@
 				E534F18E2484FB080042CBFD /* AppDelegate.swift */,
 				E534F1902484FB080042CBFD /* SceneDelegate.swift */,
 				E534F1DF24850C510042CBFD /* Constants.swift */,
+				E5F47B3A2488310B00CFC3D8 /* SearchFavourites.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,8 +396,64 @@
 			isa = PBXGroup;
 			children = (
 				E534F20624859F350042CBFD /* MapKit.framework */,
+				9C188B3E74B7D82BA7ECF06B /* Pods_RecycleHelper.framework */,
+				57BC861333FED190B86CCB26 /* Pods_RecycleHelper_RecycleHelperUITests.framework */,
+				CC35F56A9B0754E75D5ADAC8 /* Pods_RecycleHelperTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5AF66412486E06B007B26B5 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				E5F853EF2487ADEC00401F4A /* Plastic */,
+				E5AF66B224878FBC007B26B5 /* mobius.png */,
+				E5AF669F24878ACF007B26B5 /* homecomposting.png */,
+				E5AF666B24878557007B26B5 /* oprl1.png */,
+				E5AF666A24878557007B26B5 /* oprl2.png */,
+				E5AF66422486E06B007B26B5 /* LDPE.png */,
+				E5AF66432486E06B007B26B5 /* seedling.png */,
+				E5AF66452486E06B007B26B5 /* recyclablesteel.png */,
+				E5AF66462486E06B007B26B5 /* recyclablealuminium.png */,
+				E5AF66472486E06B007B26B5 /* recyclableglass.png */,
+				E5AF66482486E06B007B26B5 /* wasteelectrical.png */,
+				E5AF66492486E06B007B26B5 /* greendot.png */,
+				E5AF664A2486E06B007B26B5 /* HDPE.png */,
+				E5AF664C2486E06B007B26B5 /* tidyman.png */,
+				E5AF664D2486E06B007B26B5 /* PS.png */,
+				E5AF664E2486E06B007B26B5 /* PVC.png */,
+				E5AF664F2486E06B007B26B5 /* PP.png */,
+				E5AF66502486E06B007B26B5 /* fsc.png */,
+				E5AF66522486E06B007B26B5 /* PETE.png */,
+				E5AF66542486E06B007B26B5 /* otherplastic.png */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		E5F47B2C2487EB5200CFC3D8 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				E5F47B2D2487EB5200CFC3D8 /* background4.png */,
+				E5F47B2E2487EB5200CFC3D8 /* background2.png */,
+				E5F47B2F2487EB5200CFC3D8 /* background3.png */,
+				E5F47B302487EB5200CFC3D8 /* background1.png */,
+			);
+			name = Backgrounds;
+			path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/Backgrounds";
+			sourceTree = "<group>";
+		};
+		E5F853EF2487ADEC00401F4A /* Plastic */ = {
+			isa = PBXGroup;
+			children = (
+				E5F853F02487ADEC00401F4A /* 4.png */,
+				E5F853F12487ADEC00401F4A /* 5.png */,
+				E5F853F22487ADEC00401F4A /* 7.png */,
+				E5F853F32487ADEC00401F4A /* 6.png */,
+				E5F853F42487ADEC00401F4A /* 2.png */,
+				E5F853F52487ADEC00401F4A /* 3.png */,
+				E5F853F62487ADEC00401F4A /* 1.png */,
+			);
+			path = Plastic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,9 +463,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E534F1B52484FB0A0042CBFD /* Build configuration list for PBXNativeTarget "RecycleHelper" */;
 			buildPhases = (
+				1474F5C2D1A448CAEA6A4E4C /* [CP] Check Pods Manifest.lock */,
 				E534F1872484FB080042CBFD /* Sources */,
 				E534F1882484FB080042CBFD /* Frameworks */,
 				E534F1892484FB080042CBFD /* Resources */,
+				274BABCCB990FAF6101C6A5A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +482,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E534F1B82484FB0A0042CBFD /* Build configuration list for PBXNativeTarget "RecycleHelperTests" */;
 			buildPhases = (
+				4C753C1EE02A2C7EE6877AFC /* [CP] Check Pods Manifest.lock */,
 				E534F19D2484FB0A0042CBFD /* Sources */,
 				E534F19E2484FB0A0042CBFD /* Frameworks */,
 				E534F19F2484FB0A0042CBFD /* Resources */,
@@ -321,9 +501,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E534F1BB2484FB0A0042CBFD /* Build configuration list for PBXNativeTarget "RecycleHelperUITests" */;
 			buildPhases = (
+				E79E84B7B014C0EA2A457E25 /* [CP] Check Pods Manifest.lock */,
 				E534F1A82484FB0A0042CBFD /* Sources */,
 				E534F1A92484FB0A0042CBFD /* Frameworks */,
 				E534F1AA2484FB0A0042CBFD /* Resources */,
+				7B3D64229B790CD0C7DD4068 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -384,24 +566,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				E534F1F624850C7D0042CBFD /* glass_recyclable.png in Resources */,
+				E5F47B362487EB5200CFC3D8 /* background1.png in Resources */,
+				E5AF66582486E06B007B26B5 /* recyclablesteel.png in Resources */,
+				E5F853FB2487ADEC00401F4A /* 2.png in Resources */,
+				E534F20C24863C990042CBFD /* Pin.png in Resources */,
 				E534F1CD248505250042CBFD /* recycling.png in Resources */,
+				E5F47B322487EB5200CFC3D8 /* appstore.png in Resources */,
+				E5AF666D24878558007B26B5 /* oprl1.png in Resources */,
+				E5AF66602486E06B007B26B5 /* PS.png in Resources */,
 				E534F19B2484FB090042CBFD /* LaunchScreen.storyboard in Resources */,
 				E534F1982484FB090042CBFD /* Assets.xcassets in Resources */,
 				E534F1F724850C7D0042CBFD /* check.png in Resources */,
+				E5AF66652486E06B007B26B5 /* PETE.png in Resources */,
+				E5F47B342487EB5200CFC3D8 /* background2.png in Resources */,
 				E534F1FF24850C7D0042CBFD /* onboarding4.png in Resources */,
+				E5AF665A2486E06B007B26B5 /* recyclableglass.png in Resources */,
 				E534F1F224850C7D0042CBFD /* metal_recyclable.png in Resources */,
+				E5AF665F2486E06B007B26B5 /* tidyman.png in Resources */,
+				E5AF66612486E06B007B26B5 /* PVC.png in Resources */,
 				E534F1F424850C7D0042CBFD /* paper_recyclable.png in Resources */,
+				E5AF66402486A73F007B26B5 /* RecyclingSymbols.plist in Resources */,
+				E5AF66632486E06B007B26B5 /* fsc.png in Resources */,
 				E534F1FA24850C7D0042CBFD /* recycle.png in Resources */,
 				E534F1FC24850C7D0042CBFD /* onboarding3.png in Resources */,
+				E5AF666C24878558007B26B5 /* oprl2.png in Resources */,
+				E5AF66A024878AD0007B26B5 /* homecomposting.png in Resources */,
+				E5AF66622486E06B007B26B5 /* PP.png in Resources */,
 				E534F1F324850C7D0042CBFD /* plastic_recyclable.png in Resources */,
+				E5AF665D2486E06B007B26B5 /* HDPE.png in Resources */,
+				E5AF66592486E06B007B26B5 /* recyclablealuminium.png in Resources */,
+				E5F853FD2487ADEC00401F4A /* 1.png in Resources */,
+				E5F853FC2487ADEC00401F4A /* 3.png in Resources */,
 				E534F1F924850C7D0042CBFD /* cant_recycle.png in Resources */,
+				E5F853F92487ADEC00401F4A /* 7.png in Resources */,
+				E5AF66562486E06B007B26B5 /* seedling.png in Resources */,
 				E534F1FD24850C7D0042CBFD /* onboarding2.png in Resources */,
+				E5F47B352487EB5200CFC3D8 /* background3.png in Resources */,
 				E534F1FE24850C7D0042CBFD /* onboarding5.png in Resources */,
+				E5AF66B324878FBC007B26B5 /* mobius.png in Resources */,
+				E5F853FA2487ADEC00401F4A /* 6.png in Resources */,
+				E5AF66672486E06B007B26B5 /* otherplastic.png in Resources */,
+				E5F853F72487ADEC00401F4A /* 4.png in Resources */,
+				E5F853F82487ADEC00401F4A /* 5.png in Resources */,
 				E534F1962484FB080042CBFD /* Main.storyboard in Resources */,
 				E534F1CF248509FF0042CBFD /* SearchItemsList.plist in Resources */,
+				E5AF665C2486E06B007B26B5 /* greendot.png in Resources */,
+				E5F47B372487EB5200CFC3D8 /* Splashscreen.png in Resources */,
 				E534F1FB24850C7D0042CBFD /* onboarding1.png in Resources */,
+				E5AF665B2486E06B007B26B5 /* wasteelectrical.png in Resources */,
 				E534F1F824850C7D0042CBFD /* can_recycle.png in Resources */,
+				E5AF663C2486A4C8007B26B5 /* plasticresincode.png in Resources */,
+				E5AF66552486E06B007B26B5 /* LDPE.png in Resources */,
 				E534F1F524850C7D0042CBFD /* plastic_non_recyclable.png in Resources */,
+				E5F47B332487EB5200CFC3D8 /* background4.png in Resources */,
+				E5AF663A2486A382007B26B5 /* oprl.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +639,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1474F5C2D1A448CAEA6A4E4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecycleHelper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		274BABCCB990FAF6101C6A5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper/Pods-RecycleHelper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C753C1EE02A2C7EE6877AFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecycleHelperTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B3D64229B790CD0C7DD4068 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E79E84B7B014C0EA2A457E25 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecycleHelper-RecycleHelperUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E534F1872484FB080042CBFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -428,12 +749,16 @@
 			files = (
 				E534F1C22484FE8E0042CBFD /* SearchViewController.swift in Sources */,
 				E534F1E024850C510042CBFD /* Constants.swift in Sources */,
+				E534F20E2486527A0042CBFD /* LocationInfoViewController.swift in Sources */,
+				E5AF66692486E7E4007B26B5 /* SymbolTableViewCell.swift in Sources */,
 				E534F1932484FB080042CBFD /* ViewController.swift in Sources */,
 				E534F1D224850A660042CBFD /* ItemTableViewCell.swift in Sources */,
 				E534F18F2484FB080042CBFD /* AppDelegate.swift in Sources */,
 				E534F1912484FB080042CBFD /* SceneDelegate.swift in Sources */,
 				E534F1C42484FE990042CBFD /* VisionViewController.swift in Sources */,
+				E5F47B3B2488310B00CFC3D8 /* SearchFavourites.swift in Sources */,
 				E534F1C62484FEA80042CBFD /* SymbolViewController.swift in Sources */,
+				E5F853FF2487B40700401F4A /* SymbolInfoViewController.swift in Sources */,
 				E534F20424856B380042CBFD /* Extensions.swift in Sources */,
 				E534F1C02484FE7A0042CBFD /* HomeViewController.swift in Sources */,
 				E534F20124850D9D0042CBFD /* InfoTableViewCell.swift in Sources */,
@@ -609,6 +934,7 @@
 		};
 		E534F1B62484FB0A0042CBFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8935B7794D561FB0513805BE /* Pods-RecycleHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RecycleHelper/RecycleHelper.entitlements;
@@ -630,6 +956,7 @@
 		};
 		E534F1B72484FB0A0042CBFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11AC97FC25DF759ADCA4EDBD /* Pods-RecycleHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RecycleHelper/RecycleHelper.entitlements;
@@ -651,6 +978,7 @@
 		};
 		E534F1B92484FB0A0042CBFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D76B0168BB71BD15168AE82C /* Pods-RecycleHelperTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -673,6 +1001,7 @@
 		};
 		E534F1BA2484FB0A0042CBFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9348296009DA047425A00725 /* Pods-RecycleHelperTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -695,6 +1024,7 @@
 		};
 		E534F1BC2484FB0A0042CBFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44E6C6125495E35CC1ED402A /* Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -715,6 +1045,7 @@
 		};
 		E534F1BD2484FB0A0042CBFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63DB895AE2FD90966174315C /* Pods-RecycleHelper-RecycleHelperUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

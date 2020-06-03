@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>General</key>
+	<dict>
+		<key>Widely Recycled</key>
+		<dict>
+			<key>About</key>
+			<string>More than 75% of Local Authorities will accept this. If there is any text above the symbol, this is instructions you must follow before recycling the item.</string>
+			<key>Image</key>
+			<string>oprl1.png</string>
+		</dict>
+		<key>Don&apos;t Recycle</key>
+		<dict>
+			<key>About</key>
+			<string>This item is not recyclable.</string>
+			<key>Image</key>
+			<string>oprl2.png</string>
+		</dict>
+	</dict>
+	<key>Plastic</key>
+	<dict>
+		<key>PETE</key>
+		<dict>
+			<key>Number</key>
+			<string>1</string>
+			<key>FullName</key>
+			<string>Polyethylene Terephthalate</string>
+			<key>About</key>
+			<string>This type of plastic is generally easy to recycle, and accepted in most household recycling collections.</string>
+			<key>Examples</key>
+			<string>Clear soft drinks bottles, Food packaging etc</string>
+			<key>Image</key>
+			<string>1.png</string>
+		</dict>
+		<key>HDPE</key>
+		<dict>
+			<key>Number</key>
+			<string>2</string>
+			<key>FullName</key>
+			<string>High-Density Polyethylene</string>
+			<key>About</key>
+			<string>This type of plastic is generally easy to recycle, and accepted in most household recycling collections.</string>
+			<key>Examples</key>
+			<string>Bottles (especially for milk, cleaning products, detergent and cosmetics) etc</string>
+			<key>Image</key>
+			<string>2.png</string>
+		</dict>
+		<key>PVC</key>
+		<dict>
+			<key>Number</key>
+			<string>3</string>
+			<key>FullName</key>
+			<string>Polyvinyl Chloride</string>
+			<key>About</key>
+			<string>This type of plastic is difficult to recycle, and therefore not typically recyclable.</string>
+			<key>Examples</key>
+			<string>Credit cards, Water pipes, Shower curtains etc</string>
+			<key>Image</key>
+			<string>3.png</string>
+		</dict>
+		<key>LDPE</key>
+		<dict>
+			<key>Number</key>
+			<string>4</string>
+			<key>FullName</key>
+			<string>Low-Density Polyethylene</string>
+			<key>About</key>
+			<string>This type of plastic is managable to recycle, but not accepted in household recycling. Instead, it should be taken to a collection point.</string>
+			<key>Examples</key>
+			<string>Cling film, Plastic bags, Flexible containers, Food wrap, Six pack rings etc</string>
+			<key>Image</key>
+			<string>4.png</string>
+			<key>CollectionPoint</key>
+			<true/>
+		</dict>
+		<key>PP</key>
+		<dict>
+			<key>Number</key>
+			<string>5</string>
+			<key>FullName</key>
+			<string>Polypropylene</string>
+			<key>About</key>
+			<string>This type of plastic is generally easy to recycle, and accepted in most household recycling collections.</string>
+			<key>Examples</key>
+			<string>Yoghurt or margarine pots, Medical packaging, Toys etc</string>
+			<key>Image</key>
+			<string>5.png</string>
+		</dict>
+		<key>PS</key>
+		<dict>
+			<key>Number</key>
+			<string>6</string>
+			<key>FullName</key>
+			<string>Polystyrene</string>
+			<key>About</key>
+			<string>This type of plastic is difficult to recycle, and therefore not typically recyclable.</string>
+			<key>Examples</key>
+			<string>Disposable hot or cold drink cups, Fast food packaging, CD cases, Toys, Plastic utensils, Packaging peanuts (e.g styrofoam) etc</string>
+			<key>Image</key>
+			<string>6.png</string>
+		</dict>
+		<key>Other</key>
+		<dict>
+			<key>Number</key>
+			<string>7</string>
+			<key>About</key>
+			<string>This category contains all types of plastic not included in categories 1 to 6. These types of plastic are extremely difficult to recycle and therfore not recyclable.</string>
+			<key>Examples</key>
+			<string>Acrylic, Nylon, Fibreglass, Multilayer combinations etc</string>
+			<key>Image</key>
+			<string>7.png</string>
+		</dict>
+	</dict>
+	<key>Other</key>
+	<dict>
+		<key>Glass</key>
+		<dict>
+			<key>About</key>
+			<string>This symbol means you can recycle the item in your glass household collection, if you have one. Alternatively, take it to your local bottle bank.</string>
+			<key>Image</key>
+			<string>recyclableglass.png</string>
+		</dict>
+		<key>Recyclable Aluminium</key>
+		<dict>
+			<key>About</key>
+			<string>The item is made from recyclable aluminium.</string>
+			<key>Image</key>
+			<string>recyclablealuminium.png</string>
+		</dict>
+		<key>Recyclable Steel</key>
+		<dict>
+			<key>About</key>
+			<string>This product is made of steel - all local authorities collect steel cans, but other steel items should be taken to your household recycling centre.</string>
+			<key>Image</key>
+			<string>recyclablesteel.png</string>
+		</dict>
+		<key>Tidyman</key>
+		<dict>
+			<key>About</key>
+			<string>Part of the Keep Britain Tidy campaign, this is a reminder to not litter.</string>
+			<key>Image</key>
+			<string>tidyman.png</string>
+		</dict>
+		<key>Waste Electricals</key>
+		<dict>
+			<key>About</key>
+			<string>This symbol reminds you that you should not place the item in your general waste.</string>
+			<key>Image</key>
+			<string>wasteelectrical.png</string>
+			<key>CollectionPoint</key>
+			<true/>
+		</dict>
+		<key>Seedling Logo</key>
+		<dict>
+			<key>About</key>
+			<string>This product is certified tobe industrially compostable according to the European standard EN 13432/14955. This means it cannot be recycled, as it will break down and contaminate plastics. Place this in your garden waste instead.</string>
+			<key>Image</key>
+			<string>seedling.png</string>
+		</dict>
+		<key>Home Composting</key>
+		<dict>
+			<key>About</key>
+			<string>The item is suitable for home composting.</string>
+			<key>Image</key>
+			<string>homecomposting.png</string>
+		</dict>
+		<key>Forest Stewardship Council Logo</key>
+		<dict>
+			<key>About</key>
+			<string>This symbol identifies wood-based products from well-managed forests.</string>
+			<key>Image</key>
+			<string>fsc.png</string>
+		</dict>
+		<key>The Green Dot</key>
+		<dict>
+			<key>About</key>
+			<string>The producer has made a financial contribution towards the recovery and recycling of packaging in Europe.</string>
+			<key>Image</key>
+			<string>greendot.png</string>
+		</dict>
+		<key>Mobius Loop</key>
+		<dict>
+			<key>About</key>
+			<string>This means that the object is capable of being recycled, but does not guarantee that it has been recycled, or will be accepted in recycling collections. If the symbol includes a percentage figure, this means that the packaging contains x% of recycled material.</string>
+			<key>Image</key>
+			<string>mobius.png</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

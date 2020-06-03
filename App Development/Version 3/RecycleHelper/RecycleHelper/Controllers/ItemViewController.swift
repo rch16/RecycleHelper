@@ -11,10 +11,27 @@ import UIKit
 
 class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // Attach UI
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemRecyclability: UILabel!
     @IBOutlet weak var descriptionTable: UITableView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var favouriteBtn: UIBarButtonItem!
+    @IBAction func favouriteDidChange(_ sender: Any) {
+        isFavourite.toggle()
+        if (isFavourite) {
+            favouriteBtn.image = UIImage(systemName: "star.fill")
+            favouriteItems.append(itemID)
+            UserDefaults.standard.set(favouriteItems, forKey: K.saveItemKey)
+        } else {
+            favouriteBtn.image = UIImage(systemName: "star")
+            if let index = favouriteItems.firstIndex(of: itemID) {
+                favouriteItems.remove(at: index)
+            }
+            UserDefaults.standard.set(favouriteItems, forKey: K.saveItemKey)
+        }
+        addToFavourites()
+    }
     @IBAction func learnMoreBtn(_ sender: Any) { openUrl(urlStr: "https://www.recyclenow.com/what-to-do-with") }
     
     var itemID: String!
@@ -22,6 +39,8 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var itemInfo: [String: Any]!
     var recyclable: String!
     var instructions: [String]!
+    var isFavourite: Bool!
+    var favouriteItems: Array<String>!
     
     override func viewWillAppear(_ animated: Bool) {
         itemName.text = itemID
@@ -45,8 +64,24 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Load and display info
         loadItemData()
         displayInfo()
-        // Remove lines between table entries
-        //self.tableView.separatorColor = UIColor(cgColor: .clear)
+        // Get user defaults
+        getUserDefaults()
+        // Check if item is favourite
+        checkIfFavourite()
+    }
+    
+    func getUserDefaults() {
+        favouriteItems = (UserDefaults.standard.object(forKey: K.saveItemKey) as? Array<String>)!
+    }
+    
+    func checkIfFavourite() {
+        if let _ = favouriteItems.firstIndex(of: itemID) {
+            isFavourite = true
+            favouriteBtn.image = UIImage(systemName: "star.fill")
+        } else {
+            isFavourite = false
+            favouriteBtn.image = UIImage(systemName: "star")
+        }
     }
     
     private func loadItemData() {
@@ -57,6 +92,11 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
             recyclable = itemInfo["Recyclable"] as? String
             instructions = itemInfo["How"] as? [String]
         }
+        
+    }
+    
+    func addToFavourites() {
+        
     }
     
     // MARK: - Displaying Information

@@ -83,6 +83,16 @@
 			<string>Alternatively, you may be able to sell them.</string>
 		</array>
 	</dict>
+	<key>Brown Paper</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>If you have separate paper and cardboard collections, then recycle with cardboard.</string>
+			<string>Otherwise it will cause brown flecks in the newly recycled paper.</string>
+		</array>
+	</dict>
 	<key>Bubble Wrap</key>
 	<dict>
 		<key>Recyclable</key>
@@ -369,9 +379,8 @@
 		<string>Widely Recycled</string>
 		<key>How</key>
 		<array>
+			<string>You can include envelopes that have a plastic window.</string>
 			<string>Paper is a valuable recyclable material, but only when it is clean.</string>
-			<string>Remove any plastic wrapping or inserts.</string>
-			<string>If you scrunch paper and it doesn&apos;t spring back, then it can be recycled.</string>
 		</array>
 	</dict>
 	<key>Foil</key>
@@ -478,6 +487,13 @@
 			<string>Any embellishments, such as ribbons glitter, cannot be recycled.</string>
 		</array>
 	</dict>
+	<key>Hygiene/Sanitary Products</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array/>
+	</dict>
 	<key>Inhalers</key>
 	<dict>
 		<key>Recyclable</key>
@@ -546,6 +562,16 @@
 		<string>Not Recyclable</string>
 		<key>How</key>
 		<array/>
+	</dict>
+	<key>Nail Varnish/Polish Bottles</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>It is difficult to remove the varnish from inside these.</string>
+			<string>They are also so small that they get filtered out during recycling.</string>
+		</array>
 	</dict>
 	<key>Nappies (Disposable)</key>
 	<dict>
@@ -657,8 +683,8 @@
 		<string>Recyclable</string>
 		<key>How</key>
 		<array>
-			<string>Empty pizza boxes are recyclable, even when stained or greasy.</string>
-			<string>However, it may be worth checking this with your local authority.</string>
+			<string>Empty pizza boxes are recyclable.</string>
+			<string>However, you should remove any stained, oily or greasy areas, as these are contaminated.</string>
 		</array>
 	</dict>
 	<key>Plastic Bags</key>

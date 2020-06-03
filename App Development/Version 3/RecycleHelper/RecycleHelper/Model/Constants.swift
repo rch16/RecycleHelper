@@ -9,6 +9,12 @@
 import Foundation
 
 struct K {
+    // Colour Theme
+    static let firstColour = "EFFCEF"
+    static let secondColour = "CCEDD2"
+    static let thirdColour = "94D3AC"
+    static let fourthColour = "655C56"
+    
     // Segues
     static let scanLabelSegue = "BeginScanSegue"
     static let cancelScanLabelSegue = "CancelScanSegue"
@@ -16,6 +22,8 @@ struct K {
     static let itemViewSegue = "ShowItemSegue"
     static let objectDetectSegue = "BeginDetectionSegue"
     static let searchItemViewSegue = "ShowItemAfterSearchSegue"
+    static let locationInfoSegue = "ShowLocationInfoSegue"
+    static let symbolInfoSegue = "ShowSymbolInfoSegue"
     
     // Object Detection
     static let videoDataOutput = "VideoDataOutput"
@@ -27,14 +35,21 @@ struct K {
     static let deviceStill = "Looking for recycling label..."
     static let deviceStillObject = "Looking for object..."
     
-
+    // Recycling Symbols
+    static let symbolData = "RecyclingSymbols"
+    static let symbolCellIdentifier = "SymbolTableViewCell"
+    static let cellSpacingHeight = 15
+    
     // Item Search
     static let cellIdentifier = "ItemTableViewCell"
     static let searchData = "SearchItemsList"
     static let itemInfoCellIdentifier = "InfoTableViewCell"
+    static let saveItemKey = "SearchFavourites"
+    static let showFavourites = "ShowFavourites"
     
     // Locations
-    static let delta = 0.02
+    static let delta = 0.03
+    static let searchQuery = "Household Waste Recycling Centres"
     
     // Item View
     static let possibleCategories = ["Card","Paper","Box","Carton","Bag","Sleeve","Tray","Film","Lid","Pot","Metal","Aluminium","Can","Foil","Glass","Plastic"]

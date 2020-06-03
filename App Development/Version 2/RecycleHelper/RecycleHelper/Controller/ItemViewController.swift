@@ -33,6 +33,7 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Assign table data source and delegate
         infoTable.dataSource = self
         infoTable.delegate = self
+        
         // Alter table appearance
         infoTable.rowHeight = UITableView.automaticDimension
         infoTable.alwaysBounceVertical = false

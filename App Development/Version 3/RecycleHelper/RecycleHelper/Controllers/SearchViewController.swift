@@ -11,8 +11,31 @@ import UIKit
 
 class SearchViewController: UITableViewController, UISearchBarDelegate {
     
-    // Search Bar
+    // Attach UI
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var viewOption: UIBarButtonItem!
+    @IBAction func didChangeViewOption(_ sender: UIBarButtonItem) {
+        showFavourites.toggle()
+        if (showFavourites) {
+            // Change user default
+            UserDefaults.standard.set(showFavourites, forKey: K.showFavourites)
+            // Change button title
+            viewOption.title = "View All"
+            // Update current list
+            currentList = favouritesList
+            self.tableView.reloadData()
+        } else {
+            // Change user default
+            UserDefaults.standard.set(showFavourites, forKey: K.showFavourites)
+            // Change button title
+            viewOption.title = "Favourites"
+            // Update current list
+            currentList = tableList
+            self.tableView.reloadData()
+        }
+    }
+    
+    // Search Bar
     var searchActive: Bool = false
     var filteredData: [String] = []
     var noDataLabel: UILabel!
@@ -20,18 +43,31 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     // Table Data
     var tableData: [String: [String: Any]]!
     var tableList: [String]!
+    var favouriteItems: Array<String>!
+    var showFavourites: Bool!
+    var favouritesList: [String]!
+    var currentList: [String]!
     
     override func viewWillAppear(_ animated: Bool) {
-        // Hide navigation bar
-        self.navigationController?.isNavigationBarHidden = true
+        // Show navigation bar
+        self.navigationController?.isNavigationBarHidden = false
+        // Get user defaults
+        getUserDefaults()
+        // Check whether to display favourites or all
+        checkView()
+        // Reload data to reflect changes
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup delegates
         searchBar.delegate = self
-        // Hide navigation bar
-        self.navigationController?.isNavigationBarHidden = true
+        // Show navigation bar
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.visibleViewController!.title = "Search"
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         // Dismiss keyboard on drag
         self.tableView.keyboardDismissMode = .onDrag
         // No cancel button
@@ -39,6 +75,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         // Load the data
         loadItemData()
         filteredData = tableList
+        // Get user defaults
+        getUserDefaults()
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +84,38 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func getUserDefaults() {
+        favouriteItems = (UserDefaults.standard.object(forKey: K.saveItemKey) as? Array<String>)!
+        showFavourites = (UserDefaults.standard.object(forKey: K.showFavourites) as? Bool)!
+        favouritesList = favouriteItems
+    }
+    
+    func checkIfFavourite(item: String) -> Bool {
+        if let _ = favouriteItems.firstIndex(of: item) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func checkView() {
+        if (showFavourites) {
+            currentList = favouritesList
+        } else {
+            currentList = tableList
+        }
+    }
+    
+    func noData(message: String) {
+        noDataLabel = UILabel(frame: CGRect(x: 30, y: 300, width: self.tableView.bounds.size.width, height: tableView.bounds.size.height))
+        noDataLabel.text = message
+        noDataLabel.textColor = .secondaryLabel
+        noDataLabel.textAlignment = .center
+        noDataLabel.contentMode = .top
+        tableView.backgroundView = noDataLabel
+        tableView.backgroundColor = .systemBackground
+        tableView.separatorStyle = .none
+    }
     // MARK: - Search Bar Functionality
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -66,7 +136,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
-        filteredData = searchText.isEmpty ? tableList : tableList.filter { (item: String) -> Bool in
+        filteredData = searchText.isEmpty ? currentList : currentList.filter { (item: String) -> Bool in
             // If dataItem matches the searchText, return true to include it
             return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
@@ -82,21 +152,21 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchActive){
             if(filteredData.count == 0){
-                print("here")
-                noDataLabel = UILabel(frame: CGRect(x: 30, y: 300, width: self.tableView.bounds.size.width, height: tableView.bounds.size.height))
-                noDataLabel.text          = "No results found."
-                noDataLabel.textAlignment = .center
-                noDataLabel.contentMode = .top
-                tableView.backgroundView  = noDataLabel
-                tableView.backgroundColor = UIColor.white
-                tableView.separatorStyle  = .none
+                noData(message: "No results found.")
             } else {
                 tableView.separatorStyle  = .singleLine
                 tableView.backgroundView = nil
             }
             return filteredData.count
+        } else {
+            if(currentList.count == 0){
+                noData(message: "You've not saved any favourites yet!")
+            } else {
+                tableView.separatorStyle  = .singleLine
+                tableView.backgroundView = nil
+            }
+            return currentList.count
         }
-        return tableList.count
     }
 
     
@@ -113,7 +183,14 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         if(searchActive) {
             item = filteredData[indexPath.row]
         } else {
-            item = tableList[indexPath.row]
+            item = currentList[indexPath.row]
+        }
+        
+        if (checkIfFavourite(item: item)) {
+            //cell.isFavourite.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            cell.isFavourite.tintColor = UIColor(hexString: K.secondColour)
+        } else {
+            cell.isFavourite.tintColor = .clear
         }
         
         cell.nameLabel.text = item
