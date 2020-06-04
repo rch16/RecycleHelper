@@ -25,6 +25,13 @@ struct K {
     static let locationInfoSegue = "ShowLocationInfoSegue"
     static let symbolInfoSegue = "ShowSymbolInfoSegue"
     
+    // Home View
+    static let collectionCellIdentifier = "CollectionTableViewCell"
+    static let eventCellIdentifier = "EventCell"
+    static let datePickerCellIdentifier = "DatePickerCell"
+    static let titleCellIdentifier = "TitleCell"
+    static let binCollections = "BinCollections"
+    
     // Object Detection
     static let videoDataOutput = "VideoDataOutput"
     static let visionDomain = "VisionViewController"

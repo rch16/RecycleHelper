@@ -563,6 +563,16 @@
 		<key>How</key>
 		<array/>
 	</dict>
+	<key>Medicine Blister Packs</key>
+	<dict>
+		<key>Recyclable</key>
+		<string>Not Recyclable</string>
+		<key>How</key>
+		<array>
+			<string>These should be placed in the general waste when empty.</string>
+			<string>However, the cardboard box can be recycled.</string>
+		</array>
+	</dict>
 	<key>Nail Varnish/Polish Bottles</key>
 	<dict>
 		<key>Recyclable</key>
