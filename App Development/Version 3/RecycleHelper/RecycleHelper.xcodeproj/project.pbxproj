@@ -84,6 +84,9 @@
 		E5F47B4924890DF900CFC3D8 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B4824890DF900CFC3D8 /* TitleTableViewCell.swift */; };
 		E5F47B4B248A5BFD00CFC3D8 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B4A248A5BFD00CFC3D8 /* LocalNotificationManager.swift */; };
 		E5F47B4D248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B4C248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift */; };
+		E5F47B4F248ADCE300CFC3D8 /* WasteClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B4E248ADCE300CFC3D8 /* WasteClassifier.mlmodel */; };
+		E5F47B51248ADDA400CFC3D8 /* ObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B50248ADDA400CFC3D8 /* ObjectViewController.swift */; };
+		E5F47B53248ADE6100CFC3D8 /* ItemList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B52248ADE6100CFC3D8 /* ItemList.plist */; };
 		E5F853F72487ADEC00401F4A /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F02487ADEC00401F4A /* 4.png */; };
 		E5F853F82487ADEC00401F4A /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F12487ADEC00401F4A /* 5.png */; };
 		E5F853F92487ADEC00401F4A /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F22487ADEC00401F4A /* 7.png */; };
@@ -202,6 +205,9 @@
 		E5F47B4824890DF900CFC3D8 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		E5F47B4A248A5BFD00CFC3D8 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		E5F47B4C248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsRepeatTableViewCell.swift; sourceTree = "<group>"; };
+		E5F47B4E248ADCE300CFC3D8 /* WasteClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = WasteClassifier.mlmodel; path = "../../../Version 2/RecycleHelper/WasteClassifier.mlmodel"; sourceTree = "<group>"; };
+		E5F47B50248ADDA400CFC3D8 /* ObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewController.swift; sourceTree = "<group>"; };
+		E5F47B52248ADE6100CFC3D8 /* ItemList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ItemList.plist; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/ItemList.plist"; sourceTree = "<group>"; };
 		E5F853F02487ADEC00401F4A /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		E5F853F12487ADEC00401F4A /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		E5F853F22487ADEC00401F4A /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
@@ -279,6 +285,7 @@
 		E534F18D2484FB080042CBFD /* RecycleHelper */ = {
 			isa = PBXGroup;
 			children = (
+				E5F47B4E248ADCE300CFC3D8 /* WasteClassifier.mlmodel */,
 				E534F20824859F5D0042CBFD /* RecycleHelper.entitlements */,
 				E534F20224856B1D0042CBFD /* Model */,
 				E534F1D024850A4A0042CBFD /* View */,
@@ -321,6 +328,7 @@
 				E534F20D2486527A0042CBFD /* LocationInfoViewController.swift */,
 				E5F853FE2487B40700401F4A /* SymbolInfoViewController.swift */,
 				E5F47B422488FA2400CFC3D8 /* NewCollectionViewController.swift */,
+				E5F47B50248ADDA400CFC3D8 /* ObjectViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -328,6 +336,7 @@
 		E534F1CB248505120042CBFD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E5F47B52248ADE6100CFC3D8 /* ItemList.plist */,
 				E5F47B2B2487EB5100CFC3D8 /* appstore.png */,
 				E5F47B2C2487EB5200CFC3D8 /* Backgrounds */,
 				E5F47B312487EB5200CFC3D8 /* Splashscreen.png */,
@@ -589,6 +598,7 @@
 				E534F1F624850C7D0042CBFD /* glass_recyclable.png in Resources */,
 				E5F47B362487EB5200CFC3D8 /* background1.png in Resources */,
 				E5AF66582486E06B007B26B5 /* recyclablesteel.png in Resources */,
+				E5F47B53248ADE6100CFC3D8 /* ItemList.plist in Resources */,
 				E5F853FB2487ADEC00401F4A /* 2.png in Resources */,
 				E534F20C24863C990042CBFD /* Pin.png in Resources */,
 				E534F1CD248505250042CBFD /* recycling.png in Resources */,
@@ -775,6 +785,7 @@
 				E534F20E2486527A0042CBFD /* LocationInfoViewController.swift in Sources */,
 				E5AF66692486E7E4007B26B5 /* SymbolTableViewCell.swift in Sources */,
 				E534F1932484FB080042CBFD /* ViewController.swift in Sources */,
+				E5F47B51248ADDA400CFC3D8 /* ObjectViewController.swift in Sources */,
 				E5F47B472488FCD400CFC3D8 /* DatePickerTableViewCell.swift in Sources */,
 				E534F1D224850A660042CBFD /* ItemTableViewCell.swift in Sources */,
 				E534F18F2484FB080042CBFD /* AppDelegate.swift in Sources */,
@@ -790,6 +801,7 @@
 				E5F47B412488DEFE00CFC3D8 /* CollectionItem.swift in Sources */,
 				E534F20124850D9D0042CBFD /* InfoTableViewCell.swift in Sources */,
 				E534F1C82484FEB40042CBFD /* LocationViewController.swift in Sources */,
+				E5F47B4F248ADCE300CFC3D8 /* WasteClassifier.mlmodel in Sources */,
 				E534F1CA2484FEC20042CBFD /* ItemViewController.swift in Sources */,
 				E5F47B432488FA2400CFC3D8 /* NewCollectionViewController.swift in Sources */,
 			);

@@ -76,7 +76,6 @@ class LocationViewController: UIViewController {
     
     func checkLocationServices() {
         if (CLLocationManager.locationServicesEnabled()) {
-            locationManager.requestAlwaysAuthorization()
             locationManager.requestWhenInUseAuthorization()
             mapView.showsUserLocation = true
         }

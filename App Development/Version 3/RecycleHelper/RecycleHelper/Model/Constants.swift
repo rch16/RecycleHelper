@@ -16,9 +16,6 @@ struct K {
     static let fourthColour = "655C56"
     
     // Segues
-    static let scanLabelSegue = "BeginScanSegue"
-    static let cancelScanLabelSegue = "CancelScanSegue"
-    static let unwindLabelScanSegue = "BackToHome"
     static let itemViewSegue = "ShowItemSegue"
     static let objectDetectSegue = "BeginDetectionSegue"
     static let searchItemViewSegue = "ShowItemAfterSearchSegue"
@@ -63,5 +60,5 @@ struct K {
     
     // Item View
     static let possibleCategories = ["Card","Paper","Box","Carton","Bag","Sleeve","Tray","Film","Lid","Pot","Metal","Aluminium","Can","Foil","Glass","Plastic"]
-    //static let infoCellIdentifier = "InfoTableViewCell"
+    static let infoCellIdentifier = "InfoTableViewCell"
 }
