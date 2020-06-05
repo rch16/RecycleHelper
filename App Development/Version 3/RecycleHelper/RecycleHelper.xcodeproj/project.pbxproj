@@ -82,6 +82,8 @@
 		E5F47B452488FCC000CFC3D8 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B442488FCC000CFC3D8 /* EventTableViewCell.swift */; };
 		E5F47B472488FCD400CFC3D8 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B462488FCD400CFC3D8 /* DatePickerTableViewCell.swift */; };
 		E5F47B4924890DF900CFC3D8 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B4824890DF900CFC3D8 /* TitleTableViewCell.swift */; };
+		E5F47B4B248A5BFD00CFC3D8 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B4A248A5BFD00CFC3D8 /* LocalNotificationManager.swift */; };
+		E5F47B4D248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B4C248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift */; };
 		E5F853F72487ADEC00401F4A /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F02487ADEC00401F4A /* 4.png */; };
 		E5F853F82487ADEC00401F4A /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F12487ADEC00401F4A /* 5.png */; };
 		E5F853F92487ADEC00401F4A /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F22487ADEC00401F4A /* 7.png */; };
@@ -198,6 +200,8 @@
 		E5F47B442488FCC000CFC3D8 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		E5F47B462488FCD400CFC3D8 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 		E5F47B4824890DF900CFC3D8 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		E5F47B4A248A5BFD00CFC3D8 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		E5F47B4C248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsRepeatTableViewCell.swift; sourceTree = "<group>"; };
 		E5F853F02487ADEC00401F4A /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		E5F853F12487ADEC00401F4A /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		E5F853F22487ADEC00401F4A /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 				E5F47B442488FCC000CFC3D8 /* EventTableViewCell.swift */,
 				E5F47B462488FCD400CFC3D8 /* DatePickerTableViewCell.swift */,
 				E5F47B4824890DF900CFC3D8 /* TitleTableViewCell.swift */,
+				E5F47B4C248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				E534F1902484FB080042CBFD /* SceneDelegate.swift */,
 				E534F1DF24850C510042CBFD /* Constants.swift */,
 				E5F47B402488DEFE00CFC3D8 /* CollectionItem.swift */,
+				E5F47B4A248A5BFD00CFC3D8 /* LocalNotificationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -764,6 +770,8 @@
 			files = (
 				E534F1C22484FE8E0042CBFD /* SearchViewController.swift in Sources */,
 				E534F1E024850C510042CBFD /* Constants.swift in Sources */,
+				E5F47B4B248A5BFD00CFC3D8 /* LocalNotificationManager.swift in Sources */,
+				E5F47B4D248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift in Sources */,
 				E534F20E2486527A0042CBFD /* LocationInfoViewController.swift in Sources */,
 				E5AF66692486E7E4007B26B5 /* SymbolTableViewCell.swift in Sources */,
 				E534F1932484FB080042CBFD /* ViewController.swift in Sources */,

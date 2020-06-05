@@ -37,7 +37,13 @@ class EventTableViewCell: UITableViewCell {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "en_GB")
-        dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm MMMMd")
+        
+        if text.contains("Collection"){
+            dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
+        } else {
+            dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm MMMMd")
+        }
+        
         
         label.text = text
         dateLabel.text = dateFormatter.string(from: date)

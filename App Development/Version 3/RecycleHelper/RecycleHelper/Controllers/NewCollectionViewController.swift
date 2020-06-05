@@ -13,6 +13,7 @@ class NewCollectionViewController: UITableViewController {
     
     // Attach UI
     @IBOutlet weak var addBtn: UIBarButtonItem!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     // Date Picker
     var collections = [CollectionItem]()
@@ -25,6 +26,9 @@ class NewCollectionViewController: UITableViewController {
     
     // Collection data
     var newCollection: CollectionItem?
+    var editCollection: Bool = false
+    var collectionToEdit: CollectionItem?
+    var collectionIndexPathSection: Int?
     //var collectionTitle: String?
     
     override func viewDidLoad() {
@@ -40,20 +44,32 @@ class NewCollectionViewController: UITableViewController {
         // Add button initially disabled
         addBtn.isEnabled = false
         // Initialise new collection
-        newCollection = CollectionItem(title: "", collectionDate: Date.init(), reminderDate: Date.init())
+        newCollection = CollectionItem(title: "", collectionDate: Date.init(), reminderDate: Date.init(), recurring: false)
+        // alter navigation header and add button depending on purpose
+        addBtn.possibleTitles = ["Add", "Done"]
+        if editCollection {
+            navBar.topItem!.title = "Edit Collection"
+            addBtn.title = "Done"
+            // Fill view with selected collection data
+            populateData()
+            
+        } else {
+            navBar.topItem!.title = "New Collection"
+            addBtn.title = "Add"
+        }
     }
-    
-    func setDateFormatter() -> DateFormatter {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        dateFormatter.locale = Locale(identifier: "en_GB")
-        dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm MMMMd")
-        return dateFormatter
-    }
-    
+
     func addInitialValues() {
         inputDates = Array(repeating: Date(), count: inputTexts.count)
+    }
+    
+    func populateData() {
+        inputDates[0] = collectionToEdit?.collectionDate as! Date
+        inputDates[1] = collectionToEdit?.reminderDate as! Date
+        newCollection?.collectionDate = collectionToEdit?.collectionDate as! Date
+        newCollection?.reminderDate = collectionToEdit?.reminderDate as! Date
+        newCollection?.recurring = collectionToEdit?.recurring as! Bool
+        newCollection?.title = collectionToEdit?.title as! String
     }
     
     
@@ -65,7 +81,7 @@ class NewCollectionViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 1 {
+        if section == 2 {
             return CGFloat(30)
         } else {
             return CGFloat(0)
@@ -83,7 +99,7 @@ class NewCollectionViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section != 0 {
+        if indexPath.section == 1 {
             tableView.beginUpdates() // because there is more than one action below
             // Three outcomes:
             // 1. no date picker shown (datePickerIndexPath = nil) -> tap a row, and a date picker is shown underneath
@@ -118,11 +134,11 @@ class NewCollectionViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section != 1 {
             return 1
         } else if datePickerIndexPath != nil {
             // add a row to show the event picker
@@ -142,19 +158,35 @@ class NewCollectionViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
-        //let dateFormatter = setDateFormatter()
         if indexPath.section == 0 {
             guard let titleCell = tableView.dequeueReusableCell(withIdentifier: K.titleCellIdentifier, for: indexPath as IndexPath) as? TitleTableViewCell  else {
                 fatalError("The dequeued cell is not an instance of TitleTableViewCell.")}
            // titleCell.delegate = self
-            titleCell.configure(text: "", placeholder: "Collection Title")
+            if editCollection {
+                titleCell.configure(text: collectionToEdit?.title, placeholder: "")
+            } else {
+                titleCell.configure(text: "", placeholder: "Collection Title")
+            }
             titleCell.collectionTitle.delegate = self
-            titleCell.collectionTitle.tag = indexPath.row + 1
             return titleCell
-        }
-        else if datePickerIndexPath == indexPath {
+        } else if indexPath.section == 2 {
+            guard let switchCell = tableView.dequeueReusableCell(withIdentifier: K.repeatsCellIdentifier, for: indexPath as IndexPath) as? SetsRepeatTableViewCell  else {
+                 fatalError("The dequeued cell is not an instance of SetsRepeatTableViewCell.")}
+            if editCollection {
+                switchCell.configure(value: collectionToEdit?.recurring)
+            } else {
+                switchCell.configure(value: false)
+            }
+            switchCell.delegate = self
+            return switchCell
+        } else if datePickerIndexPath == indexPath {
             guard let datePickerCell = tableView.dequeueReusableCell(withIdentifier: K.datePickerCellIdentifier, for: indexPath as IndexPath) as? DatePickerTableViewCell  else {
                 fatalError("The dequeued cell is not an instance of DatePickerTableViewCell.")}
+            if(inputTexts[indexPath.row - 1].contains("Collection")) {
+                datePickerCell.datePicker.datePickerMode = .date
+            } else {
+                datePickerCell.datePicker.datePickerMode = .dateAndTime
+            }
             datePickerCell.updateCell(date: inputDates[indexPath.row - 1], indexPath: indexPath)
             datePickerCell.delegate = self
             return datePickerCell
@@ -183,7 +215,20 @@ extension NewCollectionViewController: DatePickerDelegate {
             // reminder date
             newCollection?.reminderDate = date
         }
+        self.addBtn.isEnabled = true
     }
+    
+}
+
+// MARK: - SwitchDelegate Methods
+
+extension NewCollectionViewController: SwitchDelegate {
+    
+    func didChangeValue(value: Bool) {
+        newCollection?.recurring = value
+        self.addBtn.isEnabled = true
+    }
+    
     
 }
 

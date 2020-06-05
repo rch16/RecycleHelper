@@ -22,7 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UserDefaults.standard.register(defaults: [K.saveItemKey: []])
         UserDefaults.standard.register(defaults: [K.showFavourites: false])
         UserDefaults.standard.register(defaults: [K.binCollections: [CollectionItem]()])
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

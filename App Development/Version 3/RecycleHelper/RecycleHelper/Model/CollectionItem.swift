@@ -15,12 +15,12 @@ class CollectionItem: Codable {
     var done: Bool
     var recurring: Bool
     
-    public init(title: String, collectionDate: Date, reminderDate: Date) {
+    public init(title: String, collectionDate: Date, reminderDate: Date, recurring: Bool) {
         self.title = title
         self.collectionDate = collectionDate
         self.reminderDate = reminderDate
         self.done = false
-        self.recurring = false
+        self.recurring = recurring
     }
 }
 
@@ -39,8 +39,8 @@ extension CollectionItem {
         let someDateTime = userCalendar.date(from: dateComponents)
         
         return [
-            CollectionItem(title: "Test1", collectionDate: someDateTime!, reminderDate: someDateTime!),
-            CollectionItem(title: "Test2", collectionDate: someDateTime!, reminderDate: someDateTime!)
+            CollectionItem(title: "Test1", collectionDate: someDateTime!, reminderDate: someDateTime!, recurring: true),
+            CollectionItem(title: "Test2", collectionDate: someDateTime!, reminderDate: someDateTime!, recurring: false)
         ]
     }
 }

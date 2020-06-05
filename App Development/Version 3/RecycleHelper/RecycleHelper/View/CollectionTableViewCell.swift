@@ -12,17 +12,21 @@ class CollectionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var collectionTitle: UILabel!
     @IBOutlet weak var collectionDate: UILabel!
+    @IBOutlet weak var repeatBtn: UIButton!
     
     // Attach UI
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Keep rounded corners
+        self.contentView.layer.cornerRadius = 15
+        self.layer.cornerRadius = 15
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        // Keep rounded corners
+//        self.contentView.layer.cornerRadius = 15
+//        self.layer.cornerRadius = 15
     }
 
 }

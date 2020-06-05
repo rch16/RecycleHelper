@@ -24,6 +24,8 @@ struct K {
     static let searchItemViewSegue = "ShowItemAfterSearchSegue"
     static let locationInfoSegue = "ShowLocationInfoSegue"
     static let symbolInfoSegue = "ShowSymbolInfoSegue"
+    static let editCollectionSegue = "EditCollectionSegue"
+    static let addCollectionSegue = "AddCollectionSegue"
     
     // Home View
     static let collectionCellIdentifier = "CollectionTableViewCell"
@@ -31,6 +33,7 @@ struct K {
     static let datePickerCellIdentifier = "DatePickerCell"
     static let titleCellIdentifier = "TitleCell"
     static let binCollections = "BinCollections"
+    static let repeatsCellIdentifier = "SetsRepeatCell"
     
     // Object Detection
     static let videoDataOutput = "VideoDataOutput"
