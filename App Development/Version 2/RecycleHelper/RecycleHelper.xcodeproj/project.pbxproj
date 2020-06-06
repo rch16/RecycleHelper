@@ -66,6 +66,7 @@
 		E5B51AC92476F66A00A58346 /* oprl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5B51AC72476F66A00A58346 /* oprl.jpg */; };
 		E5B51ACA2476F66A00A58346 /* scan_info.png in Resources */ = {isa = PBXBuildFile; fileRef = E5B51AC82476F66A00A58346 /* scan_info.png */; };
 		E5CD4F6D2471C86200DEB567 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */; };
+		E5F47B55248B84E900CFC3D8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B54248B84E900CFC3D8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,7 @@
 		E5B51AC72476F66A00A58346 /* oprl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oprl.jpg; sourceTree = "<group>"; };
 		E5B51AC82476F66A00A58346 /* scan_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scan_info.png; sourceTree = "<group>"; };
 		E5CD4F6C2471C86200DEB567 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		E5F47B54248B84E900CFC3D8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F364BFFFD5D9695643500628 /* Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig"; path = "Target Support Files/Pods-RecycleHelper-RecycleHelperUITests/Pods-RecycleHelper-RecycleHelperUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -356,6 +358,7 @@
 				E5ADD1E7246AE9F20030CD19 /* Info.plist */,
 				E5A381FB246B4288005DEAC5 /* Constants.swift */,
 				E5A1D7FE247311F600161F8D /* Extensions.swift */,
+				E5F47B54248B84E900CFC3D8 /* Constants.swift */,
 			);
 			path = RecycleHelper;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				E541E566247434D800ED8EDA /* InfoTableViewCell.swift in Sources */,
 				E503EC67246B044200225A54 /* ViewController.swift in Sources */,
 				E5A1D7F92472BEDD00161F8D /* SearchItemViewController.swift in Sources */,
+				E5F47B55248B84E900CFC3D8 /* Constants.swift in Sources */,
 				E5A1D7FB2472E61B00161F8D /* ItemTableViewCell.swift in Sources */,
 				E5CD4F6D2471C86200DEB567 /* InfoViewController.swift in Sources */,
 				E5A3821F247043BE005DEAC5 /* VisionViewController.swift in Sources */,

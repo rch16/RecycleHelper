@@ -17,10 +17,35 @@ class VisionViewController: ViewController {
     // Attach UI
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var scanBtn: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBAction func scanWasPressed(_ sender: UIButton) {
+        if startScanning {
+            // Stop scanning
+            startScanning = false
+            // Stop activity indicator
+            activityIndicator.stopAnimating()
+            // Provide option to start scanning again
+            scanBtn.setTitle("  Start scanning", for: .normal)
+            scanBtn.setImage(UIImage(systemName: "camera.viewfinder"), for: .normal)
+        } else {
+            // Start scanning
+            startScanning = true
+            // Start activity indicator
+            activityIndicator.startAnimating()
+            // Provide option to stop scanning
+            scanBtn.setTitle("  Stop scanning", for: .normal)
+            scanBtn.setImage(UIImage(systemName: "xmark"), for: .normal)
+        }
+        //startScanning.toggle()
     }
     var itemViewOpen = false // info view about detected item
+    var startScanning = false
     private var detectionOverlay: CALayer! = nil // layer showing detection
+    @IBAction func unwindToScanning(segue: UIStoryboardSegue) {
+        itemViewOpen = false
+        super.setupCaptureSession()
+        self.resetTranspositionHistory() // reset scene stability
+    }
     
     // Vision
     private let visionQueue = DispatchQueue(label: "com.BeccaHallam.RecycleHelper.serialVisionQueue")
@@ -41,16 +66,34 @@ class VisionViewController: ViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         // Rounded corners
         self.instructionsLabel.clipsToBounds = true
-        self.instructionsLabel.layer.cornerRadius = 15
+        self.instructionsLabel.layer.cornerRadius = 10
+        // Don't initially start scanning
+        startScanning = false
+        // Stop activity indicator
+        activityIndicator.stopAnimating()
+        scanBtn.setTitle("  Start scanning", for: .normal)
+        scanBtn.setImage(UIImage(systemName: "camera.viewfinder"), for: .normal)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        super.stopCaptureSession()
+        // Stop activity indicator
+        activityIndicator.stopAnimating()
 
-        if self.isMovingFromParent {
-            super.stopCaptureSession()
-            // stop detection too
-        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //setupVision()
+        itemViewOpen = false
+        // Don't initially start scanning
+        startScanning = false
+        scanBtn.setTitle("  Start scanning", for: .normal)
+        scanBtn.setImage(UIImage(systemName: "camera.viewfinder"), for: .normal)
+        // Setup
+        super.setupCaptureSession()
+        self.resetTranspositionHistory()
     }
 
     //MARK: - AVCaptureSession Methods
@@ -108,6 +151,7 @@ class VisionViewController: ViewController {
                 currentlyAnalysedPixelBuffer = pixelBuffer
                 // analyse image
                 analyseCurrentImage()
+                
             }
         } else {
             // hide overlay as object not being detected due to lack of stability
@@ -156,16 +200,19 @@ class VisionViewController: ViewController {
         DispatchQueue.main.async(execute: {
             // perform all the UI updates on the main queue
             if(visible == true){
-                // Enable camera button
-                self.scanBtn.isEnabled = true
+//                // Enable camera button
+//                self.scanBtn.isEnabled = true
                 // Hide instructions
                 self.instructionsLabel.isHidden = true
             }
             else{
-                // Disable camera button
-                self.scanBtn.isEnabled = false
-                // Show instructions
-                self.instructionsLabel.isHidden = false
+                if self.startScanning {
+                    // Show instructions
+                    self.instructionsLabel.isHidden = false
+                }
+//                // Disable camera button
+//                self.scanBtn.isEnabled = false
+                
             }
         })
     }
@@ -183,13 +230,12 @@ class VisionViewController: ViewController {
         })
     }
     
-    @IBAction func unwindToScanning(unwindSegue: UIStoryboardSegue) {
-        itemViewOpen = false
-        self.resetTranspositionHistory() // reset scene stability
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Stop capture session
         super.stopCaptureSession()
+        // Haptic feedback
+        let feedback = UINotificationFeedbackGenerator()
+        feedback.notificationOccurred(.success)
         if let itemVC = segue.destination as? ObjectViewController, segue.identifier == K.itemViewSegue {
             if let itemID = sender as? String {
                 itemVC.itemID = itemID
@@ -229,7 +275,8 @@ class VisionViewController: ViewController {
             do {
                 // Release the pixel buffer when done, allowing the next buffer to be processed.
                 defer { self.currentlyAnalysedPixelBuffer = nil }
-                try requestHandler.perform(self.analysisRequests)
+                if self.startScanning { try requestHandler.perform(self.analysisRequests) }
+                
             } catch {
                 print("Error: Vision request failed with error \"\(error)\"")
             }

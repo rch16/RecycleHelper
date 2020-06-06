@@ -619,15 +619,36 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fe-0v-HNH" userLabel="Preview">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please hold device still." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ig-kh-Kso">
-                                        <rect key="frame" x="97" y="386.5" width="220" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pR-we-fbR">
+                                        <rect key="frame" x="119.5" y="744" width="175" height="35"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="175" id="8n6-wt-bhR"/>
+                                            <constraint firstAttribute="height" constant="35" id="Gfv-SC-Jx3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title=" Start scanning" image="camera.viewfinder" catalog="system">
+                                            <color key="titleColor" red="0.43895909190177917" green="0.90985071659088135" blue="0.68618488311767578" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="regular"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="scanWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bsU-cQ-BLg"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please hold device still." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ig-kh-Kso">
+                                        <rect key="frame" x="97" y="386.5" width="220" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="27S-wD-O0h"/>
                                             <constraint firstAttribute="width" constant="220" id="jwC-U4-1Rk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" red="0.43895909190177917" green="0.90985071659088135" blue="0.68618488311767578" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -635,33 +656,19 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pR-we-fbR">
-                                        <rect key="frame" x="177" y="713" width="61" height="64"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="61" id="OKG-t2-WGk"/>
-                                            <constraint firstAttribute="width" secondItem="3pR-we-fbR" secondAttribute="height" multiplier="35:32" constant="-9" id="nNb-6j-rcf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" image="camera.viewfinder" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40" scale="large" weight="thin"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="scanWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bsU-cQ-BLg"/>
-                                        </connections>
-                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="inq-YP-rxP">
+                                        <rect key="frame" x="176.5" y="434" width="61" height="37"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="1Ig-kh-Kso" firstAttribute="centerY" secondItem="2fe-0v-HNH" secondAttribute="centerY" id="1UL-aV-jiD"/>
                                     <constraint firstItem="1Ig-kh-Kso" firstAttribute="centerX" secondItem="3pR-we-fbR" secondAttribute="centerX" id="4nm-9M-iTG"/>
-                                    <constraint firstAttribute="bottom" secondItem="3pR-we-fbR" secondAttribute="bottom" constant="36" id="EQw-qJ-lIG"/>
+                                    <constraint firstAttribute="bottom" secondItem="3pR-we-fbR" secondAttribute="bottom" constant="34" id="EQw-qJ-lIG"/>
                                     <constraint firstItem="3pR-we-fbR" firstAttribute="centerX" secondItem="2fe-0v-HNH" secondAttribute="centerX" id="Gpn-i2-gKK"/>
+                                    <constraint firstItem="inq-YP-rxP" firstAttribute="top" secondItem="1Ig-kh-Kso" secondAttribute="bottom" constant="7.5" id="LtR-Yo-IIe"/>
+                                    <constraint firstItem="inq-YP-rxP" firstAttribute="leading" secondItem="2fe-0v-HNH" secondAttribute="leading" constant="176.5" id="O4P-E0-RLn"/>
+                                    <constraint firstAttribute="trailing" secondItem="inq-YP-rxP" secondAttribute="trailing" constant="176.5" id="b7a-ag-ODH"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -676,6 +683,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DmR-Dy-bcX"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="inq-YP-rxP" id="hPM-Dq-UgJ"/>
                         <outlet property="instructionsLabel" destination="1Ig-kh-Kso" id="H4d-vv-ONt"/>
                         <outlet property="previewView" destination="2fe-0v-HNH" id="7gb-NZ-Kdl"/>
                         <outlet property="scanBtn" destination="3pR-we-fbR" id="m33-B3-CFW"/>

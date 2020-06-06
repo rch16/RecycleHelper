@@ -34,11 +34,17 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//
+//    }
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
         
         // Check Authorisation
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             // The user has previously granted access to the camera.
+            setupCaptureSession()
             break
             
         case .notDetermined:
@@ -47,6 +53,25 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
                 if !granted {
                     self.setupResult = .notAuthorized
+                    DispatchQueue.main.async {
+                        let changePrivacySetting = "RecycleHelper doesn't have permission to use the camera, please change privacy settings"
+                        let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
+                        let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
+                        
+                        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+                                                                style: .cancel,
+                                                                handler: nil))
+                        
+                        alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+                                                                style: .`default`,
+                                                                handler: { _ in
+                                                                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                                                                              options: [:],
+                                                                                              completionHandler: nil)
+                        }))
+                        
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                 }
                 self.videoDataOutputQueue.resume()
             })
@@ -56,54 +81,54 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             setupResult = .notAuthorized
         }
         
-        setupCaptureSession()
+//        setupCaptureSession()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-           
-           videoDataOutputQueue.async {
-               switch self.setupResult {
-               case .success:
-                   // Only setup observers and start the session if setup succeeded.
-                   self.session.startRunning()
-                   
-               case .notAuthorized:
-                   DispatchQueue.main.async {
-                       let changePrivacySetting = "RecycleHelper doesn't have permission to use the camera, please change privacy settings"
-                       let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
-                       let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
-                       
-                       alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
-                                                               style: .cancel,
-                                                               handler: nil))
-                       
-                       alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
-                                                               style: .`default`,
-                                                               handler: { _ in
-                                                                   UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
-                                                                                             options: [:],
-                                                                                             completionHandler: nil)
-                       }))
-                       
-                       self.present(alertController, animated: true, completion: nil)
-                   }
-                   
-               case .configurationFailed:
-                   DispatchQueue.main.async {
-                       let alertMsg = "Alert message when something goes wrong during capture session configuration"
-                       let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
-                       let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
-                       
-                       alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
-                                                               style: .cancel,
-                                                               handler: nil))
-                       
-                       self.present(alertController, animated: true, completion: nil)
-                   }
-               }
-           }
-       }
+//    override func viewWillAppear(_ animated: Bool) {
+//           super.viewWillAppear(animated)
+//
+//           videoDataOutputQueue.async {
+//               switch self.setupResult {
+//               case .success:
+//                   // Only setup observers and start the session if setup succeeded.
+//                self.setupCaptureSession()
+//
+//               case .notAuthorized:
+//                   DispatchQueue.main.async {
+//                       let changePrivacySetting = "RecycleHelper doesn't have permission to use the camera, please change privacy settings"
+//                       let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
+//                       let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
+//
+//                       alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+//                                                               style: .cancel,
+//                                                               handler: nil))
+//
+//                       alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+//                                                               style: .`default`,
+//                                                               handler: { _ in
+//                                                                   UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+//                                                                                             options: [:],
+//                                                                                             completionHandler: nil)
+//                       }))
+//
+//                       self.present(alertController, animated: true, completion: nil)
+//                   }
+//
+//               case .configurationFailed:
+//                   DispatchQueue.main.async {
+//                       let alertMsg = "Alert message when something goes wrong during capture session configuration"
+//                       let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
+//                       let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
+//
+//                       alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+//                                                               style: .cancel,
+//                                                               handler: nil))
+//
+//                       self.present(alertController, animated: true, completion: nil)
+//                   }
+//               }
+//           }
+//       }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -197,7 +222,20 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 
     func stopCaptureSession() {
         //previewLayer.removeFromSuperLayer()
-        previewLayer = nil
+
+//        session.beginConfiguration()
+        // Remove input(s)
+//        for input in session.inputs {
+//            session.removeInput(input)
+//        }
+//        // Remove output(s)
+//        for output in session.outputs {
+//            session.removeOutput(output)
+//        }
+//        session.commitConfiguration()
+
+          previewLayer = nil
+//        session.stopRunning()
     }
     
 

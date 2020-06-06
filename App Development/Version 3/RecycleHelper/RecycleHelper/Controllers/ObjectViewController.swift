@@ -37,6 +37,11 @@ class ObjectViewController: UIViewController, UITableViewDataSource, UITableView
         infoTable.alwaysBounceVertical = false
         infoTable.separatorStyle = .none
         
+        // Hide back bar button and create a custom one
+//        self.navigationItem.hidesBackButton = true
+//        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(ObjectViewController.back(sender:)))
+//        self.navigationItem.leftBarButtonItem = newBackButton
+        
         if let path = Bundle.main.path(forResource: "ItemList", ofType: "plist") {
             itemList = NSDictionary(contentsOfFile: path) as? [String: [String: Any]]
             itemOptions = Array(itemList.keys)
@@ -51,6 +56,10 @@ class ObjectViewController: UIViewController, UITableViewDataSource, UITableView
     
     }
     
+//    @objc func back(sender: UIBarButtonItem) {
+//        _ = navigationController?.popViewController(animated: true)
+//    }
+//
     func loadData(category: String) {
         // Item Title
         itemName.text = itemList[category]!["label"] as? String

@@ -160,7 +160,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
             return filteredData.count
         } else {
             if(currentList.count == 0){
-                noData(message: "You've not saved any favourites yet!")
+                noData(message: "You haven't saved any favourites yet!")
             } else {
                 tableView.separatorStyle  = .singleLine
                 tableView.backgroundView = nil

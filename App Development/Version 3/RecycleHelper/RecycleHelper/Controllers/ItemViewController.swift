@@ -18,7 +18,12 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var favouriteBtn: UIBarButtonItem!
     @IBAction func favouriteDidChange(_ sender: Any) {
+        // Toggle favourite status
         isFavourite.toggle()
+        // Haptic feedback
+        let feedback = UINotificationFeedbackGenerator()
+        feedback.notificationOccurred(.success)
+        // Define behaviour
         if (isFavourite) {
             favouriteBtn.image = UIImage(systemName: "star.fill")
             favouriteItems.append(itemID)

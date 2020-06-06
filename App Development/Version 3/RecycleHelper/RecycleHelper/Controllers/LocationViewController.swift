@@ -24,6 +24,10 @@ class LocationViewController: UIViewController {
         searchInMap()
     }
     @IBAction func recentreBtn(_ sender: Any) {
+        // Haptic feedback
+        let feedback = UINotificationFeedbackGenerator()
+        feedback.notificationOccurred(.success)
+        // Recentre map
         centreMap()
     }
     
