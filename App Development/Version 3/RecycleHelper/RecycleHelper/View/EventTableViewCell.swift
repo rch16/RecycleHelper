@@ -38,16 +38,16 @@ class EventTableViewCell: UITableViewCell {
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "en_GB")
         
-        if text.contains("Collection"){
-            dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
-        } else {
-            dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm MMMMd")
-        }
-        
-        
+        dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm MMMMd")
+
         label.text = text
         dateLabel.text = dateFormatter.string(from: date)
 
+    }
+    
+    func updateCollection(text: String, day: Int) {
+        label.text = text
+        dateLabel.text = K.weekdaysFromDateComponent[day]
     }
 
 }

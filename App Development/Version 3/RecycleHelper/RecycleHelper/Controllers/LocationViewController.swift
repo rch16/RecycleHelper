@@ -32,23 +32,35 @@ class LocationViewController: UIViewController {
     }
     
     // Map
+    private var locationResult: LocationSetupResult = .success
     var locationManager = CLLocationManager()
     var request = MKLocalSearch.Request()
     var matchingItems: [MKMapItem] = []
     
+    private enum LocationSetupResult {
+        case success
+        case notAuthorized
+    }
+    
     // Segue information
     var locationName: String!
     var location: CLLocationCoordinate2D!
-    //var phoneNumber: String!
     var placemark: String!
     
     override func viewWillAppear(_ animated: Bool) {
         // Hide navigation bar
         self.navigationController?.isNavigationBarHidden = true
+        //searchInMap()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Ask for and check authorisation
+        //authoriseLocation()
+        
+        // Check for Location Services
+        checkLocationServices()
         
         // Hide navigation bar
         self.navigationController?.isNavigationBarHidden = true
@@ -62,11 +74,7 @@ class LocationViewController: UIViewController {
         
         // Setup location
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestLocation()
-        
-        // Check for Location Services
-        checkLocationServices()
         
         // Zoom to user location
         centreMap()
@@ -78,11 +86,58 @@ class LocationViewController: UIViewController {
         searchInMap()
     }
     
-    func checkLocationServices() {
+    override func viewDidAppear(_ animated: Bool) {
+        checkLocationServices()
+    }
+    
+    func authoriseLocation() {
         if (CLLocationManager.locationServicesEnabled()) {
+            locationManager.requestAlwaysAuthorization()
             locationManager.requestWhenInUseAuthorization()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
             mapView.showsUserLocation = true
+            searchInMap()
+            checkLocationServices()
         }
+    }
+    
+    func checkLocationServices() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorized:
+            searchInMap()
+        case .notDetermined:
+            authoriseLocation()
+        case .denied:
+            DispatchQueue.main.async {
+                let changePrivacySetting = "RecycleHelper doesn't have permission to access location, please change privacy settings"
+                let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to location services")
+                let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
+                
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+                                                        style: .cancel,
+                                                        handler: nil))
+                
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+                                                        style: .`default`,
+                                                        handler: { _ in
+                                                            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                                                                      options: [:],
+                                                                                      completionHandler: nil)
+                }))
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+        case .restricted:
+            searchInMap()
+        case .authorizedWhenInUse:
+            searchInMap()
+        case .authorizedAlways:
+            searchInMap()
+        @unknown default:
+            checkLocationServices()
+        }
+        
     }
     
     func centreMap() {
@@ -178,8 +233,6 @@ extension LocationViewController: MKMapViewDelegate{
             if annotationView == nil { // If not found
                 // Make a new one
                 annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                // Enable pin clusters for multiple pins in a location
-                //annotationView?.clusteringIdentifier = "PinCluster"
                 // Show Pop up info
                 annotationView?.canShowCallout = true
                 // Attach an information button

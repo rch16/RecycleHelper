@@ -34,12 +34,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//
-//    }
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-        
+
         // Check Authorisation
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
@@ -80,55 +75,54 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             // The user has previously denied access.
             setupResult = .notAuthorized
         }
-        
-//        setupCaptureSession()
+
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//           super.viewWillAppear(animated)
-//
-//           videoDataOutputQueue.async {
-//               switch self.setupResult {
-//               case .success:
-//                   // Only setup observers and start the session if setup succeeded.
-//                self.setupCaptureSession()
-//
-//               case .notAuthorized:
-//                   DispatchQueue.main.async {
-//                       let changePrivacySetting = "RecycleHelper doesn't have permission to use the camera, please change privacy settings"
-//                       let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
-//                       let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
-//
-//                       alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
-//                                                               style: .cancel,
-//                                                               handler: nil))
-//
-//                       alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
-//                                                               style: .`default`,
-//                                                               handler: { _ in
-//                                                                   UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
-//                                                                                             options: [:],
-//                                                                                             completionHandler: nil)
-//                       }))
-//
-//                       self.present(alertController, animated: true, completion: nil)
-//                   }
-//
-//               case .configurationFailed:
-//                   DispatchQueue.main.async {
-//                       let alertMsg = "Alert message when something goes wrong during capture session configuration"
-//                       let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
-//                       let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
-//
-//                       alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
-//                                                               style: .cancel,
-//                                                               handler: nil))
-//
-//                       self.present(alertController, animated: true, completion: nil)
-//                   }
-//               }
-//           }
-//       }
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+
+           videoDataOutputQueue.async {
+               switch self.setupResult {
+               case .success:
+                   // Only setup observers and start the session if setup succeeded.
+                self.setupCaptureSession()
+
+               case .notAuthorized:
+                   DispatchQueue.main.async {
+                       let changePrivacySetting = "RecycleHelper doesn't have permission to use the camera, please change privacy settings"
+                       let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
+                       let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
+
+                       alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+                                                               style: .cancel,
+                                                               handler: nil))
+
+                       alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+                                                               style: .`default`,
+                                                               handler: { _ in
+                                                                   UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                                                                             options: [:],
+                                                                                             completionHandler: nil)
+                       }))
+
+                       self.present(alertController, animated: true, completion: nil)
+                   }
+
+               case .configurationFailed:
+                   DispatchQueue.main.async {
+                       let alertMsg = "Alert message when something goes wrong during capture session configuration"
+                       let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
+                       let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
+
+                       alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+                                                               style: .cancel,
+                                                               handler: nil))
+
+                       self.present(alertController, animated: true, completion: nil)
+                   }
+               }
+           }
+       }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -162,7 +156,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         // !! set the camera resolution to the nearest resolution that is greater than or equal to the resolution of images used in the model
         
         // if a discovery session can be created
-        let videoDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back).devices.first
+        let videoDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera,.builtInWideAngleCamera], mediaType: .video, position: .back).devices.first
         do {
             deviceInput = try AVCaptureDeviceInput(device: videoDevice!) // assign the video device
         } catch {
@@ -172,7 +166,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         // ---------- Session configuration ----------
         session.beginConfiguration() // start to configure the session
-        session.sessionPreset = .vga640x480 // Model image size is smaller
+        session.sessionPreset = .high //AVCaptureSession.Preset.photo // Adapt to phone
+        //.vga640x480 // Model image size is smaller
         
         // ---------- Add a video input ----------
         if session.canAddInput(deviceInput){

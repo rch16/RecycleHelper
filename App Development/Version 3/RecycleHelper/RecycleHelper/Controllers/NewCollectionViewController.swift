@@ -15,10 +15,32 @@ class NewCollectionViewController: UITableViewController {
     @IBOutlet weak var addBtn: UIBarButtonItem!
     @IBOutlet weak var navBar: UINavigationBar!
     
+    @IBAction func cancelDaySelection(segue: UIStoryboardSegue) {}
+    @IBAction func dayWasSelected(segue: UIStoryboardSegue) {
+        // get data
+        if let sourceVC = segue.source as? WeekdayViewController {
+            dateJustChanged = true
+            
+            // Get Info
+            let weekday = sourceVC.selectedWeekday
+            //let date = Calendar.current.
+            let indexPath = IndexPath(row: 0, section: 1)
+            let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
+            
+            // Update Data
+            collectionDay = weekday!
+            collectionToEdit?.collectionDate = collectionDay
+            newCollection?.collectionDate = collectionDay
+            cell.updateCollection(text: cell.label.text!, day: collectionDay)
+            tableView.reloadRows(at: [indexPath], with: .none)
+        }
+    }
+    
     // Date Picker
     var collections = [CollectionItem]()
     var inputTexts: [String] = ["Collection date", "Reminder date"]
     var inputDates: [Date] = []
+    var collectionDay: Int = Calendar.current.dateComponents([.weekday], from: Date.init()).weekday!
     var datePickerIndexPath: IndexPath?
     
     // Text Field
@@ -29,6 +51,7 @@ class NewCollectionViewController: UITableViewController {
     var editCollection: Bool = false
     var collectionToEdit: CollectionItem?
     var collectionIndexPathSection: Int?
+    var dateJustChanged: Bool = false
     //var collectionTitle: String?
     
     override func viewDidLoad() {
@@ -44,7 +67,10 @@ class NewCollectionViewController: UITableViewController {
         // Add button initially disabled
         addBtn.isEnabled = false
         // Initialise new collection
-        newCollection = CollectionItem(title: "", collectionDate: Date.init(), reminderDate: Date.init(), recurring: false)
+        let currentDate = Date.init()
+        let currentDateComponents = Calendar.current.dateComponents([.weekday], from: currentDate)
+        newCollection = CollectionItem(title: "", collectionDate: currentDateComponents.weekday!, reminderDate: currentDate, recurring: false)
+        print(newCollection?.collectionDate)
         // alter navigation header and add button depending on purpose
         addBtn.possibleTitles = ["Add", "Done"]
         if editCollection {
@@ -64,9 +90,13 @@ class NewCollectionViewController: UITableViewController {
     }
     
     func populateData() {
-        inputDates[0] = collectionToEdit?.collectionDate as! Date
+        if !dateJustChanged {
+            collectionDay = collectionToEdit?.collectionDate as! Int
+        } else {
+            dateJustChanged = false
+        }
         inputDates[1] = collectionToEdit?.reminderDate as! Date
-        newCollection?.collectionDate = collectionToEdit?.collectionDate as! Date
+        newCollection?.collectionDate = collectionToEdit?.collectionDate as! Int
         newCollection?.reminderDate = collectionToEdit?.reminderDate as! Date
         newCollection?.recurring = collectionToEdit?.recurring as! Bool
         newCollection?.title = collectionToEdit?.title as! String
@@ -100,26 +130,31 @@ class NewCollectionViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            tableView.beginUpdates() // because there is more than one action below
-            // Three outcomes:
-            // 1. no date picker shown (datePickerIndexPath = nil) -> tap a row, and a date picker is shown underneath
-            // 2. date picker shown -> tap a different row, date picker is hidden and another shown underneath tapped row.
-            //    a. the tapped row is above the shown date picker
-            //    b. the tapped row is below the shown date picker
-            if let datePickerIndexPath = datePickerIndexPath, datePickerIndexPath.row - 1 == indexPath.row {
-                   tableView.deleteRows(at: [datePickerIndexPath], with: .fade)
-                    tableView.deselectRow(at: indexPath, animated: true)
-                   self.datePickerIndexPath = nil
-               } else {
-                   if let datePickerIndexPath = datePickerIndexPath {
+            if indexPath.row == 0 {
+                tableView.deselectRow(at: indexPath, animated: true)
+                self.performSegue(withIdentifier: K.selectWeekdaySegue, sender: indexPath)
+            } else {
+                tableView.beginUpdates() // because there is more than one action below
+                // Three outcomes:
+                // 1. no date picker shown (datePickerIndexPath = nil) -> tap a row, and a date picker is shown underneath
+                // 2. date picker shown -> tap a different row, date picker is hidden and another shown underneath tapped row.
+                //    a. the tapped row is above the shown date picker
+                //    b. the tapped row is below the shown date picker
+                if let datePickerIndexPath = datePickerIndexPath, datePickerIndexPath.row - 1 == indexPath.row {
                        tableView.deleteRows(at: [datePickerIndexPath], with: .fade)
                         tableView.deselectRow(at: indexPath, animated: true)
+                       self.datePickerIndexPath = nil
+                   } else {
+                       if let datePickerIndexPath = datePickerIndexPath {
+                           tableView.deleteRows(at: [datePickerIndexPath], with: .fade)
+                            tableView.deselectRow(at: indexPath, animated: true)
+                       }
+                       datePickerIndexPath = indexPathToInsertDatePicker(indexPath: indexPath)
+                       tableView.insertRows(at: [datePickerIndexPath!], with: .fade)
+                       tableView.deselectRow(at: indexPath, animated: true)
                    }
-                   datePickerIndexPath = indexPathToInsertDatePicker(indexPath: indexPath)
-                   tableView.insertRows(at: [datePickerIndexPath!], with: .fade)
-                   tableView.deselectRow(at: indexPath, animated: true)
-               }
-               tableView.endUpdates()
+                   tableView.endUpdates()
+            }
         } else {
             tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -179,24 +214,45 @@ class NewCollectionViewController: UITableViewController {
             }
             switchCell.delegate = self
             return switchCell
-        } else if datePickerIndexPath == indexPath {
-            guard let datePickerCell = tableView.dequeueReusableCell(withIdentifier: K.datePickerCellIdentifier, for: indexPath as IndexPath) as? DatePickerTableViewCell  else {
-                fatalError("The dequeued cell is not an instance of DatePickerTableViewCell.")}
-            if(inputTexts[indexPath.row - 1].contains("Collection")) {
-                datePickerCell.datePicker.datePickerMode = .date
-            } else {
-                datePickerCell.datePicker.datePickerMode = .dateAndTime
-            }
-            datePickerCell.updateCell(date: inputDates[indexPath.row - 1], indexPath: indexPath)
-            datePickerCell.delegate = self
-            return datePickerCell
         } else {
-            guard let eventCell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath as IndexPath) as? EventTableViewCell  else {
-                fatalError("The dequeued cell is not an instance of EventTableViewCell.")}
-            eventCell.updateText(text: inputTexts[indexPath.row], date: inputDates[indexPath.row])
-            return eventCell
+            if indexPath.row == 0 {
+                // Collection day selection
+                guard let collectionCell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath as IndexPath) as? EventTableViewCell  else {
+                    fatalError("The dequeued cell is not an instance of EventTableViewCell.")}
+                collectionCell.updateCollection(text: inputTexts[indexPath.row], day: collectionDay)
+                let accessory: UITableViewCell.AccessoryType = .disclosureIndicator
+                collectionCell.accessoryType = accessory
+                return collectionCell
+            } else if datePickerIndexPath == indexPath {
+                // Select day and time of reminder
+                guard let datePickerCell = tableView.dequeueReusableCell(withIdentifier: K.datePickerCellIdentifier, for: indexPath as IndexPath) as? DatePickerTableViewCell  else {
+                    fatalError("The dequeued cell is not an instance of DatePickerTableViewCell.")}
+                if(inputTexts[indexPath.row - 1].contains("Collection")) {
+                    datePickerCell.datePicker.datePickerMode = .date
+                } else {
+                    datePickerCell.datePicker.datePickerMode = .dateAndTime
+                }
+                datePickerCell.updateCell(date: inputDates[indexPath.row - 1], indexPath: indexPath)
+                datePickerCell.delegate = self
+                return datePickerCell
+            } else {
+                // Reminder day selection
+                guard let reminderCell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath as IndexPath) as? EventTableViewCell  else {
+                    fatalError("The dequeued cell is not an instance of EventTableViewCell.")}
+                reminderCell.updateText(text: inputTexts[indexPath.row], date: inputDates[indexPath.row])
+                return reminderCell
+            }
         }
     
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextVC = segue.destination as? WeekdayViewController, segue.identifier == K.selectWeekdaySegue {
+            if let selectedPath = sender as! IndexPath? {
+                let cell = tableView.cellForRow(at: selectedPath) as! EventTableViewCell
+                nextVC.currentWeekday = cell.dateLabel.text
+            }
+        }
     }
     
 }
@@ -206,16 +262,17 @@ class NewCollectionViewController: UITableViewController {
 extension NewCollectionViewController: DatePickerDelegate {
     
     func didChangeDate(date: Date, indexPath: IndexPath) {
-        inputDates[indexPath.row] = date
         tableView.reloadRows(at: [indexPath], with: .none)
         if indexPath.row == 0 {
             // collection date
-            newCollection?.collectionDate = date
+            newCollection?.collectionDate = collectionDay
         } else {
             // reminder date
             newCollection?.reminderDate = date
         }
-        self.addBtn.isEnabled = true
+        if addBtn.title == "Done" {
+            self.addBtn.isEnabled = true
+        }
     }
     
 }
@@ -226,7 +283,9 @@ extension NewCollectionViewController: SwitchDelegate {
     
     func didChangeValue(value: Bool) {
         newCollection?.recurring = value
-        self.addBtn.isEnabled = true
+        if addBtn.title == "Done" {
+            self.addBtn.isEnabled = true
+        }
     }
     
     
@@ -253,10 +312,8 @@ extension NewCollectionViewController: UITextFieldDelegate {
      }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text else {
-            print("TextField text is nil")
-            return
-        }
+        guard let text = textField.text
+        else { preconditionFailure("Expected a Title") }
         
         if text == "" {
             self.addBtn.isEnabled = false

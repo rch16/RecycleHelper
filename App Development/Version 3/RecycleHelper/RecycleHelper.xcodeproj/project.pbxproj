@@ -70,6 +70,10 @@
 		E5AF666D24878558007B26B5 /* oprl1.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF666B24878557007B26B5 /* oprl1.png */; };
 		E5AF66A024878AD0007B26B5 /* homecomposting.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF669F24878ACF007B26B5 /* homecomposting.png */; };
 		E5AF66B324878FBC007B26B5 /* mobius.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66B224878FBC007B26B5 /* mobius.png */; };
+		E5BF278A248BD07A00682721 /* WeekdayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF2789248BD07A00682721 /* WeekdayTableViewCell.swift */; };
+		E5BF278C248BD12A00682721 /* WeekdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF278B248BD12A00682721 /* WeekdayViewController.swift */; };
+		E5BF278E248C09B400682721 /* CLTypingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF278D248C09B400682721 /* CLTypingLabel.swift */; };
+		E5BF2792248C0A6100682721 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF2791248C0A6100682721 /* OnboardingViewController.swift */; };
 		E5F47B322487EB5200CFC3D8 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2B2487EB5100CFC3D8 /* appstore.png */; };
 		E5F47B332487EB5200CFC3D8 /* background4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2D2487EB5200CFC3D8 /* background4.png */; };
 		E5F47B342487EB5200CFC3D8 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2E2487EB5200CFC3D8 /* background2.png */; };
@@ -191,6 +195,10 @@
 		E5AF666B24878557007B26B5 /* oprl1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oprl1.png; sourceTree = "<group>"; };
 		E5AF669F24878ACF007B26B5 /* homecomposting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homecomposting.png; sourceTree = "<group>"; };
 		E5AF66B224878FBC007B26B5 /* mobius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mobius.png; sourceTree = "<group>"; };
+		E5BF2789248BD07A00682721 /* WeekdayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayTableViewCell.swift; sourceTree = "<group>"; };
+		E5BF278B248BD12A00682721 /* WeekdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayViewController.swift; sourceTree = "<group>"; };
+		E5BF278D248C09B400682721 /* CLTypingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTypingLabel.swift; sourceTree = "<group>"; };
+		E5BF2791248C0A6100682721 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E5F47B2B2487EB5100CFC3D8 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/appstore.png"; sourceTree = "<group>"; };
 		E5F47B2D2487EB5200CFC3D8 /* background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background4.png; sourceTree = "<group>"; };
 		E5F47B2E2487EB5200CFC3D8 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
@@ -329,6 +337,8 @@
 				E5F853FE2487B40700401F4A /* SymbolInfoViewController.swift */,
 				E5F47B422488FA2400CFC3D8 /* NewCollectionViewController.swift */,
 				E5F47B50248ADDA400CFC3D8 /* ObjectViewController.swift */,
+				E5BF278B248BD12A00682721 /* WeekdayViewController.swift */,
+				E5BF2791248C0A6100682721 /* OnboardingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -367,6 +377,8 @@
 				E5F47B462488FCD400CFC3D8 /* DatePickerTableViewCell.swift */,
 				E5F47B4824890DF900CFC3D8 /* TitleTableViewCell.swift */,
 				E5F47B4C248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift */,
+				E5BF2789248BD07A00682721 /* WeekdayTableViewCell.swift */,
+				E5BF278D248C09B400682721 /* CLTypingLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -787,19 +799,23 @@
 				E534F1932484FB080042CBFD /* ViewController.swift in Sources */,
 				E5F47B51248ADDA400CFC3D8 /* ObjectViewController.swift in Sources */,
 				E5F47B472488FCD400CFC3D8 /* DatePickerTableViewCell.swift in Sources */,
+				E5BF278E248C09B400682721 /* CLTypingLabel.swift in Sources */,
 				E534F1D224850A660042CBFD /* ItemTableViewCell.swift in Sources */,
 				E534F18F2484FB080042CBFD /* AppDelegate.swift in Sources */,
 				E5F47B3F2488DCD700CFC3D8 /* CollectionTableViewCell.swift in Sources */,
 				E5F47B452488FCC000CFC3D8 /* EventTableViewCell.swift in Sources */,
 				E534F1912484FB080042CBFD /* SceneDelegate.swift in Sources */,
 				E534F1C42484FE990042CBFD /* VisionViewController.swift in Sources */,
+				E5BF278A248BD07A00682721 /* WeekdayTableViewCell.swift in Sources */,
 				E534F1C62484FEA80042CBFD /* SymbolViewController.swift in Sources */,
 				E5F853FF2487B40700401F4A /* SymbolInfoViewController.swift in Sources */,
 				E5F47B4924890DF900CFC3D8 /* TitleTableViewCell.swift in Sources */,
 				E534F20424856B380042CBFD /* Extensions.swift in Sources */,
 				E534F1C02484FE7A0042CBFD /* HomeViewController.swift in Sources */,
+				E5BF2792248C0A6100682721 /* OnboardingViewController.swift in Sources */,
 				E5F47B412488DEFE00CFC3D8 /* CollectionItem.swift in Sources */,
 				E534F20124850D9D0042CBFD /* InfoTableViewCell.swift in Sources */,
+				E5BF278C248BD12A00682721 /* WeekdayViewController.swift in Sources */,
 				E534F1C82484FEB40042CBFD /* LocationViewController.swift in Sources */,
 				E5F47B4F248ADCE300CFC3D8 /* WasteClassifier.mlmodel in Sources */,
 				E534F1CA2484FEC20042CBFD /* ItemViewController.swift in Sources */,

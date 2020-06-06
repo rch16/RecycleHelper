@@ -57,13 +57,14 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     var newCollection: CollectionItem?  // Adding new collection
     var editCollection: CollectionItem?  // Editing collection
     let manager = LocalNotificationManager() // Managing push notifications
+
   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Get user defaults
         getUserDefaults()
         // Hide navigation bar
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
         // Request push notifications access
         //registerLocal()
         // Assign table data source and delegate
@@ -98,7 +99,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     }
     
     // Add new collection
-    func addNewCollection(title: String, collectionDate: Date, reminderDate: Date, recurring: Bool) {
+    func addNewCollection(title: String, collectionDate: Int, reminderDate: Date, recurring: Bool) {
         // The index of the new item will be the current item count
         let newIndex = collectionItems.count
 
@@ -119,12 +120,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     }
     
     // Edit current colleciton
-    func updateCollection(section: Int, title: String, collectionDate: Date, reminderDate: Date, recurring: Bool) {
-        let df = setDateFormatter()
+    func updateCollection(section: Int, title: String, collectionDate: Int, reminderDate: Date, recurring: Bool) {
         let indexPath = IndexPath(row: 0, section: section)
         
         // Update list
-        let item = CollectionItem(title: title, collectionDate: collectionDate, reminderDate: collectionDate, recurring: recurring)
+        let item = CollectionItem(title: title, collectionDate: collectionDate, reminderDate: reminderDate, recurring: recurring)
         collectionItems[indexPath.section] = item
         
         // Update cell
@@ -133,7 +133,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
             manager.deleteNotification(id: cell.collectionTitle.text!)
             // Update cell
             cell.collectionTitle.text = title
-            cell.collectionDate.text = df.string(from: collectionDate)
+            cell.collectionDate.text = K.weekdaysFromDateComponent[collectionDate]
             if(item.recurring){
                 cell.repeatBtn.tintColor = UIColor(hexString: K.secondColour)
             } else {
@@ -182,7 +182,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         
         // Edit cell appearance here
         let item = collectionItems[indexPath.section]
-        let df = setDateFormatter()
         //let accessory: UITableViewCell.AccessoryType = item.done ? .checkmark : .none
         // Gradient colour
 //        let colourTheme = UIColor(hexString: K.thirdColour)
@@ -198,7 +197,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         cell.contentView.layer.cornerRadius = 15
         cell.layer.cornerRadius = 15
         cell.collectionTitle.text = item.title
-        cell.collectionDate.text = df.string(from: item.collectionDate)
+        cell.collectionDate.text = K.weekdaysFromDateComponent[item.collectionDate]
         //cell.accessoryType = accessory
         
         return cell
@@ -253,7 +252,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(segue.destination)
         if let editVC = segue.destination as? NewCollectionViewController, segue.identifier == K.editCollectionSegue {
             if let index = sender as? Int {
                 editVC.editCollection = true

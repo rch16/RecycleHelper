@@ -208,11 +208,12 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let itemVC = segue.destination as? ItemViewController, segue.identifier == K.searchItemViewSegue {
             if let itemIndex = tableView.indexPathForSelectedRow?.row {
-                if(searchActive) {
-                    itemVC.itemID = filteredData[itemIndex]
+                if showFavourites {
+                    itemVC.fromFavourites = true
                 } else {
-                    itemVC.itemID = tableList[itemIndex]
+                    itemVC.fromFavourites = false
                 }
+                itemVC.itemID = currentList[itemIndex]
             }
         }
     }

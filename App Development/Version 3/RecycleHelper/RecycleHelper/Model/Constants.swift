@@ -9,6 +9,9 @@
 import Foundation
 
 struct K {
+    // Initial launch
+    static let launchedBefore = "LaunchedBefore"
+    
     // Colour Theme
     static let firstColour = "EFFCEF"
     static let secondColour = "CCEDD2"
@@ -23,6 +26,9 @@ struct K {
     static let symbolInfoSegue = "ShowSymbolInfoSegue"
     static let editCollectionSegue = "EditCollectionSegue"
     static let addCollectionSegue = "AddCollectionSegue"
+    static let selectWeekdaySegue = "SelectWeekdaySegue"
+    static let addDaySegue = "AddDaySegue"
+    static let cancelAddDaySegue = "CancelAddDaySegue"
     
     // Home View
     static let collectionCellIdentifier = "CollectionTableViewCell"
@@ -31,6 +37,23 @@ struct K {
     static let titleCellIdentifier = "TitleCell"
     static let binCollections = "BinCollections"
     static let repeatsCellIdentifier = "SetsRepeatCell"
+    static let weekdayCellIdentifier = "WeekdayCell"
+    static let weekdaysFromDateComponent = ["",
+                                            "Sunday",
+                                            "Monday",
+                                            "Tuesday",
+                                            "Wednesday",
+                                            "Thursday",
+                                            "Friday",
+                                            "Saturday"]
+    static let weekdayValues = [2,3,4,5,6,7,1]
+    static let weekdayStrings = ["Monday",
+                                 "Tuesday",
+                                 "Wednesday",
+                                 "Thursday",
+                                 "Friday",
+                                 "Saturday",
+                                 "Sunday"]
     
     // Object Detection
     static let videoDataOutput = "VideoDataOutput"

@@ -46,6 +46,7 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var instructions: [String]!
     var isFavourite: Bool!
     var favouriteItems: Array<String>!
+    var fromFavourites: Bool!
     
     override func viewWillAppear(_ animated: Bool) {
         itemName.text = itemID
@@ -75,17 +76,26 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         checkIfFavourite()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        descriptionTable.flashScrollIndicators()
+    }
+    
     func getUserDefaults() {
         favouriteItems = (UserDefaults.standard.object(forKey: K.saveItemKey) as? Array<String>)!
     }
     
     func checkIfFavourite() {
-        if let _ = favouriteItems.firstIndex(of: itemID) {
+        if fromFavourites {
             isFavourite = true
             favouriteBtn.image = UIImage(systemName: "star.fill")
         } else {
-            isFavourite = false
-            favouriteBtn.image = UIImage(systemName: "star")
+            if let _ = favouriteItems.firstIndex(of: itemID) {
+                isFavourite = true
+                favouriteBtn.image = UIImage(systemName: "star.fill")
+            } else {
+                isFavourite = false
+                favouriteBtn.image = UIImage(systemName: "star")
+            }
         }
     }
     
