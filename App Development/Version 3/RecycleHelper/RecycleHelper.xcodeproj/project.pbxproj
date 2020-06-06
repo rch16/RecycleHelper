@@ -74,6 +74,8 @@
 		E5BF278C248BD12A00682721 /* WeekdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF278B248BD12A00682721 /* WeekdayViewController.swift */; };
 		E5BF278E248C09B400682721 /* CLTypingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF278D248C09B400682721 /* CLTypingLabel.swift */; };
 		E5BF2792248C0A6100682721 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF2791248C0A6100682721 /* OnboardingViewController.swift */; };
+		E5BF2794248C395500682721 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF2793248C395500682721 /* SettingsViewController.swift */; };
+		E5BF2796248C3B3E00682721 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF2795248C3B3E00682721 /* SettingsTableViewCell.swift */; };
 		E5F47B322487EB5200CFC3D8 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2B2487EB5100CFC3D8 /* appstore.png */; };
 		E5F47B332487EB5200CFC3D8 /* background4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2D2487EB5200CFC3D8 /* background4.png */; };
 		E5F47B342487EB5200CFC3D8 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2E2487EB5200CFC3D8 /* background2.png */; };
@@ -199,6 +201,8 @@
 		E5BF278B248BD12A00682721 /* WeekdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayViewController.swift; sourceTree = "<group>"; };
 		E5BF278D248C09B400682721 /* CLTypingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTypingLabel.swift; sourceTree = "<group>"; };
 		E5BF2791248C0A6100682721 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		E5BF2793248C395500682721 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E5BF2795248C3B3E00682721 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		E5F47B2B2487EB5100CFC3D8 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/appstore.png"; sourceTree = "<group>"; };
 		E5F47B2D2487EB5200CFC3D8 /* background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background4.png; sourceTree = "<group>"; };
 		E5F47B2E2487EB5200CFC3D8 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 				E5F47B50248ADDA400CFC3D8 /* ObjectViewController.swift */,
 				E5BF278B248BD12A00682721 /* WeekdayViewController.swift */,
 				E5BF2791248C0A6100682721 /* OnboardingViewController.swift */,
+				E5BF2793248C395500682721 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				E5F47B4C248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift */,
 				E5BF2789248BD07A00682721 /* WeekdayTableViewCell.swift */,
 				E5BF278D248C09B400682721 /* CLTypingLabel.swift */,
+				E5BF2795248C3B3E00682721 /* SettingsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -800,6 +806,7 @@
 				E5F47B51248ADDA400CFC3D8 /* ObjectViewController.swift in Sources */,
 				E5F47B472488FCD400CFC3D8 /* DatePickerTableViewCell.swift in Sources */,
 				E5BF278E248C09B400682721 /* CLTypingLabel.swift in Sources */,
+				E5BF2796248C3B3E00682721 /* SettingsTableViewCell.swift in Sources */,
 				E534F1D224850A660042CBFD /* ItemTableViewCell.swift in Sources */,
 				E534F18F2484FB080042CBFD /* AppDelegate.swift in Sources */,
 				E5F47B3F2488DCD700CFC3D8 /* CollectionTableViewCell.swift in Sources */,
@@ -810,6 +817,7 @@
 				E534F1C62484FEA80042CBFD /* SymbolViewController.swift in Sources */,
 				E5F853FF2487B40700401F4A /* SymbolInfoViewController.swift in Sources */,
 				E5F47B4924890DF900CFC3D8 /* TitleTableViewCell.swift in Sources */,
+				E5BF2794248C395500682721 /* SettingsViewController.swift in Sources */,
 				E534F20424856B380042CBFD /* Extensions.swift in Sources */,
 				E534F1C02484FE7A0042CBFD /* HomeViewController.swift in Sources */,
 				E5BF2792248C0A6100682721 /* OnboardingViewController.swift in Sources */,

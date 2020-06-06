@@ -15,8 +15,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     
     @IBAction func unwindAddingCollection(segue: UIStoryboardSegue) {}
     @IBAction func finishAddingCollection(segue: UIStoryboardSegue) {
-        // If add -> add new collection
-        // If edit -> overwrite current
         if let sourceVC = segue.source as? NewCollectionViewController {
             if sourceVC.editCollection {
                 // Overwrite edited collection
@@ -29,9 +27,14 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
             }
         }
     }
+    @IBAction func finishedEditingSettings(segue: UIStoryboardSegue) {
+        if let sourceVC = segue.source as? SettingsViewController {
+            userName.text = "Welcome, " + sourceVC.userName
+        }
+    }
     
     // Attach UI
-    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userName: CLTypingLabel!
     @IBOutlet weak var collectionTable: UITableView!
     @IBAction func didSelectSettings(_ sender: UIBarButtonItem) {
     }
@@ -61,10 +64,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Check personalisation
+        checkPersonalisation()
         // Get user defaults
         getUserDefaults()
-        // Hide navigation bar
-        self.navigationController?.isNavigationBarHidden = false
         // Request push notifications access
         //registerLocal()
         // Assign table data source and delegate
@@ -72,6 +75,42 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         collectionTable.delegate = self
         // Alter table appearance
         collectionTable.separatorStyle = .none
+    }
+    
+    func checkPersonalisation() {
+        guard let hasPersonalised = UserDefaults.standard.object(forKey: K.hasPersonalised) as? Bool else {
+            return
+        }
+        
+        if !hasPersonalised {
+            // Offer personalisation option
+            let alert = UIAlertController(title: "Welcome to RecycleHelper!", message: "What's your name?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            alert.addTextField(configurationHandler: { textField in
+                textField.placeholder = "Input your name here..."
+            })
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+
+                if let personalisation = alert.textFields?.first?.text {
+                    self.userName.text = "Welcome, " + personalisation
+                    UserDefaults.standard.set(personalisation, forKey: K.personalisation)
+                }
+            }))
+
+            self.present(alert, animated: true)
+
+            // Update user defaults
+            UserDefaults.standard.set(true, forKey: K.hasPersonalised)
+            
+        } else {
+            // Load personalisations
+            guard let personalisation = UserDefaults.standard.object(forKey: K.personalisation) as? String else {
+                return
+            }
+            userName.text = "Welcome, " + personalisation
+        }
     }
 
     // Get previous user data

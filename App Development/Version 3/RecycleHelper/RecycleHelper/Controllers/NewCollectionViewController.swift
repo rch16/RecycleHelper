@@ -70,7 +70,6 @@ class NewCollectionViewController: UITableViewController {
         let currentDate = Date.init()
         let currentDateComponents = Calendar.current.dateComponents([.weekday], from: currentDate)
         newCollection = CollectionItem(title: "", collectionDate: currentDateComponents.weekday!, reminderDate: currentDate, recurring: false)
-        print(newCollection?.collectionDate)
         // alter navigation header and add button depending on purpose
         addBtn.possibleTitles = ["Add", "Done"]
         if editCollection {

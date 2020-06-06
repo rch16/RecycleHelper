@@ -31,10 +31,13 @@ struct K {
     static let cancelAddDaySegue = "CancelAddDaySegue"
     
     // Home View
+    static let hasPersonalised = "HasPersonalised"
+    static let personalisation = "Personalisation"
     static let collectionCellIdentifier = "CollectionTableViewCell"
     static let eventCellIdentifier = "EventCell"
     static let datePickerCellIdentifier = "DatePickerCell"
     static let titleCellIdentifier = "TitleCell"
+    static let settingsCellIdentifier = "SettingsCell"
     static let binCollections = "BinCollections"
     static let repeatsCellIdentifier = "SetsRepeatCell"
     static let weekdayCellIdentifier = "WeekdayCell"
