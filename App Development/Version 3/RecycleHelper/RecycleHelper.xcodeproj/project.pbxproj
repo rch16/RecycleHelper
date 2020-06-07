@@ -25,7 +25,6 @@
 		E534F1C82484FEB40042CBFD /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1C72484FEB40042CBFD /* LocationViewController.swift */; };
 		E534F1CA2484FEC20042CBFD /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1C92484FEC20042CBFD /* ItemViewController.swift */; };
 		E534F1CD248505250042CBFD /* recycling.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1CC248505250042CBFD /* recycling.png */; };
-		E534F1CF248509FF0042CBFD /* SearchItemsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E534F1CE248509FF0042CBFD /* SearchItemsList.plist */; };
 		E534F1D224850A660042CBFD /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1D124850A660042CBFD /* ItemTableViewCell.swift */; };
 		E534F1E024850C510042CBFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F1DF24850C510042CBFD /* Constants.swift */; };
 		E534F1F224850C7D0042CBFD /* metal_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F1E224850C7D0042CBFD /* metal_recyclable.png */; };
@@ -82,12 +81,15 @@
 		E5BF27A1248D04E700682721 /* onboarding2_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E5BF279C248D04E700682721 /* onboarding2_3.png */; };
 		E5BF27A2248D04E700682721 /* onboarding2_4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5BF279D248D04E700682721 /* onboarding2_4.png */; };
 		E5BF27A3248D04E700682721 /* onboarding2_5.png in Resources */ = {isa = PBXBuildFile; fileRef = E5BF279E248D04E700682721 /* onboarding2_5.png */; };
-		E5F47B322487EB5200CFC3D8 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2B2487EB5100CFC3D8 /* appstore.png */; };
+		E5BF27A5248D09CD00682721 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5BF27A4248D09CD00682721 /* GoogleService-Info.plist */; };
+		E5BF27AA248D1F7800682721 /* Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E5BF27A6248D1F7700682721 /* Splashscreen.png */; };
+		E5BF27AB248D1F7800682721 /* SearchItemsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5BF27A7248D1F7700682721 /* SearchItemsList.plist */; };
+		E5BF27AC248D1F7800682721 /* ItemList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5BF27A8248D1F7700682721 /* ItemList.plist */; };
+		E5BF27AD248D1F7800682721 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E5BF27A9248D1F7700682721 /* appstore.png */; };
 		E5F47B332487EB5200CFC3D8 /* background4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2D2487EB5200CFC3D8 /* background4.png */; };
 		E5F47B342487EB5200CFC3D8 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2E2487EB5200CFC3D8 /* background2.png */; };
 		E5F47B352487EB5200CFC3D8 /* background3.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2F2487EB5200CFC3D8 /* background3.png */; };
 		E5F47B362487EB5200CFC3D8 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B302487EB5200CFC3D8 /* background1.png */; };
-		E5F47B372487EB5200CFC3D8 /* Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B312487EB5200CFC3D8 /* Splashscreen.png */; };
 		E5F47B3F2488DCD700CFC3D8 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B3E2488DCD700CFC3D8 /* CollectionTableViewCell.swift */; };
 		E5F47B412488DEFE00CFC3D8 /* CollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B402488DEFE00CFC3D8 /* CollectionItem.swift */; };
 		E5F47B432488FA2400CFC3D8 /* NewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B422488FA2400CFC3D8 /* NewCollectionViewController.swift */; };
@@ -98,7 +100,6 @@
 		E5F47B4D248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B4C248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift */; };
 		E5F47B4F248ADCE300CFC3D8 /* WasteClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B4E248ADCE300CFC3D8 /* WasteClassifier.mlmodel */; };
 		E5F47B51248ADDA400CFC3D8 /* ObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F47B50248ADDA400CFC3D8 /* ObjectViewController.swift */; };
-		E5F47B53248ADE6100CFC3D8 /* ItemList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B52248ADE6100CFC3D8 /* ItemList.plist */; };
 		E5F853F72487ADEC00401F4A /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F02487ADEC00401F4A /* 4.png */; };
 		E5F853F82487ADEC00401F4A /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F12487ADEC00401F4A /* 5.png */; };
 		E5F853F92487ADEC00401F4A /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F853F22487ADEC00401F4A /* 7.png */; };
@@ -157,7 +158,6 @@
 		E534F1C72484FEB40042CBFD /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		E534F1C92484FEC20042CBFD /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		E534F1CC248505250042CBFD /* recycling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recycling.png; sourceTree = "<group>"; };
-		E534F1CE248509FF0042CBFD /* SearchItemsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SearchItemsList.plist; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/SearchItemsList.plist"; sourceTree = "<group>"; };
 		E534F1D124850A660042CBFD /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		E534F1DF24850C510042CBFD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E534F1E224850C7D0042CBFD /* metal_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal_recyclable.png; sourceTree = "<group>"; };
@@ -215,12 +215,15 @@
 		E5BF279C248D04E700682721 /* onboarding2_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2_3.png; sourceTree = "<group>"; };
 		E5BF279D248D04E700682721 /* onboarding2_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2_4.png; sourceTree = "<group>"; };
 		E5BF279E248D04E700682721 /* onboarding2_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2_5.png; sourceTree = "<group>"; };
-		E5F47B2B2487EB5100CFC3D8 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/appstore.png"; sourceTree = "<group>"; };
+		E5BF27A4248D09CD00682721 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Version 2/RecycleHelper/RecycleHelper/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5BF27A6248D1F7700682721 /* Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splashscreen.png; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/Splashscreen.png"; sourceTree = "<group>"; };
+		E5BF27A7248D1F7700682721 /* SearchItemsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SearchItemsList.plist; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/SearchItemsList.plist"; sourceTree = "<group>"; };
+		E5BF27A8248D1F7700682721 /* ItemList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ItemList.plist; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/ItemList.plist"; sourceTree = "<group>"; };
+		E5BF27A9248D1F7700682721 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/appstore.png"; sourceTree = "<group>"; };
 		E5F47B2D2487EB5200CFC3D8 /* background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background4.png; sourceTree = "<group>"; };
 		E5F47B2E2487EB5200CFC3D8 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
 		E5F47B2F2487EB5200CFC3D8 /* background3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background3.png; sourceTree = "<group>"; };
 		E5F47B302487EB5200CFC3D8 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
-		E5F47B312487EB5200CFC3D8 /* Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splashscreen.png; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/Splashscreen.png"; sourceTree = "<group>"; };
 		E5F47B3E2488DCD700CFC3D8 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		E5F47B402488DEFE00CFC3D8 /* CollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItem.swift; sourceTree = "<group>"; };
 		E5F47B422488FA2400CFC3D8 /* NewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewController.swift; sourceTree = "<group>"; };
@@ -231,7 +234,6 @@
 		E5F47B4C248A7E2D00CFC3D8 /* SetsRepeatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsRepeatTableViewCell.swift; sourceTree = "<group>"; };
 		E5F47B4E248ADCE300CFC3D8 /* WasteClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = WasteClassifier.mlmodel; path = "../../../Version 2/RecycleHelper/WasteClassifier.mlmodel"; sourceTree = "<group>"; };
 		E5F47B50248ADDA400CFC3D8 /* ObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewController.swift; sourceTree = "<group>"; };
-		E5F47B52248ADE6100CFC3D8 /* ItemList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ItemList.plist; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/ItemList.plist"; sourceTree = "<group>"; };
 		E5F853F02487ADEC00401F4A /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		E5F853F12487ADEC00401F4A /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		E5F853F22487ADEC00401F4A /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		E534F18D2484FB080042CBFD /* RecycleHelper */ = {
 			isa = PBXGroup;
 			children = (
+				E5BF27A4248D09CD00682721 /* GoogleService-Info.plist */,
 				E5F47B4E248ADCE300CFC3D8 /* WasteClassifier.mlmodel */,
 				E534F20824859F5D0042CBFD /* RecycleHelper.entitlements */,
 				E534F20224856B1D0042CBFD /* Model */,
@@ -363,11 +366,12 @@
 		E534F1CB248505120042CBFD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E5BF27A9248D1F7700682721 /* appstore.png */,
+				E5BF27A8248D1F7700682721 /* ItemList.plist */,
+				E5BF27A7248D1F7700682721 /* SearchItemsList.plist */,
+				E5BF27A6248D1F7700682721 /* Splashscreen.png */,
 				E5BF2799248D04E700682721 /* Onboarding2 */,
-				E5F47B52248ADE6100CFC3D8 /* ItemList.plist */,
-				E5F47B2B2487EB5100CFC3D8 /* appstore.png */,
 				E5F47B2C2487EB5200CFC3D8 /* Backgrounds */,
-				E5F47B312487EB5200CFC3D8 /* Splashscreen.png */,
 				E5AF66412486E06B007B26B5 /* Labels */,
 				E5AF663B2486A4C8007B26B5 /* plasticresincode.png */,
 				E5AF66392486A382007B26B5 /* oprl.png */,
@@ -375,7 +379,6 @@
 				E534F1E124850C7D0042CBFD /* Categories */,
 				E534F1EC24850C7D0042CBFD /* Onboarding */,
 				E534F1E724850C7D0042CBFD /* Recycling Instructions */,
-				E534F1CE248509FF0042CBFD /* SearchItemsList.plist */,
 				E534F1CC248505250042CBFD /* recycling.png */,
 				E5AF663F2486A73F007B26B5 /* RecyclingSymbols.plist */,
 			);
@@ -642,18 +645,17 @@
 				E534F1F624850C7D0042CBFD /* glass_recyclable.png in Resources */,
 				E5F47B362487EB5200CFC3D8 /* background1.png in Resources */,
 				E5AF66582486E06B007B26B5 /* recyclablesteel.png in Resources */,
-				E5F47B53248ADE6100CFC3D8 /* ItemList.plist in Resources */,
 				E5F853FB2487ADEC00401F4A /* 2.png in Resources */,
 				E534F20C24863C990042CBFD /* Pin.png in Resources */,
 				E5BF279F248D04E700682721 /* onboarding2_1.png in Resources */,
 				E534F1CD248505250042CBFD /* recycling.png in Resources */,
-				E5F47B322487EB5200CFC3D8 /* appstore.png in Resources */,
 				E5AF666D24878558007B26B5 /* oprl1.png in Resources */,
 				E5AF66602486E06B007B26B5 /* PS.png in Resources */,
 				E534F19B2484FB090042CBFD /* LaunchScreen.storyboard in Resources */,
 				E534F1982484FB090042CBFD /* Assets.xcassets in Resources */,
 				E534F1F724850C7D0042CBFD /* check.png in Resources */,
 				E5AF66652486E06B007B26B5 /* PETE.png in Resources */,
+				E5BF27A5248D09CD00682721 /* GoogleService-Info.plist in Resources */,
 				E5F47B342487EB5200CFC3D8 /* background2.png in Resources */,
 				E534F1FF24850C7D0042CBFD /* onboarding4.png in Resources */,
 				E5BF27A3248D04E700682721 /* onboarding2_5.png in Resources */,
@@ -674,11 +676,13 @@
 				E534F1F324850C7D0042CBFD /* plastic_recyclable.png in Resources */,
 				E5AF665D2486E06B007B26B5 /* HDPE.png in Resources */,
 				E5AF66592486E06B007B26B5 /* recyclablealuminium.png in Resources */,
+				E5BF27AC248D1F7800682721 /* ItemList.plist in Resources */,
 				E5F853FD2487ADEC00401F4A /* 1.png in Resources */,
 				E5F853FC2487ADEC00401F4A /* 3.png in Resources */,
 				E534F1F924850C7D0042CBFD /* cant_recycle.png in Resources */,
 				E5F853F92487ADEC00401F4A /* 7.png in Resources */,
 				E5AF66562486E06B007B26B5 /* seedling.png in Resources */,
+				E5BF27AB248D1F7800682721 /* SearchItemsList.plist in Resources */,
 				E534F1FD24850C7D0042CBFD /* onboarding2.png in Resources */,
 				E5F47B352487EB5200CFC3D8 /* background3.png in Resources */,
 				E534F1FE24850C7D0042CBFD /* onboarding5.png in Resources */,
@@ -689,13 +693,13 @@
 				E5F853F82487ADEC00401F4A /* 5.png in Resources */,
 				E534F1962484FB080042CBFD /* Main.storyboard in Resources */,
 				E5BF27A2248D04E700682721 /* onboarding2_4.png in Resources */,
-				E534F1CF248509FF0042CBFD /* SearchItemsList.plist in Resources */,
 				E5AF665C2486E06B007B26B5 /* greendot.png in Resources */,
-				E5F47B372487EB5200CFC3D8 /* Splashscreen.png in Resources */,
 				E534F1FB24850C7D0042CBFD /* onboarding1.png in Resources */,
 				E5AF665B2486E06B007B26B5 /* wasteelectrical.png in Resources */,
 				E534F1F824850C7D0042CBFD /* can_recycle.png in Resources */,
+				E5BF27AA248D1F7800682721 /* Splashscreen.png in Resources */,
 				E5AF663C2486A4C8007B26B5 /* plasticresincode.png in Resources */,
+				E5BF27AD248D1F7800682721 /* appstore.png in Resources */,
 				E5AF66552486E06B007B26B5 /* LDPE.png in Resources */,
 				E534F1F524850C7D0042CBFD /* plastic_non_recyclable.png in Resources */,
 				E5F47B332487EB5200CFC3D8 /* background4.png in Resources */,

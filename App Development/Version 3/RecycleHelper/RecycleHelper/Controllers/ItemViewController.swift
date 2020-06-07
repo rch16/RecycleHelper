@@ -35,12 +35,10 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             UserDefaults.standard.set(favouriteItems, forKey: K.saveItemKey)
         }
-        addToFavourites()
     }
     @IBAction func learnMoreBtn(_ sender: Any) { openUrl(urlStr: "https://www.recyclenow.com/what-to-do-with") }
     
     var itemID: String!
-    var tableData: [String: [String: Any]]!
     var itemInfo: [String: Any]!
     var recyclable: String!
     var instructions: [String]!
@@ -85,10 +83,13 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func checkIfFavourite() {
+        // First, check if segue is from favourites view
+        // If so, all data will be favourite
         if fromFavourites {
             isFavourite = true
             favouriteBtn.image = UIImage(systemName: "star.fill")
         } else {
+            // Next, check if specific item is favourite by checking favourites list
             if let _ = favouriteItems.firstIndex(of: itemID) {
                 isFavourite = true
                 favouriteBtn.image = UIImage(systemName: "star.fill")
@@ -100,19 +101,15 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     private func loadItemData() {
-        // Read from the plist file into the dictionary.
-        if let path = Bundle.main.path(forResource: K.searchData, ofType: "plist") {
-            tableData = NSDictionary(contentsOfFile: path) as? [String: [String: Any]]
-            itemInfo = tableData[itemID]
-            recyclable = itemInfo["Recyclable"] as? String
-            instructions = itemInfo["How"] as? [String]
+        // itemInfo loaded during segue
+        recyclable = itemInfo["Recyclable"] as? String
+        if let how = itemInfo["How"] as? [String] {
+            instructions = how
+        } else {
+            instructions = []
         }
-        
     }
     
-    func addToFavourites() {
-        
-    }
     
     // MARK: - Displaying Information
     

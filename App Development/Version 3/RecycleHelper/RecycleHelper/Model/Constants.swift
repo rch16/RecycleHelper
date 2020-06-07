@@ -12,6 +12,9 @@ struct K {
     // Initial launch
     static let launchedBefore = "LaunchedBefore"
     
+    // Information
+    static let lastUpdated = "LastUpdated"
+    
     // Colour Theme
     static let firstColour = "EFFCEF"
     static let secondColour = "CCEDD2"
@@ -44,9 +47,11 @@ struct K {
     static let weekdayCellIdentifier = "WeekdayCell"
     static let buttonCellIdentifier = "ButtonCell"
     static let aboutCellIdentifier = "TableCell"
+    static let updatedInfoCellIdentifier = "UpdatedCell"
     static let onboardingBtnTitle = "Show onboarding"
     static let clearCollectionsBtnTitle = "Clear bin collections"
     static let clearFavouritesBtnTitle = "Clear search favourites"
+    static let changePrivacyBtnTitle = "Change privacy settings"
     static let weekdaysFromDateComponent = ["",
                                             "Sunday",
                                             "Monday",

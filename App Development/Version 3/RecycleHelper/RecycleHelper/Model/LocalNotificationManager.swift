@@ -8,6 +8,7 @@
 
 import Foundation
 import UserNotifications
+import UIKit
 
 struct Notification {
     var id: String
@@ -33,7 +34,7 @@ class LocalNotificationManager {
     // Notification authorisation
     private func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-
+            
             if granted == true && error == nil {
                 self.scheduleNotifications()
             }
@@ -45,12 +46,14 @@ class LocalNotificationManager {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
 
             switch settings.authorizationStatus {
+            case .denied:
+                self.requestAuthorization()
             case .notDetermined:
                 self.requestAuthorization()
             case .authorized, .provisional:
                 self.scheduleNotifications()
             default:
-                break // Do nothing
+                self.requestAuthorization()
             }
         }
     }
@@ -88,12 +91,27 @@ class LocalNotificationManager {
         }
     }
     
+    
     // Delete a scheduled notification
     func deleteNotification(id: String) {
         
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
         
-        print("Notification deleted! --- ID = \(id)")
+            switch settings.authorizationStatus {
+            case .denied:
+                self.requestAuthorization()
+            case .notDetermined:
+                self.requestAuthorization()
+            case .authorized, .provisional:
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+                
+                print("Notification deleted! --- ID = \(id)")
+            default:
+                break // Do nothing
+            }
+            
+        }
+        
     }
 }
 

@@ -19,18 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>recyclehelper-rch16.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:893450154709:ios:76e2951ad1692866a1685c</string>
 	<key>DATABASE_URL</key>
-	<string>https://recyclehelper-rch16.firebaseio.com</string>
+	<string>https://recyclehelper-rch16.firebaseio.com/</string>
 </dict>
 </plist>

@@ -14,7 +14,10 @@ class SettingsViewController: UITableViewController {
     var userName: String!
     
     // Number of sections
-    var sectionNum: Int = 3
+    var sectionNum: Int = 5
+    
+    // Number of rows in section
+    var rowInSection = [2,1,1,1,2]
     
     // Text Field
     var textChanged: ((String) -> Void)?
@@ -50,7 +53,7 @@ class SettingsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 2 {
+        if section == sectionNum - 1 {
             return CGFloat(30)
         } else {
             return CGFloat(0)
@@ -72,11 +75,7 @@ class SettingsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
-            return 1
-        } else {
-            return 2
-        }
+        return rowInSection[section]
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,17 +86,27 @@ class SettingsViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: K.aboutCellIdentifier, for: indexPath as IndexPath)
                 return cell
             } else {
-                // Edit personalisation
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: K.settingsCellIdentifier, for: indexPath as IndexPath) as? SettingsTableViewCell  else {
-                    fatalError("The dequeued cell is not an instance of SettingsTableViewCell.")}
+                // Information last updated on
+                let cell = tableView.dequeueReusableCell(withIdentifier: K.updatedInfoCellIdentifier, for: indexPath as IndexPath)
+                let lastUpdated = (UserDefaults.standard.object(forKey: K.lastUpdated) as? String)!
                 
-                cell.nameTextField.delegate = self
-                cell.nameTextField.text = userName
+                cell.detailTextLabel?.text = lastUpdated
+                print(lastUpdated)
                 
                 return cell
             }
             
         } else if indexPath.section == 1 {
+            // Edit personalisation
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: K.settingsCellIdentifier, for: indexPath as IndexPath) as? SettingsTableViewCell  else {
+                fatalError("The dequeued cell is not an instance of SettingsTableViewCell.")}
+            
+            cell.nameTextField.delegate = self
+            cell.nameTextField.text = userName
+            
+            return cell
+            
+        } else if indexPath.section == 2 {
             // Show onboarding
             guard let cell = tableView.dequeueReusableCell(withIdentifier: K.buttonCellIdentifier, for: indexPath as IndexPath) as? ButtonTableViewCell  else {
             fatalError("The dequeued cell is not an instance of ButtonTableViewCell.")}
@@ -107,6 +116,17 @@ class SettingsViewController: UITableViewController {
             cell.delegate = self
             
             return cell
+        } else if indexPath.section == 3 {
+            // Change privacy settings
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: K.buttonCellIdentifier, for: indexPath as IndexPath) as? ButtonTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of ButtonTableViewCell.")}
+            
+            cell.actionBtn.setTitle(K.changePrivacyBtnTitle, for: .normal)
+            cell.actionBtn.setTitleColor(UIColor(hexString: K.thirdColour), for: .normal)
+            cell.delegate = self
+            
+            return cell
+            
         } else {
             // Clear...
             guard let cell = tableView.dequeueReusableCell(withIdentifier: K.buttonCellIdentifier, for: indexPath as IndexPath) as? ButtonTableViewCell  else {
@@ -142,15 +162,31 @@ class SettingsViewController: UITableViewController {
 
 }
 
-// MARK: - CellSegueDelegate Methods
+// MARK: - CellActionDelegate Methods
 
-extension SettingsViewController: CellSegueDelegate {
+extension SettingsViewController: CellActionDelegate {
     
     func callSegueFromCell(_ sender: Any?) {
         if let buttonTitle = sender as? String {
             if buttonTitle == K.onboardingBtnTitle {
                 // Show onboarding
                 self.performSegue(withIdentifier: K.showOnboardingSegue, sender: nil)
+            } else if buttonTitle == K.changePrivacyBtnTitle {
+                let optionMenu = UIAlertController(title: nil, message: "You are about to be redirected to your phone's settings", preferredStyle: .actionSheet)
+                let yesAction = UIAlertAction(title: "OK", style: .destructive, handler: { action in
+                    // Haptic feedback
+                    let feedback = UINotificationFeedbackGenerator()
+                    feedback.notificationOccurred(.success)
+                    // Open settings
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                })
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+
+                optionMenu.addAction(yesAction)
+                optionMenu.addAction(cancelAction)
+
+                self.present(optionMenu, animated: true, completion: nil)
+                
             } else {
                 // Delete actions
                 

@@ -9,12 +9,23 @@
 import UIKit
 import CoreLocation
 import UserNotifications
+import Firebase
+import FirebaseAnalytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var ref: DatabaseReference!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Configure Firebase
+        FirebaseApp.configure()
+        
+        // Create database reference
+        ref = Database.database().reference()
+        
         return true
     }
 

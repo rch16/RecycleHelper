@@ -10,8 +10,11 @@ import Foundation
 import UIKit
 import UserNotifications
 import SwipeCellKit
+import FirebaseDatabase
 
 class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UITableViewDataSource, UITableViewDelegate {
+    
+    var ref: DatabaseReference = Database.database().reference()
     
     @IBAction func unwindAddingCollection(segue: UIStoryboardSegue) {}
     @IBAction func finishAddingCollection(segue: UIStoryboardSegue) {
@@ -69,6 +72,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         checkPersonalisation()
         // Get user defaults
         getUserDefaults()
+        // Load database data
+        loadDatabaseData()
         // Navigation bar appearance
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -129,6 +134,14 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         collectionItems = collections
      }
     
+    func loadDatabaseData() {
+        self.ref.child("Last Updated").observe(.value, with: { (snapshot) in
+           if let updatedDate = snapshot.value as? String {
+               UserDefaults.standard.set(updatedDate, forKey: K.lastUpdated)
+           }
+       })
+    }
+    
     // Date format
     func setDateFormatter() -> DateFormatter {
         let dateFormatter = DateFormatter()
@@ -158,7 +171,28 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         let notificationTitle = "Collection Reminder: " + title
         let notificationDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: reminderDate)
         manager.notifications.append(Notification(id: title, title: notificationTitle, datetime: notificationDateComponents, recurring: recurring))
+        checkNotificationAuthorisation()
         manager.schedule()
+    }
+    
+    func checkNotificationAuthorisation() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+               
+               if !granted {
+                   DispatchQueue.main.async {
+                   let changePrivacySetting = "RecycleHelper doesn't have permission to provide push notifications, please change privacy settings"
+                   let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to push notifications")
+                   let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
+                   
+                   alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"), style: .cancel, handler: nil))
+                   
+                   alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"), style: .`default`, handler: { _ in UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                   }))
+                   
+                    self.present(alertController, animated: true, completion: nil)
+               }
+            }
+        }
     }
     
     // Edit current colleciton
@@ -190,6 +224,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         let notificationTitle = "Collection Reminder: " + title
         let notificationDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: reminderDate)
         manager.notifications.append(Notification(id: title, title: notificationTitle, datetime: notificationDateComponents, recurring: recurring))
+        checkNotificationAuthorisation()
         manager.schedule()
    
     }

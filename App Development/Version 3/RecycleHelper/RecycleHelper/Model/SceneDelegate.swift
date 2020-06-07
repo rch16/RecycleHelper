@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UserDefaults.standard.register(defaults: [K.binCollections: [CollectionItem]()])
         UserDefaults.standard.register(defaults: [K.hasPersonalised: false])
         UserDefaults.standard.register(defaults: [K.personalisation: ""])
+        UserDefaults.standard.register(defaults: [K.lastUpdated: ""])
         
         let launchedBefore = UserDefaults.standard.bool(forKey: K.launchedBefore)
 

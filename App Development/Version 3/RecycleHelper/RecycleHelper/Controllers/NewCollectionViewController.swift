@@ -239,6 +239,7 @@ class NewCollectionViewController: UITableViewController {
                 guard let reminderCell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath as IndexPath) as? EventTableViewCell  else {
                     fatalError("The dequeued cell is not an instance of EventTableViewCell.")}
                 reminderCell.updateText(text: inputTexts[indexPath.row], date: inputDates[indexPath.row])
+
                 return reminderCell
             }
         }
@@ -261,17 +262,18 @@ class NewCollectionViewController: UITableViewController {
 extension NewCollectionViewController: DatePickerDelegate {
     
     func didChangeDate(date: Date, indexPath: IndexPath) {
-        tableView.reloadRows(at: [indexPath], with: .none)
         if indexPath.row == 0 {
             // collection date
             newCollection?.collectionDate = collectionDay
         } else {
             // reminder date
             newCollection?.reminderDate = date
+            inputDates[1] = date
         }
         if addBtn.title == "Done" {
             self.addBtn.isEnabled = true
         }
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
 }

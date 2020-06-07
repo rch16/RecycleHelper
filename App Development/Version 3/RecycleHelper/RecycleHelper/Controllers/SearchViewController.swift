@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 class SearchViewController: UITableViewController, UISearchBarDelegate {
     
@@ -16,23 +17,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var viewOption: UIBarButtonItem!
     @IBAction func didChangeViewOption(_ sender: UIBarButtonItem) {
         showFavourites.toggle()
-        if (showFavourites) {
-            // Change user default
-            UserDefaults.standard.set(showFavourites, forKey: K.showFavourites)
-            // Change button title
-            viewOption.title = "View All"
-            // Update current list
-            currentList = favouritesList
-            self.tableView.reloadData()
-        } else {
-            // Change user default
-            UserDefaults.standard.set(showFavourites, forKey: K.showFavourites)
-            // Change button title
-            viewOption.title = "Favourites"
-            // Update current list
-            currentList = tableList
-            self.tableView.reloadData()
-        }
+        favouritesView()
     }
     
     // Search Bar
@@ -41,6 +26,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     var noDataLabel: UILabel!
     
     // Table Data
+    var ref: DatabaseReference = Database.database().reference()
     var tableData: [String: [String: Any]]!
     var tableList: [String]!
     var favouriteItems: Array<String>!
@@ -53,7 +39,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         self.navigationController?.isNavigationBarHidden = false
         // Get user defaults
         getUserDefaults()
-        // Check whether to display favourites or all
+        // Check whether to display favourites or all items
         checkView()
         // Reload data to reflect changes
         self.tableView.reloadData()
@@ -61,27 +47,67 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Get user defaults
+        getUserDefaults()
+        
+        // Load the data
+        loadItemData()
+        
+        // Check favourites data
+        favouritesView()
+        
+        // Load data from database
+        loadDatabaseData()
+        
+        // Check whether to display favourites or all
+        checkView()
+        
         // Setup delegates
         searchBar.delegate = self
-        // Show navigation bar
+        
+        // UI Appearance
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.visibleViewController!.title = "Search"
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        // Dismiss keyboard on drag
         self.tableView.keyboardDismissMode = .onDrag
-        // No cancel button
         self.searchBar.showsCancelButton = false
-        // Load the data
-        loadItemData()
-        filteredData = tableList
-        // Get user defaults
-        getUserDefaults()
+        
+        // Reload data to reflect changes
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Loading Data Methods
+    
+    
+    private func loadItemData() {
+        // Read from the plist file into the dictionary.
+        if let path = Bundle.main.path(forResource: K.searchData, ofType: "plist") {
+            tableData = NSDictionary(contentsOfFile: path) as? [String: [String: Any]]
+            tableList = Array(tableData.keys)
+            tableList = tableList.sorted()
+        }
+    }
+    
+    func loadDatabaseData() {
+        self.ref.child("0").observe(.value, with: { (snapshot) in
+            
+            if let dict = snapshot.value as? [String: [String: Any]] {
+                self.tableData = dict
+                self.tableList = Array(self.tableData.keys)
+                self.tableList = self.tableList.sorted()
+                self.filteredData = self.tableList
+            }
+
+        })
+        favouritesView()
+        tableView.reloadData()
     }
     
     func getUserDefaults() {
@@ -116,6 +142,27 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         tableView.backgroundColor = .systemBackground
         tableView.separatorStyle = .none
     }
+    
+    func favouritesView() {
+        if (showFavourites) {
+            // Change user default
+            UserDefaults.standard.set(showFavourites, forKey: K.showFavourites)
+            // Change button title
+            viewOption.title = "View All"
+            // Update current list
+            currentList = favouritesList
+            self.tableView.reloadData()
+        } else {
+            // Change user default
+            UserDefaults.standard.set(showFavourites, forKey: K.showFavourites)
+            // Change button title
+            viewOption.title = "Favourites"
+            // Update current list
+            currentList = tableList
+            self.tableView.reloadData()
+        }
+    }
+    
     // MARK: - Search Bar Functionality
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -213,18 +260,10 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
                 } else {
                     itemVC.fromFavourites = false
                 }
-                itemVC.itemID = currentList[itemIndex]
+                let itemID = currentList[itemIndex]
+                itemVC.itemID = itemID
+                itemVC.itemInfo = tableData[itemID]
             }
-        }
-    }
-    // MARK: - Private Methods
-    
-    private func loadItemData() {
-        // Read from the plist file into the dictionary.
-        if let path = Bundle.main.path(forResource: K.searchData, ofType: "plist") {
-            tableData = NSDictionary(contentsOfFile: path) as? [String: [String: Any]]
-            tableList = Array(tableData.keys)
-            tableList = tableList.sorted()
         }
     }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CellSegueDelegate: class {
+protocol CellActionDelegate: class {
     func callSegueFromCell(_ sender: Any?)
 }
 
@@ -21,7 +21,7 @@ class ButtonTableViewCell: UITableViewCell {
         }
     }
     
-    weak var delegate: CellSegueDelegate?
+    weak var delegate: CellActionDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
