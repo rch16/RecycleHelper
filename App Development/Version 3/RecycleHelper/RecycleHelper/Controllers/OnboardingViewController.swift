@@ -23,9 +23,9 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     var scrollHeight: CGFloat! = 0.0
     
     // Onboarding views
-    var titles = ["Welcome to RecycleHelper", "Bin Collection Reminders", "Material Recognition", "Search Functionality", "Nearest Facilities Locator","Ready to get Started?"] //, "Object Detection", "Search Functionality", "Recycling made easy"]
-    var descriptions = ["Recycling information, specific to your location, available anytime.", "Setup weekly or fortnightly reminders about your kerbside waste and recycling collections.", "Allows you to learn how to recycle your regular waste items.", "Allows you to learn more by searching for a specific item, or a recycling symbol.", "Find your nearest Household Recycling Centre, Charity Shop or Supermarket for those harder-to-recycle items."," "] //, "Allows you to learn more information about a range of items.", "Once the item is identified, just follow the step-by-step instructions."]
-    var images = ["onboarding1","onboarding1","onboarding1","onboarding1","onboarding1","onboarding1"]
+    var titles = ["Welcome to RecycleHelper", "Bin Collection Reminders", "Material Recognition", "Search Functionality", "Nearest Facilities Locator","Ready to get started?"]
+    var descriptions = ["Recycling information, specific to your location, available anytime.", "Setup weekly or fortnightly reminders about your kerbside waste and recycling collections.", "Scan an item's material with your phone camera to  learn how to recycle your regular waste items.", "Allows you to learn more by searching for a specific item, or a recycling symbol.", "Find your nearest Household Recycling Centre, Charity Shop or Supermarket for those harder-to-recycle items."," "]
+    var images = ["onboarding2_1","onboarding2_2","onboarding2_3","onboarding2_4","onboarding2_5","onboarding2_1"]
     
     
     override func viewDidLoad() {
@@ -60,7 +60,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
             imageView.center = CGPoint(x: scrollWidth/2, y: scrollHeight/2 - 50)
             
             // Title
-            let title = UILabel.init(frame: CGRect(x: 32, y: imageView.frame.maxY+30, width: scrollWidth-64, height:20))
+            let title = UILabel.init(frame: CGRect(x: 32, y: imageView.frame.maxY+30, width: scrollWidth-64, height:25))
             title.textAlignment = .center
             title.font = UIFont.boldSystemFont(ofSize: 20.0)
             title.text = titles[i]

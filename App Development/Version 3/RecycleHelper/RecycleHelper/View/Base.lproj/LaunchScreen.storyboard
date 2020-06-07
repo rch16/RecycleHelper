@@ -1,25 +1,46 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gPD-Vf-ZAm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="W1s-va-nz3">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="gPD-Vf-ZAm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eeh-wl-A6T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="Splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="DWL-Cx-6ok">
+                                <rect key="frame" x="149" y="385" width="116" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="D7o-l4-Bv8"/>
+                                    <constraint firstAttribute="height" constant="127" id="tDa-7i-mVT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kav-Zg-Pn8" firstAttribute="trailing" secondItem="DWL-Cx-6ok" secondAttribute="trailing" constant="149" id="2I8-s7-jV2"/>
+                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="leading" secondItem="kav-Zg-Pn8" secondAttribute="leading" constant="149" id="DkX-7e-Ygf"/>
+                            <constraint firstItem="kav-Zg-Pn8" firstAttribute="trailing" secondItem="DWL-Cx-6ok" secondAttribute="trailing" constant="149" id="NPB-0V-9mA"/>
+                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="leading" secondItem="kav-Zg-Pn8" secondAttribute="leading" constant="149" id="afY-UX-S2A"/>
+                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="top" secondItem="kav-Zg-Pn8" secondAttribute="top" constant="288" id="iOa-fQ-b38"/>
+                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="top" secondItem="kav-Zg-Pn8" secondAttribute="top" constant="288" id="vHZ-hl-o2a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kav-Zg-Pn8"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6M-Ng-Dv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="275" y="385"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Splashscreen.png" width="375" height="375"/>
+    </resources>
 </document>

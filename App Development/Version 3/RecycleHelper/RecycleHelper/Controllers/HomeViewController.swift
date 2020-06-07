@@ -55,6 +55,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     
     // Bin Collections Data
     private var collectionItems = [CollectionItem]()
+    var noDataLabel: UILabel!
     var datePicker: UIDatePicker = UIDatePicker()
     let toolBar = UIToolbar()
     var newCollection: CollectionItem?  // Adding new collection
@@ -68,8 +69,10 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         checkPersonalisation()
         // Get user defaults
         getUserDefaults()
-        // Request push notifications access
-        //registerLocal()
+        // Navigation bar appearance
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         // Assign table data source and delegate
         collectionTable.dataSource = self
         collectionTable.delegate = self
@@ -191,10 +194,26 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
    
     }
     
+    func noData(message: String) {
+        noDataLabel = UILabel(frame: CGRect(x: 30, y: 300, width: self.collectionTable.bounds.size.width, height: collectionTable.bounds.size.height))
+        noDataLabel.text = message
+        noDataLabel.textColor = .secondaryLabel
+        noDataLabel.textAlignment = .center
+        noDataLabel.contentMode = .top
+        collectionTable.backgroundView = noDataLabel
+        collectionTable.backgroundColor = .systemBackground
+        collectionTable.separatorStyle = .none
+    }
+    
     // MARK: - TableViewDelegate Methods
     
     // Number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
+        if(collectionItems.count == 0){
+            noData(message: "You haven't added any collections yet!")
+        } else {
+            tableView.backgroundView = nil
+        }
         return collectionItems.count
     }
     

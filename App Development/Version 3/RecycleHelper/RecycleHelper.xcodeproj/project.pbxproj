@@ -76,6 +76,12 @@
 		E5BF2792248C0A6100682721 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF2791248C0A6100682721 /* OnboardingViewController.swift */; };
 		E5BF2794248C395500682721 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF2793248C395500682721 /* SettingsViewController.swift */; };
 		E5BF2796248C3B3E00682721 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF2795248C3B3E00682721 /* SettingsTableViewCell.swift */; };
+		E5BF2798248CDAEF00682721 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF2797248CDAEF00682721 /* ButtonTableViewCell.swift */; };
+		E5BF279F248D04E700682721 /* onboarding2_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E5BF279A248D04E700682721 /* onboarding2_1.png */; };
+		E5BF27A0248D04E700682721 /* onboarding2_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5BF279B248D04E700682721 /* onboarding2_2.png */; };
+		E5BF27A1248D04E700682721 /* onboarding2_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E5BF279C248D04E700682721 /* onboarding2_3.png */; };
+		E5BF27A2248D04E700682721 /* onboarding2_4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5BF279D248D04E700682721 /* onboarding2_4.png */; };
+		E5BF27A3248D04E700682721 /* onboarding2_5.png in Resources */ = {isa = PBXBuildFile; fileRef = E5BF279E248D04E700682721 /* onboarding2_5.png */; };
 		E5F47B322487EB5200CFC3D8 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2B2487EB5100CFC3D8 /* appstore.png */; };
 		E5F47B332487EB5200CFC3D8 /* background4.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2D2487EB5200CFC3D8 /* background4.png */; };
 		E5F47B342487EB5200CFC3D8 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F47B2E2487EB5200CFC3D8 /* background2.png */; };
@@ -203,6 +209,12 @@
 		E5BF2791248C0A6100682721 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E5BF2793248C395500682721 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E5BF2795248C3B3E00682721 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		E5BF2797248CDAEF00682721 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		E5BF279A248D04E700682721 /* onboarding2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2_1.png; sourceTree = "<group>"; };
+		E5BF279B248D04E700682721 /* onboarding2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2_2.png; sourceTree = "<group>"; };
+		E5BF279C248D04E700682721 /* onboarding2_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2_3.png; sourceTree = "<group>"; };
+		E5BF279D248D04E700682721 /* onboarding2_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2_4.png; sourceTree = "<group>"; };
+		E5BF279E248D04E700682721 /* onboarding2_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2_5.png; sourceTree = "<group>"; };
 		E5F47B2B2487EB5100CFC3D8 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = "../../../../Version 2/RecycleHelper/RecycleHelper/Resources/appstore.png"; sourceTree = "<group>"; };
 		E5F47B2D2487EB5200CFC3D8 /* background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background4.png; sourceTree = "<group>"; };
 		E5F47B2E2487EB5200CFC3D8 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
@@ -351,6 +363,7 @@
 		E534F1CB248505120042CBFD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E5BF2799248D04E700682721 /* Onboarding2 */,
 				E5F47B52248ADE6100CFC3D8 /* ItemList.plist */,
 				E5F47B2B2487EB5100CFC3D8 /* appstore.png */,
 				E5F47B2C2487EB5200CFC3D8 /* Backgrounds */,
@@ -385,6 +398,7 @@
 				E5BF2789248BD07A00682721 /* WeekdayTableViewCell.swift */,
 				E5BF278D248C09B400682721 /* CLTypingLabel.swift */,
 				E5BF2795248C3B3E00682721 /* SettingsTableViewCell.swift */,
+				E5BF2797248CDAEF00682721 /* ButtonTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -476,6 +490,18 @@
 				E5AF66542486E06B007B26B5 /* otherplastic.png */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		E5BF2799248D04E700682721 /* Onboarding2 */ = {
+			isa = PBXGroup;
+			children = (
+				E5BF279A248D04E700682721 /* onboarding2_1.png */,
+				E5BF279B248D04E700682721 /* onboarding2_2.png */,
+				E5BF279C248D04E700682721 /* onboarding2_3.png */,
+				E5BF279D248D04E700682721 /* onboarding2_4.png */,
+				E5BF279E248D04E700682721 /* onboarding2_5.png */,
+			);
+			path = Onboarding2;
 			sourceTree = "<group>";
 		};
 		E5F47B2C2487EB5200CFC3D8 /* Backgrounds */ = {
@@ -619,6 +645,7 @@
 				E5F47B53248ADE6100CFC3D8 /* ItemList.plist in Resources */,
 				E5F853FB2487ADEC00401F4A /* 2.png in Resources */,
 				E534F20C24863C990042CBFD /* Pin.png in Resources */,
+				E5BF279F248D04E700682721 /* onboarding2_1.png in Resources */,
 				E534F1CD248505250042CBFD /* recycling.png in Resources */,
 				E5F47B322487EB5200CFC3D8 /* appstore.png in Resources */,
 				E5AF666D24878558007B26B5 /* oprl1.png in Resources */,
@@ -629,6 +656,7 @@
 				E5AF66652486E06B007B26B5 /* PETE.png in Resources */,
 				E5F47B342487EB5200CFC3D8 /* background2.png in Resources */,
 				E534F1FF24850C7D0042CBFD /* onboarding4.png in Resources */,
+				E5BF27A3248D04E700682721 /* onboarding2_5.png in Resources */,
 				E5AF665A2486E06B007B26B5 /* recyclableglass.png in Resources */,
 				E534F1F224850C7D0042CBFD /* metal_recyclable.png in Resources */,
 				E5AF665F2486E06B007B26B5 /* tidyman.png in Resources */,
@@ -636,10 +664,12 @@
 				E534F1F424850C7D0042CBFD /* paper_recyclable.png in Resources */,
 				E5AF66402486A73F007B26B5 /* RecyclingSymbols.plist in Resources */,
 				E5AF66632486E06B007B26B5 /* fsc.png in Resources */,
+				E5BF27A1248D04E700682721 /* onboarding2_3.png in Resources */,
 				E534F1FA24850C7D0042CBFD /* recycle.png in Resources */,
 				E534F1FC24850C7D0042CBFD /* onboarding3.png in Resources */,
 				E5AF666C24878558007B26B5 /* oprl2.png in Resources */,
 				E5AF66A024878AD0007B26B5 /* homecomposting.png in Resources */,
+				E5BF27A0248D04E700682721 /* onboarding2_2.png in Resources */,
 				E5AF66622486E06B007B26B5 /* PP.png in Resources */,
 				E534F1F324850C7D0042CBFD /* plastic_recyclable.png in Resources */,
 				E5AF665D2486E06B007B26B5 /* HDPE.png in Resources */,
@@ -658,6 +688,7 @@
 				E5F853F72487ADEC00401F4A /* 4.png in Resources */,
 				E5F853F82487ADEC00401F4A /* 5.png in Resources */,
 				E534F1962484FB080042CBFD /* Main.storyboard in Resources */,
+				E5BF27A2248D04E700682721 /* onboarding2_4.png in Resources */,
 				E534F1CF248509FF0042CBFD /* SearchItemsList.plist in Resources */,
 				E5AF665C2486E06B007B26B5 /* greendot.png in Resources */,
 				E5F47B372487EB5200CFC3D8 /* Splashscreen.png in Resources */,
@@ -808,6 +839,7 @@
 				E5BF278E248C09B400682721 /* CLTypingLabel.swift in Sources */,
 				E5BF2796248C3B3E00682721 /* SettingsTableViewCell.swift in Sources */,
 				E534F1D224850A660042CBFD /* ItemTableViewCell.swift in Sources */,
+				E5BF2798248CDAEF00682721 /* ButtonTableViewCell.swift in Sources */,
 				E534F18F2484FB080042CBFD /* AppDelegate.swift in Sources */,
 				E5F47B3F2488DCD700CFC3D8 /* CollectionTableViewCell.swift in Sources */,
 				E5F47B452488FCC000CFC3D8 /* EventTableViewCell.swift in Sources */,

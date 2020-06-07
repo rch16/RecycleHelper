@@ -29,6 +29,7 @@ struct K {
     static let selectWeekdaySegue = "SelectWeekdaySegue"
     static let addDaySegue = "AddDaySegue"
     static let cancelAddDaySegue = "CancelAddDaySegue"
+    static let showOnboardingSegue = "ShowOnboarding"
     
     // Home View
     static let hasPersonalised = "HasPersonalised"
@@ -41,6 +42,11 @@ struct K {
     static let binCollections = "BinCollections"
     static let repeatsCellIdentifier = "SetsRepeatCell"
     static let weekdayCellIdentifier = "WeekdayCell"
+    static let buttonCellIdentifier = "ButtonCell"
+    static let aboutCellIdentifier = "TableCell"
+    static let onboardingBtnTitle = "Show onboarding"
+    static let clearCollectionsBtnTitle = "Clear bin collections"
+    static let clearFavouritesBtnTitle = "Clear search favourites"
     static let weekdaysFromDateComponent = ["",
                                             "Sunday",
                                             "Monday",
