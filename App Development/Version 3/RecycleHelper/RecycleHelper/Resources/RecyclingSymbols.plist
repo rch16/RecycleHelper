@@ -7,7 +7,7 @@
 		<key>Widely Recycled</key>
 		<dict>
 			<key>About</key>
-			<string>More than 75% of Local Authorities will accept this. If there is any text above the symbol, this is instructions you must follow before recycling the item.</string>
+			<string>More than 75% of Local Authorities will accept this. If there is any text above the symbol, this text will be instructions you must follow before recycling the item.</string>
 			<key>Image</key>
 			<string>oprl1.png</string>
 		</dict>
@@ -106,7 +106,7 @@
 			<key>Number</key>
 			<string>7</string>
 			<key>About</key>
-			<string>This category contains all types of plastic not included in categories 1 to 6. These types of plastic are extremely difficult to recycle and therfore not recyclable.</string>
+			<string>This category contains all types of plastic not included in categories 1 to 6. These types of plastic are extremely difficult to recycle and therefore not recyclable.</string>
 			<key>Examples</key>
 			<string>Acrylic, Nylon, Fibreglass, Multilayer combinations etc</string>
 			<key>Image</key>
@@ -182,8 +182,10 @@
 		</dict>
 		<key>Mobius Loop</key>
 		<dict>
+			<key>Examples</key>
+			<string>If the symbol includes a percentage figure, this means that the packaging contains x% of recycled material.</string>
 			<key>About</key>
-			<string>This means that the object is capable of being recycled, but does not guarantee that it has been recycled, or will be accepted in recycling collections. If the symbol includes a percentage figure, this means that the packaging contains x% of recycled material.</string>
+			<string>This means that the object is capable of being recycled, but does not guarantee that it has been recycled, or will be accepted in recycling collections. Try using the search function to search for your specific item.</string>
 			<key>Image</key>
 			<string>mobius.png</string>
 		</dict>
