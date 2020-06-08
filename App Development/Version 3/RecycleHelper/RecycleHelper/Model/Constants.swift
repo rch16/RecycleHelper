@@ -33,8 +33,11 @@ struct K {
     static let addDaySegue = "AddDaySegue"
     static let cancelAddDaySegue = "CancelAddDaySegue"
     static let showOnboardingSegue = "ShowOnboarding"
+    static let findLocationSegue = "FindLocationSegue"
+    static let showLocationSegue = "ShowLocationSegue"
     
     // Home View
+    static let userLocation = "UserLocation"
     static let hasPersonalised = "HasPersonalised"
     static let personalisation = "Personalisation"
     static let collectionCellIdentifier = "CollectionTableViewCell"
@@ -68,6 +71,8 @@ struct K {
                                  "Friday",
                                  "Saturday",
                                  "Sunday"]
+    static let frequencyStrings = ["Weekly", "Fortnightly"]
+    static let frequencyStringsNoRepeat = ["None"]
     
     // Object Detection
     static let videoDataOutput = "VideoDataOutput"
@@ -90,6 +95,7 @@ struct K {
     static let itemInfoCellIdentifier = "InfoTableViewCell"
     static let saveItemKey = "SearchFavourites"
     static let showFavourites = "ShowFavourites"
+    static let buttonOptions = ["Find a recycling centre", "Find a charity shop", "Find a supermarket", "Find a collection point"]
     
     // Locations
     static let delta = 0.03
