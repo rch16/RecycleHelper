@@ -17,7 +17,7 @@ class LocationViewController: UIViewController {
     // Connect UI
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var viewOption: UISegmentedControl!
-    @IBAction func viewOptionChanged(_ sender: Any) {
+    @IBAction func viewOptionChanged(_ sender: UISegmentedControl) {
         // remove previous pins
         mapView.removeAnnotations(mapView.annotations)
         // start new search
@@ -46,24 +46,21 @@ class LocationViewController: UIViewController {
     var locationName: String!
     var location: CLLocationCoordinate2D!
     var placemark: String!
+    var showIndex: Int!
     
     override func viewWillAppear(_ animated: Bool) {
         // Hide navigation bar
         self.navigationController?.isNavigationBarHidden = true
-        //searchInMap()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Ask for and check authorisation
-        //authoriseLocation()
-        
         // Check for Location Services
         checkLocationServices()
         
         // Hide navigation bar
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
 
         // Change segmented control text size
         let font = UIFont.systemFont(ofSize: 11)
@@ -80,9 +77,21 @@ class LocationViewController: UIViewController {
         centreMap()
 
         DispatchQueue.main.async {
-            self.locationManager.startUpdatingLocation()
+            self.locationManager.startMonitoringSignificantLocationChanges()
         }
         
+        if showIndex != nil {
+            // If segue from information views
+            self.navigationController?.isNavigationBarHidden = false
+            self.navigationController?.visibleViewController!.title = "Locate"
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+            self.navigationController?.navigationBar.isTranslucent = false
+            viewOption.selectedSegmentIndex = showIndex
+        }
+        // remove previous pins
+        mapView.removeAnnotations(mapView.annotations)
+        // start new search
         searchInMap()
     }
     
@@ -95,7 +104,7 @@ class LocationViewController: UIViewController {
             locationManager.requestAlwaysAuthorization()
             locationManager.requestWhenInUseAuthorization()
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
+            locationManager.startMonitoringSignificantLocationChanges()
             mapView.showsUserLocation = true
             searchInMap()
             checkLocationServices()
@@ -104,7 +113,7 @@ class LocationViewController: UIViewController {
     
     func checkLocationServices() {
         switch CLLocationManager.authorizationStatus() {
-        case .authorized:
+        case .authorized, .restricted, .authorizedAlways, .authorizedWhenInUse:
             searchInMap()
         case .notDetermined:
             authoriseLocation()
@@ -128,12 +137,6 @@ class LocationViewController: UIViewController {
                 
                 self.present(alertController, animated: true, completion: nil)
             }
-        case .restricted:
-            searchInMap()
-        case .authorizedWhenInUse:
-            searchInMap()
-        case .authorizedAlways:
-            searchInMap()
         @unknown default:
             checkLocationServices()
         }
