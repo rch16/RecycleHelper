@@ -24,7 +24,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     
     // Onboarding views
     var titles = ["Welcome to RecycleHelper", "Bin Collection Reminders", "Material Recognition", "Search Functionality", "Nearest Facilities Locator","Ready to get started?"]
-    var descriptions = ["Recycling information, specific to your location, available anytime.", "Setup weekly or fortnightly reminders about your kerbside waste and recycling collections.", "Scan an item's material with your phone camera to  learn how to recycle your regular waste items.", "Allows you to learn more by searching for a specific item, or a recycling symbol.", "Find your nearest Household Recycling Centre, Charity Shop or Supermarket for those harder-to-recycle items."," "]
+    var descriptions = ["Recycling information, specific to your location, available anytime.", "Setup weekly or fortnightly reminders about your kerbside waste and recycling collections.", "Scan an item's material with your phone camera to learn how to recycle your regular waste items.", "Allows you to learn more by searching for a specific item, or a recycling symbol.", "Find your nearest Household Recycling Centre, Charity Shop or Supermarket for those harder-to-recycle items."," "]
     var images = ["onboarding2_1","onboarding2_2","onboarding2_3","onboarding2_4","onboarding2_5","onboarding2_1"]
     
     
