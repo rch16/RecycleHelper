@@ -46,6 +46,34 @@
 		E534F20724859F350042CBFD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E534F20624859F350042CBFD /* MapKit.framework */; };
 		E534F20C24863C990042CBFD /* Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = E534F20B24863C990042CBFD /* Pin.png */; };
 		E534F20E2486527A0042CBFD /* LocationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F20D2486527A0042CBFD /* LocationInfoViewController.swift */; };
+		E55BABEE248E1E26000F803F /* circle_background.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BABED248E1E26000F803F /* circle_background.png */; };
+		E55BABF4248E1F9A000F803F /* background_metal_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BABEF248E1F99000F803F /* background_metal_recyclable.png */; };
+		E55BABF5248E1F9A000F803F /* background_paper_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BABF0248E1F99000F803F /* background_paper_recyclable.png */; };
+		E55BABF6248E1F9A000F803F /* background_plastic_non_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BABF1248E1F9A000F803F /* background_plastic_non_recyclable.png */; };
+		E55BABF7248E1F9A000F803F /* background_plastic_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BABF2248E1F9A000F803F /* background_plastic_recyclable.png */; };
+		E55BABF8248E1F9A000F803F /* background_glass_recyclable.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BABF3248E1F9A000F803F /* background_glass_recyclable.png */; };
+		E55BABFC248E1FA5000F803F /* background_check.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BABF9248E1FA4000F803F /* background_check.png */; };
+		E55BABFD248E1FA5000F803F /* background_can_recycle.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BABFA248E1FA5000F803F /* background_can_recycle.png */; };
+		E55BABFE248E1FA5000F803F /* background_cant_recycle.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BABFB248E1FA5000F803F /* background_cant_recycle.png */; };
+		E55BAC06248E236C000F803F /* background_6.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BABFF248E236A000F803F /* background_6.png */; };
+		E55BAC07248E236C000F803F /* background_5.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC00248E236B000F803F /* background_5.png */; };
+		E55BAC08248E236C000F803F /* background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC01248E236B000F803F /* background_1.png */; };
+		E55BAC09248E236C000F803F /* background_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC02248E236B000F803F /* background_2.png */; };
+		E55BAC0A248E236C000F803F /* background_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC03248E236B000F803F /* background_3.png */; };
+		E55BAC0B248E236C000F803F /* background_7.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC04248E236B000F803F /* background_7.png */; };
+		E55BAC0C248E236C000F803F /* background_4.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC05248E236B000F803F /* background_4.png */; };
+		E55BAC19248E2383000F803F /* background_seedling.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC0D248E237F000F803F /* background_seedling.png */; };
+		E55BAC1A248E2383000F803F /* background_wasteelectrical.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC0E248E2380000F803F /* background_wasteelectrical.png */; };
+		E55BAC1B248E2383000F803F /* background_recyclableglass.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC0F248E2380000F803F /* background_recyclableglass.png */; };
+		E55BAC1C248E2383000F803F /* background_fsc.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC10248E2380000F803F /* background_fsc.png */; };
+		E55BAC1D248E2383000F803F /* background_oprl1.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC11248E2381000F803F /* background_oprl1.png */; };
+		E55BAC1E248E2383000F803F /* background_oprl2.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC12248E2381000F803F /* background_oprl2.png */; };
+		E55BAC1F248E2383000F803F /* background_mobius.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC13248E2381000F803F /* background_mobius.png */; };
+		E55BAC20248E2383000F803F /* background_recyclablealuminium.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC14248E2381000F803F /* background_recyclablealuminium.png */; };
+		E55BAC21248E2383000F803F /* background_tidyman.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC15248E2382000F803F /* background_tidyman.png */; };
+		E55BAC22248E2383000F803F /* background_greendot.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC16248E2382000F803F /* background_greendot.png */; };
+		E55BAC23248E2383000F803F /* background_homecomposting.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC17248E2382000F803F /* background_homecomposting.png */; };
+		E55BAC24248E2383000F803F /* background_recyclablesteel.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC18248E2383000F803F /* background_recyclablesteel.png */; };
 		E5AF663A2486A382007B26B5 /* oprl.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66392486A382007B26B5 /* oprl.png */; };
 		E5AF663C2486A4C8007B26B5 /* plasticresincode.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF663B2486A4C8007B26B5 /* plasticresincode.png */; };
 		E5AF66402486A73F007B26B5 /* RecyclingSymbols.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5AF663F2486A73F007B26B5 /* RecyclingSymbols.plist */; };
@@ -180,6 +208,34 @@
 		E534F20824859F5D0042CBFD /* RecycleHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecycleHelper.entitlements; sourceTree = "<group>"; };
 		E534F20B24863C990042CBFD /* Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pin.png; sourceTree = "<group>"; };
 		E534F20D2486527A0042CBFD /* LocationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewController.swift; sourceTree = "<group>"; };
+		E55BABED248E1E26000F803F /* circle_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_background.png; sourceTree = "<group>"; };
+		E55BABEF248E1F99000F803F /* background_metal_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_metal_recyclable.png; sourceTree = "<group>"; };
+		E55BABF0248E1F99000F803F /* background_paper_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_paper_recyclable.png; sourceTree = "<group>"; };
+		E55BABF1248E1F9A000F803F /* background_plastic_non_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_plastic_non_recyclable.png; sourceTree = "<group>"; };
+		E55BABF2248E1F9A000F803F /* background_plastic_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_plastic_recyclable.png; sourceTree = "<group>"; };
+		E55BABF3248E1F9A000F803F /* background_glass_recyclable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_glass_recyclable.png; sourceTree = "<group>"; };
+		E55BABF9248E1FA4000F803F /* background_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_check.png; sourceTree = "<group>"; };
+		E55BABFA248E1FA5000F803F /* background_can_recycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_can_recycle.png; sourceTree = "<group>"; };
+		E55BABFB248E1FA5000F803F /* background_cant_recycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_cant_recycle.png; sourceTree = "<group>"; };
+		E55BABFF248E236A000F803F /* background_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_6.png; sourceTree = "<group>"; };
+		E55BAC00248E236B000F803F /* background_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_5.png; sourceTree = "<group>"; };
+		E55BAC01248E236B000F803F /* background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_1.png; sourceTree = "<group>"; };
+		E55BAC02248E236B000F803F /* background_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_2.png; sourceTree = "<group>"; };
+		E55BAC03248E236B000F803F /* background_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_3.png; sourceTree = "<group>"; };
+		E55BAC04248E236B000F803F /* background_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_7.png; sourceTree = "<group>"; };
+		E55BAC05248E236B000F803F /* background_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_4.png; sourceTree = "<group>"; };
+		E55BAC0D248E237F000F803F /* background_seedling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_seedling.png; sourceTree = "<group>"; };
+		E55BAC0E248E2380000F803F /* background_wasteelectrical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_wasteelectrical.png; sourceTree = "<group>"; };
+		E55BAC0F248E2380000F803F /* background_recyclableglass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_recyclableglass.png; sourceTree = "<group>"; };
+		E55BAC10248E2380000F803F /* background_fsc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_fsc.png; sourceTree = "<group>"; };
+		E55BAC11248E2381000F803F /* background_oprl1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_oprl1.png; sourceTree = "<group>"; };
+		E55BAC12248E2381000F803F /* background_oprl2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_oprl2.png; sourceTree = "<group>"; };
+		E55BAC13248E2381000F803F /* background_mobius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_mobius.png; sourceTree = "<group>"; };
+		E55BAC14248E2381000F803F /* background_recyclablealuminium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_recyclablealuminium.png; sourceTree = "<group>"; };
+		E55BAC15248E2382000F803F /* background_tidyman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_tidyman.png; sourceTree = "<group>"; };
+		E55BAC16248E2382000F803F /* background_greendot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_greendot.png; sourceTree = "<group>"; };
+		E55BAC17248E2382000F803F /* background_homecomposting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_homecomposting.png; sourceTree = "<group>"; };
+		E55BAC18248E2383000F803F /* background_recyclablesteel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_recyclablesteel.png; sourceTree = "<group>"; };
 		E5AF66392486A382007B26B5 /* oprl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oprl.png; sourceTree = "<group>"; };
 		E5AF663B2486A4C8007B26B5 /* plasticresincode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plasticresincode.png; sourceTree = "<group>"; };
 		E5AF663F2486A73F007B26B5 /* RecyclingSymbols.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RecyclingSymbols.plist; sourceTree = "<group>"; };
@@ -345,20 +401,20 @@
 		E534F1BE2484FE680042CBFD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E534F1922484FB080042CBFD /* ViewController.swift */,
-				E534F1BF2484FE7A0042CBFD /* HomeViewController.swift */,
-				E534F1C12484FE8E0042CBFD /* SearchViewController.swift */,
-				E534F1C32484FE990042CBFD /* VisionViewController.swift */,
-				E534F1C52484FEA80042CBFD /* SymbolViewController.swift */,
-				E534F1C72484FEB40042CBFD /* LocationViewController.swift */,
-				E534F1C92484FEC20042CBFD /* ItemViewController.swift */,
-				E534F20D2486527A0042CBFD /* LocationInfoViewController.swift */,
-				E5F853FE2487B40700401F4A /* SymbolInfoViewController.swift */,
-				E5F47B422488FA2400CFC3D8 /* NewCollectionViewController.swift */,
-				E5F47B50248ADDA400CFC3D8 /* ObjectViewController.swift */,
-				E5BF278B248BD12A00682721 /* WeekdayViewController.swift */,
 				E5BF2791248C0A6100682721 /* OnboardingViewController.swift */,
+				E534F1BF2484FE7A0042CBFD /* HomeViewController.swift */,
 				E5BF2793248C395500682721 /* SettingsViewController.swift */,
+				E5F47B422488FA2400CFC3D8 /* NewCollectionViewController.swift */,
+				E5BF278B248BD12A00682721 /* WeekdayViewController.swift */,
+				E534F1C12484FE8E0042CBFD /* SearchViewController.swift */,
+				E534F1C92484FEC20042CBFD /* ItemViewController.swift */,
+				E534F1922484FB080042CBFD /* ViewController.swift */,
+				E534F1C32484FE990042CBFD /* VisionViewController.swift */,
+				E5F47B50248ADDA400CFC3D8 /* ObjectViewController.swift */,
+				E534F1C52484FEA80042CBFD /* SymbolViewController.swift */,
+				E5F853FE2487B40700401F4A /* SymbolInfoViewController.swift */,
+				E534F1C72484FEB40042CBFD /* LocationViewController.swift */,
+				E534F20D2486527A0042CBFD /* LocationInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -409,6 +465,11 @@
 		E534F1E124850C7D0042CBFD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E55BABF3248E1F9A000F803F /* background_glass_recyclable.png */,
+				E55BABEF248E1F99000F803F /* background_metal_recyclable.png */,
+				E55BABF0248E1F99000F803F /* background_paper_recyclable.png */,
+				E55BABF1248E1F9A000F803F /* background_plastic_non_recyclable.png */,
+				E55BABF2248E1F9A000F803F /* background_plastic_recyclable.png */,
 				E534F1E224850C7D0042CBFD /* metal_recyclable.png */,
 				E534F1E324850C7D0042CBFD /* plastic_recyclable.png */,
 				E534F1E424850C7D0042CBFD /* paper_recyclable.png */,
@@ -422,6 +483,9 @@
 		E534F1E724850C7D0042CBFD /* Recycling Instructions */ = {
 			isa = PBXGroup;
 			children = (
+				E55BABFA248E1FA5000F803F /* background_can_recycle.png */,
+				E55BABFB248E1FA5000F803F /* background_cant_recycle.png */,
+				E55BABF9248E1FA4000F803F /* background_check.png */,
 				E534F1E824850C7D0042CBFD /* check.png */,
 				E534F1E924850C7D0042CBFD /* can_recycle.png */,
 				E534F1EA24850C7D0042CBFD /* cant_recycle.png */,
@@ -471,6 +535,18 @@
 		E5AF66412486E06B007B26B5 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
+				E55BAC10248E2380000F803F /* background_fsc.png */,
+				E55BAC16248E2382000F803F /* background_greendot.png */,
+				E55BAC17248E2382000F803F /* background_homecomposting.png */,
+				E55BAC13248E2381000F803F /* background_mobius.png */,
+				E55BAC11248E2381000F803F /* background_oprl1.png */,
+				E55BAC12248E2381000F803F /* background_oprl2.png */,
+				E55BAC14248E2381000F803F /* background_recyclablealuminium.png */,
+				E55BAC0F248E2380000F803F /* background_recyclableglass.png */,
+				E55BAC18248E2383000F803F /* background_recyclablesteel.png */,
+				E55BAC0D248E237F000F803F /* background_seedling.png */,
+				E55BAC15248E2382000F803F /* background_tidyman.png */,
+				E55BAC0E248E2380000F803F /* background_wasteelectrical.png */,
 				E5F853EF2487ADEC00401F4A /* Plastic */,
 				E5AF66B224878FBC007B26B5 /* mobius.png */,
 				E5AF669F24878ACF007B26B5 /* homecomposting.png */,
@@ -510,6 +586,7 @@
 		E5F47B2C2487EB5200CFC3D8 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				E55BABED248E1E26000F803F /* circle_background.png */,
 				E5F47B2D2487EB5200CFC3D8 /* background4.png */,
 				E5F47B2E2487EB5200CFC3D8 /* background2.png */,
 				E5F47B2F2487EB5200CFC3D8 /* background3.png */,
@@ -522,6 +599,13 @@
 		E5F853EF2487ADEC00401F4A /* Plastic */ = {
 			isa = PBXGroup;
 			children = (
+				E55BAC01248E236B000F803F /* background_1.png */,
+				E55BAC02248E236B000F803F /* background_2.png */,
+				E55BAC03248E236B000F803F /* background_3.png */,
+				E55BAC05248E236B000F803F /* background_4.png */,
+				E55BAC00248E236B000F803F /* background_5.png */,
+				E55BABFF248E236A000F803F /* background_6.png */,
+				E55BAC04248E236B000F803F /* background_7.png */,
 				E5F853F02487ADEC00401F4A /* 4.png */,
 				E5F853F12487ADEC00401F4A /* 5.png */,
 				E5F853F22487ADEC00401F4A /* 7.png */,
@@ -643,19 +727,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				E534F1F624850C7D0042CBFD /* glass_recyclable.png in Resources */,
+				E55BAC19248E2383000F803F /* background_seedling.png in Resources */,
 				E5F47B362487EB5200CFC3D8 /* background1.png in Resources */,
 				E5AF66582486E06B007B26B5 /* recyclablesteel.png in Resources */,
 				E5F853FB2487ADEC00401F4A /* 2.png in Resources */,
 				E534F20C24863C990042CBFD /* Pin.png in Resources */,
 				E5BF279F248D04E700682721 /* onboarding2_1.png in Resources */,
+				E55BAC20248E2383000F803F /* background_recyclablealuminium.png in Resources */,
 				E534F1CD248505250042CBFD /* recycling.png in Resources */,
+				E55BAC0B248E236C000F803F /* background_7.png in Resources */,
 				E5AF666D24878558007B26B5 /* oprl1.png in Resources */,
+				E55BAC24248E2383000F803F /* background_recyclablesteel.png in Resources */,
+				E55BABF8248E1F9A000F803F /* background_glass_recyclable.png in Resources */,
 				E5AF66602486E06B007B26B5 /* PS.png in Resources */,
 				E534F19B2484FB090042CBFD /* LaunchScreen.storyboard in Resources */,
 				E534F1982484FB090042CBFD /* Assets.xcassets in Resources */,
 				E534F1F724850C7D0042CBFD /* check.png in Resources */,
 				E5AF66652486E06B007B26B5 /* PETE.png in Resources */,
 				E5BF27A5248D09CD00682721 /* GoogleService-Info.plist in Resources */,
+				E55BAC1D248E2383000F803F /* background_oprl1.png in Resources */,
 				E5F47B342487EB5200CFC3D8 /* background2.png in Resources */,
 				E534F1FF24850C7D0042CBFD /* onboarding4.png in Resources */,
 				E5BF27A3248D04E700682721 /* onboarding2_5.png in Resources */,
@@ -663,46 +753,68 @@
 				E534F1F224850C7D0042CBFD /* metal_recyclable.png in Resources */,
 				E5AF665F2486E06B007B26B5 /* tidyman.png in Resources */,
 				E5AF66612486E06B007B26B5 /* PVC.png in Resources */,
+				E55BAC1C248E2383000F803F /* background_fsc.png in Resources */,
 				E534F1F424850C7D0042CBFD /* paper_recyclable.png in Resources */,
 				E5AF66402486A73F007B26B5 /* RecyclingSymbols.plist in Resources */,
 				E5AF66632486E06B007B26B5 /* fsc.png in Resources */,
 				E5BF27A1248D04E700682721 /* onboarding2_3.png in Resources */,
+				E55BABF4248E1F9A000F803F /* background_metal_recyclable.png in Resources */,
 				E534F1FA24850C7D0042CBFD /* recycle.png in Resources */,
+				E55BAC09248E236C000F803F /* background_2.png in Resources */,
 				E534F1FC24850C7D0042CBFD /* onboarding3.png in Resources */,
 				E5AF666C24878558007B26B5 /* oprl2.png in Resources */,
+				E55BABEE248E1E26000F803F /* circle_background.png in Resources */,
+				E55BAC08248E236C000F803F /* background_1.png in Resources */,
 				E5AF66A024878AD0007B26B5 /* homecomposting.png in Resources */,
 				E5BF27A0248D04E700682721 /* onboarding2_2.png in Resources */,
+				E55BAC07248E236C000F803F /* background_5.png in Resources */,
+				E55BABF6248E1F9A000F803F /* background_plastic_non_recyclable.png in Resources */,
 				E5AF66622486E06B007B26B5 /* PP.png in Resources */,
+				E55BABF5248E1F9A000F803F /* background_paper_recyclable.png in Resources */,
 				E534F1F324850C7D0042CBFD /* plastic_recyclable.png in Resources */,
 				E5AF665D2486E06B007B26B5 /* HDPE.png in Resources */,
 				E5AF66592486E06B007B26B5 /* recyclablealuminium.png in Resources */,
+				E55BAC1F248E2383000F803F /* background_mobius.png in Resources */,
+				E55BAC1A248E2383000F803F /* background_wasteelectrical.png in Resources */,
 				E5BF27AC248D1F7800682721 /* ItemList.plist in Resources */,
+				E55BAC06248E236C000F803F /* background_6.png in Resources */,
 				E5F853FD2487ADEC00401F4A /* 1.png in Resources */,
 				E5F853FC2487ADEC00401F4A /* 3.png in Resources */,
 				E534F1F924850C7D0042CBFD /* cant_recycle.png in Resources */,
+				E55BAC1B248E2383000F803F /* background_recyclableglass.png in Resources */,
+				E55BAC1E248E2383000F803F /* background_oprl2.png in Resources */,
 				E5F853F92487ADEC00401F4A /* 7.png in Resources */,
 				E5AF66562486E06B007B26B5 /* seedling.png in Resources */,
 				E5BF27AB248D1F7800682721 /* SearchItemsList.plist in Resources */,
 				E534F1FD24850C7D0042CBFD /* onboarding2.png in Resources */,
 				E5F47B352487EB5200CFC3D8 /* background3.png in Resources */,
 				E534F1FE24850C7D0042CBFD /* onboarding5.png in Resources */,
+				E55BAC0A248E236C000F803F /* background_3.png in Resources */,
 				E5AF66B324878FBC007B26B5 /* mobius.png in Resources */,
+				E55BABFC248E1FA5000F803F /* background_check.png in Resources */,
+				E55BAC22248E2383000F803F /* background_greendot.png in Resources */,
 				E5F853FA2487ADEC00401F4A /* 6.png in Resources */,
 				E5AF66672486E06B007B26B5 /* otherplastic.png in Resources */,
 				E5F853F72487ADEC00401F4A /* 4.png in Resources */,
 				E5F853F82487ADEC00401F4A /* 5.png in Resources */,
 				E534F1962484FB080042CBFD /* Main.storyboard in Resources */,
+				E55BAC23248E2383000F803F /* background_homecomposting.png in Resources */,
 				E5BF27A2248D04E700682721 /* onboarding2_4.png in Resources */,
 				E5AF665C2486E06B007B26B5 /* greendot.png in Resources */,
+				E55BAC0C248E236C000F803F /* background_4.png in Resources */,
 				E534F1FB24850C7D0042CBFD /* onboarding1.png in Resources */,
 				E5AF665B2486E06B007B26B5 /* wasteelectrical.png in Resources */,
 				E534F1F824850C7D0042CBFD /* can_recycle.png in Resources */,
+				E55BAC21248E2383000F803F /* background_tidyman.png in Resources */,
 				E5BF27AA248D1F7800682721 /* Splashscreen.png in Resources */,
+				E55BABFD248E1FA5000F803F /* background_can_recycle.png in Resources */,
 				E5AF663C2486A4C8007B26B5 /* plasticresincode.png in Resources */,
 				E5BF27AD248D1F7800682721 /* appstore.png in Resources */,
 				E5AF66552486E06B007B26B5 /* LDPE.png in Resources */,
+				E55BABF7248E1F9A000F803F /* background_plastic_recyclable.png in Resources */,
 				E534F1F524850C7D0042CBFD /* plastic_non_recyclable.png in Resources */,
 				E5F47B332487EB5200CFC3D8 /* background4.png in Resources */,
+				E55BABFE248E1FA5000F803F /* background_cant_recycle.png in Resources */,
 				E5AF663A2486A382007B26B5 /* oprl.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
