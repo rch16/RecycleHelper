@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 import UIKit
 
 class SymbolInfoViewController: UIViewController {
@@ -16,12 +17,17 @@ class SymbolInfoViewController: UIViewController {
     @IBOutlet weak var symbolName: UILabel!
     @IBOutlet weak var symbolFullName: UILabel!
     @IBOutlet weak var symbolInfo: UILabel!
-    @IBOutlet weak var symbolExamples: UILabel!
+//    @IBOutlet weak var symbolExamples: UILabel!
+    @IBOutlet weak var actionBtn: UIButton!
+    @IBOutlet weak var recycleLabel: UILabel!
     
+    // Symbol Data
     var symbolID: String!
     var category: String!
-    var data: [String: [String: Any]]!
-    var symbolData: [String: Any]!
+    var symbolData: [String: [String: Any]]!
+    var charityShop: Bool!
+    var collectionPoint: Bool!
+    var recyclingCentre: Bool!
     
     override func viewWillAppear(_ animated: Bool) {
         symbolName.text = symbolID
@@ -38,30 +44,98 @@ class SymbolInfoViewController: UIViewController {
     }
     
     func loadSymbolData() {
-        // Read from plist file
-        if let path = Bundle.main.path(forResource: K.symbolData, ofType: "plist") {
-            let url = URL(fileURLWithPath: path)
-            data = NSDictionary(contentsOf: url) as? [String: [String: Any]]
-            symbolData = data[category]
-            let info: NSDictionary = (symbolData[symbolID] as? NSDictionary)!
-            // Full name
-            if let fullName = info["FullName"] {
-                symbolFullName.text = fullName as? String
+        
+        // Reset variables
+        charityShop = false
+        collectionPoint = false
+        recyclingCentre = false
+    
+        let info = (symbolData[symbolID] as? [String: Any])!
+        
+        // Full name
+        if let fullName = info["FullName"] {
+            symbolFullName.text = fullName as? String
+        } else {
+            symbolFullName.text = nil
+        }
+        
+        // Recycle?
+        if let recyclablility = info["Recyclable"] as? String {
+            recycleLabel.text = recyclablility
+        } else {
+            recycleLabel.text = nil
+        }
+        
+        // Information
+        if let info = info["About"] as? String {
+            if info.contains("charity") {
+                // show charity shop button
+                charityShop = true
+                showButton()
+            } else if info.contains("collection point") {
+                // show collection point button
+                collectionPoint = true
+                showButton()
+            } else if info.contains("centre") {
+                // show recycling centre button
+                recyclingCentre = true
+                showButton()
             } else {
-                symbolFullName.text = nil
+                // hide button
+                actionBtn.isHidden = true
             }
-            // Information
-            symbolInfo.text = info["About"] as? String
-            // Symbol
-            let imageName = info["Image"] as? String
-            if let picture = UIImage(named: imageName!){
+        } else {
+            // hide button
+            actionBtn.isHidden = true
+        }
+        symbolInfo.text = info["About"] as? String
+        
+        // Symbol
+        if let name = info["Image"] as? String {
+            let imageName = "background_" + name
+            if let picture = UIImage(named: imageName){
                  imageView.image = picture
              }
-            // Examples
-            if let examples = info["Examples"] {
-                symbolExamples.text = examples as? String
-            } else {
-                symbolExamples.text = nil
+        } else {
+            imageView.image = UIImage(named: "circle_background.png" )
+        }
+        
+        // Examples
+//        if let examples = info["Examples"] {
+//            symbolExamples.text = examples as? String
+//        } else {
+//            symbolExamples.text = nil
+//        }
+
+    }
+    
+    func showButton() {
+         if recyclingCentre == true {
+             actionBtn.isHidden = false
+             actionBtn.setTitle(K.buttonOptions[0], for: .normal)
+         } else if charityShop == true {
+             actionBtn.isHidden = false
+             actionBtn.setTitle(K.buttonOptions[1], for: .normal)
+         } else if collectionPoint == true {
+             actionBtn.isHidden = false
+             actionBtn.setTitle(K.buttonOptions[3], for: .normal)
+         } else {
+             actionBtn.isHidden = true
+         }
+     }
+    
+    // MARK: - Segue Preparation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let locationVC = segue.destination as? LocationViewController , segue.identifier == K.showLocationSegue {
+            if let title = actionBtn.titleLabel?.text as? String {
+                if title.contains("collection point") {
+                    locationVC.showIndex = 2
+                } else if title.contains("charity") {
+                    locationVC.showIndex = 1
+                } else {
+                    locationVC.showIndex = 0
+                }
             }
         }
     }

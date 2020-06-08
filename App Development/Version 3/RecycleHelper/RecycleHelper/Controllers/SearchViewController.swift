@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseDatabase
+import CoreLocation
 
 class SearchViewController: UITableViewController, UISearchBarDelegate {
     
@@ -33,7 +34,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     var showFavourites: Bool!
     var favouritesList: [String]!
     var currentList: [String]!
-    
+
     override func viewWillAppear(_ animated: Bool) {
         // Show navigation bar
         self.navigationController?.isNavigationBarHidden = false
@@ -47,33 +48,27 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Get user defaults
         getUserDefaults()
-        
         // Load the data
         loadItemData()
-        
         // Check favourites data
         favouritesView()
-        
         // Load data from database
         loadDatabaseData()
-        
         // Check whether to display favourites or all
         checkView()
-        
         // Setup delegates
         searchBar.delegate = self
-        
         // UI Appearance
+        self.tableView.scrollsToTop = true
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.visibleViewController!.title = "Search"
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
         self.tableView.keyboardDismissMode = .onDrag
         self.searchBar.showsCancelButton = false
-        
         // Reload data to reflect changes
         self.tableView.reloadData()
     }
@@ -82,6 +77,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     // MARK: - Loading Data Methods
     
@@ -96,18 +92,41 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func loadDatabaseData() {
-        self.ref.child("0").observe(.value, with: { (snapshot) in
-            
-            if let dict = snapshot.value as? [String: [String: Any]] {
-                self.tableData = dict
-                self.tableList = Array(self.tableData.keys)
-                self.tableList = self.tableList.sorted()
-                self.filteredData = self.tableList
-            }
+        
+        var searchCriteria: String
 
+        
+        guard let location = UserDefaults.standard.object(forKey: K.userLocation) as? String else {
+            return
+        }
+        
+        if location == " " {
+            searchCriteria = "Default"
+        } else {
+            // If app has detected location
+            searchCriteria = location
+        }
+    
+
+        self.ref.child("Data").observe(.value, with: { (snapshot) in
+            if snapshot.hasChild(searchCriteria) {
+                // If data exists for location
+                if let dict = snapshot.childSnapshot(forPath: searchCriteria).value as? [String: [String: Any]] {
+                    self.tableData = dict
+                }
+            } else {
+                if let dict = snapshot.childSnapshot(forPath: "Default").value as? [String: [String: Any]] {
+                    self.tableData = dict
+                    
+                }
+            }
+            self.tableList = Array(self.tableData.keys)
+            self.tableList = self.tableList.sorted()
+            self.filteredData = self.tableList
+            self.favouritesView()
+            self.tableView.reloadData()
         })
-        favouritesView()
-        tableView.reloadData()
+   
     }
     
     func getUserDefaults() {
@@ -195,7 +214,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchActive){
             if(filteredData.count == 0){
@@ -268,3 +287,4 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     }
 
 }
+
