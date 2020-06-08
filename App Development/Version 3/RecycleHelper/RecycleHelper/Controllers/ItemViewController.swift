@@ -16,6 +16,8 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var itemRecyclability: UILabel!
     @IBOutlet weak var descriptionTable: UITableView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var actionBtn: UIButton!
+    @IBAction func actionBtnWasPressed(_ sender: UIButton) {}
     @IBOutlet weak var favouriteBtn: UIBarButtonItem!
     @IBAction func favouriteDidChange(_ sender: Any) {
         // Toggle favourite status
@@ -45,7 +47,10 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var isFavourite: Bool!
     var favouriteItems: Array<String>!
     var fromFavourites: Bool!
-    
+    var charityShop: Bool!
+    var supermarket: Bool!
+    var recyclingCentre: Bool!
+
     override func viewWillAppear(_ animated: Bool) {
         itemName.text = itemID
     }
@@ -62,12 +67,12 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         descriptionTable.dataSource = self
         descriptionTable.delegate = self
         // Alter table appearance
-        descriptionTable.rowHeight = UITableView.automaticDimension
         descriptionTable.alwaysBounceVertical = false
         descriptionTable.separatorStyle = .none
         // Load and display info
         loadItemData()
         displayInfo()
+        showButton()
         // Get user defaults
         getUserDefaults()
         // Check if item is favourite
@@ -81,6 +86,9 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func getUserDefaults() {
         favouriteItems = (UserDefaults.standard.object(forKey: K.saveItemKey) as? Array<String>)!
     }
+    
+    
+    // MARK: - Displaying Information
     
     func checkIfFavourite() {
         // First, check if segue is from favourites view
@@ -100,45 +108,108 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    
     private func loadItemData() {
         // itemInfo loaded during segue
+        
+        // Recyclability
         recyclable = itemInfo["Recyclable"] as? String
+        
+        // Instructions (may not have any)
         if let how = itemInfo["How"] as? [String] {
             instructions = how
         } else {
             instructions = []
         }
+        
+        // Can take to a charity shop?
+        if let _ = itemInfo["Charity Shop"] {
+            charityShop = true
+            showButton()
+        } else {
+            charityShop = false
+        }
+        
+        // Can take to a supermarket?
+        if let _ = itemInfo["Supermarket"] {
+            supermarket = true
+            showButton()
+        } else {
+            supermarket = false
+        }
+        
+        // Can take to a recycling centre?
+        if let _ = itemInfo["Recycling Centre"] {
+            recyclingCentre = true
+            showButton()
+        } else {
+            recyclingCentre = false
+        }
     }
     
+    func showButton() {
+        if recyclingCentre == true {
+            actionBtn.isHidden = false
+            actionBtn.setTitle(K.buttonOptions[0], for: .normal)
+        } else if charityShop == true {
+            actionBtn.isHidden = false
+            actionBtn.setTitle(K.buttonOptions[1], for: .normal)
+        } else if supermarket == true {
+            actionBtn.isHidden = false
+            actionBtn.setTitle(K.buttonOptions[2], for: .normal)
+        } else {
+            actionBtn.isHidden = true
+        }
+    }
     
-    // MARK: - Displaying Information
+    func openUrl(urlStr: String!){
+        if let url = URL(string: urlStr) {
+            UIApplication.shared.open(url)
+        }
+    }
     
     private func displayInfo(){
         if let recycle = recyclable {
             itemRecyclability.text = recycle
             if recycle == "Widely Recycled" || recycle == "Recyclable" {
-                if let photo = UIImage(named: "can_recycle.png"){
+                if let photo = UIImage(named: "background_can_recycle.png"){
                     imageView.image = photo
                 }
             } else if recycle.contains("Local Authority") {
-                if let photo = UIImage(named: "check.png"){
+                if let photo = UIImage(named: "background_check.png"){
                        imageView.image = photo
                    }
             } else if recycle == "Not Recyclable" {
-                if let photo = UIImage(named: "cant_recycle.png"){
+                if let photo = UIImage(named: "background_cant_recycle.png"){
                     imageView.image = photo
                 }
             } else {
-                if let photo = UIImage(named: "can_recycle.png"){
+                if let photo = UIImage(named: "background_can_recycle.png"){
                        imageView.image = photo
                    }
             }
         }
     }
+    
+    // MARK: - UITableView Methods
 
     // Number of rows in section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return instructions.count
+    }
+    
+    // Set header appearance
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = .clear
+        view.backgroundColor = .clear
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        CGFloat(2)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -148,20 +219,25 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
 
         // Fetches the appropriate item for the data source layout.
-        let instruction = instructions[indexPath.row]
+        let instruction = instructions[indexPath.section]
         cell.instr.text = instruction
-        
-        // Alter appearance
-        cell.instr.numberOfLines = 0
-        cell.instr.lineBreakMode = .byWordWrapping
-        cell.instr.sizeToFit()
     
         return cell
     }
     
-    func openUrl(urlStr: String!){
-        if let url = URL(string: urlStr) {
-            UIApplication.shared.open(url)
+    // MARK: - Segue Preparation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let locationVC = segue.destination as? LocationViewController , segue.identifier == K.findLocationSegue {
+            if let title = actionBtn.titleLabel?.text as? String {
+                if title.contains("supermarket") {
+                    locationVC.showIndex = 2
+                } else if title.contains("charity") {
+                    locationVC.showIndex = 1
+                } else {
+                    locationVC.showIndex = 0
+                }
+            }
         }
     }
 }
