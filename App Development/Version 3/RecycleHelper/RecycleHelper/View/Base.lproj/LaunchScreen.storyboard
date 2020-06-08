@@ -15,22 +15,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="Splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="DWL-Cx-6ok">
-                                <rect key="frame" x="149" y="385" width="116" height="127"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="DWL-Cx-6ok">
+                                <rect key="frame" x="149" y="384.5" width="116" height="127"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="D7o-l4-Bv8"/>
-                                    <constraint firstAttribute="height" constant="127" id="tDa-7i-mVT"/>
+                                    <constraint firstAttribute="width" constant="116" id="BLO-AK-49k"/>
+                                    <constraint firstAttribute="height" constant="127" id="tPg-LR-bUV"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kav-Zg-Pn8" firstAttribute="trailing" secondItem="DWL-Cx-6ok" secondAttribute="trailing" constant="149" id="2I8-s7-jV2"/>
-                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="leading" secondItem="kav-Zg-Pn8" secondAttribute="leading" constant="149" id="DkX-7e-Ygf"/>
-                            <constraint firstItem="kav-Zg-Pn8" firstAttribute="trailing" secondItem="DWL-Cx-6ok" secondAttribute="trailing" constant="149" id="NPB-0V-9mA"/>
-                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="leading" secondItem="kav-Zg-Pn8" secondAttribute="leading" constant="149" id="afY-UX-S2A"/>
-                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="top" secondItem="kav-Zg-Pn8" secondAttribute="top" constant="288" id="iOa-fQ-b38"/>
-                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="top" secondItem="kav-Zg-Pn8" secondAttribute="top" constant="288" id="vHZ-hl-o2a"/>
+                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="centerX" secondItem="eeh-wl-A6T" secondAttribute="centerX" id="00o-zW-dLt"/>
+                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="centerY" secondItem="eeh-wl-A6T" secondAttribute="centerY" id="K2U-MT-4Gd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kav-Zg-Pn8"/>
                     </view>
