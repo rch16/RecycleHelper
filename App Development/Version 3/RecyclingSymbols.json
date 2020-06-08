@@ -1,0 +1,109 @@
+[
+  {
+    "General": {
+      "Widely Recycled": {
+        "About": "More than 75% of Local Authorities will accept this. If there is any text above the symbol, this text will be instructions you must follow before recycling the item.",
+        "Image": "oprl1.png"
+      },
+      "Don't Recycle": {
+        "About": "This item is not recyclable.",
+        "Image": "oprl2.png"
+      }
+    },
+    "Plastic": {
+      "PETE": {
+        "Number": "1",
+        "FullName": "Polyethylene Terephthalate",
+        "About": "This type of plastic is generally easy to recycle, and accepted in most household recycling collections.",
+        "Examples": "Clear soft drinks bottles, Food packaging etc",
+        "Image": "1.png"
+      },
+      "HDPE": {
+        "Number": "2",
+        "FullName": "High-Density Polyethylene",
+        "About": "This type of plastic is generally easy to recycle, and accepted in most household recycling collections.",
+        "Examples": "Bottles (especially for milk, cleaning products, detergent and cosmetics) etc",
+        "Image": "2.png"
+      },
+      "PVC": {
+        "Number": "3",
+        "FullName": "Polyvinyl Chloride",
+        "About": "This type of plastic is difficult to recycle, and therefore not typically recyclable.",
+        "Examples": "Credit cards, Water pipes, Shower curtains etc",
+        "Image": "3.png"
+      },
+      "LDPE": {
+        "Number": "4",
+        "FullName": "Low-Density Polyethylene",
+        "About": "This type of plastic is managable to recycle, but not accepted in household recycling. Instead, it should be taken to a collection point.",
+        "Examples": "Cling film, Plastic bags, Flexible containers, Food wrap, Six pack rings etc",
+        "Image": "4.png",
+        "CollectionPoint": true
+      },
+      "PP": {
+        "Number": "5",
+        "FullName": "Polypropylene",
+        "About": "This type of plastic is generally easy to recycle, and accepted in most household recycling collections.",
+        "Examples": "Yoghurt or margarine pots, Medical packaging, Toys etc",
+        "Image": "5.png"
+      },
+      "PS": {
+        "Number": "6",
+        "FullName": "Polystyrene",
+        "About": "This type of plastic is difficult to recycle, and therefore not typically recyclable.",
+        "Examples": "Disposable hot or cold drink cups, Fast food packaging, CD cases, Toys, Plastic utensils, Packaging peanuts (e.g styrofoam) etc",
+        "Image": "6.png"
+      },
+      "Other": {
+        "Number": "7",
+        "About": "This category contains all types of plastic not included in categories 1 to 6. These types of plastic are extremely difficult to recycle and therefore not recyclable.",
+        "Examples": "Acrylic, Nylon, Fibreglass, Multilayer combinations etc",
+        "Image": "7.png"
+      }
+    },
+    "Other": {
+      "Glass": {
+        "About": "This symbol means you can recycle the item in your glass household collection, if you have one. Alternatively, take it to your local bottle bank.",
+        "Image": "recyclableglass.png"
+      },
+      "Recyclable Aluminium": {
+        "About": "The item is made from recyclable aluminium.",
+        "Image": "recyclablealuminium.png"
+      },
+      "Recyclable Steel": {
+        "About": "This product is made of steel - all local authorities collect steel cans, but other steel items should be taken to your household recycling centre.",
+        "Image": "recyclablesteel.png"
+      },
+      "Tidyman": {
+        "About": "Part of the Keep Britain Tidy campaign, this is a reminder to not litter.",
+        "Image": "tidyman.png"
+      },
+      "Waste Electricals": {
+        "About": "This symbol reminds you that you should not place the item in your general waste. These can often be donated to a charity shop, or taken to a household waste recycling centre.",
+        "Image": "wasteelectrical.png",
+        "CollectionPoint": true
+      },
+      "Seedling Logo": {
+        "About": "This product is certified tobe industrially compostable according to the European standard EN 13432/14955. This means it cannot be recycled, as it will break down and contaminate plastics. Place this in your garden waste instead.",
+        "Image": "seedling.png"
+      },
+      "Home Composting": {
+        "About": "The item is suitable for home composting.",
+        "Image": "homecomposting.png"
+      },
+      "Forest Stewardship Council Logo": {
+        "About": "This symbol identifies wood-based products from well-managed forests.",
+        "Image": "fsc.png"
+      },
+      "The Green Dot": {
+        "About": "The producer has made a financial contribution towards the recovery and recycling of packaging in Europe.",
+        "Image": "greendot.png"
+      },
+      "Mobius Loop": {
+        "Examples": "If the symbol includes a percentage figure, this means that the packaging contains x% of recycled material.",
+        "About": "This means that the object is capable of being recycled, but does not guarantee that it has been recycled, or will be accepted in recycling collections. Try using the search function to search for your specific item.",
+        "Image": "mobius.png"
+      }
+    }
+  }
+]
