@@ -69,7 +69,8 @@ class ObjectViewController: UIViewController, UITableViewDataSource, UITableView
         instructions = itemList[category]!["instructions"] as? [String]
         // Image
         let photoID = itemList[category]!["image"] as? String
-        if let photo = UIImage(named: photoID!){
+        let ID = "background_" + photoID!
+        if let photo = UIImage(named: ID){
             itemImage.image = photo
         }
         itemImage.layer.cornerRadius = 15
