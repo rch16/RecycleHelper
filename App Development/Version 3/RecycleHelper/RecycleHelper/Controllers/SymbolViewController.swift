@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import ChameleonFramework
+import FirebaseDatabase
 
 class SymbolViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -20,12 +21,13 @@ class SymbolViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     // Label data
-    var labelData: [String: [String: Any]]!
-    var generalData: [String: Any]!
+    var ref: DatabaseReference = Database.database().reference()
+    var labelData: [String: [String: [String: Any]]]!
+    var generalData: [String: [String: Any]]!
     var generalList: [String]!
-    var plasticData: [String: Any]!
+    var plasticData: [String: [String: Any]]!
     var plasticList: [String] = ["PETE","HDPE","PVC","LDPE","PP","PS","Other"] // to preserve order
-    var otherData: [String: Any]!
+    var otherData: [String: [String: Any]]!
     var otherList: [String]!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,13 +49,14 @@ class SymbolViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.separatorColor = .clear
         // Load data to populate table with
         loadSymbolData()
+        loadDatabaseData()
     }
 
     func loadSymbolData() {
         // Read from the plist file into the dictionary
         if let path = Bundle.main.path(forResource: K.symbolData, ofType: "plist") {
             let url = URL(fileURLWithPath: path)
-            labelData = NSDictionary(contentsOf: url) as? [String: [String: Any]]
+            labelData = NSDictionary(contentsOf: url) as? [String: [String: [String: Any]]]
             // General Labels
             generalData = labelData["General"]
             generalList = Array(generalData.keys)
@@ -64,6 +67,48 @@ class SymbolViewController: UIViewController, UITableViewDataSource, UITableView
             otherList = Array(otherData.keys)
             otherList.sort()
         }
+    }
+    
+    func loadDatabaseData() {
+        
+        var searchCriteria: String
+        
+        guard let location = UserDefaults.standard.object(forKey: K.userLocation) as? String else {
+            return
+        }
+        
+        if location == " " {
+            searchCriteria = "Symbols"
+        } else {
+            // If app has detected location
+            searchCriteria = location
+        }
+        
+        self.ref.child("Symbols").observe(.value, with: { (snapshot) in
+
+            if snapshot.hasChild(searchCriteria) {
+                // If data exists for location
+                if let dict = snapshot.childSnapshot(forPath: searchCriteria).value as? [String: [String: [String: Any]]] {
+                    self.labelData = dict
+                }
+            } else {
+                if let dict = snapshot.childSnapshot(forPath: "Default").value as? [String: [String: [String: Any]]] {
+                    self.labelData = dict
+                }
+            }
+            // General Labels
+            self.generalData = self.labelData["General"]
+            self.generalList = Array(self.generalData.keys)
+            // Plastic Labels
+            self.plasticData = self.labelData["Plastic"]
+            // Other Labels
+            self.otherData = self.labelData["Other"]
+            self.otherList = Array(self.otherData.keys)
+            self.otherList.sort()
+            // Reload data
+            self.tableView.reloadData()
+        })
+
     }
     
     // MARK: - Table View Data Source
@@ -101,28 +146,31 @@ class SymbolViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         var item: String
-        var data: NSDictionary
+        var data: [String: Any]
         var listNum: Int
         
         // Fetches the appropriate item for the data source layout.
         let currentView = viewOptions.titleForSegment(at: viewOptions.selectedSegmentIndex)
         if currentView == "General" {
             item = generalList[indexPath.section]
-            data = (generalData[item] as? NSDictionary)!
+            data = generalData[item]!
             listNum = generalList.count
         } else if currentView == "Plastic" {
             item = plasticList[indexPath.section]
-            data = (plasticData[item] as? NSDictionary)!
+            data = plasticData[item]!
             listNum = plasticList.count
         } else {
             item = otherList[indexPath.section]
-            data = (otherData[item] as? NSDictionary)!
+            data = otherData[item]!
             listNum = otherList.count
         }
         
-        let imageName = data["Image"] as? String
-        if let picture = UIImage(named: imageName!){
-             cell.cellImage.image = picture
+        if let imageName = data["Image"] as? String {
+            if let picture = UIImage(named: imageName){
+                 cell.cellImage.image = picture
+            }
+         } else {
+             cell.cellImage.image = nil
          }
         
         // Gradient colour
@@ -153,12 +201,14 @@ class SymbolViewController: UIViewController, UITableViewDataSource, UITableView
                 symbolVC.category = currentView
                 if currentView == "General" {
                     symbolVC.symbolID  = generalList[itemIndex]
+                    symbolVC.symbolData = generalData
                 } else if currentView == "Plastic" {
                     symbolVC.symbolID  = plasticList[itemIndex]
+                    symbolVC.symbolData = plasticData
                 } else {
                     symbolVC.symbolID  = otherList[itemIndex]
+                    symbolVC.symbolData = otherData
                 }
-                
             }
         }
     }
