@@ -12,22 +12,32 @@ import UIKit
 class WeekdayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // Attach UI
-    @IBOutlet weak var weekdayTable: UITableView!
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var dataTable: UITableView!
     @IBAction func cancelWasPressed(_ sender: Any) {
     }
     
-    var selectedWeekday: Int!
+    var selectedData: Int!
+    var frequency: String!
+    var frequencyArray: [String]!
     var cancelPressed: Bool = true
-    var currentWeekday: String!
+    var currentData: String!
+    var selectFrequency: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cancelPressed = false
         // Assign table data source and delegate
-        weekdayTable.dataSource = self
-        weekdayTable.delegate = self
+        dataTable.dataSource = self
+        dataTable.delegate = self
         // Table appearance
-        weekdayTable.backgroundColor = .systemGray5
+        dataTable.backgroundColor = .systemGray5
+        dataTable.tableFooterView = UIView() // prevent extra separators
+        if selectFrequency {
+            self.navBar.topItem?.title = "Reminder Frequency"
+        } else {
+            self.navBar.topItem?.title = "Collection Day"
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -40,18 +50,30 @@ class WeekdayViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        if selectFrequency {
+            return frequencyArray.count
+        } else {
+            return K.weekdayStrings.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = weekdayTable.dequeueReusableCell(withIdentifier: K.weekdayCellIdentifier, for: indexPath) as? WeekdayTableViewCell  else {
+        guard let cell = dataTable.dequeueReusableCell(withIdentifier: K.weekdayCellIdentifier, for: indexPath) as? WeekdayTableViewCell  else {
            fatalError("The dequeued cell is not an instance of WeekdayTableViewCell.")
         }
         
-        cell.weekdayLabel.text = K.weekdayStrings[indexPath.row]
-        let weekday = K.weekdayStrings[indexPath.row]
+        var data: String
         
-        if weekday == currentWeekday {
+        if selectFrequency {
+            data = frequencyArray[indexPath.row]
+            cell.dataLabel.text = data
+        } else {
+            data = K.weekdayStrings[indexPath.row]
+            cell.dataLabel.text = data
+            
+        }
+        
+        if data == currentData {
             cell.checkmarkLabel.isHidden = false
         } else {
             cell.checkmarkLabel.isHidden = true
@@ -66,8 +88,12 @@ class WeekdayViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.addDaySegue {
-            let selectedPath = weekdayTable.indexPathForSelectedRow
-            selectedWeekday = K.weekdayValues[selectedPath!.row]
+            let selectedPath = dataTable.indexPathForSelectedRow
+            if selectFrequency {
+                frequency = frequencyArray[selectedPath!.row]
+            } else {
+                selectedData = K.weekdayValues[selectedPath!.row]
+            }
         }
     }
     
