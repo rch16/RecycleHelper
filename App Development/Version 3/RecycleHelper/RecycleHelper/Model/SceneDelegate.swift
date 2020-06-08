@@ -18,13 +18,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        
+
         UserDefaults.standard.register(defaults: [K.saveItemKey: []])
         UserDefaults.standard.register(defaults: [K.showFavourites: false])
         UserDefaults.standard.register(defaults: [K.binCollections: [CollectionItem]()])
         UserDefaults.standard.register(defaults: [K.hasPersonalised: false])
         UserDefaults.standard.register(defaults: [K.personalisation: ""])
         UserDefaults.standard.register(defaults: [K.lastUpdated: ""])
+        UserDefaults.standard.register(defaults: [K.userLocation: ""])
         
         let launchedBefore = UserDefaults.standard.bool(forKey: K.launchedBefore)
 
@@ -39,7 +40,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             launchStoryboard(identifier: "onboarding", scene: scene)
 
         }
-        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

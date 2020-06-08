@@ -15,6 +15,7 @@ struct Notification {
     var title: String
     var datetime: DateComponents
     var recurring: Bool
+    var repeatFrequency: String
 }
 
 class LocalNotificationManager {
@@ -67,27 +68,39 @@ class LocalNotificationManager {
             content.sound    = .default
             
             var notificationDate: DateComponents
+            var request: UNNotificationRequest
             
             if(notification.recurring){
                 let weekday = notification.datetime.weekday
                 let hour = notification.datetime.hour
                 let minute = notification.datetime.minute
                 notificationDate = DateComponents(calendar: Calendar.current, timeZone: TimeZone.current, hour: hour, minute: minute, weekday: weekday)
+                
+                if(notification.repeatFrequency == "Weekly") {
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: notificationDate, repeats: notification.recurring)
+                    request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
+                    performScheduling(request: request, id: notification.id, frequency: notification.repeatFrequency)
+                } else if (notification.repeatFrequency == "Fortnightly") {
+                    let twoWeeks = 1190507.790425003
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: twoWeeks, repeats: notification.recurring)
+                    request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
+                    performScheduling(request: request, id: notification.id, frequency: notification.repeatFrequency)
+                }
             } else {
                 notificationDate = notification.datetime
+                let trigger = UNCalendarNotificationTrigger(dateMatching: notificationDate, repeats: notification.recurring)
+                request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
+                performScheduling(request: request, id: notification.id, frequency: notification.repeatFrequency)
             }
 
-            let trigger = UNCalendarNotificationTrigger(dateMatching: notificationDate, repeats: notification.recurring)
-
-            let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
-
-            UNUserNotificationCenter.current().add(request) { error in
-
-                guard error == nil else { return }
-
-                print("Notification scheduled! --- ID = \(notification.id)")
-
-            }
+           
+        }
+    }
+    
+    func performScheduling(request: UNNotificationRequest, id: String, frequency: String) {
+        UNUserNotificationCenter.current().add(request) { error in
+            guard error == nil else { return }
+            print("Notification scheduled with frequency = \(frequency) and ID = \(id)")
         }
     }
     

@@ -11,6 +11,7 @@ import UIKit
 import UserNotifications
 import SwipeCellKit
 import FirebaseDatabase
+import CoreLocation
 
 class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UITableViewDataSource, UITableViewDelegate {
     
@@ -22,11 +23,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
             if sourceVC.editCollection {
                 // Overwrite edited collection
                 editCollection = sourceVC.newCollection
-                updateCollection(section: sourceVC.collectionIndexPathSection!, title: editCollection!.title, collectionDate: editCollection!.collectionDate, reminderDate: editCollection!.reminderDate, recurring: editCollection!.recurring)
+                updateCollection(section: sourceVC.collectionIndexPathSection!, title: editCollection!.title, collectionDate: editCollection!.collectionDate, reminderDate: editCollection!.reminderDate, recurring: editCollection!.recurring, repeatFrequency: editCollection!.repeatFrequency)
             } else {
                 // Add new collection
                 newCollection = sourceVC.newCollection
-                addNewCollection(title: newCollection!.title, collectionDate: newCollection!.collectionDate, reminderDate: newCollection!.reminderDate, recurring: newCollection!.recurring)
+                addNewCollection(title: newCollection!.title, collectionDate: newCollection!.collectionDate, reminderDate: newCollection!.reminderDate, recurring: newCollection!.recurring, repeatFrequency: newCollection!.repeatFrequency)
             }
         }
     }
@@ -65,9 +66,26 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     var editCollection: CollectionItem?  // Editing collection
     let manager = LocalNotificationManager() // Managing push notifications
 
+    // Location specific information (for search view)
+    var placemark: CLPlacemark?
+    var city: String?
+    var postCode: String?
+    var locationManager = CLLocationManager()
+    private var locationResult: LocationSetupResult = .success
+    private enum LocationSetupResult {
+        case success
+        case notAuthorized
+    }
+    
+    // Fun facts
+    var factsArray: [String]!
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Setup location
+        locationManager.delegate = self
+        // Check for Location Services
+        checkLocationServices()
         // Check personalisation
         checkPersonalisation()
         // Get user defaults
@@ -84,6 +102,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         // Alter table appearance
         collectionTable.separatorStyle = .none
     }
+    
+    // MARK: - Obtain Data
     
     func checkPersonalisation() {
         guard let hasPersonalised = UserDefaults.standard.object(forKey: K.hasPersonalised) as? Bool else {
@@ -136,10 +156,19 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     
     func loadDatabaseData() {
         self.ref.child("Last Updated").observe(.value, with: { (snapshot) in
-           if let updatedDate = snapshot.value as? String {
-               UserDefaults.standard.set(updatedDate, forKey: K.lastUpdated)
-           }
+            if let updatedDate = snapshot.value as? String {
+                UserDefaults.standard.set(updatedDate, forKey: K.lastUpdated)
+            }
        })
+        
+        self.ref.child("Facts").observe(.value, with: { (snapshot) in
+             if let facts = snapshot.value as? [String] {
+                 self.factsArray = facts
+                 // Populate fun fact
+                 self.chooseRandomFact()
+             }
+        })
+            
     }
     
     // Date format
@@ -148,18 +177,17 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "en_GB")
-        //dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm MMMMd")
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
         return dateFormatter
     }
     
     // Add new collection
-    func addNewCollection(title: String, collectionDate: Int, reminderDate: Date, recurring: Bool) {
+    func addNewCollection(title: String, collectionDate: Int, reminderDate: Date, recurring: Bool, repeatFrequency: String) {
         // The index of the new item will be the current item count
         let newIndex = collectionItems.count
 
         // Create new item and add it to the collections list
-        collectionItems.append(CollectionItem(title: title, collectionDate: collectionDate, reminderDate: reminderDate, recurring: recurring))
+        collectionItems.append(CollectionItem(title: title, collectionDate: collectionDate, reminderDate: reminderDate, recurring: recurring, repeatFrequency: repeatFrequency))
         
         // Update user defaults
         UserDefaults.standard.set(try? PropertyListEncoder().encode(collectionItems), forKey: K.binCollections)
@@ -170,7 +198,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         // Schedule notification
         let notificationTitle = "Collection Reminder: " + title
         let notificationDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: reminderDate)
-        manager.notifications.append(Notification(id: title, title: notificationTitle, datetime: notificationDateComponents, recurring: recurring))
+        manager.notifications.append(Notification(id: title, title: notificationTitle, datetime: notificationDateComponents, recurring: recurring, repeatFrequency: repeatFrequency))
         checkNotificationAuthorisation()
         manager.schedule()
     }
@@ -196,11 +224,11 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     }
     
     // Edit current colleciton
-    func updateCollection(section: Int, title: String, collectionDate: Int, reminderDate: Date, recurring: Bool) {
+    func updateCollection(section: Int, title: String, collectionDate: Int, reminderDate: Date, recurring: Bool, repeatFrequency: String) {
         let indexPath = IndexPath(row: 0, section: section)
         
         // Update list
-        let item = CollectionItem(title: title, collectionDate: collectionDate, reminderDate: reminderDate, recurring: recurring)
+        let item = CollectionItem(title: title, collectionDate: collectionDate, reminderDate: reminderDate, recurring: recurring, repeatFrequency: repeatFrequency)
         collectionItems[indexPath.section] = item
         
         // Update cell
@@ -223,7 +251,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         // Schedule new notification
         let notificationTitle = "Collection Reminder: " + title
         let notificationDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: reminderDate)
-        manager.notifications.append(Notification(id: title, title: notificationTitle, datetime: notificationDateComponents, recurring: recurring))
+        manager.notifications.append(Notification(id: title, title: notificationTitle, datetime: notificationDateComponents, recurring: recurring, repeatFrequency: repeatFrequency))
         checkNotificationAuthorisation()
         manager.schedule()
    
@@ -239,6 +267,90 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         collectionTable.backgroundColor = .systemBackground
         collectionTable.separatorStyle = .none
     }
+    
+    func chooseRandomFact() {
+        if let range = factsArray?.count {
+            let randomIndex = Int.random(in: 0..<range!)
+            if let fact = factsArray?[randomIndex] {
+                print(fact)
+            }
+        }
+    }
+    
+    // MARK: - Location Access
+    
+    func authoriseLocation() {
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startMonitoringSignificantLocationChanges()
+            checkLocationServices()
+        }
+    }
+    
+    func checkLocationServices() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorized, .restricted, .authorizedAlways, .authorizedWhenInUse:
+            locationManager.startMonitoringSignificantLocationChanges()
+            lookUpCurrentLocation()
+            
+        case .notDetermined:
+            authoriseLocation()
+        case .denied:
+            DispatchQueue.main.async {
+                let changePrivacySetting = "RecycleHelper doesn't have permission to access location, please change privacy settings"
+                let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to location services")
+                let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
+                
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+                                                        style: .cancel,
+                                                        handler: nil))
+                
+                alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+                                                        style: .`default`,
+                                                        handler: { _ in
+                                                            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                                                                      options: [:],
+                                                                                      completionHandler: nil)
+                }))
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+        @unknown default:
+            checkLocationServices()
+        }
+        
+    }
+    
+    func lookUpCurrentLocation() {
+        // Use the last reported location.
+        if let lastLocation = self.locationManager.location {
+            let geocoder = CLGeocoder()
+                
+            // Look up the location and pass it to the completion handler
+            geocoder.reverseGeocodeLocation(lastLocation,
+                        completionHandler: { (placemarks, error) in
+                if error == nil {
+                    self.placemark = placemarks?[0]
+                    self.city = self.placemark?.locality
+                    self.postCode = self.placemark?.postalCode
+                    self.postCode = String(self.postCode!.split(separator: " ")[0]) // Take first half only
+                    var userLocation: String = self.city! + ", " + self.postCode!
+                    UserDefaults.standard.set(userLocation, forKey: K.userLocation)
+                }
+                else {
+                 // An error occurred during geocoding.
+                    print(error)
+                }
+            })
+        }
+        else {
+            // No location was available.
+            print("no location")
+        }
+    }
+    
     
     // MARK: - TableViewDelegate Methods
     
@@ -354,5 +466,25 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         }
     }
     
+}
+
+
+// MARK: CLLocationManagerDelegate Methods
+
+extension HomeViewController:  CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+         print("error:: \(error.localizedDescription)")
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+    }
+
 }
 

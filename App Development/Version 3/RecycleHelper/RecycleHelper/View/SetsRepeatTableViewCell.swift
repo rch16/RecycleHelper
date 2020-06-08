@@ -20,12 +20,12 @@ class SetsRepeatTableViewCell: UITableViewCell {
         valueDidChange(sender)
     }
     
-    var indexPath: IndexPath!
     weak var delegate: SwitchDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        initView()
     }
     
     public func configure(value: Bool?) {
@@ -36,6 +36,10 @@ class SetsRepeatTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    func initView() {
+        repeatSwitch.addTarget(self, action: #selector(valueDidChange), for: .valueChanged)
     }
     
     @objc func valueDidChange(_ sender: UISwitch) {

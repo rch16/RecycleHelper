@@ -12,7 +12,7 @@ class EventTableViewCell: UITableViewCell {
 
     // Attach UI
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,13 +41,18 @@ class EventTableViewCell: UITableViewCell {
         dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm MMMMd")
 
         label.text = text
-        dateLabel.text = dateFormatter.string(from: date)
+        valueLabel.text = dateFormatter.string(from: date)
 
     }
     
     func updateCollection(text: String, day: Int) {
         label.text = text
-        dateLabel.text = K.weekdaysFromDateComponent[day]
+        valueLabel.text = K.weekdaysFromDateComponent[day]
+    }
+    
+    func updateFrequency(text: String, frequency: String){
+        label.text = text
+        valueLabel.text = frequency
     }
 
 }

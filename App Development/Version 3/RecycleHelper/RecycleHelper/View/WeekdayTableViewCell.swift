@@ -10,7 +10,7 @@ import UIKit
 
 class WeekdayTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var weekdayLabel: UILabel!
+    @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var checkmarkLabel: UIButton!
     
     override func awakeFromNib() {

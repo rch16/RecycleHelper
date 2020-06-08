@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NewCollectionViewController: UITableViewController {
+class NewCollectionViewController: UITableViewController, SwitchDelegate {
     
     // Attach UI
     @IBOutlet weak var addBtn: UIBarButtonItem!
@@ -19,20 +19,38 @@ class NewCollectionViewController: UITableViewController {
     @IBAction func dayWasSelected(segue: UIStoryboardSegue) {
         // get data
         if let sourceVC = segue.source as? WeekdayViewController {
-            dateJustChanged = true
+            if sourceVC.selectFrequency == true {
+                let indexPath = IndexPath(row: 1, section: 2)
+                let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
+                freqJustChanged = true
+                // Get Info
+                let freq = sourceVC.frequency
+                // Update Data
+                repeatFrequency = freq!
+                collectionToEdit?.repeatFrequency = repeatFrequency
+                newCollection?.repeatFrequency = repeatFrequency
+                cell.updateFrequency(text: cell.label.text!, frequency: repeatFrequency)
+                // Reload View
+                tableView.reloadRows(at: [indexPath], with: .none)
+            } else {
+                let indexPath = IndexPath(row: 0, section: 1)
+                let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
+                dateJustChanged = true
+                // Get Info
+                let weekday = sourceVC.selectedData
+                // Update Data
+                collectionDay = weekday!
+                collectionToEdit?.collectionDate = collectionDay
+                newCollection?.collectionDate = collectionDay
+                cell.updateCollection(text: cell.label.text!, day: collectionDay)
+                // Reload View
+                tableView.reloadRows(at: [indexPath], with: .none)
+            }
+            if addBtn.title == "Done" {
+                // Enable add button on some data changing
+                self.addBtn.isEnabled = true
+            }
             
-            // Get Info
-            let weekday = sourceVC.selectedWeekday
-            //let date = Calendar.current.
-            let indexPath = IndexPath(row: 0, section: 1)
-            let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
-            
-            // Update Data
-            collectionDay = weekday!
-            collectionToEdit?.collectionDate = collectionDay
-            newCollection?.collectionDate = collectionDay
-            cell.updateCollection(text: cell.label.text!, day: collectionDay)
-            tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
     
@@ -41,10 +59,14 @@ class NewCollectionViewController: UITableViewController {
     var inputTexts: [String] = ["Collection date", "Reminder date"]
     var inputDates: [Date] = []
     var collectionDay: Int = Calendar.current.dateComponents([.weekday], from: Date.init()).weekday!
+    var repeatFrequency: String = "None"
     var datePickerIndexPath: IndexPath?
     
     // Text Field
     var textChanged: ((String) -> Void)?
+    
+    // Toggle Switch
+    var recurring: Bool = false
     
     // Collection data
     var newCollection: CollectionItem?
@@ -52,7 +74,7 @@ class NewCollectionViewController: UITableViewController {
     var collectionToEdit: CollectionItem?
     var collectionIndexPathSection: Int?
     var dateJustChanged: Bool = false
-    //var collectionTitle: String?
+    var freqJustChanged: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +91,7 @@ class NewCollectionViewController: UITableViewController {
         // Initialise new collection
         let currentDate = Date.init()
         let currentDateComponents = Calendar.current.dateComponents([.weekday], from: currentDate)
-        newCollection = CollectionItem(title: "", collectionDate: currentDateComponents.weekday!, reminderDate: currentDate, recurring: false)
+        newCollection = CollectionItem(title: "", collectionDate: currentDateComponents.weekday!, reminderDate: currentDate, recurring: false, repeatFrequency: "None")
         // alter navigation header and add button depending on purpose
         addBtn.possibleTitles = ["Add", "Done"]
         if editCollection {
@@ -94,11 +116,19 @@ class NewCollectionViewController: UITableViewController {
         } else {
             dateJustChanged = false
         }
+        if !freqJustChanged {
+            repeatFrequency = collectionToEdit?.repeatFrequency as! String
+        } else {
+            freqJustChanged = false
+        }
         inputDates[1] = collectionToEdit?.reminderDate as! Date
         newCollection?.collectionDate = collectionToEdit?.collectionDate as! Int
         newCollection?.reminderDate = collectionToEdit?.reminderDate as! Date
         newCollection?.recurring = collectionToEdit?.recurring as! Bool
         newCollection?.title = collectionToEdit?.title as! String
+        newCollection?.repeatFrequency = collectionToEdit?.repeatFrequency as! String
+        repeatFrequency = collectionToEdit?.repeatFrequency as! String
+        recurring = collectionToEdit?.recurring as! Bool
     }
     
     
@@ -130,6 +160,7 @@ class NewCollectionViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             if indexPath.row == 0 {
+                // Select weekday
                 tableView.deselectRow(at: indexPath, animated: true)
                 self.performSegue(withIdentifier: K.selectWeekdaySegue, sender: indexPath)
             } else {
@@ -154,6 +185,10 @@ class NewCollectionViewController: UITableViewController {
                    }
                    tableView.endUpdates()
             }
+        } else if indexPath.section == 2, indexPath.row == 1 {
+            // Select notification recurring frequency
+            tableView.deselectRow(at: indexPath, animated: true)
+            self.performSegue(withIdentifier: K.selectWeekdaySegue, sender: indexPath)
         } else {
             tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -172,8 +207,10 @@ class NewCollectionViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section != 1 {
+        if section == 0 {
             return 1
+        } else if section == 2{
+            return 2
         } else if datePickerIndexPath != nil {
             // add a row to show the event picker
             return inputTexts.count + 1
@@ -193,6 +230,7 @@ class NewCollectionViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
         if indexPath.section == 0 {
+            // Collection title
             guard let titleCell = tableView.dequeueReusableCell(withIdentifier: K.titleCellIdentifier, for: indexPath as IndexPath) as? TitleTableViewCell  else {
                 fatalError("The dequeued cell is not an instance of TitleTableViewCell.")}
            // titleCell.delegate = self
@@ -204,15 +242,28 @@ class NewCollectionViewController: UITableViewController {
             titleCell.collectionTitle.delegate = self
             return titleCell
         } else if indexPath.section == 2 {
-            guard let switchCell = tableView.dequeueReusableCell(withIdentifier: K.repeatsCellIdentifier, for: indexPath as IndexPath) as? SetsRepeatTableViewCell  else {
-                 fatalError("The dequeued cell is not an instance of SetsRepeatTableViewCell.")}
-            if editCollection {
-                switchCell.configure(value: collectionToEdit?.recurring)
+            // Collection repeat
+            if indexPath.row == 0 {
+                // Repeat on/off
+                guard let switchCell = tableView.dequeueReusableCell(withIdentifier: K.repeatsCellIdentifier, for: indexPath as IndexPath) as? SetsRepeatTableViewCell  else {
+                     fatalError("The dequeued cell is not an instance of SetsRepeatTableViewCell.")}
+                if editCollection {
+                    switchCell.configure(value: collectionToEdit?.recurring)
+                } else {
+                    switchCell.configure(value: false)
+                }
+                switchCell.delegate = self
+                return switchCell
             } else {
-                switchCell.configure(value: false)
+                // Repeat frequency
+                guard let repeatFreqCell = tableView.dequeueReusableCell(withIdentifier: K.eventCellIdentifier, for: indexPath as IndexPath) as? EventTableViewCell  else {
+                    fatalError("The dequeued cell is not an instance of EventTableViewCell.")}
+                repeatFreqCell.updateFrequency(text: "Repeat Frequency", frequency: repeatFrequency)
+                let accessory: UITableViewCell.AccessoryType = .disclosureIndicator
+                repeatFreqCell.accessoryType = accessory
+                return repeatFreqCell
             }
-            switchCell.delegate = self
-            return switchCell
+            
         } else {
             if indexPath.row == 0 {
                 // Collection day selection
@@ -247,11 +298,48 @@ class NewCollectionViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let nextVC = segue.destination as? WeekdayViewController, segue.identifier == K.selectWeekdaySegue {
-            if let selectedPath = sender as! IndexPath? {
-                let cell = tableView.cellForRow(at: selectedPath) as! EventTableViewCell
-                nextVC.currentWeekday = cell.dateLabel.text
+        if let selectedPath = sender as? IndexPath? {
+            if let nextVC = segue.destination as? WeekdayViewController, segue.identifier == K.selectWeekdaySegue {
+                if selectedPath!.section == 2 {
+                    let cell = tableView.cellForRow(at: selectedPath!) as! EventTableViewCell
+                    // Change to frequency not weekdays
+                    nextVC.selectFrequency = true
+                    nextVC.currentData = cell.valueLabel.text
+                    if recurring {
+                        nextVC.frequencyArray = K.frequencyStrings
+                    } else {
+                        nextVC.frequencyArray = K.frequencyStringsNoRepeat
+                    }
+                    
+                } else {
+                    let cell = tableView.cellForRow(at: selectedPath!) as! EventTableViewCell
+                    nextVC.selectFrequency = false
+                    nextVC.currentData = cell.valueLabel.text
+                }
             }
+        }
+    }
+    
+    
+    // MARK: - SwitchDelegate Methods
+    
+    func didChangeValue(value: Bool) {
+       
+        newCollection?.recurring = value
+        recurring = value
+        
+        if addBtn.title == "Done" {
+            // Enable add button on some data changing
+            self.addBtn.isEnabled = true
+        }
+        
+        let indexPath = IndexPath(row: 1, section: 2)
+        if !recurring {
+            repeatFrequency = "None"
+            tableView.reloadRows(at: [indexPath], with: .none)
+        } else {
+            repeatFrequency = "Weekly"
+            tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
     
@@ -275,21 +363,7 @@ extension NewCollectionViewController: DatePickerDelegate {
         }
         tableView.reloadRows(at: [indexPath], with: .none)
     }
-    
-}
 
-// MARK: - SwitchDelegate Methods
-
-extension NewCollectionViewController: SwitchDelegate {
-    
-    func didChangeValue(value: Bool) {
-        newCollection?.recurring = value
-        if addBtn.title == "Done" {
-            self.addBtn.isEnabled = true
-        }
-    }
-    
-    
 }
 
 // MARK: - UITextFieldDelegate Methods
