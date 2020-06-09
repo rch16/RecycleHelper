@@ -33,11 +33,29 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     }
     @IBAction func finishedEditingSettings(segue: UIStoryboardSegue) {
         if let sourceVC = segue.source as? SettingsViewController {
-            userName.text = "Welcome, " + sourceVC.userName
+            
+            // Check animation
+            animated = sourceVC.animated
+            let text = "Welcome, " + sourceVC.userName
+            if animated {
+                userName.text = text
+                nonAnimatedUserName.text = " "
+            } else {
+                userName.text = " "
+                nonAnimatedUserName.text = text
+            }
+            
+            // Check recycle count
+            getRecycledItemCount()
+            progressView.setProgress(progress, animated: true)
         }
     }
     
     // Attach UI
+    @IBOutlet weak var progressView: CircleProgressView!
+    @IBOutlet weak var itemsRecycledLabel: UILabel!
+    @IBOutlet weak var factTable: UITableView!
+    @IBOutlet weak var nonAnimatedUserName: UILabel!
     @IBOutlet weak var userName: CLTypingLabel!
     @IBOutlet weak var collectionTable: UITableView!
     @IBAction func didSelectSettings(_ sender: UIBarButtonItem) {
@@ -78,7 +96,30 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     }
     
     // Fun facts
-    var factsArray: [String]!
+    var factsArray: [String] = []
+    var currentFact: String = ""
+    
+    // Personalisation
+    var animated: Bool = true
+    
+    // Recycling usage stats
+    var recycledItemCount: Int = 0
+    var target: Double = 50.0
+    var progress: Double = 0.0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Populate fact
+        chooseRandomFact()
+        // Get recycled item count
+        getRecycledItemCount()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Update progess
+        progressView.setProgress(progress, animated: true)
+    }
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,14 +137,52 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        // Assign table data source and delegate
+        // Assign tables data source and delegate
         collectionTable.dataSource = self
         collectionTable.delegate = self
-        // Alter table appearance
+        factTable.dataSource = self
+        factTable.delegate = self
+        // Alter tables appearance
         collectionTable.separatorStyle = .none
+        factTable.separatorStyle = .none
+        // Populate fun fact
+        self.chooseRandomFact()
     }
     
     // MARK: - Obtain Data
+    
+    func getRecycledItemCount() {
+        if let count = UserDefaults.standard.object(forKey: K.recycleCount) as? Int {
+            recycledItemCount = count
+        }
+        if let goal = UserDefaults.standard.object(forKey: K.recycleTarget) as? Int {
+            target = Double(goal)
+        }
+        
+        if recycledItemCount != 0 {
+            if Double(recycledItemCount) >= target {
+                // goal reached!
+                let alert = UIAlertController(title: "Congratulations!", message: "You have reached your goal! Let's aim for the next \(Int(target)) items.", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
+
+                // Update user defaults
+                recycledItemCount = 0
+                UserDefaults.standard.set(recycledItemCount, forKey: K.recycleCount)
+            }
+            
+            progress = Double(recycledItemCount)/target
+            
+        } else {
+            progress = Double(0)
+        }
+        
+        let fraction: String = String(recycledItemCount) + "/" + String(Int(target))
+        itemsRecycledLabel.text = fraction + " items recycled"
+        
+    }
     
     func checkPersonalisation() {
         guard let hasPersonalised = UserDefaults.standard.object(forKey: K.hasPersonalised) as? Bool else {
@@ -122,7 +201,14 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
 
                 if let personalisation = alert.textFields?.first?.text {
-                    self.userName.text = "Welcome, " + personalisation
+                    let text = "Welcome, " + personalisation
+                    if self.animated {
+                        self.userName.text = text
+                        self.nonAnimatedUserName.text = " "
+                    } else {
+                        self.userName.text = " "
+                        self.nonAnimatedUserName.text = text
+                    }
                     UserDefaults.standard.set(personalisation, forKey: K.personalisation)
                 }
             }))
@@ -137,7 +223,21 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
             guard let personalisation = UserDefaults.standard.object(forKey: K.personalisation) as? String else {
                 return
             }
-            userName.text = "Welcome, " + personalisation
+            
+            if let animate = UserDefaults.standard.object(forKey: K.animatedTyping) as? Bool {
+                animated = animate
+            }
+            
+            let text = "Welcome, " + personalisation
+            if animated {
+                userName.text = text
+                nonAnimatedUserName.text = " "
+
+            } else {
+                userName.text = " "
+                nonAnimatedUserName.text = text
+            }
+
         }
     }
 
@@ -152,23 +252,36 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         }
         
         collectionItems = collections
+        
+        if let animate = UserDefaults.standard.object(forKey: K.animatedTyping) as? Bool {
+            animated = animate
+        }
      }
     
     func loadDatabaseData() {
-        self.ref.child("Last Updated").observe(.value, with: { (snapshot) in
-            if let updatedDate = snapshot.value as? String {
-                UserDefaults.standard.set(updatedDate, forKey: K.lastUpdated)
-            }
-       })
-        
         self.ref.child("Facts").observe(.value, with: { (snapshot) in
-             if let facts = snapshot.value as? [String] {
-                 self.factsArray = facts
-                 // Populate fun fact
-                 self.chooseRandomFact()
-             }
+            
+            if snapshot.hasChild("Recycling Facts") {
+                if let factsDict = snapshot.childSnapshot(forPath: "Recycling Facts").value as? [String: String] {
+                    for fact in factsDict {
+                        self.factsArray.append(fact.value)
+                    }
+                }
+                self.chooseRandomFact()
+            }
+            
         })
             
+    }
+    
+    func chooseRandomFact() {
+        if factsArray != [] {
+            let range = factsArray.count
+            let randomIndex = Int.random(in: 0..<range)
+            let fact = factsArray[randomIndex]
+            currentFact = fact
+            factTable.reloadData()
+        }
     }
     
     // Date format
@@ -268,14 +381,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         collectionTable.separatorStyle = .none
     }
     
-    func chooseRandomFact() {
-        if let range = factsArray?.count {
-            let randomIndex = Int.random(in: 0..<range!)
-            if let fact = factsArray?[randomIndex] {
-                print(fact)
-            }
-        }
-    }
     
     // MARK: - Location Access
     
@@ -336,7 +441,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
                     self.city = self.placemark?.locality
                     self.postCode = self.placemark?.postalCode
                     self.postCode = String(self.postCode!.split(separator: " ")[0]) // Take first half only
-                    var userLocation: String = self.city! + ", " + self.postCode!
+                    let userLocation: String = self.city! + ", " + self.postCode!
                     UserDefaults.standard.set(userLocation, forKey: K.userLocation)
                 }
                 else {
@@ -356,12 +461,17 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     
     // Number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
-        if(collectionItems.count == 0){
-            noData(message: "You haven't added any collections yet!")
+        if tableView == collectionTable {
+            if(collectionItems.count == 0){
+                noData(message: "You haven't added any collections yet!")
+            } else {
+                tableView.backgroundView = nil
+            }
+            return collectionItems.count
         } else {
-            tableView.backgroundView = nil
+            return 1
         }
-        return collectionItems.count
+        
     }
     
     // Number of rows
@@ -382,76 +492,83 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     
     // Populate table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Dequeue reusable cell using a cell identifier
-        guard let cell = collectionTable.dequeueReusableCell(withIdentifier: K.collectionCellIdentifier, for: indexPath) as? CollectionTableViewCell else { fatalError("The dequeued cell is not an instance of CollectionTableViewCell") }
-        
-        // Edit cell appearance here
-        let item = collectionItems[indexPath.section]
-        //let accessory: UITableViewCell.AccessoryType = item.done ? .checkmark : .none
-        // Gradient colour
-//        let colourTheme = UIColor(hexString: K.thirdColour)
-//        if let colour = colourTheme!.darken(byPercentage: CGFloat(indexPath.section) / (CGFloat(10))) {
-//            cell.backgroundColor = colour as! CGColor
-//        }
-        
-        if(item.recurring){
-            cell.repeatBtn.tintColor = UIColor(hexString: K.secondColour)
+        if tableView == collectionTable {
+            // Dequeue reusable cell using a cell identifier
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: K.collectionCellIdentifier, for: indexPath) as? CollectionTableViewCell else { fatalError("The dequeued cell is not an instance of CollectionTableViewCell") }
+            
+            // Edit cell appearance
+            let item = collectionItems[indexPath.section]
+
+            
+            if(item.recurring){
+                cell.repeatBtn.tintColor = UIColor(hexString: K.secondColour)
+            } else {
+                cell.repeatBtn.tintColor = .clear
+            }
+            cell.contentView.layer.cornerRadius = 15
+            cell.layer.cornerRadius = 15
+            cell.collectionTitle.text = item.title
+            cell.collectionDate.text = K.weekdaysFromDateComponent[item.collectionDate]
+            
+            return cell
         } else {
-            cell.repeatBtn.tintColor = .clear
+            // Dequeue reusable cell using a cell identifier
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.factCellIdentifier, for: indexPath)
+            
+            cell.textLabel?.text = currentFact
+            cell.contentView.layer.cornerRadius = 15
+            cell.layer.cornerRadius = 15
+            cell.backgroundColor = UIColor(hexString: K.thirdColour)
+            
+            return cell
         }
-        cell.contentView.layer.cornerRadius = 15
-        cell.layer.cornerRadius = 15
-        cell.collectionTitle.text = item.title
-        cell.collectionDate.text = K.weekdaysFromDateComponent[item.collectionDate]
-        //cell.accessoryType = accessory
-        
-        return cell
     }
     
     // Toggle complete or not
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if(collectionTable .isEditing) {
-            // Delete old entry (will get re added upon return segue)
-//            // Remove from collection items
-//            collectionItems.remove(at: indexPath.section)
-//            // Update user defaults
-//            UserDefaults.standard.set(try? PropertyListEncoder().encode(collectionItems), forKey: K.binCollections)
-//            // Remove from table
-//            tableView.deleteSections([indexPath.section], with: .top)
-            // Perform all UI updates on the main queue.
-            DispatchQueue.main.async(execute: {
-                // Segue to edit view
-                self.performSegue(withIdentifier: K.editCollectionSegue, sender: indexPath.section)
-            })
-            
-        } else {
-            // Toggle collection
-            let item = collectionItems[indexPath.section]
-            item.done = !item.done
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+        if tableView == collectionTable {
+            if(collectionTable .isEditing) {
+                // Perform all UI updates on the main queue.
+                DispatchQueue.main.async(execute: {
+                    // Segue to edit view
+                    self.performSegue(withIdentifier: K.editCollectionSegue, sender: indexPath.section)
+                })
+                
+            } else {
+                // Toggle collection
+                let item = collectionItems[indexPath.section]
+                item.done = !item.done
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
         }
     }
     
     // Swipe left to delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if indexPath.section < collectionItems.count {
-            // Remove from collection items
-            collectionItems.remove(at: indexPath.section)
-            // Update user defaults
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(collectionItems), forKey: K.binCollections)
-            // Remove pending notification
-            if let cell = collectionTable.cellForRow(at: indexPath) as? CollectionTableViewCell {
-                manager.deleteNotification(id: cell.collectionTitle.text!)
+        if tableView == collectionTable {
+            if indexPath.section < collectionItems.count {
+                // Remove from collection items
+                collectionItems.remove(at: indexPath.section)
+                // Update user defaults
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(collectionItems), forKey: K.binCollections)
+                // Remove pending notification
+                if let cell = collectionTable.cellForRow(at: indexPath) as? CollectionTableViewCell {
+                    manager.deleteNotification(id: cell.collectionTitle.text!)
+                }
+                // Remove from table
+                tableView.deleteSections([indexPath.section], with: .top)
             }
-            // Remove from table
-            tableView.deleteSections([indexPath.section], with: .top)
         }
     }
     
     // Editing cells
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        if tableView == collectionTable {
+            return true
+        } else {
+            return false
+        }
     }
     
     // MARK: - Navigation
