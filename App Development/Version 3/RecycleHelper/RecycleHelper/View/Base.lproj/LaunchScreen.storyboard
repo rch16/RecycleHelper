@@ -16,24 +16,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="DWL-Cx-6ok">
-                                <rect key="frame" x="149" y="384.5" width="116" height="127"/>
+                                <rect key="frame" x="162.5" y="406.5" width="89" height="83"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="BLO-AK-49k"/>
-                                    <constraint firstAttribute="height" constant="127" id="tPg-LR-bUV"/>
+                                    <constraint firstAttribute="height" constant="83" id="V8r-yX-uP9"/>
+                                    <constraint firstAttribute="width" constant="89" id="lnx-bg-qTX"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="centerX" secondItem="eeh-wl-A6T" secondAttribute="centerX" id="00o-zW-dLt"/>
-                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="centerY" secondItem="eeh-wl-A6T" secondAttribute="centerY" id="K2U-MT-4Gd"/>
+                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="centerY" secondItem="eeh-wl-A6T" secondAttribute="centerY" id="89L-PO-ol1"/>
+                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="centerX" secondItem="eeh-wl-A6T" secondAttribute="centerX" id="tKM-Df-EOI"/>
+                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="centerX" secondItem="eeh-wl-A6T" secondAttribute="centerX" id="tVc-Cl-u81"/>
+                            <constraint firstItem="DWL-Cx-6ok" firstAttribute="centerY" secondItem="eeh-wl-A6T" secondAttribute="centerY" id="zBS-Ps-U6w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kav-Zg-Pn8"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6M-Ng-Dv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="275" y="385"/>
+            <point key="canvasLocation" x="273.91304347826087" y="384.375"/>
         </scene>
     </scenes>
     <resources>
