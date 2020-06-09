@@ -74,6 +74,8 @@
 		E55BAC22248E2383000F803F /* background_greendot.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC16248E2382000F803F /* background_greendot.png */; };
 		E55BAC23248E2383000F803F /* background_homecomposting.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC17248E2382000F803F /* background_homecomposting.png */; };
 		E55BAC24248E2383000F803F /* background_recyclablesteel.png in Resources */ = {isa = PBXBuildFile; fileRef = E55BAC18248E2383000F803F /* background_recyclablesteel.png */; };
+		E55BAC2A248FA7D5000F803F /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BAC29248FA7D5000F803F /* CircleProgressView.swift */; };
+		E55BAC30248FF28C000F803F /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BAC2F248FF28C000F803F /* GoalViewController.swift */; };
 		E5AF663A2486A382007B26B5 /* oprl.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF66392486A382007B26B5 /* oprl.png */; };
 		E5AF663C2486A4C8007B26B5 /* plasticresincode.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AF663B2486A4C8007B26B5 /* plasticresincode.png */; };
 		E5AF66402486A73F007B26B5 /* RecyclingSymbols.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5AF663F2486A73F007B26B5 /* RecyclingSymbols.plist */; };
@@ -236,6 +238,8 @@
 		E55BAC16248E2382000F803F /* background_greendot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_greendot.png; sourceTree = "<group>"; };
 		E55BAC17248E2382000F803F /* background_homecomposting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_homecomposting.png; sourceTree = "<group>"; };
 		E55BAC18248E2383000F803F /* background_recyclablesteel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_recyclablesteel.png; sourceTree = "<group>"; };
+		E55BAC29248FA7D5000F803F /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		E55BAC2F248FF28C000F803F /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		E5AF66392486A382007B26B5 /* oprl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oprl.png; sourceTree = "<group>"; };
 		E5AF663B2486A4C8007B26B5 /* plasticresincode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plasticresincode.png; sourceTree = "<group>"; };
 		E5AF663F2486A73F007B26B5 /* RecyclingSymbols.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RecyclingSymbols.plist; sourceTree = "<group>"; };
@@ -404,6 +408,7 @@
 				E5BF2791248C0A6100682721 /* OnboardingViewController.swift */,
 				E534F1BF2484FE7A0042CBFD /* HomeViewController.swift */,
 				E5BF2793248C395500682721 /* SettingsViewController.swift */,
+				E55BAC2F248FF28C000F803F /* GoalViewController.swift */,
 				E5F47B422488FA2400CFC3D8 /* NewCollectionViewController.swift */,
 				E5BF278B248BD12A00682721 /* WeekdayViewController.swift */,
 				E534F1C12484FE8E0042CBFD /* SearchViewController.swift */,
@@ -458,6 +463,7 @@
 				E5BF278D248C09B400682721 /* CLTypingLabel.swift */,
 				E5BF2795248C3B3E00682721 /* SettingsTableViewCell.swift */,
 				E5BF2797248CDAEF00682721 /* ButtonTableViewCell.swift */,
+				E55BAC29248FA7D5000F803F /* CircleProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -964,8 +970,10 @@
 				E5BF278A248BD07A00682721 /* WeekdayTableViewCell.swift in Sources */,
 				E534F1C62484FEA80042CBFD /* SymbolViewController.swift in Sources */,
 				E5F853FF2487B40700401F4A /* SymbolInfoViewController.swift in Sources */,
+				E55BAC30248FF28C000F803F /* GoalViewController.swift in Sources */,
 				E5F47B4924890DF900CFC3D8 /* TitleTableViewCell.swift in Sources */,
 				E5BF2794248C395500682721 /* SettingsViewController.swift in Sources */,
+				E55BAC2A248FA7D5000F803F /* CircleProgressView.swift in Sources */,
 				E534F20424856B380042CBFD /* Extensions.swift in Sources */,
 				E534F1C02484FE7A0042CBFD /* HomeViewController.swift in Sources */,
 				E5BF2792248C0A6100682721 /* OnboardingViewController.swift in Sources */,
