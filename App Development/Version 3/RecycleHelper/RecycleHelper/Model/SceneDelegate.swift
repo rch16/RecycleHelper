@@ -26,6 +26,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UserDefaults.standard.register(defaults: [K.personalisation: ""])
         UserDefaults.standard.register(defaults: [K.lastUpdated: ""])
         UserDefaults.standard.register(defaults: [K.userLocation: ""])
+        UserDefaults.standard.register(defaults: [K.animatedTyping: true])
+        UserDefaults.standard.register(defaults: [K.recycleCount: 0])
+        UserDefaults.standard.register(defaults: [K.recycleTarget: 50])
+        UserDefaults.standard.register(defaults: [K.shownInstructions: false])
         
         let launchedBefore = UserDefaults.standard.bool(forKey: K.launchedBefore)
 
