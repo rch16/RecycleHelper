@@ -19,7 +19,7 @@ class NewCollectionViewController: UITableViewController, SwitchDelegate {
     @IBAction func dayWasSelected(segue: UIStoryboardSegue) {
         // get data
         if let sourceVC = segue.source as? WeekdayViewController {
-            if sourceVC.selectFrequency == true {
+            if sourceVC.selectOther == true {
                 let indexPath = IndexPath(row: 1, section: 2)
                 let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
                 freqJustChanged = true
@@ -303,17 +303,17 @@ class NewCollectionViewController: UITableViewController, SwitchDelegate {
                 if selectedPath!.section == 2 {
                     let cell = tableView.cellForRow(at: selectedPath!) as! EventTableViewCell
                     // Change to frequency not weekdays
-                    nextVC.selectFrequency = true
+                    nextVC.selectOther = true
                     nextVC.currentData = cell.valueLabel.text
                     if recurring {
-                        nextVC.frequencyArray = K.frequencyStrings
+                        nextVC.otherArray = K.frequencyStrings
                     } else {
-                        nextVC.frequencyArray = K.frequencyStringsNoRepeat
+                        nextVC.otherArray = K.frequencyStringsNoRepeat
                     }
                     
                 } else {
                     let cell = tableView.cellForRow(at: selectedPath!) as! EventTableViewCell
-                    nextVC.selectFrequency = false
+                    nextVC.selectOther = false
                     nextVC.currentData = cell.valueLabel.text
                 }
             }
