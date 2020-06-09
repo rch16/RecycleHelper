@@ -200,8 +200,6 @@ class VisionViewController: ViewController {
         DispatchQueue.main.async(execute: {
             // perform all the UI updates on the main queue
             if(visible == true){
-//                // Enable camera button
-//                self.scanBtn.isEnabled = true
                 // Hide instructions
                 self.instructionsLabel.isHidden = true
             }
@@ -210,8 +208,6 @@ class VisionViewController: ViewController {
                     // Show instructions
                     self.instructionsLabel.isHidden = false
                 }
-//                // Disable camera button
-//                self.scanBtn.isEnabled = false
                 
             }
         })
