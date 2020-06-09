@@ -17,9 +17,34 @@ class SymbolInfoViewController: UIViewController {
     @IBOutlet weak var symbolName: UILabel!
     @IBOutlet weak var symbolFullName: UILabel!
     @IBOutlet weak var symbolInfo: UILabel!
-//    @IBOutlet weak var symbolExamples: UILabel!
     @IBOutlet weak var actionBtn: UIButton!
     @IBOutlet weak var recycleLabel: UILabel!
+    @IBOutlet weak var recycledItBtn: UIButton!
+    @IBAction func didRecycleIt(_ sender: UIButton) {
+        // UIActionSheet
+        // Show action sheet to make sure
+        let optionMenu = UIAlertController(title: nil, message: "Do you want to increase your recycled item count?", preferredStyle: .actionSheet)
+            
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: { action in
+            // Haptic feedback
+            let feedback = UINotificationFeedbackGenerator()
+            feedback.notificationOccurred(.success)
+            // Get current count
+            if let count = UserDefaults.standard.object(forKey: K.recycleCount) as? Int {
+                // Increase count
+                UserDefaults.standard.set(count + 1, forKey: K.recycleCount)
+            }
+            // Show completion message
+            self.showCompletionAlert(message: "Count increased successfully.")
+
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+
+        optionMenu.addAction(yesAction)
+        optionMenu.addAction(cancelAction)
+
+        self.present(optionMenu, animated: true, completion: nil)
+    }
     
     // Symbol Data
     var symbolID: String!
@@ -60,10 +85,18 @@ class SymbolInfoViewController: UIViewController {
         }
         
         // Recycle?
-        if let recyclablility = info["Recyclable"] as? String {
-            recycleLabel.text = recyclablility
+        if let recyclability = info["Recyclable"] as? String {
+            recycleLabel.text = recyclability
+            if recyclability == "Recyclable" {
+                recycledItBtn.isHidden = false
+            } else if recyclability.contains("Household Recycling Centre") {
+                recycledItBtn.isHidden = false
+            } else {
+                recycledItBtn.isHidden = true
+            }
         } else {
             recycleLabel.text = nil
+            recycledItBtn.isHidden = true
         }
         
         // Information
@@ -123,6 +156,13 @@ class SymbolInfoViewController: UIViewController {
              actionBtn.isHidden = true
          }
      }
+    
+    // Show completion
+    func showCompletionAlert(message: String) {
+        let alert = UIAlertController(title: "Success!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
     
     // MARK: - Segue Preparation
     

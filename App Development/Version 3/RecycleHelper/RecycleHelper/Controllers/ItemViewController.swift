@@ -18,6 +18,33 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var actionBtn: UIButton!
     @IBAction func actionBtnWasPressed(_ sender: UIButton) {}
+    @IBOutlet weak var recycledItBtn: UIButton!
+    @IBAction func didRecycleIt(_ sender: UIButton) {
+        // UIActionSheet
+        // Show action sheet to make sure
+        let optionMenu = UIAlertController(title: nil, message: "Do you want to increase your recycled item count?", preferredStyle: .actionSheet)
+            
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: { action in
+            // Haptic feedback
+            let feedback = UINotificationFeedbackGenerator()
+            feedback.notificationOccurred(.success)
+            // Get current count
+            if let count = UserDefaults.standard.object(forKey: K.recycleCount) as? Int {
+                // Increase count
+                UserDefaults.standard.set(count + 1, forKey: K.recycleCount)
+            }
+            // Show completion message
+            self.showCompletionAlert(message: "Count increased successfully.")
+
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+
+        optionMenu.addAction(yesAction)
+        optionMenu.addAction(cancelAction)
+
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+
     @IBOutlet weak var favouriteBtn: UIBarButtonItem!
     @IBAction func favouriteDidChange(_ sender: Any) {
         // Toggle favourite status
@@ -114,6 +141,11 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // Recyclability
         recyclable = itemInfo["Recyclable"] as? String
+        if recyclable.contains("Not") {
+            recycledItBtn.isHidden = true
+        } else {
+            recycledItBtn.isHidden = false
+        }
         
         // Instructions (may not have any)
         if let how = itemInfo["How"] as? [String] {
@@ -160,6 +192,13 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             actionBtn.isHidden = true
         }
+    }
+    
+    // Show completion
+    func showCompletionAlert(message: String) {
+        let alert = UIAlertController(title: "Success!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
     
     func openUrl(urlStr: String!){
@@ -229,7 +268,7 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let locationVC = segue.destination as? LocationViewController , segue.identifier == K.findLocationSegue {
-            if let title = actionBtn.titleLabel?.text as? String {
+            if let title = actionBtn.titleLabel?.text {
                 if title.contains("supermarket") {
                     locationVC.showIndex = 2
                 } else if title.contains("charity") {
