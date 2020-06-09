@@ -54,5 +54,10 @@ class EventTableViewCell: UITableViewCell {
         label.text = text
         valueLabel.text = frequency
     }
+    
+    func updateGoal(text: String, goal: Int){
+        label.text = text
+        valueLabel.text = String(goal)
+    }
 
 }
