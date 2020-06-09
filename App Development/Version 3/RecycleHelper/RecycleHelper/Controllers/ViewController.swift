@@ -75,6 +75,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             // The user has previously denied access.
             setupResult = .notAuthorized
         }
+        
+        showInstructions()
 
     }
     
@@ -141,6 +143,24 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         case success
         case notAuthorized
         case configurationFailed
+    }
+    
+    func showInstructions() {
+        guard let hasShownInstructions = UserDefaults.standard.object(forKey: K.shownInstructions) as? Bool else {
+            return
+        }
+        
+        if !hasShownInstructions {
+            // Show instructions
+            let alert = UIAlertController(title: "Welcome to the scan feature!", message: "This feature uses machine learning to predict the material of the device presented in front of the camera. For best results, focus on capturing the material, rather than the whole item.", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+            self.present(alert, animated: true)
+
+            // Update user defaults
+            UserDefaults.standard.set(true, forKey: K.shownInstructions)
+        }
     }
 
     //MARK: - AVCaptureSession Methods
@@ -216,21 +236,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
 
     func stopCaptureSession() {
-        //previewLayer.removeFromSuperLayer()
-
-//        session.beginConfiguration()
-        // Remove input(s)
-//        for input in session.inputs {
-//            session.removeInput(input)
-//        }
-//        // Remove output(s)
-//        for output in session.outputs {
-//            session.removeOutput(output)
-//        }
-//        session.commitConfiguration()
-
           previewLayer = nil
-//        session.stopRunning()
     }
     
 
