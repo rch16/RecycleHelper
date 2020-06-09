@@ -19,10 +19,10 @@ class WeekdayViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var selectedData: Int!
     var frequency: String!
-    var frequencyArray: [String]!
+    var otherArray: [String]!
     var cancelPressed: Bool = true
     var currentData: String!
-    var selectFrequency: Bool = false
+    var selectOther: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class WeekdayViewController: UIViewController, UITableViewDataSource, UITableVie
         // Table appearance
         dataTable.backgroundColor = .systemGray5
         dataTable.tableFooterView = UIView() // prevent extra separators
-        if selectFrequency {
+        if selectOther {
             self.navBar.topItem?.title = "Reminder Frequency"
         } else {
             self.navBar.topItem?.title = "Collection Day"
@@ -50,8 +50,8 @@ class WeekdayViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if selectFrequency {
-            return frequencyArray.count
+        if selectOther {
+            return otherArray.count
         } else {
             return K.weekdayStrings.count
         }
@@ -64,8 +64,8 @@ class WeekdayViewController: UIViewController, UITableViewDataSource, UITableVie
         
         var data: String
         
-        if selectFrequency {
-            data = frequencyArray[indexPath.row]
+        if selectOther {
+            data = otherArray[indexPath.row]
             cell.dataLabel.text = data
         } else {
             data = K.weekdayStrings[indexPath.row]
@@ -89,8 +89,8 @@ class WeekdayViewController: UIViewController, UITableViewDataSource, UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.addDaySegue {
             let selectedPath = dataTable.indexPathForSelectedRow
-            if selectFrequency {
-                frequency = frequencyArray[selectedPath!.row]
+            if selectOther {
+                frequency = otherArray[selectedPath!.row]
             } else {
                 selectedData = K.weekdayValues[selectedPath!.row]
             }
