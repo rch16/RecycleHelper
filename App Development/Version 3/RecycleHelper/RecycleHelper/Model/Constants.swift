@@ -14,6 +14,8 @@ struct K {
     
     // Information
     static let lastUpdated = "LastUpdated"
+    static let recycleCount = "RecycleCount"
+    static let recycleTarget = "RecycleTarget"
     
     // Colour Theme
     static let firstColour = "EFFCEF"
@@ -30,7 +32,9 @@ struct K {
     static let editCollectionSegue = "EditCollectionSegue"
     static let addCollectionSegue = "AddCollectionSegue"
     static let selectWeekdaySegue = "SelectWeekdaySegue"
+    static let selectGoalSegue = "SelectGoalSegue"
     static let addDaySegue = "AddDaySegue"
+    static let goalSegue = "GoalSegue"
     static let cancelAddDaySegue = "CancelAddDaySegue"
     static let showOnboardingSegue = "ShowOnboarding"
     static let findLocationSegue = "FindLocationSegue"
@@ -38,23 +42,29 @@ struct K {
     
     // Home View
     static let userLocation = "UserLocation"
+    static let shownInstructions = "ShownInstructions"
     static let hasPersonalised = "HasPersonalised"
     static let personalisation = "Personalisation"
+    static let animatedTyping = "AnimatedTyping"
     static let collectionCellIdentifier = "CollectionTableViewCell"
     static let eventCellIdentifier = "EventCell"
     static let datePickerCellIdentifier = "DatePickerCell"
     static let titleCellIdentifier = "TitleCell"
     static let settingsCellIdentifier = "SettingsCell"
+    static let factCellIdentifier = "FactCell"
     static let binCollections = "BinCollections"
     static let repeatsCellIdentifier = "SetsRepeatCell"
     static let weekdayCellIdentifier = "WeekdayCell"
     static let buttonCellIdentifier = "ButtonCell"
     static let aboutCellIdentifier = "TableCell"
     static let updatedInfoCellIdentifier = "UpdatedCell"
+    static let targetCellIdentifier = "TargetCell"
     static let onboardingBtnTitle = "Show onboarding"
+    static let clearProgressBtnTitle = "Clear progress"
     static let clearCollectionsBtnTitle = "Clear bin collections"
     static let clearFavouritesBtnTitle = "Clear search favourites"
     static let changePrivacyBtnTitle = "Change privacy settings"
+    static let resetAppBtnTitle = "Reset app"
     static let weekdaysFromDateComponent = ["",
                                             "Sunday",
                                             "Monday",
@@ -73,6 +83,8 @@ struct K {
                                  "Sunday"]
     static let frequencyStrings = ["Weekly", "Fortnightly"]
     static let frequencyStringsNoRepeat = ["None"]
+    static let goalArray = ["5","10","15","20","25","50","75","100"]
+    static let goalIntArray = [5,10,15,20,25,50,75,100]
     
     // Object Detection
     static let videoDataOutput = "VideoDataOutput"
