@@ -106,7 +106,6 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
             // If app has detected location
             searchCriteria = location
         }
-    
 
         self.ref.child("Data").observe(.value, with: { (snapshot) in
             if snapshot.hasChild(searchCriteria) {

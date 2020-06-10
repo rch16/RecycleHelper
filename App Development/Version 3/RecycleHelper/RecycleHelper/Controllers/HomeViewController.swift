@@ -438,6 +438,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
                         completionHandler: { (placemarks, error) in
                 if error == nil {
                     self.placemark = placemarks?[0]
+                    //print(self.placemark)
                     self.city = self.placemark?.locality
                     self.postCode = self.placemark?.postalCode
                     self.postCode = String(self.postCode!.split(separator: " ")[0]) // Take first half only
@@ -449,6 +450,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
                     print(error)
                 }
             })
+            
         }
         else {
             // No location was available.
