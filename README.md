@@ -10,6 +10,14 @@ This repo documents the design and development of RecycleHelper, a persuasive sm
 ![alt text](https://github.com/rch16/FYP/blob/master/App%20Development/Version%203/App%20Screenshots/Symbols.png)
 ![alt text](https://github.com/rch16/FYP/blob/master/App%20Development/Version%203/App%20Screenshots/Locate.png)
 
+Location specific information is currently provided for:
+* London, W9, W13, SW7, N20, E15
+* Leeds, LS6
+* St Albans, AL3
+* Rickmansworth, WD3
+* Cardiff, CF5
+* Penarth, CF6
+
 ----------------------------------------------
 
 
