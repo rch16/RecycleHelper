@@ -7,11 +7,10 @@ This repo documents the design and development of RecycleHelper, a persuasive sm
 
 The app provides resources to allow users find out how to recycle 100+ items, and currently provides specific information for the following locations:
 
-* London, W9, W13, SW7, N20, E15
-* Leeds, LS6
-* St Albans, AL3
-* Rickmansworth, WD3
-* Cardiff, CF5
+* London Boroughs of Barnet, Ealing, Kensington and Chelsea, Newham and Westminster
+* Leeds
+* St Albans and Rickmansworth, Hertfordshire
+* Cardiff and Penarth, Wales
 
 And generic information for the rest of the UK. Persuasive techniques are employed to help motivate users to improve their recycling behaviour - for more information, please see the Final Report.
 
