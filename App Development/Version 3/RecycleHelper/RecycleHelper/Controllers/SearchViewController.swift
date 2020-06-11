@@ -38,12 +38,9 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     override func viewWillAppear(_ animated: Bool) {
         // Show navigation bar
         self.navigationController?.isNavigationBarHidden = false
-        // Check search status
-        if(filteredData.count == 0){
-             searchActive = false
-         } else {
-             searchActive = true
-         }
+        // Search status
+        searchActive = false
+        print(searchActive)
         // Get user defaults
         getUserDefaults()
         // Check favourites data
@@ -151,15 +148,29 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func checkView() {
-        if (showFavourites) {
-            currentList = favouritesList
-        } else {
+        var message: String
+        
+        if showFavourites {
             if searchActive {
                 currentList = filteredData
+                message = "No results found."
             } else {
-                currentList = tableList
+                currentList = favouritesList
+                message = "You haven't saved any favourites yet!"
             }
+        } else if searchActive {
+            currentList = filteredData
+            message = "No results found."
+        } else {
+            currentList = tableList
+            message = "No results found."
+        }
             
+        if(currentList.count == 0){
+            noData(message: message)
+        } else {
+            tableView.separatorStyle  = .singleLine
+            tableView.backgroundView = nil
         }
     }
     
@@ -200,35 +211,71 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     // MARK: - Search Bar Functionality
     
+    func checkSearchText(searchBar: UISearchBar) {
+        if let searchedText = searchBar.searchTextField.text {
+            if searchedText.isEmpty {
+                searchActive = false
+            } else {
+                searchActive = true
+            }
+        } else {
+            searchActive = false
+        }
+    }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true
     }
 
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchActive = false
+        checkSearchText(searchBar: searchBar)
+        checkView()
+        tableView.reloadData()
+        searchBar.resignFirstResponder()
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false
+        checkSearchText(searchBar: searchBar)
+        checkView()
+        tableView.reloadData()
+        searchBar.resignFirstResponder()
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false
+        checkSearchText(searchBar: searchBar)
+        searchBar.resignFirstResponder()
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-
-        filteredData = searchText.isEmpty ? tableList : currentList.filter { (item: String) -> Bool in
-            // If dataItem matches the searchText, return true to include it
-            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        
+        var searchList: [String]
+        
+        if showFavourites {
+            searchList = favouritesList
+        } else {
+            searchList = tableList
         }
-        if(filteredData.count == 0){
+        
+        if searchText.isEmpty {
             searchActive = false
+            currentList = searchList
+            tableView.reloadData()
         } else {
             searchActive = true
+            filteredData = searchList.filter { (item: String) -> Bool in
+                // If dataItem matches the searchText, return true to include it
+                return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            }
+            currentList = filteredData
+            self.tableView.reloadData()
+            
+            if(currentList.count == 0){
+               noData(message: "No results found.")
+            } else {
+               tableView.separatorStyle  = .singleLine
+               tableView.backgroundView = nil
+            }
         }
-        //currentList = filteredData
-        self.tableView.reloadData()
     }
     
     // MARK: - Table View Data Source
@@ -238,25 +285,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(searchActive){
-            currentList = filteredData
-            if(filteredData.count == 0){
-                noData(message: "No results found.")
-            } else {
-                tableView.separatorStyle  = .singleLine
-                tableView.backgroundView = nil
-            }
-            return filteredData.count
-        } else {
-            currentList = tableList
-            if(tableList.count == 0){
-                noData(message: "You haven't saved any favourites yet!")
-            } else {
-                tableView.separatorStyle  = .singleLine
-                tableView.backgroundView = nil
-            }
-            return tableList.count
-        }
+        checkView()
+        return currentList.count
     }
 
     
@@ -268,14 +298,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         }
         
         // Fetches the appropriate item for the data source layout.
-        var item: String
-        
-        if(searchActive) {
-            item = filteredData[indexPath.row]
-        } else {
-            item = currentList[indexPath.row]
-        }
-        
+        let item = currentList[indexPath.row]
+
         if (checkIfFavourite(item: item)) {
             //cell.isFavourite.setImage(UIImage(systemName: "star.fill"), for: .normal)
             cell.isFavourite.tintColor = UIColor(hexString: K.secondColour)
