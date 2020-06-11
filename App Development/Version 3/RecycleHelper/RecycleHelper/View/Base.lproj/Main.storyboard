@@ -802,14 +802,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WeekdayCell" id="J8h-gi-3Uk" customClass="WeekdayTableViewCell" customModule="RecycleHelper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J8h-gi-3Uk" id="y1o-52-BgT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lck-hl-SJ3">
-                                                    <rect key="frame" x="20" y="11.5" width="210" height="21"/>
+                                                    <rect key="frame" x="20" y="11.5" width="210" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="210" id="YjT-vv-m8B"/>
                                                     </constraints>
@@ -818,7 +818,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTj-AT-F9O">
-                                                    <rect key="frame" x="335" y="11" width="19" height="22.5"/>
+                                                    <rect key="frame" x="335" y="11" width="19" height="23"/>
                                                     <state key="normal" image="checkmark" catalog="system"/>
                                                 </button>
                                             </subviews>
@@ -1141,11 +1141,11 @@
         <scene sceneID="bVf-Pd-JQY">
             <objects>
                 <viewController title="Item View Controller" id="qOZ-xg-kMW" userLabel="Search Item View Controller" customClass="ItemViewController" customModule="RecycleHelper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="zDM-ZS-Pln">
+                    <view key="view" contentMode="scaleToFill" id="zDM-ZS-Pln">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3jq-Gz-i8P">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3jq-Gz-i8P">
                                 <rect key="frame" x="20" y="233" width="374" height="51.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0o-6s-0zq" userLabel="Item">
@@ -1163,8 +1163,8 @@
                                     <constraint firstAttribute="height" constant="51.5" id="Sep-4u-oN6"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zVS-7z-Xal">
-                                <rect key="frame" x="20" y="285.5" width="374" height="250"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zVS-7z-Xal">
+                                <rect key="frame" x="20" y="285.5" width="374" height="261.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="2qT-nJ-ISH"/>
@@ -1200,7 +1200,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stq-oy-JES">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Stq-oy-JES">
                                 <rect key="frame" x="82" y="626" width="250" height="30"/>
                                 <color key="backgroundColor" red="0.43895909189999999" green="0.90985071660000005" blue="0.68618488310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1221,7 +1221,7 @@
                                     <segue destination="yEc-TH-5xz" kind="show" identifier="FindLocationSegue" id="m5w-xu-OXI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bd-01-dwJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bd-01-dwJ">
                                 <rect key="frame" x="168" y="660" width="78" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="78" id="1yu-Gu-2Xp"/>
@@ -1232,7 +1232,7 @@
                                     <action selector="learnMoreBtn:" destination="qOZ-xg-kMW" eventType="touchUpInside" id="LMQ-4F-CKT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Information sourced from https://www.recyclenow.com/what-to-do-with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvQ-ol-dUA" userLabel="Info Source">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information sourced from https://www.recyclenow.com/what-to-do-with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvQ-ol-dUA" userLabel="Info Source">
                                 <rect key="frame" x="49" y="694" width="316" height="11"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="11" id="Uaf-pt-6Pg"/>
@@ -1241,13 +1241,13 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7N-0R-ET1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R7N-0R-ET1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="233" id="8xH-oP-kiL"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxh-V5-cyx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxh-V5-cyx">
                                 <rect key="frame" x="149.5" y="587" width="115" height="30"/>
                                 <color key="backgroundColor" red="0.43895909189999999" green="0.90985071660000005" blue="0.68618488310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1803,7 +1803,6 @@
         <!--Locate-->
         <scene sceneID="NRs-2C-3Ez">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rFL-9H-1zn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="yEc-TH-5xz" customClass="LocationViewController" customModule="RecycleHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Jd-69-kds">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
@@ -1861,7 +1860,7 @@
                         <viewLayoutGuide key="safeArea" id="Uqr-wQ-2cn"/>
                     </view>
                     <navigationItem key="navigationItem" title="Locate" id="qTc-pr-Qig">
-                        <barButtonItem key="backBarButtonItem" title="Back" image="barButtonItem:kdV-Jj-RbP:image" catalog="system" id="kdV-Jj-RbP"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" image="barButtonItem:kdV-Jj-RbP:image" id="kdV-Jj-RbP"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -1870,6 +1869,7 @@
                         <segue destination="nAP-GL-BMY" kind="show" identifier="ShowLocationInfoSegue" id="lBg-LB-BIc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rFL-9H-1zn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3396" y="2717"/>
         </scene>
@@ -1955,7 +1955,6 @@
         <!--Location Info View Controller-->
         <scene sceneID="P2v-n1-KkF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RmY-OQ-r4g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="nAP-GL-BMY" customClass="LocationInfoViewController" customModule="RecycleHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bqb-Z6-Tu0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
@@ -2028,6 +2027,7 @@
                         <outlet property="mapView" destination="cim-w4-pcu" id="FbJ-H2-daN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RmY-OQ-r4g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2549" y="2717"/>
         </scene>
@@ -2059,14 +2059,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WeekdayCell" id="QY6-Oz-UoF" customClass="WeekdayTableViewCell" customModule="RecycleHelper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QY6-Oz-UoF" id="XpJ-gN-2rh">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzM-gN-9sN">
-                                                    <rect key="frame" x="20" y="11.5" width="210" height="21"/>
+                                                    <rect key="frame" x="20" y="11.5" width="210" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="210" id="0pk-iR-zex"/>
                                                     </constraints>
@@ -2075,7 +2075,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3g9-wD-Xoh">
-                                                    <rect key="frame" x="335" y="11" width="19" height="22.5"/>
+                                                    <rect key="frame" x="335" y="11" width="19" height="23"/>
                                                     <state key="normal" image="checkmark" catalog="system"/>
                                                 </button>
                                             </subviews>
@@ -2120,7 +2120,7 @@
     <color key="tintColor" red="0.43895909190177917" green="0.90985071659088135" blue="0.68618488311767578" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="arrow.3.trianglepath" catalog="system" width="128" height="128"/>
-        <image name="barButtonItem:kdV-Jj-RbP:image" catalog="system" width="96" height="128">
+        <image name="barButtonItem:kdV-Jj-RbP:image" width="96" height="128">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBELDBscIRkmKisyNThCSktPUlUkbnVsbNcNDg8QERITFBUW
