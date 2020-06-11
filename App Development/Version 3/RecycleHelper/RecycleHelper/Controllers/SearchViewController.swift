@@ -30,7 +30,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     var ref: DatabaseReference = Database.database().reference()
     var tableData: [String: [String: Any]]!
     var tableList: [String]!
-    var favouriteItems: Array<String>!
+    var favouriteItems: [String]!
     var showFavourites: Bool!
     var favouritesList: [String]!
     var currentList: [String]!
@@ -38,8 +38,16 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     override func viewWillAppear(_ animated: Bool) {
         // Show navigation bar
         self.navigationController?.isNavigationBarHidden = false
+        // Check search status
+        if(filteredData.count == 0){
+             searchActive = false
+         } else {
+             searchActive = true
+         }
         // Get user defaults
         getUserDefaults()
+        // Check favourites data
+        favouritesView()
         // Check whether to display favourites or all items
         checkView()
         // Reload data to reflect changes
@@ -129,7 +137,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func getUserDefaults() {
-        favouriteItems = (UserDefaults.standard.object(forKey: K.saveItemKey) as? Array<String>)!
+        favouriteItems = (UserDefaults.standard.object(forKey: K.saveItemKey) as? [String])!
         showFavourites = (UserDefaults.standard.object(forKey: K.showFavourites) as? Bool)!
         favouritesList = favouriteItems
     }
@@ -146,7 +154,12 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         if (showFavourites) {
             currentList = favouritesList
         } else {
-            currentList = tableList
+            if searchActive {
+                currentList = filteredData
+            } else {
+                currentList = tableList
+            }
+            
         }
     }
     
@@ -163,7 +176,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     func favouritesView() {
         if (showFavourites) {
-            // Change user default
+            // Change user default to true
             UserDefaults.standard.set(showFavourites, forKey: K.showFavourites)
             // Change button title
             viewOption.title = "View All"
@@ -171,12 +184,16 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
             currentList = favouritesList
             self.tableView.reloadData()
         } else {
-            // Change user default
+            // Change user default to false
             UserDefaults.standard.set(showFavourites, forKey: K.showFavourites)
             // Change button title
             viewOption.title = "Favourites"
             // Update current list
-            currentList = tableList
+            if searchActive {
+                currentList = filteredData
+            } else {
+                currentList = tableList
+            }
             self.tableView.reloadData()
         }
     }
@@ -201,10 +218,16 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
-        filteredData = searchText.isEmpty ? currentList : currentList.filter { (item: String) -> Bool in
+        filteredData = searchText.isEmpty ? tableList : currentList.filter { (item: String) -> Bool in
             // If dataItem matches the searchText, return true to include it
             return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
+        if(filteredData.count == 0){
+            searchActive = false
+        } else {
+            searchActive = true
+        }
+        //currentList = filteredData
         self.tableView.reloadData()
     }
     
@@ -216,6 +239,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchActive){
+            currentList = filteredData
             if(filteredData.count == 0){
                 noData(message: "No results found.")
             } else {
@@ -224,13 +248,14 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
             }
             return filteredData.count
         } else {
-            if(currentList.count == 0){
+            currentList = tableList
+            if(tableList.count == 0){
                 noData(message: "You haven't saved any favourites yet!")
             } else {
                 tableView.separatorStyle  = .singleLine
                 tableView.backgroundView = nil
             }
-            return currentList.count
+            return tableList.count
         }
     }
 
@@ -278,9 +303,17 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
                 } else {
                     itemVC.fromFavourites = false
                 }
-                let itemID = currentList[itemIndex]
-                itemVC.itemID = itemID
-                itemVC.itemInfo = tableData[itemID]
+                if searchActive {
+                    let itemID = filteredData[itemIndex]
+                    itemVC.itemID = itemID
+                    itemVC.itemInfo = tableData[itemID]
+                } else {
+                    let itemID = currentList[itemIndex]
+                    itemVC.itemID = itemID
+                    itemVC.itemInfo = tableData[itemID]
+                }
+                
+                
             }
         }
     }
