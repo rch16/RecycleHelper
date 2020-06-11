@@ -13,12 +13,12 @@ The app provides resources to allow users find out how to recycle 100+ items, an
 * Leeds
 * Manchester
 
-**Ireland**
-* Dublin
-
 **Wales**
 * Cardiff
 * Penarth
+
+**Ireland**
+* Dublin
 
 And generic information for the rest of the UK. Persuasive techniques are employed to help motivate users to improve their recycling behaviour - for more information, please see the Final Report.
 
