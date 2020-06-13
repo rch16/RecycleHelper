@@ -437,12 +437,17 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
             geocoder.reverseGeocodeLocation(lastLocation,
                         completionHandler: { (placemarks, error) in
                 if error == nil {
+                    var userLocation : String
                     self.placemark = placemarks?[0]
                     //print(self.placemark)
                     self.city = self.placemark?.locality
-                    self.postCode = self.placemark?.postalCode
-                    self.postCode = String(self.postCode!.split(separator: " ")[0]) // Take first half only
-                    let userLocation: String = self.city! + ", " + self.postCode!
+                    if let post = self.placemark?.postalCode {
+                        self.postCode = String(post.split(separator: " ")[0]) // Take first half only
+                        userLocation = self.city! + ", " + self.postCode!
+                    } else {
+                        userLocation = self.city!
+                    }
+                    print(userLocation)
                     UserDefaults.standard.set(userLocation, forKey: K.userLocation)
                 }
                 else {

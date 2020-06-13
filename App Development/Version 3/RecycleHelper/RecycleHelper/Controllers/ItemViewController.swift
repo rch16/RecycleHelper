@@ -56,6 +56,7 @@ class ItemViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if (isFavourite) {
             favouriteBtn.image = UIImage(systemName: "star.fill")
             favouriteItems.append(itemID)
+            favouriteItems.sort()
             UserDefaults.standard.set(favouriteItems, forKey: K.saveItemKey)
         } else {
             favouriteBtn.image = UIImage(systemName: "star")
