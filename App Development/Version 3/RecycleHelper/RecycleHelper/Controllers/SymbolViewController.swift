@@ -85,11 +85,16 @@ class SymbolViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         self.ref.child("Symbols").observe(.value, with: { (snapshot) in
-
-            if snapshot.hasChild(searchCriteria) {
-                // If data exists for location
-                if let dict = snapshot.childSnapshot(forPath: searchCriteria).value as? [String: [String: [String: Any]]] {
-                    self.labelData = dict
+            if searchCriteria != nil, searchCriteria != "" {
+                if snapshot.hasChild(searchCriteria) {
+                    // If data exists for location
+                    if let dict = snapshot.childSnapshot(forPath: searchCriteria).value as? [String: [String: [String: Any]]] {
+                        self.labelData = dict
+                    }
+                } else {
+                    if let dict = snapshot.childSnapshot(forPath: "Default").value as? [String: [String: [String: Any]]] {
+                        self.labelData = dict
+                    }
                 }
             } else {
                 if let dict = snapshot.childSnapshot(forPath: "Default").value as? [String: [String: [String: Any]]] {

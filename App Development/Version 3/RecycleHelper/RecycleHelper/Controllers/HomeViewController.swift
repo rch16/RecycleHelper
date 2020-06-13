@@ -95,6 +95,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         case notAuthorized
     }
     
+    private var foregroundRestorationObserver: NSObjectProtocol?
+    
     // Fun facts
     var factsArray: [String] = []
     var currentFact: String = ""
@@ -113,6 +115,8 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         chooseRandomFact()
         // Get recycled item count
         getRecycledItemCount()
+        // Get location
+        requestLocation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -120,13 +124,22 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
         // Update progess
         progressView.setProgress(progress, animated: true)
     }
+    
+    override func awakeFromNib() {
+           super.awakeFromNib()
+           locationManager.delegate = self
+           
+           let name = UIApplication.willEnterForegroundNotification
+           foregroundRestorationObserver = NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil, using: { [unowned self] (_) in
+               // Get a new location when returning from Settings to enable location services.
+               self.requestLocation()
+           })
+       }
   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup location
         locationManager.delegate = self
-        // Check for Location Services
-        checkLocationServices()
         // Check personalisation
         checkPersonalisation()
         // Get user defaults
@@ -382,52 +395,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
     }
     
     
-    // MARK: - Location Access
-    
-    func authoriseLocation() {
-        if (CLLocationManager.locationServicesEnabled()) {
-            locationManager.requestAlwaysAuthorization()
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startMonitoringSignificantLocationChanges()
-            checkLocationServices()
-        }
-    }
-    
-    func checkLocationServices() {
-        switch CLLocationManager.authorizationStatus() {
-        case .authorized, .restricted, .authorizedAlways, .authorizedWhenInUse:
-            locationManager.startMonitoringSignificantLocationChanges()
-            lookUpCurrentLocation()
-            
-        case .notDetermined:
-            authoriseLocation()
-        case .denied:
-            DispatchQueue.main.async {
-                let changePrivacySetting = "RecycleHelper doesn't have permission to access location, please change privacy settings"
-                let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to location services")
-                let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
-                
-                alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
-                                                        style: .cancel,
-                                                        handler: nil))
-                
-                alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
-                                                        style: .`default`,
-                                                        handler: { _ in
-                                                            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
-                                                                                      options: [:],
-                                                                                      completionHandler: nil)
-                }))
-                
-                self.present(alertController, animated: true, completion: nil)
-            }
-        @unknown default:
-            checkLocationServices()
-        }
-        
-    }
-    
     func lookUpCurrentLocation() {
         // Use the last reported location.
         if let lastLocation = self.locationManager.location {
@@ -439,7 +406,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
                 if error == nil {
                     var userLocation : String
                     self.placemark = placemarks?[0]
-                    //print(self.placemark)
                     self.city = self.placemark?.locality
                     if let post = self.placemark?.postalCode {
                         self.postCode = String(post.split(separator: " ")[0]) // Take first half only
@@ -447,7 +413,6 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
                     } else {
                         userLocation = self.city!
                     }
-                    print(userLocation)
                     UserDefaults.standard.set(userLocation, forKey: K.userLocation)
                 }
                 else {
@@ -593,7 +558,7 @@ class HomeViewController: UIViewController, UNUserNotificationCenterDelegate, UI
 }
 
 
-// MARK: CLLocationManagerDelegate Methods
+// MARK: - CLLocationManagerDelegate Methods
 
 extension HomeViewController:  CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -611,4 +576,46 @@ extension HomeViewController:  CLLocationManagerDelegate {
     }
 
 }
+
+// MARK: - Location Handling
+
+extension HomeViewController {
+    private func requestLocation() {
+        guard CLLocationManager.locationServicesEnabled() else {
+            displayLocationServicesDeniedAlert()
+            return
+        }
+        
+        let status = CLLocationManager.authorizationStatus()
+        guard status != .denied else {
+            displayLocationServicesDeniedAlert()
+            return
+        }
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+    }
+    
+    private func displayLocationServicesDeniedAlert() {
+        let changePrivacySetting = "RecycleHelper doesn't have permission to access location, please change privacy settings"
+        let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to location services")
+        let alertController = UIAlertController(title: "RecycleHelper", message: message, preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
+                                                style: .cancel,
+                                                handler: nil))
+        
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+                                                style: .`default`,
+                                                handler: { _ in
+                                                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                                                              options: [:],
+                                                                              completionHandler: nil)
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+
 

@@ -40,7 +40,6 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         self.navigationController?.isNavigationBarHidden = false
         // Search status
         searchActive = false
-        print(searchActive)
         // Get user defaults
         getUserDefaults()
         // Check favourites data
@@ -113,10 +112,17 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         }
 
         self.ref.child("Data").observe(.value, with: { (snapshot) in
-            if snapshot.hasChild(searchCriteria) {
-                // If data exists for location
-                if let dict = snapshot.childSnapshot(forPath: searchCriteria).value as? [String: [String: Any]] {
-                    self.tableData = dict
+            if searchCriteria != nil, searchCriteria != "" {
+                if snapshot.hasChild(searchCriteria) {
+                    // If data exists for location
+                    if let dict = snapshot.childSnapshot(forPath: searchCriteria).value as? [String: [String: Any]] {
+                        self.tableData = dict
+                    }
+                } else {
+                    if let dict = snapshot.childSnapshot(forPath: "Default").value as? [String: [String: Any]] {
+                        self.tableData = dict
+                        
+                    }
                 }
             } else {
                 if let dict = snapshot.childSnapshot(forPath: "Default").value as? [String: [String: Any]] {
