@@ -70,7 +70,6 @@ cd App\ Development/ Version\ 3/RecycleHelper/
 
 ## Repository Structure
 
-* [Final Report](https://github.com/rch16/RecycleHelper/blob/master/FinalReport.pdf): The report documenting the design and development process of RecycleHelper, that was the final deliverable for this project
 * [App Development](https://github.com/rch16/RecycleHelper/tree/master/App%20Development): RecycleHelper project, containing entire code for app versions 1, 2 and 3
     * [Version 1](https://github.com/rch16/RecycleHelper/tree/master/App%20Development/Version%201)
     * [Version 2](https://github.com/rch16/RecycleHelper/tree/master/App%20Development/Version%202)
@@ -82,6 +81,7 @@ cd App\ Development/ Version\ 3/RecycleHelper/
 * [Testing](https://github.com/rch16/RecycleHelper/tree/master/Testing): Results and resources for the rounds of testing completed after development of each app version 
     * [Performance and Stability](https://github.com/rch16/RecycleHelper/tree/master/Testing/Performance%20and%20Stability)
     * [Usability](https://github.com/rch16/RecycleHelper/tree/master/Testing/Usability)
+* [Final Report](https://github.com/rch16/RecycleHelper/blob/master/FinalReport.pdf): The report documenting the design and development process of RecycleHelper, that was the final deliverable for this project
 
 ## Credits
 
