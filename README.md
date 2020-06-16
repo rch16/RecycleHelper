@@ -6,10 +6,10 @@ This repo documents the design and development of RecycleHelper, and contains th
 # Contents
 
 * [About RecycleHelper](#about-recyclehelper)
-* [Technologies Used](#technologies-used)
+* [Technologies used](#technologies-used)
 * [Access the current app version](#access-the-current-app-version)
 * [Contribute to further development](#contribute-to-further-development)
-* [Repository Structure](#repository-structure)
+* [Repository structure](#repository-structure)
 * [Credits](#credits)
 * [Citation](#citation)
 
