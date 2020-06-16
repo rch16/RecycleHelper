@@ -11,6 +11,7 @@ This repo documents the design and development of RecycleHelper, and contains th
 * [Contribute to further development](#contribute-to-further-development)
 * [Repository Structure](#repository-structure)
 * [Credits](#credits)
+* [Citation](#citation)
 
 ## About RecycleHelper
 
@@ -18,23 +19,15 @@ RecycleHelper is an iOS application designed to improve recycling performance of
 
 ![alt text](https://github.com/rch16/FYP/blob/master/App%20Development/Version%203/App%20Screenshots/Onboarding.png)
 
-The app provides resources to allow users find out how to recycle 100+ items, and currently provides specific information for the following locations:
+Specific information is currently provided for the following locations:
 
-**England**
-* London Boroughs of Barnet, Ealing, Kensington and Chelsea, Newham and Westminster
-* St Albans and Rickmansworth, Hertfordshire
-* Leeds
-* Manchester
+| Country                                                               | Location                             |
+| --------------------------------------------------------------------- | ------------------------------------ |
+| England                                                               | London Boroughs of Barnet, Ealing, Kensington and Chelsea, Newham and Westminster, St Albans (Hertfordshire) Rickmansworth (Hertfordshire), Leeds and Manchester |
+| Wales                                                                 | Cardiff and Penarth                  |
+| Ireland                                                               | Lucan and Dublin                     |
 
-**Wales**
-* Cardiff
-* Penarth
-
-**Ireland**
-* Dublin
-
-And generic information for the rest of the UK. Persuasive techniques are employed to help motivate users to improve their recycling behaviour - for more information, please see the Final Report.
-
+If the app is used in another location, it will display generic information for the rest of the UK. For more information, please see the Final Report.
 
 ![alt text](https://github.com/rch16/FYP/blob/master/App%20Development/Version%203/App%20Screenshots/Homescreen.png)
 ![alt text](https://github.com/rch16/FYP/blob/master/App%20Development/Version%203/App%20Screenshots/Search.png)
@@ -45,8 +38,11 @@ And generic information for the rest of the UK. Persuasive techniques are employ
 ## Technologies Used
 
 RecycleHelper was built in [XCode 11.5](https://apps.apple.com/gb/app/xcode/id497799835?mt=12), using:
-* [Swift 5](https://swift.org/blog/swift-5-released/)
-* [Python 3.8.0](https://www.python.org/downloads/release/python-380/)
+
+| Language                                                              | Version | Libraries or Frameworks            |
+| --------------------------------------------------------------------- | ------- | ---------------------------------- |
+| [Swift](https://swift.org/blog/swift-5-released/)                      | 5       | AVFoundation, ChameleonFramework, Contacts,       CoreLocation, CoreML, FirebaseDatabase, Foundation, MapKit, UIKit, UserNotifications, Vision                 |
+| [Python](https://www.python.org/downloads/release/python-380/)        | 3.8.0   | Matplotlib, Numpy, OS, Pandas, PIL (Image), Random, Seaborn, SHUtil, SKLearn, Sys, Tensorflow (Keras), Zipfile                                                   |
 
 ## Access the Current App Version
 
@@ -54,10 +50,27 @@ RecycleHelper is not yet available on the App Store as it is still in the Beta T
 
 ## Contribute to Further Development
 
-RecycleHelper can be 
+To contribute to development of RecycleHelper, you must have access to a device running MacOS.
+
+1. Download [XCode](https://apps.apple.com/gb/app/xcode/id497799835?mt=12)
+
+2. Clone repository
+
+````
+git clone https://github.com/rch16/RecycleHelper.git
+
+````
+3. Navigate to latest version directory
+
+````
+cd App\ Development/ Version\ 3/RecycleHelper/
+
+````
+4. Open *RecycleHelper.xcworkspace* in XCode
 
 ## Repository Structure
 
+* [Final Report](https://github.com/rch16/RecycleHelper/blob/master/FinalReport.pdf): The report documenting the design and development process of RecycleHelper, that was the final deliverable for this project
 * [App Development](https://github.com/rch16/RecycleHelper/tree/master/App%20Development): RecycleHelper project, containing entire code for app versions 1, 2 and 3
     * [Version 1](https://github.com/rch16/RecycleHelper/tree/master/App%20Development/Version%201)
     * [Version 2](https://github.com/rch16/RecycleHelper/tree/master/App%20Development/Version%202)
@@ -79,3 +92,17 @@ RecycleHelper can be
 **Email**: rch16@ic.ac.uk
 
 RecycleHelper was created under the supervision of Dr. Thomas J. W. Clarke, submitted in partial fulfillment for an MEng degree in Electrical & Electronic Engineering from Imperial College, London
+
+## Citation
+
+If you use RecycleHelper or related work for published work, please cite:
+
+````
+@misc{
+    title = {{RecycleHelper: A persuasive smartphone app to improve recycling performance}},
+    author = {Hallam, Rebecca},
+    year = {2020},
+    url = {https://github.com/rch16/RecycleHelper/}
+}
+````
+
