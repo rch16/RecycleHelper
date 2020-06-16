@@ -1,0 +1,2 @@
+round_epochs,loss,acc,val_loss,val_acc,batch_size,dropout,epochs,lr,mom
+200,0.7686958223210051,0.6387316,0.1328570848640477,0.34564644,50,0.2,200,0.001,0.2
