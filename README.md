@@ -27,7 +27,7 @@ Specific information is currently provided for the following locations:
 | Wales                                                                 | Cardiff and Penarth                  |
 | Ireland                                                               | Lucan and Dublin                     |
 
-If the app is used in another location, it will display generic information for the rest of the UK. For more information, please see the Final Report.
+If the app is used in another location, it will display generic information for the rest of the UK. For more information, please see the [Final Report](https://github.com/rch16/RecycleHelper/blob/master/Final%20Report.pdf).
 
 ![alt text](https://github.com/rch16/FYP/blob/master/App%20Development/Version%203/App%20Screenshots/Homescreen.png)
 ![alt text](https://github.com/rch16/FYP/blob/master/App%20Development/Version%203/App%20Screenshots/Search.png)
