@@ -15,7 +15,7 @@ This repo documents the design and development of RecycleHelper, and contains th
 
 ## About RecycleHelper
 
-RecycleHelper is an iOS application designed to improve recycling performance of consumers in the UK. It provides location-specific recycling information that is accessible via a search feature, or by a machine learning scan feature that predicts the material of the object presented to it. The app can also be used to track and provide reminders of upcoming household waste collections, as well as find the nearest Recycling Centre, Supermarket or Charity Shop, for items that can be recycled but aren't accepted in a kerbside collection. To help improve consumers' motivation to recycle, persuasive techniques are employed to improve the user experience and make users feel more positive about recycling. Some examples of techniques include the Mere-Exposure Effect, used in the UI design, as well as social motivation through a recycling tracking feature.
+RecycleHelper is an iOS application designed to improve recycling performance of consumers in the UK. It provides location-specific recycling information that is accessible via a search feature, or by a machine learning scan feature that predicts the material of the object presented to it. The app can also be used to track and provide reminders of upcoming household waste collections, as well as find the nearest Recycling Centre, Supermarket or Charity Shop, for items that can be recycled but aren't accepted in a kerbside collection. Information on various recycling symbols is also provided in-app. To help improve consumers' motivation to recycle, persuasive techniques are employed to improve the user experience and make users feel more positive about recycling. Some examples of techniques include the Mere-Exposure Effect, used in the UI design, as well as social motivation through a recycling tracking feature.
 
 ![alt text](https://github.com/rch16/FYP/blob/master/App%20Development/Version%203/App%20Screenshots/Onboarding.png)
 
@@ -46,7 +46,7 @@ RecycleHelper was built in [XCode 11.5](https://apps.apple.com/gb/app/xcode/id49
 
 ## Access the Current App Version
 
-RecycleHelper is not yet available on the App Store as it is still in the Beta Testing stage. Therefore current version of RecycleHelper, V3.0 build 7, can be accessed by [downloading TestFlight](https://apps.apple.com/gb/app/testflight/id899247664) on your iOS device and then following [this link](https://testflight.apple.com/join/YrAypbv3) to join the testing program. Any Beta Feedback, such as crash reports or bugs found, would be greatly appreciated.
+RecycleHelper is not yet available on the App Store, as it is still in the Beta Testing stage. Therefore, the current version of RecycleHelper, V3.0 build 7, can be accessed by [downloading TestFlight](https://apps.apple.com/gb/app/testflight/id899247664) on your iOS device and then following [this link](https://testflight.apple.com/join/YrAypbv3) to join the testing program. Any Beta Feedback, such as crash reports or bugs found, would be greatly appreciated.
 
 ## Contribute to Further Development
 
