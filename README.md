@@ -41,8 +41,8 @@ RecycleHelper was built in [XCode 11.5](https://apps.apple.com/gb/app/xcode/id49
 
 | Language                                                              | Version | Libraries or Frameworks            |
 | --------------------------------------------------------------------- | ------- | ---------------------------------- |
-| [Swift](https://swift.org/blog/swift-5-released/)                      | 5       | AVFoundation, ChameleonFramework, Contacts,       CoreLocation, CoreML, FirebaseDatabase, Foundation, MapKit, UIKit, UserNotifications, Vision                 |
-| [Python](https://www.python.org/downloads/release/python-380/)        | 3.8.0   | Matplotlib, Numpy, OS, Pandas, PIL (Image), Random, Seaborn, SHUtil, SKLearn, Sys, Tensorflow (Keras), Zipfile                                                   |
+| [Swift](https://swift.org/blog/swift-5-released/)                      | 5       | AVFoundation, ChameleonFramework, Contacts,       CoreLocation, CoreML, FirebaseDatabase, Foundation, MapKit, UIKit, UserNotifications, Vision           |
+| [Python](https://www.python.org/downloads/release/python-380/)        | 3.8.0   | CoreMLTools, Matplotlib, Numpy, OS, Pandas, PIL (Image), Random, Seaborn, SHUtil, SKLearn, Sys, Tensorflow (Keras), Zipfile                                |
 
 ## Access the Current App Version
 
